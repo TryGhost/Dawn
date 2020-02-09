@@ -1,0 +1,69 @@
+.feed {
+  align-items: center;
+  display: flex;
+  line-height: 1;
+  overflow: hidden;
+  padding: 1.5rem 0;
+  position: relative;
+
+  &:hover .feed-title {
+    opacity: .8;
+  }
+
+  &:hover .feed-length {
+    margin-right: 1.5rem;
+  }
+
+  &:hover .feed-icon {
+    transform: translateX(.5rem);
+  }
+}
+
+.feed + .feed {
+  border-top: 1px solid var(--light-gray-color);
+
+  &.feed-paged {
+    border-top: 0;
+    margin-top: 3rem;
+  }
+}
+
+.feed-calendar {
+  color: var(--brand-color);
+  display: flex;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-right: 1.5rem;
+  white-space: nowrap;
+}
+
+.feed-calendar-month {
+  margin-right: .4rem;
+  text-transform: uppercase;
+}
+
+.feed-title {
+  flex-grow: 1;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 0;
+  overflow: hidden;
+  padding-right: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.feed-length {
+  color: var(--secondary-text-color);
+  font-size: 1.4rem;
+  transition: margin .2s var(--animation-base);
+  white-space: nowrap;
+}
+
+.feed-icon {
+  color: var(--secondary-text-color);
+  position: absolute;
+  right: 0;
+  transform: translateX(2rem);
+  transition: transform .2s var(--animation-base);
+}

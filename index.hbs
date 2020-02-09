@@ -1,0 +1,12 @@
+{{!< default}}
+
+<div class="content-area">
+  <main class="site-main">
+    <div class="post-feed kg-width-normal">
+      {{#foreach posts visibility="all"}}
+        {{> "loop"}}
+      {{/foreach}}
+    </div>
+    {{pagination}}
+  </main>
+</div>

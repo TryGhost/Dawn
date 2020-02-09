@@ -1,0 +1,20 @@
+{{!< default}}
+
+<div class="content-area">
+  <main class="site-main">
+    {{#tag}}
+      <section class="tag kg-width-normal">
+        <h1 class="tag-name">{{name}}</h1>
+        {{#if description}}
+          <div class="tag-description">{{description}}</div>
+        {{/if}}
+      </section>
+    {{/tag}}
+    <div class="post-feed kg-width-normal">
+      {{#foreach posts visibility="all"}}
+        {{> "loop"}}
+      {{/foreach}}
+    </div>
+    {{pagination}}
+  </main>
+</div>

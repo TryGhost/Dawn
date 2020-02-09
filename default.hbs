@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta_title}}</title>
+  <link rel="stylesheet" href="{{asset "css/screen.css"}}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i,800">
+
+  {{> customize/config}}
+
+  {{ghost_head}}
+</head>
+<body class="{{body_class}}{{{block "body_class"}}}">
+  <div class="container">
+    <div class="site">
+      {{> header}}
+      {{#is "home"}}
+        {{> cover}}
+        {{> featured}}
+      {{/is}}
+      <div class="site-content">
+        {{{body}}}
+      </div>
+      {{> footer}}
+      {{> modal}}
+      {{> members/notifications}}
+    </div>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+  <script src="{{asset "js/main.min.js"}}"></script>
+
+  <script>
+    $(function () {
+      var action = getParameterByName('action');
+      var stripe = getParameterByName('stripe');
+
+      if (action === 'subscribe') {
+        body.addClass('notification-opened subscribe-success');
+      }
+      if (action === 'signup') {
+        window.location = '{{@site.url}}/signup/?action=checkout';
+      }
+      if (action === 'checkout') {
+        body.addClass('notification-opened signup-success');
+      }
+      if (action === 'signin') {
+        body.addClass('notification-opened signin-success');
+      }
+      if (stripe === 'success') {
+        body.addClass('notification-opened checkout-success');
+      }
+    });
+  </script>
+
+  {{ghost_foot}}
+</body>
+</html>

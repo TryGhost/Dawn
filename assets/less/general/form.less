@@ -1,0 +1,49 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"] {
+  appearance: none;
+  border: 1px solid var(--mid-gray-color);
+  border-radius: 5px;
+  font-size: 1.6rem;
+  height: 50px;
+  outline: none;
+  padding: 0 1.5rem;
+  width: 100%;
+
+  &:focus {
+    border-color: var(--brand-color);
+  }
+}
+
+.form-wrapper {
+  position: relative;
+}
+
+.form-button {
+  align-items: center;
+  background-color: var(--brand-color);
+  border: 0;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  display: flex;
+  font-size: 20px;
+  height: 40px;
+  justify-content: center;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 40px;
+
+  &:after {
+    color: var(--white-color);
+    content: "\e92c";
+    font-family: IVEEL;
+  }
+
+  svg {
+    display: none;
+  }
+}

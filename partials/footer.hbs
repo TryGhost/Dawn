@@ -1,0 +1,21 @@
+<footer class="site-footer">
+  <nav class="footer-nav">
+    {{navigation type="secondary"}}
+  </nav>
+  {{> customize/copyright}}
+  <div class="social">
+    {{#if @site.facebook}}
+      <a class="social-item social-item-facebook" href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener noreferrer">
+        <i class="icon icon-facebook-box"></i>
+      </a>
+    {{/if}}
+    {{#if @site.twitter}}
+      <a class="social-item social-item-twitter" href="{{twitter_url @site.twiiter}}" target="_blank" rel="noopener noreferrer">
+        <i class="icon icon-twitter-box"></i>
+      </a>
+    {{/if}}
+    <a class="social-item social-item-rss" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" target="_blank" rel="noopener noreferrer">
+      <i class="icon icon-rss-box"></i>
+    </a>
+  </div>
+</footer>

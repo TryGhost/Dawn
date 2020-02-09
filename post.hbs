@@ -1,0 +1,90 @@
+{{!< default}}
+
+<div class="content-area">
+  <main class="site-main">
+    {{#post}}
+      <article class="single {{post_class}} kg-width-narrow">
+        <header class="single-header">
+          <div class="single-meta">
+            <span class="single-meta-item single-meta-date">
+              <time datetime="{{date format="YYYY-MM-DD"}}">
+                {{date published_at}}
+              </time>
+            </span>
+            <span class="single-meta-item single-meta-length">
+              {{reading_time}}
+            </span>
+            {{#primary_tag}}
+              <span class="single-meta-item single-meta-tag">
+                <a class="post-tag post-tag-{{slug}}" href="{{url}}">
+                  {{name}}
+                </a>
+              </span>
+            {{/primary_tag}}
+          </div>
+          <h1 class="single-title">{{title}}</h1>
+          {{#if custom_excerpt}}
+            <div class="single-excerpt">
+              {{custom_excerpt}}
+            </div>
+          {{/if}}
+        </header>
+        {{#if feature_image}}
+          <div class="single-media kg-width-wide u-placeholder horizontal">
+            <img class="lazyload u-object-fit"
+              data-srcset="{{> srcset}}"
+              data-sizes="auto"
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              alt="{{title}}"
+            >
+          </div>
+        {{/if}}
+        <div class="single-content u-text-format">
+          {{#if access}}
+            {{content}}
+          {{else}}
+
+          {{/if}}
+        </div>
+        <footer class="single-footer kg-width-normal">
+          <div class="single-footer-left">
+            {{#prev_post}}
+              <div class="navigation navigation-previous">
+                <a class="navigation-link" href="{{url}}"><i class="icon icon-arrow-left navigation-icon"></i></a>
+              </div>
+            {{/prev_post}}
+          </div>
+          <div class="single-footer-middle">
+            <div class="single-footer-top">
+              <h3 class="single-footer-title">{{t "Published by:"}}</h3>
+              <div class="author-list">
+                {{#foreach authors}}
+                  <div class="author-image-placeholder u-placeholder square">
+                    <a href="{{url}}" title="{{name}}">
+                      <img class="author-image lazyload u-object-fit" data-src="{{img_url profile_image size="xs"}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{{name}}">
+                    </a>
+                  </div>
+                {{/foreach}}
+              </div>
+            </div>
+            <div class="single-footer-bottom">
+              <div class="share">
+                <a class="share-link share-link-facebook" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank" rel="noopener noreferrer"><i class="icon icon-facebook"></i>{{t "Share"}}</a>
+                <a class="share-link share-link-twitter" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{encode title}}" target="_blank" rel="noopener noreferrer"><i class="icon icon-twitter"></i>{{t "Tweet"}}</a>
+              </div>
+            </div>
+          </div>
+          <div class="single-footer-right">
+            {{#next_post}}
+              <div class="navigation navigation-next">
+                <a class="navigation-link" href="{{url}}"><i class="icon icon-arrow-right navigation-icon"></i></a>
+              </div>
+            {{/next_post}}
+          </div>
+        </footer>
+      </article>
+    {{/post}}
+    {{> related}}
+    {{> disqus}}
+  </main>
+</div>

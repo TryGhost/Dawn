@@ -1,0 +1,10 @@
+<div class="site-cover">
+  <div class="cover-content">
+    {{#if @site.icon}}
+      <img class="cover-icon" src="{{@site.icon}}" alt="{{@site.title}}">
+    {{/if}}
+    {{#if @site.description}}
+      <div class="cover-description">{{@site.description}}</div>
+    {{/if}}
+  </div>
+</div>

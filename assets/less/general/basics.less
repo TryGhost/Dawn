@@ -1,0 +1,151 @@
+:root {
+  --brand-color: #ff572f;
+  --primary-text-color: #333;
+  --secondary-text-color: #999;
+  --white-color: #fff;
+  --lighter-gray-color: #f6f6f6;
+  --light-gray-color: #e6e6e6;
+  --mid-gray-color: #ccc;
+  --dark-gray-color: #444;
+  --darker-gray-color: #1a1a1a;
+  --black-color: #000;
+  --green-color: #28a745;
+  --orange-color: #ffc107;
+  --red-color: #dc3545;
+  --facebook-color: #3b5998;
+  --twitter-color: #1da1f2;
+  --rss-color: #f26522;
+  --animation-base: ease-in-out;
+  --font-base: Muli, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  --navbar-height: 80px;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--white-color);
+  color: var(--primary-text-color);
+  font-family: var(--font-base);
+  font-size: 1.5rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--darker-gray-color);
+  text-decoration: none;
+  transition: color .1s var(--animation-base);
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--darker-gray-color);
+  font-family: var(--font-base);
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0 0 1.5rem;
+}
+
+p {
+  margin: 0 0 2rem;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: 6px solid var(--brand-color);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 4.5rem 0;
+  padding-left: 1.5rem;
+
+  em {
+    font-style: normal;
+  }
+}
+
+ul, ol {
+  margin: 3rem 0;
+  padding-left: 2rem;
+}
+
+iframe,
+embed {
+  border: 0;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+figure {
+  margin: 4.5rem 0;
+}
+
+figcaption {
+  color: var(--darker-gray-color);
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+pre {
+  margin: 3rem 0;
+  overflow-x: scroll;
+}
+
+code {
+  font-size: 1.4rem;
+}
+
+hr {
+  background-color: var(--secondary-text-color);
+  border: 0;
+  border-radius: 50%;
+  height: 5px;
+  margin: 40px auto;
+  position: relative;
+  width: 5px;
+
+  &:before,
+  &:after {
+    background-color: var(--secondary-text-color);
+    border-radius: 50%;
+    content: "";
+    height: 5px;
+    position: absolute;
+    width: 5px;
+  }
+
+  &:before {
+    right: 20px;
+  }
+
+  &:after {
+    left: 20px;
+  }
+}

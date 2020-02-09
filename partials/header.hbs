@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="header-left">
+    <a class="logo" href="{{@site.url}}">
+      {{#if @site.logo}}
+        <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
+      {{else}}
+        <span class="logo-text">{{@site.title}}</span>
+      {{/if}}
+    </a>
+  </div>
+  {{#if @site.navigation}}
+    <nav class="main-nav hidden-xs hidden-sm hidden-md">
+      {{navigation}}
+    </nav>
+  {{/if}}
+  <div class="header-right">
+    <button class="button-icon js-modal" data-modal="search"><i class="icon icon-magnify"></i></button>
+    <a class="menu-item menu-item-cta" href="#">{{t "Subscribe"}}</a>
+  </div>
+</header>
