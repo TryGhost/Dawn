@@ -1,9 +1,21 @@
 <div class="modal-overlay">
   <div class="modal modal-search">
     <div class="form-wrapper">
-      <input class="modal-input search-input" type="search">
+      <input class="modal-input search-input" type="search" placeholder="{{t "Enter keyword..."}}">
       <button class="form-button search-button"></button>
     </div>
+    {{#get "tags" limit="5" include="count.posts" order="count.posts desc"}}
+      {{#if tags}}
+        <div class="popular-wrapper">
+          <h4 class="popular-title">{{t "Popular tags"}}</h4>
+          <div class="popular-feed">
+            {{#foreach tags}}
+              <a class="popular" href="{{url}}">{{name}}</a>
+            {{/foreach}}
+          </div>
+        </div>
+      {{/if}}
+    {{/get}}
     <div class="search-result"></div>
   </div>
   <button class="button-icon modal-close"><i class="icon icon-window-close"></i></button>

@@ -102,14 +102,16 @@ function search() {
   var searchInput = $('.search-input');
   var searchButton = $('.search-button');
   var searchResult = $('.search-result');
+  var popular = $('.popular-wrapper');
   var posts = [];
+  var result = [];
 
   if (themeOptions.search_key == '') {
     return;
   }
 
   searchInput.one('focus', function () {
-    var base = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname.split('/')[1];
+    var base = window.location.protocol + "//" + window.location.host;
     $.get(base + '/ghost/api/v3/content/posts/?key=' + themeOptions.search_key + '&limit=all&fields=title,url,visibility&formats=plaintext', function (data) {
       posts = data.posts
     });
@@ -119,7 +121,7 @@ function search() {
     var output = '';
 
     if (e.target.value.length > 2) {
-      var result = fuzzysort.go(e.target.value, posts, {keys: ['title', 'plaintext']});
+      result = fuzzysort.go(e.target.value, posts, {keys: ['title']});
       result.forEach(function (item) {
         output += '<div class="search-result-row">' +
           '<a class="search-result-row-link" href="' + item.obj.url + '">' + item.obj.title + '</a>' +
@@ -132,6 +134,12 @@ function search() {
       searchButton.addClass('search-button-clear');
     } else {
       searchButton.removeClass('search-button-clear');
+    }
+
+    if (result.length > 0 && e.target.value.length > 2) {
+      popular.hide();
+    } else {
+      popular.show();
     }
 
     searchResult.html(output);
