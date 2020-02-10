@@ -16,12 +16,26 @@
 
   &:hover {
     border-color: var(--mid-gray-color);
+    opacity: 1;
+  }
+
+  svg {
+    display: none;
+  }
+
+  &.loading {
+    text-indent: -9999px;
+
+    svg {
+      display: block;
+    }
   }
 }
 
 .button-icon {
   background-color: transparent;
   border: 0;
+  color: var(--white-color);
   cursor: pointer;
   display: inline-flex;
   font-size: 20px;

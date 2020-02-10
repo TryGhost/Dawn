@@ -1,0 +1,13 @@
+{{!< ../default}}
+
+<div class="content-area">
+  <main class="site-main">
+    <div class="single">
+      {{#if @member.paid}}
+        <script>window.location = '{{@site.url}}';</script>
+      {{else}}
+        {{> members/auth}}
+      {{/if}}
+    </div>
+  </main>
+</div>

@@ -1,0 +1,72 @@
+.notification {
+  align-items: center;
+  background-color: var(--white-color);
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 700;
+  height: var(--notification-height);
+  justify-content: center;
+  left: 0;
+  padding: 0 60px 0 20px;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateY(calc(var(--notification-height) * -1));
+  transition: transform .3s var(--animation-base);
+  z-index: 90;
+}
+
+.subscribe-success.notification-opened .notification-subscribe {
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+  pointer-events: unset;
+  transform: translateY(0);
+}
+
+.signup-success.notification-opened .notification-signup {
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+  pointer-events: unset;
+  transform: translateY(0);
+}
+
+.signin-success.notification-opened .notification-signin {
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+  pointer-events: unset;
+  transform: translateY(0);
+}
+
+.checkout-success.notification-opened .notification-checkout {
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+  pointer-events: unset;
+  transform: translateY(0);
+}
+
+.success .notification-success {
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+  pointer-events: unset;
+  transform: translateY(0);
+}
+
+.error .notification-error {
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+  pointer-events: unset;
+  transform: translateY(0);
+}
+
+.notification-icon {
+  font-size: 25px;
+  margin-right: .6rem;
+
+  &.icon-checkbox-marked-circle-outline {
+    color: var(--green-color);
+  }
+
+  &.icon-alert-circle-outline {
+    color: var(--red-color);
+  }
+}
+
+.notification-close {
+  position: absolute;
+  right: 15px;
+}

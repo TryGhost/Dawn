@@ -3,7 +3,7 @@ input[type="password"],
 input[type="email"],
 input[type="search"] {
   appearance: none;
-  border: 1px solid var(--mid-gray-color);
+  border: 1px solid var(--light-gray-color);
   border-radius: 5px;
   font-size: 1.6rem;
   height: 50px;
@@ -12,7 +12,7 @@ input[type="search"] {
   width: 100%;
 
   &:focus {
-    border-color: var(--brand-color);
+    border-color: var(--mid-gray-color);
   }
 }
 
@@ -45,5 +45,15 @@ input[type="search"] {
 
   svg {
     display: none;
+  }
+}
+
+.loading .form-button {
+  &:after {
+    display: none;
+  }
+
+  svg {
+    display: block;
   }
 }
