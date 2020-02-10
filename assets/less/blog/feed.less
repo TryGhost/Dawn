@@ -10,7 +10,7 @@
     opacity: .8;
   }
 
-  &:hover .feed-length {
+  &:hover .feed-right {
     margin-right: 1.5rem;
   }
 
@@ -53,15 +53,30 @@
   white-space: nowrap;
 }
 
+.feed-right {
+  align-items: center;
+  display: flex;
+  transition: margin .2s var(--animation-base);
+}
+
+.feed-visibility {
+  color: var(--orange-color);
+  margin-right: 1rem;
+}
+
+.feed-visibility-public {
+  display: none;
+}
+
 .feed-length {
   color: var(--secondary-text-color);
   font-size: 1.4rem;
-  transition: margin .2s var(--animation-base);
   white-space: nowrap;
 }
 
 .feed-icon {
   color: var(--secondary-text-color);
+  margin-top: 1px;
   position: absolute;
   right: 0;
   transform: translateX(2rem);
