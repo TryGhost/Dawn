@@ -101,57 +101,36 @@ function search() {
   'use strict';
   var searchInput = $('.search-input');
   var searchButton = $('.search-button');
-  var searchResult = $('.search-result');
   var popular = $('.popular-wrapper');
-  var posts = [];
-  var result = [];
 
-  if (themeOptions.search_key == '') {
-    return;
-  }
+  var search = searchInput.ghostHunter({
+    includebodysearch: true,
+    info_template: '<span class="search-result-count">{{amount}}</span>',
+    onComplete: function (results) {
+      if (results.length > 0) {
+        popular.hide();
+      } else {
+        popular.show();
+      }
 
-  searchInput.one('focus', function () {
-    var base = window.location.protocol + "//" + window.location.host;
-    $.get(base + '/ghost/api/v3/content/posts/?key=' + themeOptions.search_key + '&limit=all&fields=title,url,visibility&formats=plaintext', function (data) {
-      posts = data.posts
-    });
-  })
-
-  searchInput.on('keyup', function (e) {
-    var output = '';
-
-    if (e.target.value.length > 2) {
-      result = fuzzysort.go(e.target.value, posts, {keys: ['title']});
-      result.forEach(function (item) {
-        output += '<div class="search-result-row">' +
-          '<a class="search-result-row-link" href="' + item.obj.url + '">' + item.obj.title + '</a>' +
-        '</div>';
-      });
-      searchResult.html(output);
-    }
-
-    if (e.target.value.length > 0) {
-      searchButton.addClass('search-button-clear');
-    } else {
-      searchButton.removeClass('search-button-clear');
-    }
-
-    if (result.length > 0 && e.target.value.length > 2) {
-      popular.hide();
-    } else {
-      popular.show();
-    }
-
-    searchResult.html(output);
-  });
-
-  $('.search-form').on('submit', function (e) {
-    e.preventDefault();
+      if (searchInput.val().length > 0) {
+        searchButton.addClass('search-button-clear');
+      } else {
+        searchButton.removeClass('search-button-clear');
+      }
+    },
+    onKeyUp: true,
+    results: '.search-result',
+    result_template: '<div class="search-result-row"><a id="gh-{{ref}}" class="search-result-row-link gh-search-item" href="{{link}}">{{title}}</a></div>',
+    zeroResultsInfo: false
   });
 
   searchButton.on('click', function () {
     if ($(this).hasClass('search-button-clear')) {
-      searchInput.val('').focus().keyup();
+      search.clear();
+      searchInput.focus();
+      searchButton.removeClass('search-button-clear');
+      popular.show();
     }
   });
 }
