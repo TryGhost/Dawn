@@ -7,6 +7,7 @@ $(function () {
   gallery();
   modal();
   search();
+  notification();
 });
 
 function featured() {
@@ -131,6 +132,24 @@ function search() {
       searchInput.focus();
       searchButton.removeClass('search-button-clear');
       popular.show();
+    }
+  });
+}
+
+function notification() {
+  'use strict';
+  $('.notification-close').on('click', function (e) {
+    e.preventDefault();
+
+    body.removeClass('notification-opened');
+    var uri = window.location.toString();
+    if (uri.indexOf('?') > 0) {
+      var clean_uri = uri.substring(0, uri.indexOf('?'));
+      window.history.replaceState({}, document.title, clean_uri);
+    }
+
+    if ($(this).closest('.auth-form').length) {
+      $(this).closest('.auth-form').removeClass('success error');
     }
   });
 }
