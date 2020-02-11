@@ -11,10 +11,19 @@
   {{#if @site.navigation}}
     <nav class="main-nav hidden-xs hidden-sm hidden-md">
       {{navigation}}
+      <button class="button-icon js-modal" data-modal="search"><i class="icon icon-magnify"></i></button>
     </nav>
   {{/if}}
   <div class="header-right">
-    <button class="button-icon js-modal" data-modal="search"><i class="icon icon-magnify"></i></button>
-    <a class="menu-item menu-item-cta" href="{{@site.url}}/subscribe/">{{t "Subscribe"}}</a>
+    {{#if @labs.members}}
+      {{#if @member}}
+        <a class="menu-item" href="{{@site.url}}/account/">{{t "Account"}}</a>
+        {{#unless @member.paid}}
+          <a class="menu-item menu-item-cta" href="{{@site.url}}/upgrade/">{{t "Upgrade"}}</a>
+        {{/unless}}
+      {{else}}
+        <a class="menu-item menu-item-cta" href="{{@site.url}}/subscribe/">{{t "Subscribe"}}</a>
+      {{/if}}
+    {{/if}}
   </div>
 </header>

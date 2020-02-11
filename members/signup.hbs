@@ -3,7 +3,7 @@
 <div class="content-area">
   <main class="site-main">
     <div class="single">
-      {{#if @member.paid}}
+      {{^if @member}}
         <script>window.location = '{{@site.url}}';</script>
       {{else}}
         {{> members/auth}}

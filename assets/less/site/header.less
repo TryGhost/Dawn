@@ -13,6 +13,14 @@
 
 .header-right {
   justify-content: flex-end;
+
+  .menu-item {
+    margin: 0;
+
+    & + .menu-item {
+      margin-left: 2rem;
+    }
+  }
 }
 
 .logo-text {
@@ -22,6 +30,7 @@
 }
 
 .main-nav {
+  align-items: center;
   display: flex;
 }
 
@@ -32,5 +41,4 @@
 
 .menu-item-cta {
   color: var(--brand-color);
-  margin: 0 0 0 1rem;
 }

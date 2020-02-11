@@ -1,0 +1,93 @@
+{{!< ../default}}
+
+<div class="content-area">
+  <main class="site-main">
+    <div class="single kg-width-narrow">
+      <header class="single-header">
+        <h1 class="single-title">{{t "Your account"}}</h1>
+      </header>
+      {{#unless @member}}
+        <script>window.location = '{{@site.url}}/signin/';</script>
+      {{else}}
+        <div class="account">
+          <div class="account-profile">
+            <div class="account-image-placeholder u-placeholder square">
+              <img class="account-image lazyload u-object-fit" data-email="{{@member.email}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            </div>
+            <h2 class="account-name">{{@member.name}}</h2>
+            <div class="account-email">{{@member.email}}</div>
+            <div class="account-button-list">
+              {{#unless @member.paid}}
+                <a class="button account-button" href="{{@site.url}}/upgrade/">{{t "Upgrade"}}</a>
+              {{/unless}}
+              <button class="button button-secondary account-button" data-members-signout>{{t "Sign out"}}</button>
+            </div>
+          </div>
+
+          {{#if @member.paid}}
+            <div class="account-subscription-list">
+              {{#foreach @member.subscriptions}}
+                <div class="account-subscription">
+                  <div class="account-row">
+                    <h3 class="account-row-title">{{t "Subscription status"}}</h3>
+                    <div class="account-row-value account-status account-status-{{status}}">{{status}}</div>
+                  </div>
+                  <div class="account-row">
+                    <h3 class="account-row-title">{{t "Your plan"}}</h3>
+                    <div class="account-row-value">{{plan.nickname}} (${{price}}/{{plan.interval}})</div>
+                  </div>
+                  <div class="account-row">
+                    <h3 class="account-row-title">{{t "Start date"}}</h3>
+                    <div class="account-row-value">{{date start_date}}</div>
+                  </div>
+                  <div class="account-row">
+                    <h3 class="account-row-title">{{t "Next bill date"}}</h3>
+                    <div class="account-row-value">{{date current_period_end}}</div>
+                  </div>
+                  <div class="account-row">
+                    <h3 class="account-row-title">{{t "Billing info"}}</h3>
+                    <div class="account-row-value">**** **** **** {{default_payment_card_last4}}</div>
+                  </div>
+                  <div class="account-cancel">
+                    {{cancel_link class="account-cancel-link" errorClass="account-cancel-error"}}
+                  </div>
+                </div>
+              {{/foreach}}
+            </div>
+          {{else if @member}}
+
+          {{/if}}
+
+          {{!-- <div class="account-subscription-list">
+            <div class="account-subscription">
+              <div class="account-row">
+                <h3 class="account-row-title">Subscription status</h3>
+                <div class="account-row-value account-status account-status-active">active</div>
+              </div>
+              <div class="account-row">
+                <h3 class="account-row-title">Your plan</h3>
+                <div class="account-row-value">Montly ($5/month)</div>
+              </div>
+              <div class="account-row">
+                <h3 class="account-row-title">Start date</h3>
+                <div class="account-row-value">July 11, 2016</div>
+              </div>
+              <div class="account-row">
+                <h3 class="account-row-title">Next bill date</h3>
+                <div class="account-row-value">August 11, 2016</div>
+              </div>
+              <div class="account-row">
+                <h3 class="account-row-title">Billing info</h3>
+                <div class="account-row-value">**** **** **** 1234</div>
+              </div>
+              <div class="account-cancel">
+                <a class="account-cancel-link" href="">Cancel subscription</a>
+                <span class="account-cancel-error gh-error-subscription-cancel" data-members-error>Something went wrong.</span>
+              </div>
+            </div>
+          </div> --}}
+        </div>
+      {{/unless}}
+    </div>
+  </main>
+</div>

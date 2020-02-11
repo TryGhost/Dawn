@@ -24,7 +24,9 @@
       </div>
       {{> footer}}
       {{> modal}}
-      {{> members/notifications}}
+      {{#if @labs.members}}
+        {{> members/notifications}}
+      {{/if}}
     </div>
   </div>
 
@@ -35,28 +37,30 @@
   </script>
   <script src="{{asset "js/main.min.js"}}"></script>
 
-  <script>
-    $(function () {
-      var action = getParameterByName('action');
-      var stripe = getParameterByName('stripe');
+  {{#if @labs.members}}
+    <script>
+      $(function () {
+        var action = getParameterByName('action');
+        var stripe = getParameterByName('stripe');
 
-      if (action === 'subscribe') {
-        body.addClass('notification-opened subscribe-success');
-      }
-      if (action === 'signup') {
-        window.location = '{{@site.url}}/signup/?action=checkout';
-      }
-      if (action === 'checkout') {
-        body.addClass('notification-opened signup-success');
-      }
-      if (action === 'signin') {
-        body.addClass('notification-opened signin-success');
-      }
-      if (stripe === 'success') {
-        body.addClass('notification-opened checkout-success');
-      }
-    });
-  </script>
+        if (action === 'subscribe') {
+          body.addClass('notification-opened subscribe-success');
+        }
+        if (action === 'signup') {
+          window.location = '{{@site.url}}/signup/?action=checkout';
+        }
+        if (action === 'checkout') {
+          body.addClass('notification-opened signup-success');
+        }
+        if (action === 'signin') {
+          body.addClass('notification-opened signin-success');
+        }
+        if (stripe === 'success') {
+          body.addClass('notification-opened checkout-success');
+        }
+      });
+    </script>
+  {{/if}}
 
   {{ghost_foot}}
 </body>

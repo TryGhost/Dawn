@@ -7,6 +7,7 @@ $(function () {
   gallery();
   modal();
   search();
+  gravatar();
   notification();
 });
 
@@ -134,6 +135,15 @@ function search() {
       popular.show();
     }
   });
+}
+
+function gravatar() {
+  'use strict';
+  var image = $('.account-image');
+  if (image.length) {
+    image.attr('data-src', 'https://www.gravatar.com/avatar/' + md5(image.attr('data-email')) + '?d=mp&s=160');
+    lazySizes.loader.unveil(image[0]);
+  }
 }
 
 function notification() {

@@ -1,0 +1,81 @@
+.account-profile {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.account-image-placeholder {
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  width: 70px;
+}
+
+.account-name {
+  font-size: 1.8rem;
+  margin-bottom: .5rem;
+}
+
+.account-button-list {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.account-button {
+  margin: 0 .4rem;
+}
+
+.account-subscription {
+  margin-top: 4.5rem;
+}
+
+.account-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  & + & {
+    margin-top: 1.5rem;
+  }
+}
+
+.account-row-title {
+  color: var(--secondary-text-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.account-row-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.account-status {
+  background-color: var(--green-color);
+  border-radius: 3px;
+  color: var(--white-color);
+  font-size: 1.2rem;
+  height: 100%;
+  line-height: 1;
+  padding: .5rem .8rem;
+  text-transform: uppercase;
+}
+
+.account-status-trialing {
+  background-color: var(--orange-color);
+}
+
+.account-cancel {
+  margin-top: 3rem;
+}
+
+.account-cancel-link {
+  font-weight: 700;
+}
+
+.account-cancel-error {
+  display: block;
+  font-size: 1.4rem;
+  margin-top: .2rem;
+}
