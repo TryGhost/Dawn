@@ -4,16 +4,18 @@
   display: flex;
   font-size: 1.6rem;
   font-weight: 700;
-  height: var(--notification-height);
   justify-content: center;
   left: 0;
-  padding: 0 60px 0 20px;
+  line-height: 1.4;
+  padding: 12px 60px 12px 20px;
   pointer-events: none;
   position: fixed;
   right: 0;
   top: 0;
-  transform: translateY(calc(var(--notification-height) * -1));
-  transition: transform .3s var(--animation-base);
+  transform: translateY(-100%);
+  transition-duration: .3s;
+  transition-property: box-shadow, transform;
+  transition-timing-function: var(--animation-base);
   z-index: 90;
 }
 
