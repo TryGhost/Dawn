@@ -43,7 +43,17 @@
           {{#if access}}
             {{content}}
           {{else}}
-
+            <p>{{t "You don't have access to this post at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing will give you immediate access."}}</p>
+            <section class="single-cta">
+              {{#if @member}}
+                <h2 class="single-cta-title">{{t "This post is for paying subscribers only"}}</h2>
+              {{else}}
+                <h2 class="single-cta-title">{{t "This post is for subscribers only"}}</h2>
+              {{/if}}
+              <a class="button single-cta-button" href="/signup/">{{t "Subscribe now"}} <i class="icon icon-arrow-right"></i></a>
+              <br>
+              <a class="single-cta-footer" href="/signin/">{{t "Already have an account? Sign in"}}</a>
+            </section>
           {{/if}}
         </div>
         <footer class="single-footer kg-width-normal">
