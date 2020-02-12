@@ -5,6 +5,7 @@ $(function () {
   featured();
   pagination();
   gallery();
+  table();
   modal();
   search();
   gravatar();
@@ -63,6 +64,26 @@ function gallery() {
     var ratio = width / height;
     container.style.flex = ratio + ' 1 0%';
   });
+}
+
+function table() {
+  'use strict';
+  if (body.hasClass('post-template') || body.hasClass('page-template')) {
+    var tables = $('.single-content').find('.table');
+    tables.each(function (_, table) {
+      var labels = []
+
+      $(table).find('thead th').each(function (_, label) {
+        labels.push($(label).text());
+      });
+      
+      $(table).find('tr').each(function (_, row) {
+        $(row).find('td').each(function (index, column) {
+          $(column).attr('data-label', labels[index]);
+        });
+      });
+    });
+  }
 }
 
 function modal() {

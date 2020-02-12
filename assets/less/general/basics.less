@@ -150,3 +150,72 @@ hr {
     left: 20px;
   }
 }
+
+table {
+  border-collapse: collapse;
+  font-size: 1.5rem;
+  margin: 3rem 0;
+  width: 100%;
+  word-break: normal;
+}
+
+thead {
+  background-color: var(--lighter-gray-color);
+  border-bottom: 1px solid var(--light-gray-color);
+}
+
+tr {
+  & + & {
+    border-top: 1px solid var(--light-gray-color);
+  }
+
+  &:hover td {
+    background-color: var(--lighter-gray-color);
+  }
+}
+
+th, td {
+  line-height: 1.5;
+  padding: 1rem 1.5rem;
+}
+
+th {
+  color: var(--secondary-text-color);
+  text-align: left;
+}
+
+tfoot {
+  border-top: 1px solid var(--mid-gray-color);
+
+  td {
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 767px) {
+  .table {
+    thead {
+      display: none;
+    }
+
+    tr {
+      display: block;
+      padding: 1.2rem 0;
+    }
+
+    td {
+      display: flex;
+      justify-content: space-between;
+      padding: .7rem 0;
+      text-align: right;
+      width: 100%;
+
+      &:before {
+        color: var(--secondary-text-color);
+        content: attr(data-label);
+        margin-right: 1rem;
+        white-space: nowrap;
+      }
+    }
+  }
+}
