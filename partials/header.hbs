@@ -11,7 +11,9 @@
   {{#if @site.navigation}}
     <nav class="main-nav hidden-xs hidden-sm hidden-md">
       {{navigation}}
-      <button class="button-icon js-modal" data-modal="search"><i class="icon icon-magnify"></i></button>
+      {{#if @labs.members}}
+        <button class="button-icon menu-item-button js-modal" data-modal="search"><i class="icon icon-magnify"></i></button>
+      {{/if}}
     </nav>
   {{/if}}
   <div class="header-right">
@@ -24,6 +26,8 @@
       {{else}}
         <a class="menu-item menu-item-cta" href="{{@site.url}}/subscribe/">{{t "Subscribe"}}</a>
       {{/if}}
+    {{else}}
+      <button class="button-icon js-modal" data-modal="search"><i class="icon icon-magnify"></i></button>
     {{/if}}
   </div>
 </header>
