@@ -36,13 +36,15 @@
     text-transform: uppercase;
   }
 
-  a {
+  a:not(.button):not(.kg-bookmark-container) {
+    color: var(--brand-color);
+    font-weight: 700;
     text-decoration: underline;
   }
 
   ul, ol {
     li {
-      margin: 10px 0;
+      margin: 1rem 0;
     }
   }
 
