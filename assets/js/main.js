@@ -147,6 +147,7 @@ function search() {
     onKeyUp: true,
     results: '.search-result',
     result_template: '<div id="gh-{{ref}}" class="search-result-row gh-search-item"><a class="search-result-row-link" href="{{link}}">{{title}}</a></div>',
+    subpath: ghosthunter_subpath,
     zeroResultsInfo: false
   });
 
@@ -186,6 +187,7 @@ function plan() {
     $(this).closest('.plan-selector').attr('class', 'plan-selector plan-selector-' + $(this).attr('data-plan'));
   });
 }
+
 
 function notification() {
   'use strict';
