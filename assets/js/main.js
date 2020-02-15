@@ -8,7 +8,9 @@ $(function () {
   table();
   modal();
   search();
+  burger();
   gravatar();
+  plan();
   notification();
 });
 
@@ -128,7 +130,7 @@ function search() {
 
   var search = searchInput.ghostHunter({
     includebodysearch: true,
-    info_template: '<span class="search-result-count">{{amount}}</span>',
+    info_template: '',
     onComplete: function (results) {
       if (results.length > 0) {
         popular.hide();
@@ -144,7 +146,7 @@ function search() {
     },
     onKeyUp: true,
     results: '.search-result',
-    result_template: '<div class="search-result-row"><a id="gh-{{ref}}" class="search-result-row-link gh-search-item" href="{{link}}">{{title}}</a></div>',
+    result_template: '<div id="gh-{{ref}}" class="search-result-row gh-search-item"><a class="search-result-row-link" href="{{link}}">{{title}}</a></div>',
     zeroResultsInfo: false
   });
 
@@ -158,6 +160,13 @@ function search() {
   });
 }
 
+function burger() {
+  'use strict';
+  $('.burger').on('click', function() {
+    body.toggleClass('menu-opened');
+  });
+}
+
 function gravatar() {
   'use strict';
   var image = $('.account-image');
@@ -165,6 +174,17 @@ function gravatar() {
     image.attr('data-src', 'https://www.gravatar.com/avatar/' + md5(image.attr('data-email')) + '?d=mp&s=160');
     lazySizes.loader.unveil(image[0]);
   }
+}
+
+function plan() {
+  'use strict';
+  var button = $('.plan-selector-button');
+
+  button.on('click', function () {
+    button.addClass('button-secondary')
+    $(this).removeClass('button-secondary');
+    $(this).closest('.plan-selector').attr('class', 'plan-selector plan-selector-' + $(this).attr('data-plan'));
+  });
 }
 
 function notification() {

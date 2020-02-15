@@ -1,4 +1,4 @@
-<section class="plan">
+<section class="plan plan-monthly">
   <header class="plan-header">
     <h2 class="plan-title">{{t "Monthly"}}</h2>
     <div class="plan-price">
@@ -14,7 +14,7 @@
   </ul>
   <button class="button" data-members-plan="Monthly">{{t "Choose monthly"}}{{> members/loader}}</button>
 </section>
-<section class="plan">
+<section class="plan plan-yearly">
   <header class="plan-header">
     <h2 class="plan-title">{{t "Yearly"}}</h2>
     <div class="plan-price">
@@ -29,5 +29,5 @@
     <li class="plan-feature">Simple, secure card payment</li>
     <li class="plan-feature">One easy payment instead of 12!</li>
   </ul>
-  <button class="button" data-members-plan="Yearly">{{t "Choose yearly"}}</button>
+  <button class="button" data-members-plan="Yearly">{{t "Choose yearly"}}{{> members/loader}}</button>
 </section>

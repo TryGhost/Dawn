@@ -42,3 +42,51 @@
 .plan-feature {
   margin: .6rem 0;
 }
+
+.plan-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.plan-selector-button {
+  position: relative;
+
+  &:first-child {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  & + & {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    margin-left: -1px;
+
+    &:not(:last-child) {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  &:hover {
+    z-index: 10;
+  }
+}
+
+@media (max-width: 991px) {
+  .plan {
+    display: none;
+  }
+
+  .plan-selector-free + .plan-list .plan-free {
+    display: flex;
+  }
+
+  .plan-selector-monthly + .plan-list .plan-monthly {
+    display: flex;
+  }
+
+  .plan-selector-yearly + .plan-list .plan-yearly {
+    display: flex;
+  }
+}

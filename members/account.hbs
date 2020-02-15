@@ -14,7 +14,9 @@
             <div class="account-image-placeholder u-placeholder square">
               <img class="account-image lazyload u-object-fit" data-email="{{@member.email}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
             </div>
-            <h2 class="account-name">{{@member.name}}</h2>
+            {{#if @member.name}}
+              <h2 class="account-name">{{@member.name}}</h2>
+            {{/if}}
             <div class="account-email">{{@member.email}}</div>
             <div class="account-button-list">
               {{#unless @member.paid}}

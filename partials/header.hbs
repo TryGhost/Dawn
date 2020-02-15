@@ -15,8 +15,33 @@
         <button class="button-icon menu-item-button js-modal" data-modal="search"><i class="icon icon-magnify"></i></button>
       {{/if}}
     </nav>
+    
+    <button class="button-icon hidden-lg hidden-xl js-modal" data-modal="search"><i class="icon icon-magnify"></i></button>
+    <div class="burger hidden-lg hidden-xl">
+      <div class="burger-bar"></div>
+      <div class="burger-bar"></div>
+    </div>
+
+    <div class="mobile-menu hidden-lg hidden-xl">
+      <div class="container">
+        <nav class="mobile-nav">
+          {{navigation}}
+          {{#if @labs.members}}
+            {{#if @member}}
+              <a class="menu-item" href="{{@site.url}}/account/">{{t "Account"}}</a>
+              {{#unless @member.paid}}
+                <a class="menu-item menu-item-cta" href="{{@site.url}}/upgrade/">{{t "Upgrade"}}</a>
+              {{/unless}}
+            {{else}}
+              <a class="menu-item" href="{{@site.url}}/signin/">{{t "Login"}}</a>
+              <a class="menu-item menu-item-cta" href="{{@site.url}}/subscribe/">{{t "Subscribe"}}</a>
+            {{/if}}
+          {{/if}}
+        </nav>
+      </div>
+    </div>
   {{/if}}
-  <div class="header-right">
+  <div class="header-right hidden-xs hidden-sm hidden-md">
     {{#if @labs.members}}
       {{#if @member}}
         <a class="menu-item" href="{{@site.url}}/account/">{{t "Account"}}</a>
@@ -24,6 +49,7 @@
           <a class="menu-item menu-item-cta" href="{{@site.url}}/upgrade/">{{t "Upgrade"}}</a>
         {{/unless}}
       {{else}}
+        <a class="menu-item" href="{{@site.url}}/signin/">{{t "Login"}}</a>
         <a class="menu-item menu-item-cta" href="{{@site.url}}/subscribe/">{{t "Subscribe"}}</a>
       {{/if}}
     {{else}}

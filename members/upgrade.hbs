@@ -6,9 +6,15 @@
       <header class="single-header kg-width-narrow">
         <h1 class="single-title">{{t "Choose your subscription"}}</h1>
         <div class="single-excerpt">
-          {{{t "Unlock full access to {site} and see the entire library of <br> members-only content & updates" site=@site.title}}}
+          {{t "Unlock full access to {site} and see the entire library of members-only content & updates" site=@site.title}}
         </div>
       </header>
+      
+      <div class="plan-selector plan-selector-monthly hidden-lg hidden-xl">
+        <button class="button plan-selector-button" data-plan="monthly">{{t "Monthly"}}</button>
+        <button class="button button-secondary plan-selector-button" data-plan="yearly">{{t "Yearly"}}</button>
+      </div>
+
       <div class="plan-list">
         {{> members/plan-paid}}
       </div>

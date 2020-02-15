@@ -44,9 +44,40 @@
 }
 
 .menu-item-button {
-  margin: 0 .4rem;
+  margin: 0 .7rem;
 }
 
 .menu-item-cta {
   color: var(--brand-color);
+}
+
+.mobile-menu {
+  background-color: var(--white-color);
+  display: none;
+  height: calc(~"100vh - var(--navbar-height)");
+  left: 0;
+  padding-top: 3rem;
+  position: absolute;
+  top: var(--navbar-height);
+  width: 100%;
+  z-index: 90;
+
+  .menu-item {
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: right;
+
+    & + .menu-item {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-opened .mobile-menu {
+  display: block;
 }
