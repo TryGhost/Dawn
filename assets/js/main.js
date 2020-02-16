@@ -128,37 +128,77 @@ function search() {
   'use strict';
   var searchInput = $('.search-input');
   var searchButton = $('.search-button');
+  var searchResult = $('.search-result');
   var popular = $('.popular-wrapper');
 
-  var search = searchInput.ghostHunter({
-    includebodysearch: true,
-    info_template: '',
-    onComplete: function (results) {
-      if (results.length > 0) {
-        popular.hide();
-      } else {
-        popular.show();
-      }
+  var base = window.location.protocol + "//" + window.location.host;
+  var url = base + '/ghost/api/v2/content/posts/?key=' + search_key + '&limit=all&fields=id,title,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
+  var indexDump = JSON.parse(localStorage.getItem('dawn_index'));
+  var index;
 
-      if (searchInput.val().length > 0) {
-        searchButton.addClass('search-button-clear');
-      } else {
-        searchButton.removeClass('search-button-clear');
+  function update(data) {
+    data.posts.forEach(function (post) {
+      index.addDoc(post);
+    });
+
+    localStorage.setItem('dawn_index', JSON.stringify(index));
+    localStorage.setItem('dawn_last', data.posts[0].updated_at);
+  }
+
+  if (!indexDump) {
+    $.get(url, function (data) {
+      if (data.posts.length > 0) {
+        index = elasticlunr(function () {
+          this.addField('title');
+          this.addField('plaintext');
+          this.setRef('id');
+        });
+
+        update(data);
       }
-    },
-    onKeyUp: true,
-    results: '.search-result',
-    result_template: '<div id="gh-{{ref}}" class="search-result-row gh-search-item"><a class="search-result-row-link" href="{{link}}">{{title}}</a></div>',
-    subpath: ghosthunter_subpath,
-    zeroResultsInfo: false
+    });
+  } else {
+    index = elasticlunr.Index.load(indexDump);
+
+    $.get(url + '&filter=updated_at:>\'' + localStorage.getItem('dawn_last').replace(/\..*/, '').replace(/T/, ' ') + '\'', function (data) {
+      if (data.posts.length > 0) {
+        update(data);
+      }
+    });
+  }
+
+  searchInput.on('keyup', function (e) {
+    var result = index.search(e.target.value, {});
+    var output = '';
+
+    result.forEach(function (post) {
+      output += '<div class="search-result-row">' +
+        '<a class="search-result-row-link" href="' + post.doc.url + '">' + post.doc.title + '</a>' +
+      '</div>';
+    });
+
+    searchResult.html(output);
+
+    if (e.target.value.length > 0) {
+      searchButton.addClass('search-button-clear');
+    } else {
+      searchButton.removeClass('search-button-clear');
+    }
+
+    if (result.length > 0) {
+      popular.hide();
+    } else {
+      popular.show();
+    }
+  });
+
+  $('.search-form').on('submit', function (e) {
+    e.preventDefault();
   });
 
   searchButton.on('click', function () {
     if ($(this).hasClass('search-button-clear')) {
-      search.clear();
-      searchInput.focus();
-      searchButton.removeClass('search-button-clear');
-      popular.show();
+      searchInput.val('').focus().keyup();
     }
   });
 }
