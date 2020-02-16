@@ -1,0 +1,49 @@
+.sticky {
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255,255,255,.8);
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 2rem;
+  position: fixed;
+  right: 0;
+  transition: transform .3s var(--animation-base);
+  z-index: 90;
+}
+
+.sticky-title {
+  color: var(--darker-gray-color);
+  flex-grow: 1;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.sticky-button {
+  border: 0;
+  margin-right: -6px;
+  padding: 0;
+
+  .icon {
+    font-size: 21px;
+  }
+}
+
+.sticky-track {
+  background-color: var(--light-gray-color);
+  bottom: -2px;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.sticky-progress {
+  background-color: var(--brand-color);
+  height: 100%;
+}
+
+.sticky-toggled .sticky {
+  transform: translateY(-50px);
+}
