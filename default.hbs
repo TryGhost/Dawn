@@ -9,6 +9,12 @@
 
   {{> customize/config}}
 
+  <script>
+    if (localStorage.getItem('dawn_theme') == 'dark') {
+      document.documentElement.classList.add('theme-dark');
+    }
+  </script>
+
   {{ghost_head}}
 </head>
 <body class="{{body_class}}{{{block "body_class"}}}">

@@ -1,3 +1,4 @@
+var html = $('html');
 var body = $('body');
 
 $(function () {
@@ -11,6 +12,7 @@ $(function () {
   burger();
   gravatar();
   plan();
+  theme();
   notification();
 });
 
@@ -188,6 +190,36 @@ function plan() {
   });
 }
 
+function theme() {
+  'use strict';
+  var toggle = $('.js-theme');
+
+  function light() {
+    html.removeClass('theme-dark');
+    localStorage.setItem('dawn_theme', 'light');
+  }
+
+  function dark() {
+    html.addClass('theme-dark');
+    localStorage.setItem('dawn_theme', 'dark');
+  }
+
+  window.matchMedia('(prefers-color-scheme: light)').addListener(function (e) {
+    e.matches && light();
+  });
+  
+  window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+    e.matches && dark();
+  });
+
+  toggle.on('click', function () {
+    if (html.hasClass('theme-dark')) {
+      light();
+    } else {
+      dark();
+    }
+  });
+}
 
 function notification() {
   'use strict';
