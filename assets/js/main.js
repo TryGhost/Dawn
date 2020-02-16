@@ -1,5 +1,9 @@
 var html = $('html');
 var body = $('body');
+var st = 0;
+var lastSt = 0;
+var contentOffset = 0;
+var progress = $('.sticky-progress');
 
 $(function () {
   'use strict';
@@ -15,6 +19,37 @@ $(function () {
   theme();
   notification();
 });
+
+$(window).on('scroll', function () {
+  'use strict';
+  if (body.hasClass('post-template')) {
+    window.requestAnimationFrame(sticky);
+  }
+});
+
+$(window).on('load', function () {
+  'use strict';
+  if (body.hasClass('post-template')) {
+    var content = $('.single-content');
+    var contentHeight = content.height();
+    contentOffset = content.offset().top + contentHeight - $(window).height() / 2;
+  }
+});
+
+function sticky() {
+  'use strict';
+  st = jQuery(window).scrollTop();
+
+  if (st > 500 && st > lastSt) {
+    body.addClass('sticky-toggled');
+  } else {
+    body.removeClass('sticky-toggled');
+  }
+
+  progress.css('width', st * 100 / contentOffset + '%');
+
+  lastSt = st;
+}
 
 function featured() {
   'use strict';
