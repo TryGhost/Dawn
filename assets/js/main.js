@@ -1,7 +1,9 @@
 var html = $('html');
 var body = $('body');
+var timeout;
 var st = 0;
 var lastSt = 0;
+var titleOffset = 0;
 var contentOffset = 0;
 var progress = $('.sticky-progress');
 
@@ -11,6 +13,7 @@ $(function () {
   pagination();
   gallery();
   table();
+  toc();
   modal();
   search();
   burger();
@@ -23,13 +26,18 @@ $(function () {
 $(window).on('scroll', function () {
   'use strict';
   if (body.hasClass('post-template')) {
-    window.requestAnimationFrame(sticky);
+    if (timeout) {
+      window.cancelAnimationFrame(timeout);
+    }
+    timeout = window.requestAnimationFrame(sticky);
   }
 });
 
 $(window).on('load', function () {
   'use strict';
   if (body.hasClass('post-template')) {
+    titleOffset = $('.single-title').offset().top;
+
     var content = $('.single-content');
     var contentHeight = content.height();
     contentOffset = content.offset().top + contentHeight - $(window).height() / 2;
@@ -40,10 +48,21 @@ function sticky() {
   'use strict';
   st = jQuery(window).scrollTop();
 
-  if (st > 500 && st > lastSt) {
-    body.addClass('sticky-toggled');
-  } else {
-    body.removeClass('sticky-toggled');
+  if (titleOffset > 0 && contentOffset > 0) {
+    if (st > lastSt) {
+      if (st > titleOffset) {
+        body.removeClass('sticky-hidden').addClass('sticky-visible');
+      }
+      // if (st > 400) {
+      //   body.removeClass('sticky-visible').addClass('sticky-hidden');
+      // }
+    } else {
+      if (st <= titleOffset) {
+      //   body.removeClass('sticky-hidden').addClass('sticky-visible');
+      // } else {
+        body.removeClass('sticky-visible sticky-hidden');
+      }
+    }
   }
 
   progress.css('width', st * 100 / contentOffset + '%');
@@ -125,6 +144,33 @@ function table() {
   }
 }
 
+function toc() {
+  'use strict';
+  if (body.hasClass('post-template')) {
+    var output = '';
+
+    $('.single-content').find('h2, h3').each(function (index, value) {
+      var linkClass = $(this).prop('tagName') == 'H3' ? 'sticky-toc-link sticky-toc-link-indented' : 'sticky-toc-link';
+      output += '<a class="' + linkClass + '" href="#' + $(value).attr('id') + '">' + $(value).text() + '</a>';
+    });
+
+    $('.sticky-toc').html(output);
+
+    $('.sticky-toc-button').on('click', function () {
+      body.toggleClass('toc-opened');
+    });
+
+    $('.sticky-toc-link').on('click', function (e) {
+      e.preventDefault();
+      var link = $(this).attr('href');
+
+      $('html, body').animate({
+        scrollTop: $(link).offset().top - 82
+      }, 500);
+    });
+  }
+}
+
 function modal() {
   'use strict';
   var modal = $('.modal');
@@ -166,7 +212,7 @@ function search() {
   var searchResult = $('.search-result');
   var popular = $('.popular-wrapper');
 
-  var base = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname.split('/')[1];
+  var base = window.location.protocol + "//" + window.location.host;
   var url = base + '/ghost/api/v2/content/posts/?key=' + search_key + '&limit=all&fields=id,title,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
   var indexDump = JSON.parse(localStorage.getItem('dawn_index'));
   var index;

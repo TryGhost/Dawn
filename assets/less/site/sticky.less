@@ -9,6 +9,7 @@
   padding: 0 2rem;
   position: fixed;
   right: 0;
+  transform: translateY(-52px);
   transition: transform .3s var(--animation-base);
   z-index: 90;
 }
@@ -20,13 +21,54 @@
   font-weight: 800;
 }
 
-.sticky-button {
+.sticky-toc-button {
+  background-color: transparent;
   border: 0;
   margin-right: -6px;
   padding: 0;
 
   .icon {
     font-size: 21px;
+    transition: transform .2s var(--animation-base);
+  }
+}
+
+.sticky-toc {
+  background-color: var(--lighter-gray-color);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  padding: 1rem 0;
+  position: absolute;
+  right: 20px;
+  text-align: left;
+  top: 72px;
+  transform: translateY(-10px);
+  transition-duration: .2s;
+  transition-property: opacity transform;
+  transition-timing-function: var(--animation-base);
+  visibility: hidden;
+  width: 250px;
+}
+
+.sticky-toc-link {
+  padding: .8rem 1.5rem;
+}
+
+.sticky-toc-link-indented:before {
+  content: "-";
+  margin-right: .5rem;
+}
+
+.toc-opened {
+  .sticky-toc-button .icon {
+    transform: rotate(180deg);
+  }
+
+  .sticky-toc {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
   }
 }
 
@@ -42,8 +84,13 @@
 .sticky-progress {
   background-color: var(--brand-color);
   height: 100%;
+  width: 0;
 }
 
-.sticky-toggled .sticky {
+.sticky-visible .sticky {
+  transform: translateY(0);
+}
+
+.sticky-hidden .sticky {
   transform: translateY(-50px);
 }
