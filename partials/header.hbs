@@ -12,7 +12,9 @@
     <nav class="main-nav hidden-xs hidden-sm hidden-md">
       {{navigation}}
       {{#if @labs.members}}
-        <button class="button-icon menu-item-button js-modal" data-modal="search"><i class="icon icon-magnify"></i></button>
+        <button class="button-icon menu-item-button js-modal" data-modal="search">
+          <svg class="icon"><use xlink:href="#magnify"></use></svg>
+        </button>
       {{/if}}
     </nav>
     
@@ -53,7 +55,9 @@
         <a class="menu-item menu-item-cta" href="{{@site.url}}/subscribe/">{{t "Subscribe"}}</a>
       {{/if}}
     {{else}}
-      <button class="button-icon js-modal" data-modal="search"><i class="icon icon-magnify"></i></button>
+      <button class="button-icon js-modal" data-modal="search">
+        <svg class="icon"><use xlink:href="#magnify"></use></svg>
+      </button>
     {{/if}}
   </div>
 </header>
@@ -64,7 +68,7 @@
       <div class="sticky-title">{{title}}</div>
       <button class="button sticky-toc-button">
         {{t "Table of Contents"}}
-        <i class="icon icon-menu-down"></i>
+        <svg class="icon"><use xlink:href="#menu-down"></use></svg>
         <div class="sticky-toc"></div>
       </button>
       <div class="sticky-track">

@@ -76,7 +76,7 @@ function featured() {
     dots: false,
     margin: 30,
     nav: true,
-    navText: ['<i class="icon icon-chevron-left"></i>', '<i class="icon icon-chevron-right"></i>'],
+    navText: ['<svg class="icon"><use xlink:href="#chevron-left"></use></svg>', '<svg class="icon"><use xlink:href="#chevron-right"></use></svg>'],
     responsive: {
       0: {
         items: 1,

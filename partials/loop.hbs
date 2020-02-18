@@ -9,11 +9,11 @@
   </div>
   <h2 class="feed-title">{{title}}</h2>
   <div class="feed-right">
-    <i class="icon icon-star feed-visibility feed-visibility-{{visibility}}"></i>
+    <svg class="icon feed-visibility feed-visibility-{{visibility}}"><use xlink:href="#star"></use></svg>
     <div class="feed-length">
       {{reading_time}}
     </div>
   </div>
-  <i class="icon icon-chevron-right feed-icon"></i>
+  <svg class="icon feed-icon"><use xlink:href="#chevron-right"></use></svg>
   <a class="u-permalink" href="{{url}}"></a>
 </article>
