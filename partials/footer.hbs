@@ -1,22 +1,24 @@
 <footer class="site-footer">
   <nav class="footer-nav">
     {{navigation type="secondary"}}
-    <button class="button-icon footer-button-theme js-theme"><i class="icon icon-brightness-2"></i></button>
+    <button class="button-icon footer-button-theme js-theme">
+      <svg class="icon"><use xlink:href="#brightness-2"></use></svg>
+    </button>
   </nav>
   {{> customize/copyright}}
   <div class="social">
     {{#if @site.facebook}}
       <a class="social-item social-item-facebook" href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener noreferrer">
-        <i class="icon icon-facebook-box"></i>
+        <svg class="icon"><use xlink:href="#facebook-box"></use></svg>
       </a>
     {{/if}}
     {{#if @site.twitter}}
       <a class="social-item social-item-twitter" href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener noreferrer">
-        <i class="icon icon-twitter-box"></i>
+        <svg class="icon"><use xlink:href="#twitter-box"></use></svg>
       </a>
     {{/if}}
     <a class="social-item social-item-rss" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" target="_blank" rel="noopener noreferrer">
-      <i class="icon icon-rss-box"></i>
+      <svg class="icon"><use xlink:href="#rss-box"></use></svg>
     </a>
   </div>
 </footer>

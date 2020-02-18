@@ -2,7 +2,10 @@
   <div class="modal modal-search">
     <div class="form-wrapper">
       <input class="modal-input search-input" type="search" placeholder="{{t "Enter keyword..."}}">
-      <button class="form-button search-button"></button>
+      <button class="form-button search-button">
+        <svg class="icon icon-search"><use xlink:href="#magnify"></use></svg>
+        <svg class="icon icon-close"><use xlink:href="#window-close"></use></svg>
+      </button>
     </div>
     {{#get "tags" limit="5" include="count.posts" order="count.posts desc"}}
       {{#if tags}}
@@ -18,5 +21,7 @@
     {{/get}}
     <div class="search-result"></div>
   </div>
-  <button class="button-icon modal-close"><i class="icon icon-window-close"></i></button>
+  <button class="button-icon modal-close">
+    <svg class="icon icon-close"><use xlink:href="#window-close"></use></svg>
+  </button>
 </div>

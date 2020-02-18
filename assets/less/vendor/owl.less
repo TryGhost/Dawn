@@ -55,13 +55,14 @@
 
   .owl-prev,
   .owl-next {
+    align-items: center;
     background-color: var(--white-color);
     border: 1px solid var(--light-gray-color);
     border-radius: 3px;
     color: var(--dark-gray-color);
-    font-size: 18px;
+    display: flex;
     height: 30px;
-    line-height: 28px;
+    justify-content: center;
     outline: none;
     padding: 0;
     position: absolute;
@@ -73,6 +74,11 @@
     &.disabled {
       color: var(--mid-gray-color);
       cursor: default;
+    }
+
+    .icon {
+      height: 18px;
+      width: 18px;
     }
   }
 

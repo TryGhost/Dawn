@@ -2,15 +2,19 @@
   border: 0 !important;
 }
 
-.search-button:after {
-  content: "\e905";
+.search-button {
+  .icon-close {
+    display: none;
+  }
 }
 
 .search-button-clear {
-  font-size: 18px;
+  .icon-search {
+    display: none;
+  }
   
-  &:after {
-    content: "\e92f";
+  .icon-close {
+    display: block;
   }
 }
 
