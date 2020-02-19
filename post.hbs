@@ -60,7 +60,9 @@
           <div class="single-footer-left">
             {{#prev_post}}
               <div class="navigation navigation-previous">
-                <a class="navigation-link" href="{{url}}"><i class="icon icon-arrow-left navigation-icon"></i></a>
+                <a class="navigation-link" href="{{url}}">
+                  <svg class="icon navigation-icon"><use xlink:href="#arrow-left"></use></svg>
+                </a>
               </div>
             {{/prev_post}}
           </div>
@@ -79,15 +81,23 @@
             </div>
             <div class="single-footer-bottom">
               <div class="share">
-                <a class="share-link share-link-facebook" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank" rel="noopener noreferrer"><i class="icon icon-facebook"></i>{{t "Share"}}</a>
-                <a class="share-link share-link-twitter" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{encode title}}" target="_blank" rel="noopener noreferrer"><i class="icon icon-twitter"></i>{{t "Tweet"}}</a>
+                <a class="share-link share-link-facebook" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon icon-facebook"><use xlink:href="#facebook"></use></svg>
+                  {{t "Share"}}
+                </a>
+                <a class="share-link share-link-twitter" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{encode title}}" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon icon-twitter"><use xlink:href="#twitter"></use></svg>
+                  {{t "Tweet"}}
+                </a>
               </div>
             </div>
           </div>
           <div class="single-footer-right">
             {{#next_post}}
               <div class="navigation navigation-next">
-                <a class="navigation-link" href="{{url}}"><i class="icon icon-arrow-right navigation-icon"></i></a>
+                <a class="navigation-link" href="{{url}}">
+                  <svg class="icon navigation-icon"><use xlink:href="#arrow-right"></use></svg>
+                </a>
               </div>
             {{/next_post}}
           </div>
