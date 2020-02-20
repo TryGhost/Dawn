@@ -51,21 +51,16 @@ function sticky() {
   if (titleOffset > 0 && contentOffset > 0) {
     if (st > lastSt) {
       if (st > titleOffset) {
-        body.removeClass('sticky-hidden').addClass('sticky-visible');
+        body.addClass('sticky-visible');
       }
-      // if (st > 400) {
-      //   body.removeClass('sticky-visible').addClass('sticky-hidden');
-      // }
     } else {
       if (st <= titleOffset) {
-      //   body.removeClass('sticky-hidden').addClass('sticky-visible');
-      // } else {
-        body.removeClass('sticky-visible sticky-hidden');
+        body.removeClass('sticky-visible');
       }
     }
   }
 
-  progress.css('width', st * 100 / contentOffset + '%');
+  progress.css('transform', 'translateX(' + (-100 + Math.min(st * 100 / contentOffset, 100)) + '%)');
 
   lastSt = st;
 }
