@@ -19,17 +19,20 @@
   flex-grow: 1;
   font-size: 1.6rem;
   font-weight: 800;
+  line-height: 1.3;
+  margin-right: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sticky-toc-button {
-  background-color: transparent;
-  border: 0;
+  flex-shrink: 0;
   margin-right: -6px;
-  padding: 0;
 
   .icon {
-    font-size: 21px;
-    transition: transform .2s var(--animation-base);
+    height: 24px;
+    width: 24px;
   }
 }
 
@@ -52,7 +55,10 @@
 }
 
 .sticky-toc-link {
-  padding: .8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.6rem 1.7rem;
+  text-transform: uppercase;
 }
 
 .sticky-toc-link-indented:before {
@@ -61,10 +67,6 @@
 }
 
 .toc-opened {
-  .sticky-toc-button .icon {
-    transform: rotate(180deg);
-  }
-
   .sticky-toc {
     opacity: 1;
     transform: translateY(0);
@@ -84,13 +86,17 @@
 .sticky-progress {
   background-color: var(--brand-color);
   height: 100%;
-  width: 0;
+  transform: translateX(-100%);
+  transition: transform .2s;
 }
 
 .sticky-visible .sticky {
   transform: translateY(0);
 }
 
-.sticky-hidden .sticky {
-  transform: translateY(-50px);
+@media (max-width: 767px) {
+  .sticky-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
 }

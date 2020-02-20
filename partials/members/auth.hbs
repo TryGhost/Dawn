@@ -12,7 +12,8 @@
       <div class="form-wrapper">
         <input class="auth-email" type="email" data-members-email placeholder="{{t "Your email address"}}" required="true" autocomplete="false">
         <button class="form-button" type="submit">
-          {{> members/loader}}
+          <svg class="icon"><use xlink:href="#arrow-right"></use></svg>
+          <svg class="icon icon-loading"><use xlink:href="#loader"></use></svg>
         </button>
       </div>
       <div class="notification notification-success">
