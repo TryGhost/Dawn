@@ -143,15 +143,20 @@ function toc() {
   'use strict';
   if (body.hasClass('post-template')) {
     var output = '';
+    var toggle = $('.sticky-toc-button');
 
-    $('.single-content').find('h2, h3').each(function (index, value) {
+    $('.single-content').find('> h2, > h3').each(function (index, value) {
       var linkClass = $(this).prop('tagName') == 'H3' ? 'sticky-toc-link sticky-toc-link-indented' : 'sticky-toc-link';
       output += '<a class="' + linkClass + '" href="#' + $(value).attr('id') + '">' + $(value).text() + '</a>';
     });
 
+    if (output == '') {
+      toggle.remove();
+    }
+
     $('.sticky-toc').html(output);
 
-    $('.sticky-toc-button').on('click', function () {
+    toggle.on('click', function () {
       body.toggleClass('toc-opened');
     });
 
