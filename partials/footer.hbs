@@ -1,11 +1,4 @@
 <footer class="site-footer">
-  <nav class="footer-nav">
-    {{navigation type="secondary"}}
-    <button class="button-icon footer-button-theme js-theme">
-      <svg class="icon"><use xlink:href="#brightness-2"></use></svg>
-    </button>
-  </nav>
-  {{> customize/copyright}}
   <div class="social">
     {{#if @site.facebook}}
       <a class="social-item social-item-facebook" href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener noreferrer">
@@ -21,4 +14,15 @@
       <svg class="icon"><use xlink:href="#rss-box"></use></svg>
     </a>
   </div>
+
+  {{> customize/copyright}}
+
+  <nav class="footer-nav">
+    {{navigation type="secondary"}}
+    <a class="menu-item js-theme" href="#" data-dark="{{t "Dark theme"}}" data-light="{{t "Light theme"}}">
+      <svg class="icon theme-icon theme-icon-dark"><use xlink:href="#brightness-2"></use></svg>
+      <svg class="icon theme-icon theme-icon-light"><use xlink:href="#white-balance-sunny"></use></svg>
+      <span class="theme-text">{{t "Dark theme"}}</span>
+    </a>
+  </nav>
 </footer>
