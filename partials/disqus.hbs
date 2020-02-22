@@ -6,7 +6,7 @@
 
 <script>
   // DON'T EDIT BELOW THIS LINE
-  if (disqus_shortname == '') {
+  if (themeOptions.disqus_shortname == '') {
     document.querySelector('.comment').remove();
   }
   
@@ -17,7 +17,7 @@
 
   function loadDisqus() {
     var d = document, s = d.createElement('script');
-    s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+    s.src = 'https://' + themeOptions.disqus_shortname + '.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
   };
