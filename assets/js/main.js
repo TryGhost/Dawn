@@ -309,15 +309,29 @@ function plan() {
 function theme() {
   'use strict';
   var toggle = $('.js-theme');
+  var toggleText = toggle.find('.theme-text');
 
   function light() {
     html.removeClass('theme-dark');
     localStorage.setItem('dawn_theme', 'light');
+    toggleText.text(toggle.attr('data-dark'));
   }
 
   function dark() {
     html.addClass('theme-dark');
     localStorage.setItem('dawn_theme', 'dark');
+    toggleText.text(toggle.attr('data-light'));
+  }
+
+  switch (localStorage.getItem('dawn_theme')) {
+    case 'dark':
+      dark();
+      break;
+    case 'light':
+      light();
+      break;
+    default:
+      break;
   }
 
   window.matchMedia('(prefers-color-scheme: light)').addListener(function (e) {
@@ -328,7 +342,9 @@ function theme() {
     e.matches && dark();
   });
 
-  toggle.on('click', function () {
+  toggle.on('click', function (e) {
+    e.preventDefault();
+    
     if (html.hasClass('theme-dark')) {
       light();
     } else {
