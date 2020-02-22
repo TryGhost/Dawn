@@ -207,8 +207,8 @@ function search() {
   var searchResult = $('.search-result');
   var popular = $('.popular-wrapper');
 
-  var base = window.location.protocol + "//" + window.location.host;
-  var url = base + '/ghost/api/v2/content/posts/?key=' + search_key + '&limit=all&fields=id,title,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
+  var base = window.location.protocol + "//" + window.location.host + '/' + themeOptions.root_url;
+  var url = base + '/ghost/api/v2/content/posts/?key=' + themeOptions.search_key + '&limit=all&fields=id,title,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
   var indexDump = JSON.parse(localStorage.getItem('dawn_index'));
   var index;
 
