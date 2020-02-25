@@ -8,6 +8,16 @@
   --dark-gray-color: #e6e6e6;
   --darker-gray-color: #fff;
 
+  .logo-image {
+    &:not(.white) {
+      opacity: 0;
+    }
+
+    &.white {
+      opacity: 1;
+    }
+  }
+
   .sticky {
     background-color: rgba(0,0,0,.6);
   }
