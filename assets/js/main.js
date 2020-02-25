@@ -9,6 +9,7 @@ var progress = $('.sticky-progress');
 
 $(function () {
   'use strict';
+  whiteLogo();
   featured();
   pagination();
   gallery();
@@ -63,6 +64,14 @@ function sticky() {
   progress.css('transform', 'translateX(' + (-100 + Math.min(st * 100 / contentOffset, 100)) + '%)');
 
   lastSt = st;
+}
+
+function whiteLogo() {
+  'use strict';
+  if (themeOptions.white_logo != '') {
+    var whiteImage = '<img class="logo-image white" src="' + themeOptions.white_logo + '">';
+    $('.logo').append(whiteImage);
+  }
 }
 
 function featured() {
@@ -212,7 +221,7 @@ function search() {
   var searchResult = $('.search-result');
   var popular = $('.popular-wrapper');
 
-  var base = window.location.protocol + "//" + window.location.host + '/' + themeOptions.root_url;
+  var base = window.location.protocol + "//" + window.location.host + themeOptions.root_url;
   var url = base + '/ghost/api/v2/content/posts/?key=' + themeOptions.search_key + '&limit=all&fields=id,title,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
   var indexDump = JSON.parse(localStorage.getItem('dawn_index'));
   var index;
