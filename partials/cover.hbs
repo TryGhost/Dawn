@@ -3,8 +3,18 @@
     {{#if @site.icon}}
       <img class="cover-icon" src="{{@site.icon}}" alt="{{@site.title}}">
     {{/if}}
+
     {{#if @site.description}}
       <div class="cover-description">{{@site.description}}</div>
+    {{/if}}
+
+    {{#if @labs.members}}
+      {{#unless @member}}
+        <div class="cover-cta">
+          <a class="button" href="{{@site.url}}/subscribe/">{{t "Subscribe now"}}</a>
+          <a class="button button-secondary" href="{{@site.url}}/signin/">{{t "Login"}}</a>
+        </div>
+      {{/unless}}
     {{/if}}
   </div>
 </div>
