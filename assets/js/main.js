@@ -235,7 +235,7 @@ function search() {
     localStorage.setItem('dawn_last', data.posts[0].updated_at);
   }
 
-  if (!indexDump) {
+  if (!indexDump || themeOptions.search_migration != localStorage.getItem('dawn_migration')) {
     $.get(url, function (data) {
       if (data.posts.length > 0) {
         index = elasticlunr(function () {
@@ -245,6 +245,7 @@ function search() {
         });
 
         update(data);
+        localStorage.setItem('dawn_migration', themeOptions.search_migration);
       }
     });
   } else {
