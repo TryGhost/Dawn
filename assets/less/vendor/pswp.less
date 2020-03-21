@@ -42,13 +42,14 @@
 
 .pswp__bg {
   backface-visibility: hidden;
-  background: rgba(255,255,255,.9);
+  background-color: rgba(0,0,0,.85);
   height: 100%;
   left: 0;
   opacity: 0;
   position: absolute;
   top: 0;
   transform: translateZ(0);
+  transition: opacity 333ms cubic-bezier(.4,0,.22,1);
   width: 100%;
   will-change: opacity;
 }
@@ -84,11 +85,6 @@
   transform-origin: left top;
   transition: transform 333ms cubic-bezier(.4,0,.22, 1);
   width: 100%;
-}
-
-.pswp__bg {
-  transition: opacity 333ms cubic-bezier(.4,0,.22,1);
-  will-change: opacity;
 }
 
 .pswp--animated-in .pswp__bg,
@@ -287,8 +283,9 @@
 // 2. Index indicator ("1 of X" counter)
 
 .pswp__counter {
+  color: var(--white-color);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 700;
   height: 44px;
   left: 0;
   line-height: 44px;
@@ -309,7 +306,7 @@
 }
 
 .pswp__caption__center {
-  color: var(--dark-gray-color);
+  color: var(--white-color);
   font-size: 11px;
   line-height: 1.6;
   margin: 0 auto;
