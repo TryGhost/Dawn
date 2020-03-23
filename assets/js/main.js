@@ -225,19 +225,22 @@ function search() {
 
   var base = window.location.protocol + "//" + window.location.host + themeOptions.root_url;
   var url = base + '/ghost/api/v2/content/posts/?key=' + themeOptions.search_key + '&limit=all&fields=id,title,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
-  var indexDump = JSON.parse(localStorage.getItem('dawn_index'));
+  var indexDump = JSON.parse(localStorage.getItem('dawn_search_index'));
   var index;
+
+  localStorage.removeItem('dawn_index');
+  localStorage.removeItem('dawn_last');
 
   function update(data) {
     data.posts.forEach(function (post) {
       index.addDoc(post);
     });
 
-    localStorage.setItem('dawn_index', JSON.stringify(index));
-    localStorage.setItem('dawn_last', data.posts[0].updated_at);
+    localStorage.setItem('dawn_search_index', JSON.stringify(index));
+    localStorage.setItem('dawn_search_last', data.posts[0].updated_at);
   }
 
-  if (!indexDump || themeOptions.search_migration != localStorage.getItem('dawn_migration')) {
+  if (!indexDump || themeOptions.search_migration != localStorage.getItem('dawn_search_migration')) {
     $.get(url, function (data) {
       if (data.posts.length > 0) {
         index = elasticlunr(function () {
@@ -247,13 +250,15 @@ function search() {
         });
 
         update(data);
-        localStorage.setItem('dawn_migration', themeOptions.search_migration);
+        if (typeof themeOptions.search_migration != 'undefined') {
+          localStorage.setItem('dawn_search_migration', themeOptions.search_migration);
+        }
       }
     });
   } else {
     index = elasticlunr.Index.load(indexDump);
 
-    $.get(url + '&filter=updated_at:>\'' + localStorage.getItem('dawn_last').replace(/\..*/, '').replace(/T/, ' ') + '\'', function (data) {
+    $.get(url + '&filter=updated_at:>\'' + localStorage.getItem('dawn_search_last').replace(/\..*/, '').replace(/T/, ' ') + '\'', function (data) {
       if (data.posts.length > 0) {
         update(data);
       }
