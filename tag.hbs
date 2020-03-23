@@ -8,6 +8,16 @@
         {{#if description}}
           <div class="tag-description">{{description}}</div>
         {{/if}}
+        {{#if feature_image}}
+          <div class="tag-media kg-width-large u-placeholder horizontal">
+            <img class="lazyload u-object-fit"
+              data-srcset="{{> srcset}}"
+              data-sizes="auto"
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              alt="{{name}}"
+            >
+          </div>
+        {{/if}}
       </section>
     {{/tag}}
     <div class="post-feed kg-width-normal">

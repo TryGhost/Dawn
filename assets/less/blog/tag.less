@@ -1,5 +1,6 @@
 .tag {
   margin-bottom: 4.5rem;
+  text-align: center;
 }
 
 .tag-name {
@@ -13,5 +14,25 @@
 }
 
 .tag-description {
-  margin-top: .8rem;
+  font-size: 1.7rem;
+  margin: 1.5rem auto 0;
+  max-width: 500px;
+}
+
+.tag-media {
+  margin-top: 4.5rem;
+
+  &:before {
+    padding-bottom: 35% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .tag {
+    margin-bottom: 2.5rem;
+  }
+
+  .tag-media {
+    margin-top: 3rem;
+  }
 }
