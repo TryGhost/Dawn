@@ -1,7 +1,9 @@
 <div class="cover">
   <div class="cover-content">
     {{#if @site.icon}}
-      <img class="cover-icon" src="{{@site.icon}}" alt="{{@site.title}}">
+      <div class="cover-icon">
+        <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+      </div>
     {{/if}}
 
     {{#if @site.description}}

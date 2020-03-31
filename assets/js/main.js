@@ -10,6 +10,7 @@ var progress = $('.sticky-progress');
 $(function () {
   'use strict';
   whiteLogo();
+  whiteIcon();
   featured();
   pagination();
   gallery();
@@ -71,6 +72,14 @@ function whiteLogo() {
   if (themeOptions.white_logo != '') {
     var whiteImage = '<img class="logo-image white" src="' + themeOptions.white_logo + '">';
     $('.logo').append(whiteImage);
+  }
+}
+
+function whiteIcon() {
+  'use strict';
+  if (themeOptions.white_icon != '') {
+    var whiteImage = '<img class="cover-icon-image white" src="' + themeOptions.white_icon + '">';
+    $('.cover-icon').append(whiteImage);
   }
 }
 
