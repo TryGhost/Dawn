@@ -6,6 +6,8 @@
       {{> content width="wide"}}
     {{/post}}
     {{> related}}
-    {{> disqus}}
+    {{#if post.access}}
+      {{> disqus}}
+    {{/if}}
   </main>
 </div>
