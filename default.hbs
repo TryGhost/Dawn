@@ -38,6 +38,13 @@
     </div>
   </div>
 
+  <script>
+    var body = document.querySelector('body');
+    if (window.innerWidth > body.clientWidth + 5) {
+      document.documentElement.style.setProperty('--scrollbar', (window.innerWidth - body.clientWidth) + 'px');
+    }
+  </script>
+
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
