@@ -145,9 +145,9 @@
 }
 
 .kg-width-full {
-  margin-left: calc(~"-100vw / 2 + 100% / 2");
-  margin-right: calc(~"-100vw / 2 + 100% / 2");
-  max-width: 100vw;
+  margin-left: calc(~"-100vw / 2 + 100% / 2 + var(--scrollbar) / 2");
+  margin-right: calc(~"-100vw / 2 + 100% / 2 + var(--scrollbar) / 2");
+  max-width: calc(100vw - var(--scrollbar));
 }
 
 .single-content .kg-width-full img {
