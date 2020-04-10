@@ -71,15 +71,15 @@ function whiteLogo() {
   'use strict';
   if (themeOptions.white_logo != '') {
     var whiteImage = '<img class="logo-image white" src="' + themeOptions.white_logo + '">';
-    $('.logo').append(whiteImage);
+    $('.logo').prepend(whiteImage);
   }
 }
 
 function whiteIcon() {
   'use strict';
-  if (themeOptions.white_icon != '') {
+  if (typeof themeOptions.white_icon != 'undefined' && themeOptions.white_icon != '') {
     var whiteImage = '<img class="cover-icon-image white" src="' + themeOptions.white_icon + '">';
-    $('.cover-icon').append(whiteImage);
+    $('.cover-icon').prepend(whiteImage);
   }
 }
 

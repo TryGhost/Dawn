@@ -8,15 +8,14 @@
   --dark-gray-color: #e6e6e6;
   --darker-gray-color: #fff;
 
-  .logo-image,
-  .cover-icon-image {
-    &:not(.white) {
-      opacity: 0;
-    }
+  .logo-image.white + .logo-image,
+  .cover-icon-image.white + .cover-icon-image {
+    opacity: 0;
+  }
 
-    &.white {
-      opacity: 1;
-    }
+  .logo-image.logo-image.white,
+  .cover-icon-image.white {
+    opacity: 1;
   }
 
   .sticky {
