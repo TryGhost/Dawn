@@ -351,15 +351,22 @@ function theme() {
   var toggle = $('.js-theme');
   var toggleText = toggle.find('.theme-text');
 
-  function light() {
-    html.removeClass('theme-dark');
-    localStorage.setItem('dawn_theme', 'light');
-    toggleText.text(toggle.attr('data-dark'));
+  function system() {
+    html.removeClass('theme-light');
+    localStorage.removeItem('dawn_theme');
+    toggleText.text(toggle.attr('data-system'));
   }
 
   function dark() {
     html.addClass('theme-dark');
     localStorage.setItem('dawn_theme', 'dark');
+    toggleText.text(toggle.attr('data-dark'));
+  }
+
+  function light() {
+    html.removeClass('theme-dark');
+    html.addClass('theme-light');
+    localStorage.setItem('dawn_theme', 'light');
     toggleText.text(toggle.attr('data-light'));
   }
 
@@ -371,24 +378,19 @@ function theme() {
       light();
       break;
     default:
+      system();
       break;
   }
-
-  window.matchMedia('(prefers-color-scheme: light)').addListener(function (e) {
-    e.matches && light();
-  });
-  
-  window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-    e.matches && dark();
-  });
 
   toggle.on('click', function (e) {
     e.preventDefault();
     
-    if (html.hasClass('theme-dark')) {
+    if (!html.hasClass('theme-dark') && !html.hasClass('theme-light')) {
+      dark();
+    } else if (html.hasClass('theme-dark')) {
       light();
     } else {
-      dark();
+      system();
     }
   });
 }

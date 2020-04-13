@@ -64,15 +64,31 @@
 
 .theme-icon {
   height: 1.1rem;
-  margin-right: .3rem;
   width: 1.1rem;
 }
 
+.theme-text {
+  margin-left: .3rem;
+}
+
+.theme-icon-dark,
 .theme-icon-light {
   display: none;
 }
 
 .theme-dark {
+  .theme-icon-system,
+  .theme-icon-light {
+    display: none;
+  }
+  
+  .theme-icon-dark {
+    display: block;
+  }
+}
+
+.theme-light {
+  .theme-icon-system,
   .theme-icon-dark {
     display: none;
   }
