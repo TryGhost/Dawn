@@ -18,6 +18,26 @@
   max-width: 500px;
 }
 
+.tag-list {
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+.tag-list-label {
+  color: var(--secondary-text-color);
+  margin-right: .5rem;
+}
+
+.tag-list-item {
+  &:before {
+    content: "#";
+  }
+
+  & + & {
+    margin-left: .3rem;
+  }
+}
+
 .tag-media {
   margin-top: 4.5rem;
 

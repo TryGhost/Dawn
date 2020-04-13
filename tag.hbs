@@ -8,6 +8,16 @@
         {{#if description}}
           <div class="tag-description">{{description}}</div>
         {{/if}}
+        {{#get "tags" limit="all" filter="id:-{{id}}" as |tags|}}
+          {{#if tags}}
+            <div class="tag-list">
+              <span class="tag-list-label">{{t "More:"}}</span>
+              {{#foreach tags}}
+                <a class="tag-list-item" href="{{url}}">{{name}}</a>
+              {{/foreach}}
+            </div>
+          {{/if}}
+        {{/get}}
         {{#if feature_image}}
           <div class="tag-media kg-width-large u-placeholder horizontal">
             <img class="lazyload u-object-fit"
