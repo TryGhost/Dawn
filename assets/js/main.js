@@ -233,15 +233,18 @@ function modal() {
 
 function search() {
   'use strict';
+  if (themeOptions.search_key == '') return;
+
   var searchInput = $('.search-input');
   var searchButton = $('.search-button');
   var searchResult = $('.search-result');
   var popular = $('.popular-wrapper');
 
-  var base = window.location.protocol + "//" + window.location.host + themeOptions.root_url;
-  var url = base + '/ghost/api/v2/content/posts/?key=' + themeOptions.search_key + '&limit=all&fields=id,title,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
+  var url = siteUrl + '/ghost/api/v2/content/posts/?key=' + themeOptions.search_key + '&limit=all&fields=id,title,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
   var indexDump = JSON.parse(localStorage.getItem('dawn_search_index'));
   var index;
+
+  elasticlunr.clearStopWords();
 
   localStorage.removeItem('dawn_index');
   localStorage.removeItem('dawn_last');
@@ -281,7 +284,7 @@ function search() {
   }
 
   searchInput.on('keyup', function (e) {
-    var result = index.search(e.target.value, {});
+    var result = index.search(e.target.value, {expand: true});
     var output = '';
 
     result.forEach(function (post) {
