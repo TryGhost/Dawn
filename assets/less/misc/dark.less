@@ -1,12 +1,14 @@
-.theme-dark {
-  --primary-text-color: #e2e2e2;
-  --secondary-text-color: #868686;
-  --white-color: #282c35;
-  --lighter-gray-color: #2f333c;
-  --light-gray-color: #3b3e46;
-  --mid-gray-color: #666;
-  --dark-gray-color: #e6e6e6;
-  --darker-gray-color: #fff;
+.dark-mode() {
+  &:root {
+    --primary-text-color: #e2e2e2;
+    --secondary-text-color: #868686;
+    --white-color: #282c35;
+    --lighter-gray-color: #2f333c;
+    --light-gray-color: #3b3e46;
+    --mid-gray-color: #666;
+    --dark-gray-color: #e6e6e6;
+    --darker-gray-color: #fff;
+  }
 
   .logo-image.white + .logo-image,
   .cover-icon-image.white + .cover-icon-image {
@@ -37,5 +39,15 @@
 
   .share-link-twitter {
     color: var(--twitter-color);
+  }
+}
+
+.theme-dark {
+  .dark-mode();
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light) {
+    .dark-mode();
   }
 }
