@@ -13,6 +13,7 @@ $(function () {
   whiteIcon();
   featured();
   pagination();
+  video();
   gallery();
   table();
   toc();
@@ -123,6 +124,11 @@ function pagination() {
   wrapper.on('append.infiniteScroll', function (event, response, path, items) {
     $(items[0]).addClass('feed-paged');
   });
+}
+
+function video() {
+  'use strict';
+  $('.single-content').fitVids();
 }
 
 function gallery() {
