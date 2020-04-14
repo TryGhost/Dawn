@@ -5,7 +5,11 @@
     {{#post}}
       {{> content width="full"}}
     {{/post}}
-    {{> related}}
-    {{> disqus}}
+    {{#is "post"}}
+      {{> related}}
+      {{#if post.access}}
+        {{> disqus}}
+      {{/if}}
+    {{/is}}
   </main>
 </div>
