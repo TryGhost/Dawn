@@ -41,16 +41,18 @@
   <div class="single-content u-text-format">
     {{#if access}}
       {{content}}
-      {{#if @labs.members}}
-        {{#unless @member}}
-          <section class="single-cta">
-            <h2 class="single-cta-title">{{t "Enjoying these posts? Subscribe for more"}}</h2>
-            <a class="button single-cta-button" href="{{@site.url}}/subscribe/">{{t "Subscribe now"}}</a>
-            <br>
-            <a class="single-cta-footer" href="{{@site.url}}/signin/">{{t "Already have an account? Sign in"}}</a>
-          </section>
-        {{/unless}}
-      {{/if}}
+      {{#is "post"}}
+        {{#if @labs.members}}
+          {{#unless @member}}
+            <section class="single-cta">
+              <h2 class="single-cta-title">{{t "Enjoying these posts? Subscribe for more"}}</h2>
+              <a class="button single-cta-button" href="{{@site.url}}/subscribe/">{{t "Subscribe now"}}</a>
+              <br>
+              <a class="single-cta-footer" href="{{@site.url}}/signin/">{{t "Already have an account? Sign in"}}</a>
+            </section>
+          {{/unless}}
+        {{/if}}
+      {{/is}}
     {{else}}
       <p>{{t "You don't have access to this post at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing will give you immediate access."}}</p>
       <section class="single-cta">
