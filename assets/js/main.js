@@ -63,7 +63,7 @@ function sticky() {
     }
   }
 
-  progress.css('transform', 'translateX(' + (-100 + Math.min(st * 100 / contentOffset, 100)) + '%)');
+  progress.css('transform', 'translate3d(' + (-100 + Math.min(st * 100 / contentOffset, 100)) + '%,0,0)');
 
   lastSt = st;
 }
