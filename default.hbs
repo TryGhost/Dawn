@@ -76,6 +76,9 @@
         if (stripe === 'success') {
           body.addClass('notification-opened checkout-success');
         }
+        if (stripe === 'billing-update-success') {
+          body.addClass('notification-opened billing-success');
+        }
       });
     </script>
   {{/if}}
