@@ -1,14 +1,28 @@
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="search"] {
+label {
+  color: var(--darker-gray-color);
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  & + & {
+    margin-top: 2rem;
+  }
+
+  input,
+  textarea {
+    margin-top: .7rem;
+  }
+}
+
+input,
+textarea {
   appearance: none;
   background-color: var(--white-color);
   border: 1px solid var(--light-gray-color);
   border-radius: 5px;
   color: var(--darker-gray-color);
   font-size: 1.6rem;
-  height: 50px;
+  height: 44px;
   outline: none;
   padding: 0 1.5rem;
   width: 100%;
@@ -16,6 +30,13 @@ input[type="search"] {
   &:focus {
     border-color: var(--mid-gray-color);
   }
+}
+
+textarea {
+  height: 100%;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  resize: vertical;
 }
 
 .form-wrapper {
@@ -51,5 +72,13 @@ input[type="search"] {
   
   .icon-loading {
     display: block;
+  }
+}
+
+.contact-form {
+  margin-top: 3rem;
+
+  .button {
+    margin-top: 1.5rem;
   }
 }
