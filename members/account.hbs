@@ -43,7 +43,13 @@
                     <div class="account-row-value">{{date start_date}}</div>
                   </div>
                   <div class="account-row">
-                    <h3 class="account-row-title">{{t "Next bill date"}}</h3>
+                    <h3 class="account-row-title">
+                      {{#if cancel_at_period_end}}
+                        {{t "Expires"}}
+                      {{else}}
+                        {{t "Next bill date"}}
+                      {{/if}}
+                    </h3>
                     <div class="account-row-value">{{date current_period_end}}</div>
                   </div>
                   <div class="account-row">
