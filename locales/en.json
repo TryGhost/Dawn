@@ -1,6 +1,11 @@
 {
     "Facebook": "Facebook",
     "Twitter": "Twitter",
+    "Name:": "Name:",
+    "Email:": "Email:",
+    "Message:": "Message:",
+    "Contact Form Submission": "Contact Form Submission",
+    "Submit": "Submit",
     "More:": "More:",
     "Enjoying these posts? Subscribe for more": "Enjoying these posts? Subscribe for more",
     "Subscribe now": "Subscribe now",
@@ -41,6 +46,7 @@
     "Great! Next, complete checkout for full access to {site}.": "Great! Next, complete checkout for full access to {site}.",
     "Welcome back! You've successfully signed in.": "Welcome back! You've successfully signed in.",
     "Success! Your account is fully activated, you now have access to all content.": "Success! Your account is fully activated, you now have access to all content.",
+    "Success! Your billing info is updated.": "Success! Your billing info is updated.",
     "Free": "Free",
     "Monthly": "Monthly",
     "/ month": "/ month",
@@ -53,8 +59,10 @@
     "Subscription status": "Subscription status",
     "Your plan": "Your plan",
     "Start date": "Start date",
+    "Expires": "Expires",
     "Next bill date": "Next bill date",
     "Billing info": "Billing info",
+    "Edit billing info": "Edit billing info",
     "Choose your subscription": "Choose your subscription",
     "Unlock full access to {site} and see the entire library of members-only content & updates": "Unlock full access to {site} and see the entire library of members-only content & updates"
 }
