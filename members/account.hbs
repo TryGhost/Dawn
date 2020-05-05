@@ -56,8 +56,14 @@
                     <h3 class="account-row-title">{{t "Billing info"}}</h3>
                     <div class="account-row-value">**** **** **** {{default_payment_card_last4}}</div>
                   </div>
-                  <div class="account-cancel">
-                    {{cancel_link class="account-cancel-link" errorClass="account-cancel-error"}}
+                  <div class="account-action">
+                    <a class="button button-secondary account-update" href="javascript:"
+                      data-members-edit-billing
+                      data-members-success="{{@site.url}}/account/?stripe=billing-update-success"
+                      data-members-cancel="{{@site.url}}/account/?stripe=billing-update-cancel">Edit billing info</a>
+                    <div class="account-cancel">
+                      {{cancel_link class="account-cancel-link" errorClass="account-cancel-error"}}
+                    </div>
                   </div>
                 </div>
               {{/foreach}}
