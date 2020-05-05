@@ -52,14 +52,62 @@
 .menu-item {
   font-weight: 700;
   margin: 0 1.5rem;
+
+  &[href*="..."],
+  &[href*="..."] ~ & {
+    display: none;
+  }
 }
 
 .menu-item-button {
   margin: 0 .7rem;
 }
 
+.menu-item-more {
+  position: relative;
+
+  .icon {
+    height: 24px;
+    width: 24px;
+  }
+}
+
 .menu-item-cta {
   color: var(--brand-color);
+}
+
+.sub-menu {
+  background-color: var(--darker-gray-color);
+  border-radius: 5px;
+  display: none;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  position: absolute;
+  right: -13px;
+  text-align: left;
+  top: 100%;
+  width: 170px;
+  z-index: 90;
+
+  &:before {
+    border-bottom: 7px solid var(--darker-gray-color);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    content: "";
+    height: 0;
+    position: absolute;
+    right: 21px;
+    top: -7px;
+    width: 0;
+  }
+
+  .menu-item {
+    color: var(--white-color);
+    display: block;
+    font-size: 1.3rem;
+    margin: 0;
+    padding: .7rem 1.5rem;
+  }
 }
 
 .mobile-menu {
@@ -80,6 +128,10 @@
 
     & + .menu-item {
       margin-top: 1.5rem;
+    }
+
+    &[href*="..."] ~ .menu-item {
+      display: inline;
     }
   }
 }

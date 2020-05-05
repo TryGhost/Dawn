@@ -9,6 +9,7 @@ var progress = $('.sticky-progress');
 
 $(function () {
   'use strict';
+  subMenu();
   whiteLogo();
   whiteIcon();
   featured();
@@ -66,6 +67,24 @@ function sticky() {
   progress.css('transform', 'translate3d(' + (-100 + Math.min(st * 100 / contentOffset, 100)) + '%,0,0)');
 
   lastSt = st;
+}
+
+function subMenu() {
+  'use strict';
+  var mainNav = $('.main-nav');
+  var toggleItem = mainNav.find('.menu-item[href*="..."]');
+
+  if (toggleItem.length) {
+    toggleItem.nextAll('.menu-item').wrapAll('<div class="sub-menu" />');
+    toggleItem.replaceWith('<button class="button-icon menu-item-button menu-item-more"><svg class="icon"><use xlink:href="#dots-horizontal"></use></svg></button>');
+
+    var toggle = mainNav.find('.menu-item-more');
+    toggle.append($('.sub-menu'));
+
+    toggle.on('click', function () {
+      $(this).find('.sub-menu').toggle();
+    });
+  }
 }
 
 function whiteLogo() {
