@@ -171,44 +171,44 @@ hr {
   }
 }
 
-table {
+table:not(.highlight) {
   border-collapse: collapse;
   font-size: 1.5rem;
   margin: 3rem 0;
   width: 100%;
   word-break: normal;
-}
 
-thead {
-  background-color: var(--lighter-gray-color);
-  border-bottom: 1px solid var(--light-gray-color);
-}
-
-tr {
-  & + & {
-    border-top: 1px solid var(--light-gray-color);
-  }
-
-  &:hover td {
+  thead {
     background-color: var(--lighter-gray-color);
+    border-bottom: 1px solid var(--light-gray-color);
   }
-}
-
-th, td {
-  line-height: 1.5;
-  padding: 1rem 1.5rem;
-}
-
-th {
-  color: var(--secondary-text-color);
-  text-align: left;
-}
-
-tfoot {
-  border-top: 1px solid var(--mid-gray-color);
-
-  td {
-    font-weight: 700;
+  
+  tr {
+    & + & {
+      border-top: 1px solid var(--light-gray-color);
+    }
+  
+    &:hover td {
+      background-color: var(--lighter-gray-color);
+    }
+  }
+  
+  th, td {
+    line-height: 1.5;
+    padding: 1rem 1.5rem;
+  }
+  
+  th {
+    color: var(--secondary-text-color);
+    text-align: left;
+  }
+  
+  tfoot {
+    border-top: 1px solid var(--mid-gray-color);
+  
+    td {
+      font-weight: 700;
+    }
   }
 }
 
