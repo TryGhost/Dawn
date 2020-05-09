@@ -72,17 +72,29 @@ function sticky() {
 function subMenu() {
   'use strict';
   var mainNav = $('.main-nav');
-  var toggleItem = mainNav.find('.menu-item[href*="..."]');
+  var separator = mainNav.find('.menu-item[href*="..."]');
 
-  if (toggleItem.length) {
-    toggleItem.nextAll('.menu-item').wrapAll('<div class="sub-menu" />');
-    toggleItem.replaceWith('<button class="button-icon menu-item-button menu-item-more"><svg class="icon"><use xlink:href="#dots-horizontal"></use></svg></button>');
+  if (separator.length) {
+    separator.nextAll('.menu-item').wrapAll('<div class="sub-menu" />');
+    separator.replaceWith('<button class="button-icon menu-item-button menu-item-more"><svg class="icon"><use xlink:href="#dots-horizontal"></use></svg></button>');
 
     var toggle = mainNav.find('.menu-item-more');
-    toggle.append($('.sub-menu'));
+    var subMenu = $('.sub-menu');
+    toggle.append(subMenu);
 
     toggle.on('click', function () {
-      $(this).find('.sub-menu').toggle();
+      if (!subMenu.is(':visible')) {
+        subMenu.show().addClass('animate__animated animate__bounceIn');
+      } else {
+        subMenu.addClass('animate__animated animate__zoomOut');
+      }
+    });
+
+    subMenu.on('animationend', function (e) {
+      subMenu.removeClass('animate__animated animate__bounceIn animate__zoomOut');
+      if (e.originalEvent.animationName == 'zoomOut') {
+        subMenu.hide();
+      }
     });
   }
 }
