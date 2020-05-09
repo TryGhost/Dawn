@@ -1,0 +1,54 @@
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(.215,.61,.355,1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.7,.7,.7);
+  }
+
+  40% {
+    transform: scale3d(1.1,1.1,1.1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1,1,1);
+  }
+}
+
+.animate__bounceIn {
+  animation-duration: .3s;
+  animation-name: bounceIn;
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(.7,.7,.7);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.animate__zoomOut {
+  animation-duration: .3s;
+  animation-name: zoomOut;
+}
