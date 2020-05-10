@@ -17,6 +17,7 @@
   transition-duration: .3s;
   transition-property: box-shadow, transform;
   transition-timing-function: var(--animation-base);
+  visibility: hidden;
   z-index: 90;
 }
 
@@ -34,11 +35,19 @@
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
   pointer-events: unset;
   transform: translateY(0);
+  visibility: visible;
+}
+
+.notification-closing .notification {
+  box-shadow: none !important;
+  transform: translateY(-100%) !important;
 }
 
 .notification-close {
+  margin-top: -15px;
   position: absolute;
   right: 15px;
+  top: 50%;
 }
 
 @media (max-width: 767px) {

@@ -230,19 +230,13 @@ function toc() {
 
 function modal() {
   'use strict';
+  var modalOverlay = $('.modal-overlay');
   var modal = $('.modal');
-  var modalSearch = $('.modal-search');
   var modalInput = $('.modal-input');
 
   $('.js-modal').on('click', function (e) {
     e.preventDefault();
-    switch ($(this).attr('data-modal')) {
-      case 'search':
-        modalSearch.show();
-        break;
-      default:
-        break;
-    }
+    modalOverlay.show().outerWidth();
     body.addClass('modal-opened');
     modalInput.focus();
   });
@@ -259,6 +253,16 @@ function modal() {
     if (e.keyCode === 27 && body.hasClass('modal-opened')) {
       body.removeClass('modal-opened');
     }
+  });
+
+  modalOverlay.on('transitionend', function (e) {
+    if (!body.hasClass('modal-opened')) {
+      modalOverlay.hide();
+    }
+  });
+
+  modal.on('transitionend', function (e) {
+    e.stopPropagation();
   });
 }
 
@@ -503,10 +507,12 @@ function pswp(container, element, trigger, caption, isGallery) {
 
 function notification() {
   'use strict';
+  var notification = $('.notification');
+
   $('.notification-close').on('click', function (e) {
     e.preventDefault();
 
-    body.removeClass('notification-opened');
+    body.addClass('notification-closing');
     var uri = window.location.toString();
     if (uri.indexOf('?') > 0) {
       var clean_uri = uri.substring(0, uri.indexOf('?'));
@@ -515,6 +521,12 @@ function notification() {
 
     if ($(this).closest('.auth-form').length) {
       $(this).closest('.auth-form').removeClass('success error');
+    }
+  });
+
+  notification.on('transitionend', function () {
+    if (body.hasClass('notification-closing')) {
+      body.removeClass('notification-closing notification-opened');
     }
   });
 }
