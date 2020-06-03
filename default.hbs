@@ -14,8 +14,16 @@
   {{> customize/config}}
 
   <script>
-    if (localStorage.getItem('dawn_theme') == 'dark') {
-      document.documentElement.classList.add('theme-dark');
+    var localTheme = localStorage.getItem('dawn_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
     }
   </script>
 
