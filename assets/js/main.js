@@ -387,20 +387,19 @@ function theme() {
   var toggleText = toggle.find('.theme-text');
 
   function system() {
-    html.removeClass('theme-light');
+    html.removeClass(['theme-dark', 'theme-light']);
     localStorage.removeItem('dawn_theme');
     toggleText.text(toggle.attr('data-system'));
   }
 
   function dark() {
-    html.addClass('theme-dark');
+    html.removeClass('theme-light').addClass('theme-dark');
     localStorage.setItem('dawn_theme', 'dark');
     toggleText.text(toggle.attr('data-dark'));
   }
 
   function light() {
-    html.removeClass('theme-dark');
-    html.addClass('theme-light');
+    html.removeClass('theme-dark').addClass('theme-light');
     localStorage.setItem('dawn_theme', 'light');
     toggleText.text(toggle.attr('data-light'));
   }
