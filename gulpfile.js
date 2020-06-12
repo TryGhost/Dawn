@@ -8,8 +8,7 @@ const concat = require('gulp-concat');
 const exec = require('child_process').exec;
 
 const theme = 'dawn';
-const current = '1.3.0';
-const next = '1.4.0';
+const version = '1.4.0';
 const root = '/Users/sodbileg/Developer/ghost-themes';
 const final = '/Users/sodbileg/Dropbox/IVEEL/Dawn';
 
@@ -51,11 +50,8 @@ function prepare(done) {
     'rsync -avz --delete --exclude "assets/js/vendor" --exclude "assets/js/main.js" --exclude "assets/less" --exclude ".git" --exclude ".gitignore" --exclude "node_modules" --exclude "gulpfile.js" --exclude "package-lock.json" ' + root + '/content/themes/' + theme + '/ ' + final + '/' + theme + '/ && ' +
     'cd ' + final + ' && ' +
     'find ./' + theme + ' -type f -exec chmod 664 {} \\; && ' +
-    'zip -r -X ' + theme + '.zip ' + theme + ' -x "*.DS_Store" -x "*.gitignore" -x "*.travis.yml" -x "*.tx" -x "*.git" -x "*.svn" && ' +
-    'cp ' + theme + '.zip ' + theme + '-*/upload && ' +
-    'cp -r ' + theme + '-' + current + ' ' + theme + '-' + next + ' && ' +
-    'zip -r -X ' + theme + '-' + next + '.zip ' + theme + '-' + next + ' -x "*.DS_Store" -x "*.gitignore" -x "*.travis.yml" -x "*.tx" -x "*.git" -x "*.svn" && ' +
-    'rm ' + theme + '.zip ' + '&& rm -r ' + theme + '&& rm -r ' + theme + '-' + current
+    'zip -r -X ' + theme + '-' + version + '.zip ' + theme + ' -x "*.DS_Store" -x "*.gitignore" -x "*.travis.yml" -x "*.tx" -x "*.git" -x "*.svn" && ' +
+    'rm -r ' + theme
   );
   done();
 }
