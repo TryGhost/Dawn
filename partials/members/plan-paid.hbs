@@ -2,7 +2,7 @@
   <header class="plan-header">
     <h2 class="plan-title">{{t "Monthly"}}</h2>
     <div class="plan-price">
-      <div class="plan-amount">${{@price.monthly}}</div>
+      <div class="plan-amount">{{@price.currency_symbol}}{{@price.monthly}}</div>
       {{t "/ month"}}
     </div>
   </header>
@@ -21,7 +21,7 @@
   <header class="plan-header">
     <h2 class="plan-title">{{t "Yearly"}}</h2>
     <div class="plan-price">
-      <div class="plan-amount">${{@price.yearly}}</div>
+      <div class="plan-amount">{{@price.currency_symbol}}{{@price.yearly}}</div>
       {{t "/ year"}}
     </div>
   </header>
