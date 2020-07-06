@@ -12,13 +12,13 @@
     <nav class="main-nav hidden-xs hidden-sm hidden-md">
       {{navigation}}
       {{#if @labs.members}}
-        <button class="button-icon menu-item-button js-modal" data-modal="search">
+        <button class="button-icon menu-item-button js-modal" data-modal="search" aria-label="Search">
           <svg class="icon"><use xlink:href="#magnify"></use></svg>
         </button>
       {{/if}}
     </nav>
     
-    <button class="button-icon hidden-lg hidden-xl js-modal" data-modal="search">
+    <button class="button-icon hidden-lg hidden-xl js-modal" data-modal="search" aria-label="Search">
       <svg class="icon"><use xlink:href="#magnify"></use></svg>
     </button>
     <div class="burger hidden-lg hidden-xl">
@@ -57,7 +57,7 @@
         <a class="menu-item menu-item-cta members-subscribe" href="{{@site.url}}/subscribe/">{{t "Subscribe"}}</a>
       {{/if}}
     {{else}}
-      <button class="button-icon js-modal" data-modal="search">
+      <button class="button-icon js-modal" data-modal="search" aria-label="Search">
         <svg class="icon"><use xlink:href="#magnify"></use></svg>
       </button>
     {{/if}}
@@ -68,7 +68,7 @@
   {{#post}}
     <header class="sticky kg-width-full">
       <div class="sticky-title">{{title}}</div>
-      <button class="button-icon sticky-toc-button">
+      <button class="button-icon sticky-toc-button" aria-label="Table of Contents">
         <svg class="icon"><use xlink:href="#table-of-contents"></use></svg>
         <div class="sticky-toc"></div>
       </button>

@@ -76,7 +76,7 @@ function subMenu() {
 
   if (separator.length) {
     separator.nextAll('.menu-item').wrapAll('<div class="sub-menu" />');
-    separator.replaceWith('<button class="button-icon menu-item-button menu-item-more"><svg class="icon"><use xlink:href="#dots-horizontal"></use></svg></button>');
+    separator.replaceWith('<button class="button-icon menu-item-button menu-item-more" aria-label="More"><svg class="icon"><use xlink:href="#dots-horizontal"></use></svg></button>');
 
     var toggle = mainNav.find('.menu-item-more');
     var subMenu = $('.sub-menu');
