@@ -2,7 +2,7 @@
   <div class="modal modal-search">
     <div class="form-wrapper">
       <input class="modal-input search-input" type="search" placeholder="{{t "Enter keyword..."}}">
-      <button class="form-button search-button">
+      <button class="form-button search-button" aria-label="Search">
         <svg class="icon icon-search"><use xlink:href="#magnify"></use></svg>
         <svg class="icon icon-close"><use xlink:href="#window-close"></use></svg>
       </button>
@@ -21,7 +21,7 @@
     {{/get}}
     <div class="search-result"></div>
   </div>
-  <button class="button-icon modal-close">
+  <button class="button-icon modal-close" aria-label="Close">
     <svg class="icon icon-close"><use xlink:href="#window-close"></use></svg>
   </button>
 </div>
