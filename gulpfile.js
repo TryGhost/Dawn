@@ -8,7 +8,7 @@ const concat = require('gulp-concat');
 const exec = require('child_process').exec;
 
 const theme = 'dawn';
-const version = '1.4.0';
+const version = '1.5.0';
 const root = '/Users/sodbileg/Developer/ghost-themes';
 const final = '/Users/sodbileg/Dropbox/IVEEL/Dawn';
 
