@@ -5,14 +5,16 @@
       <div class="featured-feed owl">
         {{#foreach featured visibility="all"}}
           <article class="{{post_class}}">
-            <div class="u-placeholder horizontal">
-              <img class="lazyload u-object-fit"
-                data-srcset="{{> srcset}}"
-                data-sizes="auto"
-                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                alt="{{title}}"
-              >
-            </div>
+            {{#if feature_image}}
+              <div class="u-placeholder horizontal">
+                <img class="lazyload u-object-fit"
+                  data-srcset="{{> srcset}}"
+                  data-sizes="auto"
+                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  alt="{{title}}"
+                >
+              </div>
+            {{/if}}
             <h3 class="post-title">{{title}}</h3>
             <a class="u-permalink" href={{url}} aria-label="{{title}}"></a>
           </article>
