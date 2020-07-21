@@ -8,7 +8,7 @@
         {{#if description}}
           <div class="tag-description">{{description}}</div>
         {{/if}}
-        {{#get "tags" limit="all" filter="id:-{{id}}" as |tags|}}
+        {{#get "tags" limit="all" filter="id:-{{id}}+visibility:public" as |tags|}}
           {{#if tags}}
             <div class="tag-list">
               <span class="tag-list-label">{{t "More:"}}</span>
