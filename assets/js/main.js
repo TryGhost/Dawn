@@ -146,6 +146,7 @@ function pagination() {
       button: '.infinite-scroll-button',
       debug: false,
       hideNav: '.pagination',
+      history: false,
       path: '.pagination .older-posts',
       scrollThreshold: false,
       status: '.infinite-scroll-status',
