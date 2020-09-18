@@ -1,0 +1,13 @@
+symbol {
+  fill: currentColor;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+}
+
+.icon-loading {
+  height: 26px;
+  width: 26px;
+}

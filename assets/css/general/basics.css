@@ -1,0 +1,239 @@
+:root {
+  --brand-color: #ff572f;
+  --primary-text-color: #333;
+  --secondary-text-color: #999;
+  --white-color: #fff;
+  --lighter-gray-color: #f6f6f6;
+  --light-gray-color: #e6e6e6;
+  --mid-gray-color: #ccc;
+  --dark-gray-color: #444;
+  --darker-gray-color: #1a1a1a;
+  --black-color: #000;
+  --green-color: #28a745;
+  --orange-color: #ffc107;
+  --red-color: #dc3545;
+  --facebook-color: #3b5998;
+  --twitter-color: #1da1f2;
+  --rss-color: #f26522;
+  --animation-base: ease-in-out;
+  --font-base: muli, -apple-system, blinkmacsystemfont, segoe ui, helvetica, arial, sans-serif;
+  --navbar-height: 80px;
+  --scrollbar: 0;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --navbar-height: 70px;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--white-color);
+  color: var(--primary-text-color);
+  font-family: var(--font-base);
+  font-size: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  word-break: break-word;
+}
+
+a {
+  color: var(--darker-gray-color);
+  text-decoration: none;
+  transition: color 0.1s var(--animation-base);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--darker-gray-color);
+  font-family: var(--font-base);
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0 0 1.5rem;
+}
+
+p {
+  margin: 0 0 2rem;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+blockquote {
+  background-color: var(--lighter-gray-color);
+  border-left: 5px solid var(--brand-color);
+  color: var(--secondary-text-color);
+  font-size: 2.1rem;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.03rem;
+  line-height: 1.4;
+  margin: 3rem 0;
+  padding: 2rem 3rem;
+  text-align: center;
+}
+
+blockquote strong {
+  font-weight: 700;
+}
+
+ul,
+ol {
+  margin: 3rem 0;
+  padding-left: 2rem;
+}
+
+iframe,
+embed {
+  border: 0;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+figure {
+  margin: 4.5rem 0;
+}
+
+figcaption {
+  color: var(--secondary-text-color);
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+figcaption a {
+  color: var(--secondary-text-color) !important;
+  font-weight: 400 !important;
+}
+
+pre {
+  background-color: var(--darker-gray-color);
+  border-radius: 5px !important;
+  color: var(--white-color);
+  font-size: 1.6rem !important;
+  line-height: 1.5;
+  margin: 3rem 0 !important;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  padding: 1.6rem 2.2rem;
+}
+
+hr {
+  background-color: var(--secondary-text-color);
+  border: 0;
+  border-radius: 50%;
+  height: 5px;
+  margin: 40px auto;
+  position: relative;
+  width: 5px;
+}
+
+hr::before,
+hr::after {
+  background-color: var(--secondary-text-color);
+  border-radius: 50%;
+  content: "";
+  height: 5px;
+  position: absolute;
+  width: 5px;
+}
+
+hr::before {
+  right: 20px;
+}
+
+hr::after {
+  left: 20px;
+}
+
+table:not(.highlight) {
+  border-collapse: collapse;
+  font-size: 1.5rem;
+  margin: 3rem 0;
+  width: 100%;
+  word-break: normal;
+}
+
+table:not(.highlight) thead {
+  background-color: var(--lighter-gray-color);
+  border-bottom: 1px solid var(--light-gray-color);
+}
+
+table:not(.highlight) tr + table:not(.highlight) tr {
+  border-top: 1px solid var(--light-gray-color);
+}
+
+table:not(.highlight) tr:hover td {
+  background-color: var(--lighter-gray-color);
+}
+
+table:not(.highlight) th,
+table:not(.highlight) td {
+  line-height: 1.5;
+  padding: 1rem 1.5rem;
+}
+
+table:not(.highlight) th {
+  color: var(--secondary-text-color);
+  text-align: left;
+}
+
+table:not(.highlight) tfoot {
+  border-top: 1px solid var(--mid-gray-color);
+}
+
+table:not(.highlight) tfoot td {
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    display: block;
+    padding: 1.2rem 0;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    text-align: right;
+    width: 100%;
+  }
+
+  .table td::before {
+    color: var(--secondary-text-color);
+    content: attr(data-label);
+    margin-right: 1rem;
+    white-space: nowrap;
+  }
+}
