@@ -7,20 +7,20 @@
     {{/post}}
     <form action="https://formspree.io/FORM_ID" class="contact-form kg-width-narrow" method="POST">
       <label>
-        {{t "Name:"}}
+        Name:
         <input type="text" name="name" required>
       </label>
       <label>
-        {{t "Email:"}}
+        Email:
         <input type="email" name="email" required>
       </label>
       <label>
-        {{t "Message:"}}
+        Message:
         <textarea rows="6" name="message" required></textarea>
       </label>
-      <input type="hidden" name="_subject" id="email-subject" value="{{t "Contact Form Submission"}}">
+      <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
       <input type="hidden" name="_next" value="{{@site.url}}/thanks/">
-      <button class="button" type="submit">{{t "Submit"}}</button>
+      <button class="button" type="submit">Submit</button>
     </form>
   </main>
 </div>
