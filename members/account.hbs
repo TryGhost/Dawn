@@ -4,7 +4,7 @@
   <main class="site-main">
     <div class="single kg-width-narrow">
       <header class="single-header">
-        <h1 class="single-title">{{t "Your account"}}</h1>
+        <h1 class="single-title">Your account</h1>
       </header>
       {{#unless @member}}
         <script>window.location = '{{@site.url}}/signin/';</script>
@@ -20,9 +20,9 @@
             <div class="account-email">{{@member.email}}</div>
             <div class="account-button-list">
               {{#unless @member.paid}}
-                <a class="button account-button members-upgrade" href="{{@site.url}}/upgrade/">{{t "Upgrade"}}</a>
+                <a class="button account-button members-upgrade" href="{{@site.url}}/upgrade/">Upgrade</a>
               {{/unless}}
-              <button class="button button-secondary account-button members-signout" data-members-signout>{{t "Sign out"}}</button>
+              <button class="button button-secondary account-button members-signout" data-members-signout>Sign out</button>
             </div>
           </div>
 
@@ -31,36 +31,36 @@
               {{#foreach @member.subscriptions}}
                 <div class="account-subscription">
                   <div class="account-row">
-                    <h3 class="account-row-title">{{t "Subscription status"}}</h3>
+                    <h3 class="account-row-title">Subscription status</h3>
                     <div class="account-row-value account-status account-status-{{status}}">{{status}}</div>
                   </div>
                   <div class="account-row">
-                    <h3 class="account-row-title">{{t "Your plan"}}</h3>
+                    <h3 class="account-row-title">Your plan</h3>
                     <div class="account-row-value">{{plan.nickname}} ({{@price.currency_symbol}}{{price plan.amount}}/{{plan.interval}})</div>
                   </div>
                   <div class="account-row">
-                    <h3 class="account-row-title">{{t "Start date"}}</h3>
+                    <h3 class="account-row-title">Start date</h3>
                     <div class="account-row-value">{{date start_date}}</div>
                   </div>
                   <div class="account-row">
                     <h3 class="account-row-title">
                       {{#if cancel_at_period_end}}
-                        {{t "Expires"}}
+                        Expires
                       {{else}}
-                        {{t "Next bill date"}}
+                        Next bill date
                       {{/if}}
                     </h3>
                     <div class="account-row-value">{{date current_period_end}}</div>
                   </div>
                   <div class="account-row">
-                    <h3 class="account-row-title">{{t "Billing info"}}</h3>
+                    <h3 class="account-row-title">Billing info</h3>
                     <div class="account-row-value">**** **** **** {{default_payment_card_last4}}</div>
                   </div>
                   <div class="account-action">
                     <a class="button button-secondary account-update" href="javascript:"
                       data-members-edit-billing
                       data-members-success="{{@site.url}}/account/?stripe=billing-update-success"
-                      data-members-cancel="{{@site.url}}/account/?stripe=billing-update-cancel">{{t "Edit billing info"}}</a>
+                      data-members-cancel="{{@site.url}}/account/?stripe=billing-update-cancel">Edit billing info</a>
                     <div class="account-cancel">
                       {{cancel_link class="account-cancel-link" errorClass="account-cancel-error"}}
                     </div>
