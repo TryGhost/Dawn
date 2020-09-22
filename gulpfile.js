@@ -8,7 +8,6 @@ const postcss = require('gulp-postcss');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const beeper = require('beeper');
-const fs = require('fs');
 
 // postcss plugins
 const easyimport = require('postcss-easy-import');
