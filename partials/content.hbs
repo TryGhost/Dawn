@@ -29,10 +29,9 @@
   {{#if feature_image}}
     {{#unless no_image}}
       <div class="single-media kg-width-{{width}} u-placeholder horizontal">
-        <img class="lazyload u-object-fit"
-          data-srcset="{{> srcset}}"
-          data-sizes="auto"
-          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        <img class="u-object-fit"
+          srcset="{{> srcset}}"
+          src="{{img_url feature_image size="l"}}"
           alt="{{title}}"
         >
       </div>
@@ -89,7 +88,7 @@
             {{#foreach authors}}
               <div class="author-image-placeholder u-placeholder square">
                 <a href="{{url}}" title="{{name}}">
-                  <img class="author-image lazyload u-object-fit" data-src="{{img_url profile_image size="xs"}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{{name}}">
+                  <img class="author-image u-object-fit" src="{{img_url profile_image size="xs"}}" alt="{{name}}" loading="lazy">
                 </a>
               </div>
             {{/foreach}}
