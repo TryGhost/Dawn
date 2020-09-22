@@ -20,10 +20,9 @@
         {{/get}}
         {{#if feature_image}}
           <div class="tag-media kg-width-large u-placeholder horizontal">
-            <img class="lazyload u-object-fit"
-              data-srcset="{{> srcset}}"
-              data-sizes="auto"
-              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            <img class="u-object-fit"
+              srcset="{{> srcset}}"
+              src="{{img_url feature_image size="l"}}"
               alt="{{name}}"
             >
           </div>
