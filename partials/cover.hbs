@@ -1,22 +1,22 @@
 <div class="cover">
-  <div class="cover-content">
-    {{#if @site.icon}}
-      <div class="cover-icon">
-        <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
-      </div>
-    {{/if}}
+    <div class="cover-content">
+        {{#if @site.icon}}
+            <div class="cover-icon">
+                <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+            </div>
+        {{/if}}
 
-    {{#if @site.description}}
-      <div class="cover-description">{{@site.description}}</div>
-    {{/if}}
+        {{#if @site.description}}
+            <div class="cover-description">{{@site.description}}</div>
+        {{/if}}
 
-    {{#if @labs.members}}
-      {{#unless @member}}
-        <div class="cover-cta">
-          <a class="button members-subscribe" href="{{@site.url}}/subscribe/">Subscribe now</a>
-          <a class="button button-secondary members-login" href="{{@site.url}}/signin/">Login</a>
-        </div>
-      {{/unless}}
-    {{/if}}
-  </div>
+        {{#if @labs.members}}
+            {{#unless @member}}
+                <div class="cover-cta">
+                    <a class="button members-subscribe" href="{{@site.url}}/subscribe/">Subscribe now</a>
+                    <a class="button button-secondary members-login" href="{{@site.url}}/signin/">Login</a>
+                </div>
+            {{/unless}}
+        {{/if}}
+    </div>
 </div>

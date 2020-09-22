@@ -1,13 +1,13 @@
 {{!< ../default}}
 
 <div class="content-area">
-  <main class="site-main">
-    <div class="single">
-      {{#if @member}}
-        <script>window.location = '{{@site.url}}';</script>
-      {{else}}
-        {{> members/auth login=true}}
-      {{/if}}
-    </div>
-  </main>
+    <main class="site-main">
+        <div class="single">
+            {{#if @member}}
+                <script>window.location = '{{@site.url}}';</script>
+            {{else}}
+                {{> members/auth login=true}}
+            {{/if}}
+        </div>
+    </main>
 </div>

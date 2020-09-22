@@ -1,80 +1,90 @@
 <header class="site-header">
-  <div class="header-left">
-    <a class="logo" href="{{@site.url}}">
-      {{#if @site.logo}}
-        <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
-      {{else}}
-        <span class="logo-text">{{@site.title}}</span>
-      {{/if}}
-    </a>
-  </div>
-  {{#if @site.navigation}}
-    <nav class="main-nav hidden-xs hidden-sm hidden-md">
-      {{navigation}}
-      {{#if @labs.members}}
-        <button class="button-icon menu-item-button js-modal" data-modal="search" aria-label="Search">
-          <svg class="icon"><use xlink:href="#magnify"></use></svg>
-        </button>
-      {{/if}}
-    </nav>
-    
-    <button class="button-icon hidden-lg hidden-xl js-modal" data-modal="search" aria-label="Search">
-      <svg class="icon"><use xlink:href="#magnify"></use></svg>
-    </button>
-    <div class="burger hidden-lg hidden-xl">
-      <div class="burger-bar"></div>
-      <div class="burger-bar"></div>
-    </div>
-
-    <div class="mobile-menu hidden-lg hidden-xl">
-      <div class="container">
-        <nav class="mobile-nav">
-          {{navigation}}
-          {{#if @labs.members}}
-            {{#if @member}}
-              <a class="menu-item members-account" href="{{@site.url}}/account/">Account</a>
-              {{#unless @member.paid}}
-                <a class="menu-item menu-item-cta members-upgrade" href="{{@site.url}}/upgrade/">Upgrade</a>
-              {{/unless}}
+    <div class="header-left">
+        <a class="logo" href="{{@site.url}}">
+            {{#if @site.logo}}
+                <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
             {{else}}
-              <a class="menu-item members-login" href="{{@site.url}}/signin/">Login</a>
-              <a class="menu-item menu-item-cta members-subscribe" href="{{@site.url}}/subscribe/">Subscribe</a>
+                <span class="logo-text">{{@site.title}}</span>
             {{/if}}
-          {{/if}}
-        </nav>
-      </div>
+        </a>
     </div>
-  {{/if}}
-  <div class="header-right hidden-xs hidden-sm hidden-md">
-    {{#if @labs.members}}
-      {{#if @member}}
-        <a class="menu-item members-account" href="{{@site.url}}/account/">Account</a>
-        {{#unless @member.paid}}
-          <a class="menu-item menu-item-cta members-upgrade" href="{{@site.url}}/upgrade/">Upgrade</a>
-        {{/unless}}
-      {{else}}
-        <a class="menu-item members-login" href="{{@site.url}}/signin/">Login</a>
-        <a class="menu-item menu-item-cta members-subscribe" href="{{@site.url}}/subscribe/">Subscribe</a>
-      {{/if}}
-    {{else}}
-      <button class="button-icon js-modal" data-modal="search" aria-label="Search">
-        <svg class="icon"><use xlink:href="#magnify"></use></svg>
-      </button>
+    {{#if @site.navigation}}
+        <nav class="main-nav hidden-xs hidden-sm hidden-md">
+            {{navigation}}
+            {{#if @labs.members}}
+                <button class="button-icon menu-item-button js-modal" data-modal="search" aria-label="Search">
+                    <svg class="icon">
+                        <use xlink:href="#magnify"></use>
+                    </svg>
+                </button>
+            {{/if}}
+        </nav>
+
+        <button class="button-icon hidden-lg hidden-xl js-modal" data-modal="search" aria-label="Search">
+            <svg class="icon">
+                <use xlink:href="#magnify"></use>
+            </svg>
+        </button>
+        <div class="burger hidden-lg hidden-xl">
+            <div class="burger-bar"></div>
+            <div class="burger-bar"></div>
+        </div>
+
+        <div class="mobile-menu hidden-lg hidden-xl">
+            <div class="container">
+                <nav class="mobile-nav">
+                    {{navigation}}
+                    {{#if @labs.members}}
+                        {{#if @member}}
+                            <a class="menu-item members-account" href="{{@site.url}}/account/">Account</a>
+                            {{#unless @member.paid}}
+                                <a class="menu-item menu-item-cta members-upgrade"
+                                    href="{{@site.url}}/upgrade/">Upgrade</a>
+                            {{/unless}}
+                        {{else}}
+                            <a class="menu-item members-login" href="{{@site.url}}/signin/">Login</a>
+                            <a class="menu-item menu-item-cta members-subscribe"
+                                href="{{@site.url}}/subscribe/">Subscribe</a>
+                        {{/if}}
+                    {{/if}}
+                </nav>
+            </div>
+        </div>
     {{/if}}
-  </div>
+    <div class="header-right hidden-xs hidden-sm hidden-md">
+        {{#if @labs.members}}
+            {{#if @member}}
+                <a class="menu-item members-account" href="{{@site.url}}/account/">Account</a>
+                {{#unless @member.paid}}
+                    <a class="menu-item menu-item-cta members-upgrade" href="{{@site.url}}/upgrade/">Upgrade</a>
+                {{/unless}}
+            {{else}}
+                <a class="menu-item members-login" href="{{@site.url}}/signin/">Login</a>
+                <a class="menu-item menu-item-cta members-subscribe" href="{{@site.url}}/subscribe/">Subscribe</a>
+            {{/if}}
+        {{else}}
+            <button class="button-icon js-modal" data-modal="search" aria-label="Search">
+                <svg class="icon">
+                    <use xlink:href="#magnify"></use>
+                </svg>
+            </button>
+        {{/if}}
+    </div>
 </header>
 
 {{#is "post"}}
-  {{#post}}
-    <header class="sticky kg-width-full">
-      <div class="sticky-title">{{title}}</div>
-      <button class="button-icon sticky-toc-button" aria-label="Table of Contents">
-        <svg class="icon"><use xlink:href="#table-of-contents"></use></svg>
-        <div class="sticky-toc"></div>
-      </button>
-      <div class="sticky-track">
-        <div class="sticky-progress"></div>
-      </div>
-    </header>
-  {{/post}}
+    {{#post}}
+        <header class="sticky kg-width-full">
+            <div class="sticky-title">{{title}}</div>
+            <button class="button-icon sticky-toc-button" aria-label="Table of Contents">
+                <svg class="icon">
+                    <use xlink:href="#table-of-contents"></use>
+                </svg>
+                <div class="sticky-toc"></div>
+            </button>
+            <div class="sticky-track">
+                <div class="sticky-progress"></div>
+            </div>
+        </header>
+    {{/post}}
 {{/is}}

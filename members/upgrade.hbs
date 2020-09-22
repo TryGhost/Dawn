@@ -1,23 +1,23 @@
 {{!< ../default}}
 
 <div class="content-area">
-  <main class="site-main">
-    <div class="single">
-      <header class="single-header kg-width-narrow">
-        <h1 class="single-title">Choose your subscription</h1>
-        <div class="single-excerpt">
-          Unlock full access to {{@site.title}} and see the entire library of members-only content & updates
-        </div>
-      </header>
-      
-      <div class="plan-selector plan-selector-monthly hidden-lg hidden-xl">
-        <button class="button plan-selector-button" data-plan="monthly">Monthly</button>
-        <button class="button button-secondary plan-selector-button" data-plan="yearly">Yearly</button>
-      </div>
+    <main class="site-main">
+        <div class="single">
+            <header class="single-header kg-width-narrow">
+                <h1 class="single-title">Choose your subscription</h1>
+                <div class="single-excerpt">
+                    Unlock full access to {{@site.title}} and see the entire library of members-only content & updates
+                </div>
+            </header>
 
-      <div class="plan-list">
-        {{> members/plan-paid}}
-      </div>
-    </div>
-  </main>
+            <div class="plan-selector plan-selector-monthly hidden-lg hidden-xl">
+                <button class="button plan-selector-button" data-plan="monthly">Monthly</button>
+                <button class="button button-secondary plan-selector-button" data-plan="yearly">Yearly</button>
+            </div>
+
+            <div class="plan-list">
+                {{> members/plan-paid}}
+            </div>
+        </div>
+    </main>
 </div>

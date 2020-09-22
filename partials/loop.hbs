@@ -1,21 +1,25 @@
 <article class="feed {{post_class}}">
-  <div class="feed-calendar">
-    <div class="feed-calendar-month">
-      {{date published_at format="MMM"}}
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            {{date published_at format="MMM"}}
+        </div>
+        <div class="feed-calendar-day">
+            {{date published_at format="DD"}}
+        </div>
     </div>
-    <div class="feed-calendar-day">
-      {{date published_at format="DD"}}
+    <h2 class="feed-title">{{title}}</h2>
+    <div class="feed-right">
+        {{#if @labs.members}}
+            <svg class="icon feed-visibility feed-visibility-{{visibility}}">
+                <use xlink:href="#star"></use>
+            </svg>
+        {{/if}}
+        <div class="feed-length">
+            {{reading_time}}
+        </div>
     </div>
-  </div>
-  <h2 class="feed-title">{{title}}</h2>
-  <div class="feed-right">
-    {{#if @labs.members}}
-      <svg class="icon feed-visibility feed-visibility-{{visibility}}"><use xlink:href="#star"></use></svg>
-    {{/if}}
-    <div class="feed-length">
-      {{reading_time}}
-    </div>
-  </div>
-  <svg class="icon feed-icon"><use xlink:href="#chevron-right"></use></svg>
-  <a class="u-permalink" href="{{url}}" aria-label="{{title}}"></a>
+    <svg class="icon feed-icon">
+        <use xlink:href="#chevron-right"></use>
+    </svg>
+    <a class="u-permalink" href="{{url}}" aria-label="{{title}}"></a>
 </article>
