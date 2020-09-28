@@ -2,6 +2,7 @@
     "extends": "stylelint-config-standard",
     "plugins": ["stylelint-order"],
     "rules": {
+        "indentation": 4,
         "no-descending-specificity": null,
         "order/properties-alphabetical-order": true
     }
