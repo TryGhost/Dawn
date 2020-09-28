@@ -1,83 +1,83 @@
 label {
-  color: var(--darker-gray-color);
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 700;
+    color: var(--darker-gray-color);
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 label + label {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 label input,
 label textarea {
-  margin-top: 0.7rem;
+    margin-top: 0.7rem;
 }
 
 input,
 textarea {
-  appearance: none;
-  background-color: var(--white-color);
-  border: 1px solid var(--light-gray-color);
-  border-radius: 5px;
-  color: var(--darker-gray-color);
-  font-size: 1.6rem;
-  height: 44px;
-  outline: none;
-  padding: 0 1.5rem;
-  width: 100%;
+    appearance: none;
+    background-color: var(--white-color);
+    border: 1px solid var(--light-gray-color);
+    border-radius: 5px;
+    color: var(--darker-gray-color);
+    font-size: 1.6rem;
+    height: 44px;
+    outline: none;
+    padding: 0 1.5rem;
+    width: 100%;
 }
 
 input:focus,
 textarea:focus {
-  border-color: var(--mid-gray-color);
+    border-color: var(--mid-gray-color);
 }
 
 textarea {
-  height: 100%;
-  padding-bottom: 1.5rem;
-  padding-top: 1.5rem;
-  resize: vertical;
+    height: 100%;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    resize: vertical;
 }
 
 .form-wrapper {
-  position: relative;
+    position: relative;
 }
 
 .form-button {
-  align-items: center;
-  background-color: var(--brand-color);
-  border: 0;
-  border-radius: 0 4px 4px 0;
-  color: var(--white-color);
-  cursor: pointer;
-  display: flex;
-  height: 40px;
-  justify-content: center;
-  outline: none;
-  padding: 0;
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  width: 40px;
+    align-items: center;
+    background-color: var(--brand-color);
+    border: 0;
+    border-radius: 0 4px 4px 0;
+    color: var(--white-color);
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 40px;
 }
 
 .form-button .icon-loading {
-  display: none;
+    display: none;
 }
 
 .loading .form-button .icon {
-  display: none;
+    display: none;
 }
 
 .loading .form-button .icon-loading {
-  display: block;
+    display: block;
 }
 
 .contact-form {
-  margin-top: 3rem;
+    margin-top: 3rem;
 }
 
 .contact-form .button {
-  margin-top: 1.5rem;
+    margin-top: 1.5rem;
 }

@@ -1,92 +1,92 @@
 .plan-list {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .plan {
-  border: 1px solid var(--light-gray-color);
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 1rem;
-  max-width: 35rem;
-  padding: 3rem;
+    border: 1px solid var(--light-gray-color);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+    max-width: 35rem;
+    padding: 3rem;
 }
 
 .plan-title {
-  color: var(--brand-color);
-  font-size: 2rem;
-  margin-bottom: 0.3rem;
+    color: var(--brand-color);
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
 }
 
 .plan-price {
-  align-items: baseline;
-  color: var(--secondary-text-color);
-  display: flex;
+    align-items: baseline;
+    color: var(--secondary-text-color);
+    display: flex;
 }
 
 .plan-amount {
-  color: var(--darker-gray-color);
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-right: 0.5rem;
+    color: var(--darker-gray-color);
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-right: 0.5rem;
 }
 
 .plan-feature-list {
-  flex-grow: 1;
-  list-style-type: none;
-  margin: 2rem 0 3rem;
-  padding: 0;
+    flex-grow: 1;
+    list-style-type: none;
+    margin: 2rem 0 3rem;
+    padding: 0;
 }
 
 .plan-feature {
-  margin: 0.6rem 0;
+    margin: 0.6rem 0;
 }
 
 .plan-selector {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
 }
 
 .plan-selector-button {
-  position: relative;
+    position: relative;
 }
 
 .plan-selector-button:first-child {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .plan-selector-button + .plan-selector-button {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  margin-left: -1px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    margin-left: -1px;
 }
 
 .plan-selector-button + .plan-selector-button:not(:last-child) {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .plan-selector-button:hover {
-  z-index: 10;
+    z-index: 10;
 }
 
 @media (max-width: 991px) {
-  .plan {
-    display: none;
-  }
+    .plan {
+        display: none;
+    }
 
-  .plan-selector-free + .plan-list .plan-free {
-    display: flex;
-  }
+    .plan-selector-free + .plan-list .plan-free {
+        display: flex;
+    }
 
-  .plan-selector-monthly + .plan-list .plan-monthly {
-    display: flex;
-  }
+    .plan-selector-monthly + .plan-list .plan-monthly {
+        display: flex;
+    }
 
-  .plan-selector-yearly + .plan-list .plan-yearly {
-    display: flex;
-  }
+    .plan-selector-yearly + .plan-list .plan-yearly {
+        display: flex;
+    }
 }

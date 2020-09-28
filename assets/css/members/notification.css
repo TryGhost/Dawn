@@ -1,28 +1,28 @@
 .notification {
-  align-items: center;
-  background-color: var(--white-color);
-  border-top: 3px solid var(--green-color);
-  display: flex;
-  font-size: 1.6rem;
-  font-weight: 700;
-  justify-content: center;
-  left: 0;
-  line-height: 1.4;
-  padding: 20px 60px;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transform: translateY(-100%);
-  transition-duration: 0.3s;
-  transition-property: box-shadow, transform;
-  transition-timing-function: var(--animation-base);
-  visibility: hidden;
-  z-index: 90;
+    align-items: center;
+    background-color: var(--white-color);
+    border-top: 3px solid var(--green-color);
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 700;
+    justify-content: center;
+    left: 0;
+    line-height: 1.4;
+    padding: 20px 60px;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateY(-100%);
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+    transition-timing-function: var(--animation-base);
+    visibility: hidden;
+    z-index: 90;
 }
 
 .error .notification {
-  border-top-color: var(--red-color);
+    border-top-color: var(--red-color);
 }
 
 .subscribe-success.notification-opened .notification-subscribe,
@@ -32,27 +32,27 @@
 .billing-success.notification-opened .notification-billing-update,
 .success .notification-success,
 .error .notification-error {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-  pointer-events: unset;
-  transform: translateY(0);
-  visibility: visible;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    pointer-events: unset;
+    transform: translateY(0);
+    visibility: visible;
 }
 
 .notification-closing .notification {
-  box-shadow: none !important;
-  transform: translateY(-100%) !important;
+    box-shadow: none !important;
+    transform: translateY(-100%) !important;
 }
 
 .notification-close {
-  margin-top: -15px;
-  position: absolute;
-  right: 15px;
-  top: 50%;
+    margin-top: -15px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
 }
 
 @media (max-width: 767px) {
-  .notification {
-    justify-content: flex-start;
-    padding: 15px 60px 15px 20px;
-  }
+    .notification {
+        justify-content: flex-start;
+        padding: 15px 60px 15px 20px;
+    }
 }

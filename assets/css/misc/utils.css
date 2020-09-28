@@ -1,6 +1,6 @@
 .u-text-format {
-  font-size: 1.7rem;
-  line-height: 1.8;
+    font-size: 1.7rem;
+    line-height: 1.8;
 }
 
 .u-text-format h1,
@@ -9,110 +9,110 @@
 .u-text-format h4,
 .u-text-format h5,
 .u-text-format h6 {
-  margin-top: 4rem;
+    margin-top: 4rem;
 }
 
 .u-text-format h1 {
-  font-size: 2.8rem;
-  letter-spacing: -0.03rem;
+    font-size: 2.8rem;
+    letter-spacing: -0.03rem;
 }
 
 .u-text-format h2 {
-  font-size: 2.3rem;
-  letter-spacing: -0.03rem;
+    font-size: 2.3rem;
+    letter-spacing: -0.03rem;
 }
 
 .u-text-format h3 {
-  color: var(--secondary-text-color);
-  font-size: 2rem;
-  letter-spacing: -0.03rem;
+    color: var(--secondary-text-color);
+    font-size: 2rem;
+    letter-spacing: -0.03rem;
 }
 
 .u-text-format h4 {
-  font-size: 1.9rem;
-  font-weight: 700;
+    font-size: 1.9rem;
+    font-weight: 700;
 }
 
 .u-text-format h5 {
-  font-size: 1.6rem;
-  font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
 .u-text-format h6 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .u-text-format a {
-  color: var(--brand-color);
-  font-weight: 700;
-  text-decoration: underline;
+    color: var(--brand-color);
+    font-weight: 700;
+    text-decoration: underline;
 }
 
 .u-text-format ul li,
 .u-text-format ol li {
-  margin: 1rem 0;
+    margin: 1rem 0;
 }
 
 .u-text-format > *:first-child,
 .u-text-format > *:first-child > *:first-child {
-  margin-top: 0 !important;
+    margin-top: 0 !important;
 }
 
 .u-text-format > *:last-child,
 .u-text-format > *:last-child > *:last-child {
-  margin-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .post-template .u-text-format h2,
 .post-template .u-text-format h3 {
-  scroll-margin-top: 8rem;
+    scroll-margin-top: 8rem;
 }
 
 .page-template .u-text-format h2,
 .page-template .u-text-format h3 {
-  scroll-margin-top: 3rem;
+    scroll-margin-top: 3rem;
 }
 
 .u-permalink {
-  bottom: 0;
-  left: 0;
-  outline: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 50;
+    bottom: 0;
+    left: 0;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 50;
 }
 
 .u-placeholder {
-  background-color: var(--lighter-gray-color);
-  position: relative;
-  z-index: 10;
+    background-color: var(--lighter-gray-color);
+    position: relative;
+    z-index: 10;
 }
 
 .u-placeholder::before {
-  content: "";
-  display: block;
+    content: "";
+    display: block;
 }
 
 .u-placeholder.horizontal::before {
-  padding-bottom: 50%;
+    padding-bottom: 50%;
 }
 
 .u-placeholder.rectangle::before {
-  padding-bottom: 62.5%;
+    padding-bottom: 62.5%;
 }
 
 .u-placeholder.square::before {
-  padding-bottom: 100%;
+    padding-bottom: 100%;
 }
 
 .u-object-fit {
-  height: 100%;
-  left: 0;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 100%;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
