@@ -111,25 +111,18 @@ function subMenu() {
 
 function whiteLogo() {
     'use strict';
-    if (themeOptions.white_logo != '') {
+    if (typeof gh_white_logo != 'undefined') {
         var whiteImage =
-            '<img class="logo-image white" src="' +
-            themeOptions.white_logo +
-            '">';
+            '<img class="logo-image white" src="' + gh_white_logo + '">';
         $('.logo').prepend(whiteImage);
     }
 }
 
 function whiteIcon() {
     'use strict';
-    if (
-        typeof themeOptions.white_icon != 'undefined' &&
-        themeOptions.white_icon != ''
-    ) {
+    if (typeof gh_white_icon != 'undefined') {
         var whiteImage =
-            '<img class="cover-icon-image white" src="' +
-            themeOptions.white_icon +
-            '">';
+            '<img class="cover-icon-image white" src="' + gh_white_icon + '">';
         $('.cover-icon').prepend(whiteImage);
     }
 }
@@ -323,7 +316,12 @@ function modal() {
 
 function search() {
     'use strict';
-    if (themeOptions.search_key == '') return;
+    if (
+        typeof gh_search_key == 'undefined' ||
+        gh_search_key == '' ||
+        typeof gh_search_migration == 'undefined'
+    )
+        return;
 
     var searchInput = $('.search-input');
     var searchButton = $('.search-button');
@@ -332,8 +330,8 @@ function search() {
 
     var url =
         siteUrl +
-        '/ghost/api/v2/content/posts/?key=' +
-        themeOptions.search_key +
+        '/ghost/api/v3/content/posts/?key=' +
+        gh_search_key +
         '&limit=all&fields=id,title,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
     var indexDump = JSON.parse(localStorage.getItem('dawn_search_index'));
     var index;
@@ -354,8 +352,7 @@ function search() {
 
     if (
         !indexDump ||
-        themeOptions.search_migration !=
-            localStorage.getItem('dawn_search_migration')
+        gh_search_migration != localStorage.getItem('dawn_search_migration')
     ) {
         $.get(url, function (data) {
             if (data.posts.length > 0) {
@@ -366,12 +363,11 @@ function search() {
                 });
 
                 update(data);
-                if (typeof themeOptions.search_migration != 'undefined') {
-                    localStorage.setItem(
-                        'dawn_search_migration',
-                        themeOptions.search_migration
-                    );
-                }
+
+                localStorage.setItem(
+                    'dawn_search_migration',
+                    gh_search_migration
+                );
             }
         });
     } else {
