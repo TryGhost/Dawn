@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i,800">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i,800">
 
     <script>
         var siteUrl = '{{@site.url}}';
     </script>
-    {{> customize/config}}
 
     <script>
         var localTheme = localStorage.getItem('dawn_theme');
@@ -59,7 +59,8 @@
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous">
         </script>
     <script src="{{asset "built/main.min.js"}}"></script>
 

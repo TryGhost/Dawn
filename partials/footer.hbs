@@ -1,7 +1,8 @@
 <footer class="site-footer">
     <div class="social">
         {{#if @site.facebook}}
-            <a class="social-item social-item-facebook" href="{{facebook_url @site.facebook}}" target="_blank"
+            <a class="social-item social-item-facebook"
+                href="{{facebook_url @site.facebook}}" target="_blank"
                 rel="noopener noreferrer" aria-label="Facebook">
                 <svg class="icon">
                     <use xlink:href="#facebook-box"></use>
@@ -9,14 +10,16 @@
             </a>
         {{/if}}
         {{#if @site.twitter}}
-            <a class="social-item social-item-twitter" href="{{twitter_url @site.twitter}}" target="_blank"
+            <a class="social-item social-item-twitter"
+                href="{{twitter_url @site.twitter}}" target="_blank"
                 rel="noopener noreferrer" aria-label="Twitter">
                 <svg class="icon">
                     <use xlink:href="#twitter-box"></use>
                 </svg>
             </a>
         {{/if}}
-        <a class="social-item social-item-rss" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/"
+        <a class="social-item social-item-rss"
+            href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/"
             target="_blank" rel="noopener noreferrer" aria-label="RSS">
             <svg class="icon">
                 <use xlink:href="#rss-box"></use>
@@ -24,12 +27,15 @@
         </a>
     </div>
 
-    {{> customize/copyright}}
+    <div class="copyright">
+        Powered by <a href="https://ghost.org/" target="_blank"
+            rel="noopener noreferrer">Ghost</a>
+    </div>
 
     <nav class="footer-nav">
         {{navigation type="secondary"}}
-        <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme"
-            data-light="Light theme">
+        <a class="menu-item js-theme" href="#" data-system="System theme"
+            data-dark="Dark theme" data-light="Light theme">
             <svg class="icon theme-icon theme-icon-system">
                 <use xlink:href="#circle-half-full"></use>
             </svg>
