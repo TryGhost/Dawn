@@ -11,6 +11,32 @@ A clean, minimalist theme featuring a light and dark mode. Launch your online pu
 1. [Download this theme](https://github.com/TryGhost/Dawn/archive/master.zip)
 2. Log into Ghost, and go to the `Design` settings area to upload the zip file
 
+# Search
+
+1. Generate a content API key in `Integrations` section which will be used to fetch posts from your site.
+2. Insert the generated key in `Code injection > Site Header` field.
+
+```html
+<script>
+    var gh_search_key = 'API_KEY';
+    var gh_search_migration = 'v1';
+</script>
+```
+
+The theme generates an index of posts for highly performant search. The index is updated automatically when posts are added or updated. However, it isn't updated when posts are unpublished or deleted.
+
+To force update the index, increment the search index migration version like `'v2'`.
+
+# White Logo
+
+If your logo image isn't recognizable in dark mode, you can set a white version of the logo in `Code injection > Site Header` field.
+
+```html
+<script>
+    var gh_white_logo = 'https://example.com/content/images/white-logo.png';
+</script>
+```
+
 # Development
 
 Styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
