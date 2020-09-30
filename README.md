@@ -1,6 +1,6 @@
 # Dawn
 
-A clean, minimalist theme featuring a light and dark mode. Launch your online publications with flair. Completely free and fully responsive, released under the MIT license.
+A highly functional ghost theme that adapts to the reader's preferences. Let them read, search, subscribe, navigate, and more with ease. Completely free and fully responsive, released under the MIT license.
 
 **Demo: https://dawn.ghost.io**
 
