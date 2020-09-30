@@ -74,6 +74,21 @@ function lint(done) {
     ], handleError(done));
 }
 
+function zipper(done) {
+    const filename = require('./package.json').name + '.zip';
+
+    pump([
+        src([
+            '**',
+            '!node_modules', '!node_modules/**',
+            '!dist', '!dist/**',
+            '!yarn-error.log'
+        ]),
+        zip(filename),
+        dest('dist/')
+    ], handleError(done));
+}
+
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', 'members/**/*.hbs'], hbs);
 const cssWatcher = () => watch('assets/css/**/*.css', css);
 const jsWatcher = () => watch('assets/js/**/*.js', js);
@@ -82,4 +97,5 @@ const build = series(css, js);
 
 exports.build = build;
 exports.lint = lint;
+exports.zip = series(build, zipper);
 exports.default = series(build, serve, watcher);
