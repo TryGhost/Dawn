@@ -13,8 +13,8 @@
         {{#if @labs.members}}
             {{#unless @member}}
                 <div class="cover-cta">
-                    <a class="button members-subscribe" href="{{@site.url}}/subscribe/">Subscribe now</a>
-                    <a class="button button-secondary members-login" href="{{@site.url}}/signin/">Login</a>
+                    <button class="button members-subscribe" data-portal="signup">Subscribe now</button>
+                    <button class="button button-secondary members-login" data-portal="signin">Login</button>
                 </div>
             {{/unless}}
         {{/if}}
