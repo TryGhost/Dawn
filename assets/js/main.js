@@ -21,10 +21,7 @@ $(function () {
     modal();
     search();
     burger();
-    gravatar();
-    plan();
     theme();
-    notification();
 });
 
 $(window).on('scroll', function () {
@@ -437,35 +434,6 @@ function burger() {
     });
 }
 
-function gravatar() {
-    'use strict';
-    var image = $('.account-image');
-    if (image.length) {
-        image.attr(
-            'src',
-            'https://www.gravatar.com/avatar/' +
-                md5(image.attr('data-email')) +
-                '?d=mp&s=160'
-        );
-    }
-}
-
-function plan() {
-    'use strict';
-    var button = $('.plan-selector-button');
-
-    button.on('click', function () {
-        button.addClass('button-secondary');
-        $(this).removeClass('button-secondary');
-        $(this)
-            .closest('.plan-selector')
-            .attr(
-                'class',
-                'plan-selector plan-selector-' + $(this).attr('data-plan')
-            );
-    });
-}
-
 function theme() {
     'use strict';
     var toggle = $('.js-theme');
@@ -601,41 +569,4 @@ function pswp(container, element, trigger, caption, isGallery) {
     $(container).on('click', trigger, function (e) {
         onThumbnailsClick(e);
     });
-}
-
-function notification() {
-    'use strict';
-    var notification = $('.notification');
-
-    $('.notification-close').on('click', function (e) {
-        e.preventDefault();
-
-        body.addClass('notification-closing');
-        var uri = window.location.toString();
-        if (uri.indexOf('?') > 0) {
-            var clean_uri = uri.substring(0, uri.indexOf('?'));
-            window.history.replaceState({}, document.title, clean_uri);
-        }
-
-        if ($(this).closest('.auth-form').length) {
-            $(this).closest('.auth-form').removeClass('success error');
-        }
-    });
-
-    notification.on('transitionend', function () {
-        if (body.hasClass('notification-closing')) {
-            body.removeClass('notification-closing notification-opened');
-        }
-    });
-}
-
-function getParameterByName(name, url) {
-    'use strict';
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-    var results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
