@@ -36,15 +36,13 @@
                     {{navigation}}
                     {{#if @labs.members}}
                         {{#if @member}}
-                            <a class="menu-item members-account" href="{{@site.url}}/account/">Account</a>
+                            <button class="button-text menu-item members-account" data-portal="account">Account</button>
                             {{#unless @member.paid}}
-                                <a class="menu-item menu-item-cta members-upgrade"
-                                    href="{{@site.url}}/upgrade/">Upgrade</a>
+                                <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
                             {{/unless}}
                         {{else}}
-                            <a class="menu-item members-login" href="{{@site.url}}/signin/">Login</a>
-                            <a class="menu-item menu-item-cta members-subscribe"
-                                href="{{@site.url}}/subscribe/">Subscribe</a>
+                            <button class="button-text menu-item members-login" data-portal="signin">Login</button>
+                            <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
                         {{/if}}
                     {{/if}}
                 </nav>
@@ -54,13 +52,13 @@
     <div class="header-right hidden-xs hidden-sm hidden-md">
         {{#if @labs.members}}
             {{#if @member}}
-                <a class="menu-item members-account" href="{{@site.url}}/account/">Account</a>
+                <button class="button-text menu-item members-account" data-portal="account">Account</button>
                 {{#unless @member.paid}}
-                    <a class="menu-item menu-item-cta members-upgrade" href="{{@site.url}}/upgrade/">Upgrade</a>
+                    <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
                 {{/unless}}
             {{else}}
-                <a class="menu-item members-login" href="{{@site.url}}/signin/">Login</a>
-                <a class="menu-item menu-item-cta members-subscribe" href="{{@site.url}}/subscribe/">Subscribe</a>
+                <button class="button-text menu-item members-login" data-portal="signin">Login</button>
+                <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
             {{/if}}
         {{else}}
             <button class="button-icon js-modal" data-modal="search" aria-label="Search">
