@@ -54,3 +54,12 @@
 .button-icon:hover .icon {
     opacity: 0.8;
 }
+
+.button-text {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    line-height: inherit;
+    outline: none;
+    padding: 0;
+}
