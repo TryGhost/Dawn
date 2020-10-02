@@ -45,10 +45,6 @@
     text-align: center;
 }
 
-.single-cta a {
-    text-decoration: none !important;
-}
-
 .single-cta-title {
     margin: 0 0 3rem !important;
 }
@@ -59,7 +55,6 @@
 }
 
 .single-cta-footer {
-    color: var(--darker-gray-color) !important;
     font-size: 1.4rem;
     font-weight: 400 !important;
     letter-spacing: -0.02rem;
