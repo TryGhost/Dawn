@@ -58,6 +58,7 @@
 .button-text {
     background-color: transparent;
     border: 0;
+    color: var(--darker-gray-color);
     cursor: pointer;
     line-height: inherit;
     outline: none;
