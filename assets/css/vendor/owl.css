@@ -1,0 +1,151 @@
+.owl {
+  display: none;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  z-index: 1;
+}
+
+.owl .owl-stage {
+  position: relative;
+  touch-action: pan-y;
+}
+
+.owl .owl-stage::after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.owl .owl-stage-outer {
+  overflow: hidden;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+}
+
+.owl .owl-item {
+  backface-visibility: hidden;
+  float: left;
+  min-height: 1px;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  transform: translateZ(0);
+}
+
+.owl .owl-item > img {
+  display: block;
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
+.owl .owl-nav.disabled,
+.owl .owl-dots.disabled {
+  display: none;
+}
+
+.owl .owl-prev,
+.owl .owl-next,
+.owl .owl-dot {
+  cursor: pointer;
+  user-select: none;
+}
+
+.owl .owl-prev,
+.owl .owl-next {
+  align-items: center;
+  background-color: var(--white-color);
+  border: 1px solid var(--light-gray-color);
+  border-radius: 3px;
+  color: var(--dark-gray-color);
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: -86px;
+  transition: color 0.5s var(--animation-base);
+  width: 30px;
+}
+
+.owl .owl-prev.disabled,
+.owl .owl-next.disabled {
+  color: var(--mid-gray-color);
+  cursor: default;
+}
+
+.owl .owl-prev .icon,
+.owl .owl-next .icon {
+  height: 18px;
+  width: 18px;
+}
+
+.owl .owl-prev {
+  right: 34px;
+}
+
+.owl .owl-next {
+  right: 0;
+}
+
+.owl .owl-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.owl .owl-dot {
+  align-items: center;
+  border: 0;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  outline: none;
+  padding: 0;
+  width: 20px;
+}
+
+.owl .owl-dot span {
+  background-color: var(--light-gray-color);
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+}
+
+.owl .owl-dot.active span {
+  background-color: var(--black-color);
+}
+
+.owl.owl-loaded {
+  display: block;
+}
+
+.owl.owl-loading {
+  display: block;
+  opacity: 0;
+}
+
+.owl.owl-hidden {
+  opacity: 0;
+}
+
+.owl.owl-refresh .owl-item {
+  visibility: hidden;
+}
+
+.owl.owl-drag .owl-item {
+  user-select: none;
+}
+
+.owl.owl-grab {
+  cursor: move;
+}
+
+.no-js .owl {
+  display: block;
+}

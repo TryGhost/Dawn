@@ -1,0 +1,85 @@
+.theme-dark:root {
+    --primary-text-color: #e2e2e2;
+    --secondary-text-color: #868686;
+    --white-color: #282c35;
+    --lighter-gray-color: #2f333c;
+    --light-gray-color: #3b3e46;
+    --mid-gray-color: #666;
+    --dark-gray-color: #e6e6e6;
+    --darker-gray-color: #fff;
+}
+
+.theme-dark .logo-image.white + .logo-image,
+.theme-dark .cover-icon-image.white + .cover-icon-image {
+    opacity: 0;
+}
+
+.theme-dark .logo-image.logo-image.white,
+.theme-dark .cover-icon-image.white {
+    opacity: 1;
+}
+
+.theme-dark .sticky {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.theme-dark .form-button,
+.theme-dark .pswp__counter {
+    color: var(--darker-gray-color);
+}
+
+.theme-dark .share-link {
+    background-color: var(--darker-gray-color);
+}
+
+.theme-dark .share-link-facebook {
+    color: var(--facebook-color);
+}
+
+.theme-dark .share-link-twitter {
+    color: var(--twitter-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not(.theme-light):root {
+        --primary-text-color: #e2e2e2;
+        --secondary-text-color: #868686;
+        --white-color: #282c35;
+        --lighter-gray-color: #2f333c;
+        --light-gray-color: #3b3e46;
+        --mid-gray-color: #666;
+        --dark-gray-color: #e6e6e6;
+        --darker-gray-color: #fff;
+    }
+
+    html:not(.theme-light) .logo-image.white + .logo-image,
+    html:not(.theme-light) .cover-icon-image.white + .cover-icon-image {
+        opacity: 0;
+    }
+
+    html:not(.theme-light) .logo-image.logo-image.white,
+    html:not(.theme-light) .cover-icon-image.white {
+        opacity: 1;
+    }
+
+    html:not(.theme-light) .sticky {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    html:not(.theme-light) .form-button,
+    html:not(.theme-light) .pswp__counter {
+        color: var(--darker-gray-color);
+    }
+
+    html:not(.theme-light) .share-link {
+        background-color: var(--darker-gray-color);
+    }
+
+    html:not(.theme-light) .share-link-facebook {
+        color: var(--facebook-color);
+    }
+
+    html:not(.theme-light) .share-link-twitter {
+        color: var(--twitter-color);
+    }
+}

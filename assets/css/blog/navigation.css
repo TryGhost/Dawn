@@ -1,0 +1,18 @@
+.navigation-previous .navigation-icon {
+    margin-left: -2px;
+}
+
+.navigation-next .navigation-link {
+    justify-content: flex-end;
+}
+
+.navigation-next .navigation-icon {
+    margin-right: -2px;
+}
+
+.navigation-link {
+    align-items: center;
+    display: flex;
+    height: 30px;
+    width: 30px;
+}

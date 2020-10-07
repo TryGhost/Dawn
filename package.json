@@ -1,54 +1,69 @@
 {
-  "name": "dawn",
-  "description": "A Premium Ghost Theme",
-  "version": "1.5.0",
-  "engines": {
-    "ghost": ">=3.0.0",
-    "ghost-api": "v3"
-  },
-  "author": {
-    "name": "IVEEL",
-    "email": "hello@iveel.co",
-    "url": "https://iveel.co"
-  },
-  "keywords": [
-    "ghost",
-    "theme",
-    "ghost-theme"
-  ],
-  "config": {
-    "posts_per_page": 5,
-    "image_sizes": {
-      "xs": {
-        "width": 150
-      },
-      "s": {
-        "width": 400
-      },
-      "m": {
-        "width": 750
-      },
-      "l": {
-        "width": 960
-      },
-      "xl": {
-        "width": 1140
-      },
-      "xxl": {
-        "width": 1920
-      }
-    }
-  },
-  "scripts": {
-    "dev": "gulp",
-    "test": "gscan ."
-  },
-  "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-less": "^4.0.1",
-    "gulp-touch-fd": "github:funkedigital/gulp-touch-fd",
-    "gulp-uglify": "^3.0.1"
-  }
+    "name": "dawn",
+    "description": "A Ghost theme",
+    "version": "1.5.0",
+    "engines": {
+        "ghost": ">=3.0.0",
+        "ghost-api": "v3"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Ghost Foundation",
+        "email": "hello@ghost.org",
+        "url": "https://ghost.org"
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "config": {
+        "posts_per_page": 5,
+        "image_sizes": {
+            "xs": {
+                "width": 150
+            },
+            "s": {
+                "width": 400
+            },
+            "m": {
+                "width": 750
+            },
+            "l": {
+                "width": 960
+            },
+            "xl": {
+                "width": 1140
+            },
+            "xxl": {
+                "width": 1920
+            }
+        }
+    },
+    "scripts": {
+        "dev": "gulp",
+        "test": "gscan .",
+        "lint": "gulp lint",
+        "zip": "gulp zip"
+    },
+    "devDependencies": {
+        "autoprefixer": "9.8.6",
+        "beeper": "2.0.0",
+        "cssnano": "4.1.10",
+        "gulp": "4.0.2",
+        "gulp-concat": "2.6.1",
+        "gulp-livereload": "4.0.2",
+        "gulp-postcss": "8.0.0",
+        "gulp-stylelint": "^13.0.0",
+        "gulp-uglify": "3.0.2",
+        "gulp-zip": "5.0.2",
+        "postcss-easy-import": "3.0.0",
+        "pump": "3.0.0",
+        "stylelint": "^13.7.1",
+        "stylelint-config-standard": "^20.0.0",
+        "stylelint-order": "^4.1.0"
+    },
+    "browserslist": [
+        "defaults"
+    ]
 }

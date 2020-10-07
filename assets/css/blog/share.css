@@ -1,0 +1,40 @@
+.share {
+    display: flex;
+}
+
+.share-link {
+    align-items: center;
+    border-radius: 3px;
+    color: var(--white-color);
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: 800;
+    height: 2.6rem;
+    letter-spacing: 0.04rem;
+    line-height: 1;
+    margin: 0 0.6rem;
+    padding: 0 0.8rem;
+    text-transform: uppercase;
+}
+
+.share-link .icon {
+    height: 14px;
+    width: 14px;
+}
+
+.share-link .icon-facebook {
+    margin-left: -0.3rem;
+    margin-right: 0.2rem;
+}
+
+.share-link .icon-twitter {
+    margin-right: 0.4rem;
+}
+
+.share-link-facebook {
+    background-color: var(--facebook-color);
+}
+
+.share-link-twitter {
+    background-color: var(--twitter-color);
+}
