@@ -3,13 +3,30 @@
     line-height: 1.8;
 }
 
-.u-text-format h1,
-.u-text-format h2,
-.u-text-format h3,
-.u-text-format h4,
-.u-text-format h5,
-.u-text-format h6 {
+.u-text-format > * {
+    margin-bottom: 0;
+}
+
+.u-text-format > * + * {
+    margin-top: 3rem;
+}
+
+.u-text-format > *:first-child {
+    margin-top: 0 !important;
+}
+
+.u-text-format > * + p,
+.u-text-format > * + ul,
+.u-text-format > * + ol {
+    margin-top: 2rem;
+}
+
+.u-text-format > [id] {
     margin-top: 4rem;
+}
+
+.u-text-format > [id] + p {
+    margin-top: 1.5rem;
 }
 
 .u-text-format h1 {
@@ -50,19 +67,24 @@
     text-decoration: underline;
 }
 
-.u-text-format ul li,
-.u-text-format ol li {
-    margin: 1rem 0;
+.u-text-format ul li + li,
+.u-text-format ol li + li {
+    margin-top: 1rem;
 }
 
-.u-text-format > *:first-child,
-.u-text-format > *:first-child > *:first-child {
-    margin-top: 0 !important;
+.u-text-format > .kg-card,
+.u-text-format > .kg-card + * {
+    margin-top: 4.5rem;
 }
 
-.u-text-format > *:last-child,
-.u-text-format > *:last-child > *:last-child {
-    margin-bottom: 0 !important;
+.u-text-format hr,
+.u-text-format hr + * {
+    margin-top: 4rem;
+}
+
+.u-text-format blockquote,
+.u-text-format blockquote + * {
+    margin-top: 3rem;
 }
 
 .post-template .u-text-format h2,

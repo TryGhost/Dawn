@@ -31,28 +31,20 @@
 
 <body class="{{body_class}}{{{block "body_class"}}}">
     {{> icons}}
-    <div class="container">
-        <div class="site">
-            {{> header}}
-            {{#is "home"}}
-                {{> cover}}
-                {{> featured}}
-            {{/is}}
-            <div class="site-content">
-                {{{body}}}
-            </div>
-            {{> footer}}
-            {{> modal}}
-            {{> pswp}}
-        </div>
-    </div>
 
-    <script>
-        var body = document.querySelector('body');
-        if (window.innerWidth > body.clientWidth + 5) {
-            document.documentElement.style.setProperty('--scrollbar', (window.innerWidth - body.clientWidth) + 'px');
-        }
-    </script>
+    <div class="site">
+        {{> header}}
+        {{#is "home"}}
+            {{> cover}}
+            {{> featured}}
+        {{/is}}
+        <div class="site-content">
+            {{{body}}}
+        </div>
+        {{> footer}}
+        {{> modal}}
+        {{> pswp}}
+    </div>
 
     <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"

@@ -3,7 +3,7 @@
 <div class="content-area">
     <main class="site-main">
         {{#author}}
-            <section class="author kg-width-narrow">
+            <section class="author container small">
                 <div class="author-image-placeholder u-placeholder square">
                     <img class="author-image u-object-fit" src="{{img_url profile_image size="xs"}}" alt="{{name}}">
                 </div>
@@ -39,7 +39,7 @@
                 </div>
             </section>
         {{/author}}
-        <div class="post-feed kg-width-normal">
+        <div class="post-feed container medium">
             {{#foreach posts visibility="all"}}
                 {{> "loop"}}
             {{/foreach}}

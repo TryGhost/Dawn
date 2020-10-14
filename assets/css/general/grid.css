@@ -1,32 +1,18 @@
 .container {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    max-width: calc(1130px + 8vw);
+    padding-left: 4vw;
+    padding-right: 4vw;
+    width: 100%;
 }
 
-@media (max-width: 767px) {
-    .container {
-        max-width: 460px;
-    }
+.container.medium {
+    max-width: calc(750px + 8vw);
 }
 
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px;
-    }
-}
-
-@media (min-width: 992px) {
-    .container {
-        max-width: 960px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1170px;
-    }
+.container.small {
+    max-width: calc(640px + 8vw);
 }
 
 .row {
