@@ -1,4 +1,4 @@
-<header class="site-header">
+<header class="site-header container">
     <div class="header-left">
         <a class="logo" href="{{@site.url}}">
             {{#if @site.logo}}
@@ -72,7 +72,7 @@
 
 {{#is "post"}}
     {{#post}}
-        <header class="sticky kg-width-full">
+        <header class="sticky">
             <div class="sticky-title">{{title}}</div>
             <button class="button-icon sticky-toc-button" aria-label="Table of Contents">
                 <svg class="icon">

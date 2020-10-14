@@ -25,6 +25,7 @@
     font-size: 4rem;
     letter-spacing: -0.1rem;
     line-height: 1.2;
+    margin-bottom: 0;
 }
 
 .single-excerpt {
@@ -34,13 +35,13 @@
 }
 
 .single-media {
-    margin-bottom: 4.5rem;
+    margin-top: 4.5rem;
 }
 
 .single-cta {
     border-bottom: 1px solid var(--light-gray-color);
     border-top: 5px solid var(--brand-color);
-    margin-top: 4rem;
+    margin-top: 4rem !important;
     padding: 3rem;
     text-align: center;
 }
@@ -110,6 +111,6 @@
     }
 
     .single-media {
-        margin-bottom: 3rem;
+        margin-top: 3rem;
     }
 }

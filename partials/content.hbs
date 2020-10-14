@@ -1,5 +1,5 @@
-<article class="single {{post_class}} kg-width-narrow">
-    <header class="single-header">
+<article class="single {{post_class}}">
+    <header class="single-header kg-canvas">
         {{#is "post"}}
             <div class="single-meta">
                 <span class="single-meta-item single-meta-date">
@@ -25,19 +25,18 @@
                 {{custom_excerpt}}
             </div>
         {{/if}}
+        {{#if feature_image}}
+            {{#unless no_image}}
+                <div class="single-media kg-width-{{width}} u-placeholder horizontal">
+                    <img class="lazyload u-object-fit" data-srcset="{{> srcset}}"
+                        data-sizes="auto" src="{{img_url feature_image size="l"}}"
+                        srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        alt="{{title}}">
+                </div>
+            {{/unless}}
+        {{/if}}
     </header>
-    {{#if feature_image}}
-        {{#unless no_image}}
-            <div
-                class="single-media kg-width-{{width}} u-placeholder horizontal">
-                <img class="lazyload u-object-fit" data-srcset="{{> srcset}}"
-                    data-sizes="auto" src="{{img_url feature_image size="l"}}"
-                    srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                    alt="{{title}}">
-            </div>
-        {{/unless}}
-    {{/if}}
-    <div class="single-content u-text-format">
+    <div class="single-content kg-canvas u-text-format">
         {{#if @labs.members}}
             {{#if access}}
                 {{content}}
@@ -75,7 +74,7 @@
         {{/if}}
     </div>
     {{#is "post"}}
-        <footer class="single-footer kg-width-normal">
+        <footer class="single-footer container medium">
             <div class="single-footer-left">
                 {{#prev_post}}
                     <div class="navigation navigation-previous">
