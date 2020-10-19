@@ -1,7 +1,7 @@
 {
     "name": "dawn",
     "description": "A Ghost theme",
-    "version": "1.5.0",
+    "version": "1.0.0",
     "engines": {
         "ghost": ">=3.0.0",
         "ghost-api": "v3"
