@@ -4,17 +4,17 @@
 }
 
 .single-meta {
+    margin-bottom: 1rem;
     color: var(--secondary-text-color);
     font-size: 1.2rem;
     font-weight: 800;
-    margin-bottom: 1rem;
     text-transform: uppercase;
 }
 
 .single-meta-item + .single-meta-item::before {
     content: "\02022";
-    font-family: serif;
     padding: 0 0.3rem;
+    font-family: serif;
 }
 
 .single-meta-tag .post-tag {
@@ -22,16 +22,16 @@
 }
 
 .single-title {
-    font-size: 4rem;
-    letter-spacing: -0.1rem;
-    line-height: 1.2;
     margin-bottom: 0;
+    font-size: 4rem;
+    line-height: 1.2;
+    letter-spacing: -0.1rem;
 }
 
 .single-excerpt {
+    margin-top: 2rem;
     font-size: 1.8rem;
     font-style: italic;
-    margin-top: 2rem;
 }
 
 .single-media {
@@ -39,10 +39,10 @@
 }
 
 .single-cta {
-    border-bottom: 1px solid var(--light-gray-color);
-    border-top: 5px solid var(--brand-color);
     margin-top: 4rem !important;
     padding: 3rem;
+    border-top: 5px solid var(--brand-color);
+    border-bottom: 1px solid var(--light-gray-color);
     text-align: center;
 }
 
@@ -51,8 +51,8 @@
 }
 
 .single-cta-button {
-    font-weight: 800 !important;
     margin-bottom: 1rem;
+    font-weight: 800 !important;
 }
 
 .single-cta-footer {
@@ -62,15 +62,15 @@
 }
 
 .single-footer {
-    align-items: center;
     display: flex;
+    align-items: center;
     margin-top: 4.5rem;
 }
 
 .single-footer-left,
 .single-footer-right {
-    display: flex;
     flex: 2;
+    display: flex;
 }
 
 .single-footer-right {
@@ -83,14 +83,14 @@
 }
 
 .single-footer-top {
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .single-footer-title {
-    font-size: 1.8rem;
     margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
 .single-footer-bottom {

@@ -29,8 +29,8 @@
 }
 
 .animate__bounceIn {
-    animation-duration: 0.3s;
     animation-name: bounceIn;
+    animation-duration: 0.3s;
 }
 
 @keyframes zoomOut {
@@ -49,6 +49,6 @@
 }
 
 .animate__zoomOut {
-    animation-duration: 0.3s;
     animation-name: zoomOut;
+    animation-duration: 0.3s;
 }

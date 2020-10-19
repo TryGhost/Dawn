@@ -1,24 +1,24 @@
 .notification {
-    align-items: center;
-    background-color: var(--white-color);
-    border-top: 3px solid var(--green-color);
-    display: flex;
-    font-size: 1.6rem;
-    font-weight: 700;
-    justify-content: center;
-    left: 0;
-    line-height: 1.4;
-    padding: 20px 60px;
-    pointer-events: none;
+    visibility: hidden;
     position: fixed;
-    right: 0;
     top: 0;
-    transform: translateY(-100%);
+    right: 0;
+    left: 0;
+    z-index: 90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 60px;
+    border-top: 3px solid var(--green-color);
+    font-size: 1.6rem;
+    line-height: 1.4;
+    font-weight: 700;
+    background-color: var(--white-color);
+    transition-timing-function: var(--animation-base);
     transition-duration: 0.3s;
     transition-property: box-shadow, transform;
-    transition-timing-function: var(--animation-base);
-    visibility: hidden;
-    z-index: 90;
+    transform: translateY(-100%);
+    pointer-events: none;
 }
 
 .error .notification {
@@ -32,10 +32,10 @@
 .billing-success.notification-opened .notification-billing-update,
 .success .notification-success,
 .error .notification-error {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-    pointer-events: unset;
-    transform: translateY(0);
     visibility: visible;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transform: translateY(0);
+    pointer-events: unset;
 }
 
 .notification-closing .notification {
@@ -44,10 +44,10 @@
 }
 
 .notification-close {
-    margin-top: -15px;
     position: absolute;
-    right: 15px;
     top: 50%;
+    right: 15px;
+    margin-top: -15px;
 }
 
 @media (max-width: 767px) {

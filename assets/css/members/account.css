@@ -1,19 +1,19 @@
 .account-profile {
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .account-image-placeholder {
-    border-radius: 50%;
-    margin-bottom: 2rem;
     overflow: hidden;
+    margin-bottom: 2rem;
     width: 70px;
+    border-radius: 50%;
 }
 
 .account-name {
-    font-size: 1.8rem;
     margin-bottom: 0.5rem;
+    font-size: 1.8rem;
 }
 
 .account-button-list {
@@ -30,9 +30,9 @@
 }
 
 .account-row {
-    align-items: center;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .account-row + .account-row {
@@ -40,10 +40,10 @@
 }
 
 .account-row-title {
+    margin-bottom: 0;
     color: var(--secondary-text-color);
     font-size: 1.6rem;
     font-weight: 700;
-    margin-bottom: 0;
 }
 
 .account-row-value {
@@ -52,14 +52,14 @@
 }
 
 .account-status {
-    background-color: var(--green-color);
-    border-radius: 3px;
+    padding: 0.5rem 0.8rem;
+    height: 100%;
     color: var(--white-color);
     font-size: 1.2rem;
-    height: 100%;
     line-height: 1;
-    padding: 0.5rem 0.8rem;
     text-transform: uppercase;
+    background-color: var(--green-color);
+    border-radius: 3px;
 }
 
 .account-status-trialing {
@@ -67,9 +67,9 @@
 }
 
 .account-action {
-    align-items: center;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 3rem;
 }
 
@@ -79,6 +79,6 @@
 
 .account-cancel-error {
     display: block;
-    font-size: 1.4rem;
     margin-top: 0.2rem;
+    font-size: 1.4rem;
 }

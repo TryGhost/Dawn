@@ -1,10 +1,10 @@
 .feed {
-    align-items: center;
+    position: relative;
     display: flex;
-    line-height: 1;
+    align-items: center;
     overflow: hidden;
     padding: 1.5rem 0;
-    position: relative;
+    line-height: 1;
 }
 
 .feed:hover .feed-title {
@@ -24,16 +24,16 @@
 }
 
 .feed + .feed.feed-paged {
-    border-top: 0;
     margin-top: 3rem;
+    border-top: 0;
 }
 
 .feed-calendar {
-    color: var(--brand-color);
     display: flex;
+    margin-right: 1.5rem;
+    color: var(--brand-color);
     font-size: 1.1rem;
     font-weight: 800;
-    margin-right: 1.5rem;
     white-space: nowrap;
 }
 
@@ -44,26 +44,26 @@
 
 .feed-title {
     flex-grow: 1;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding-right: 1rem;
     font-size: 1.6rem;
     font-weight: 400;
-    margin-bottom: 0;
-    overflow: hidden;
-    padding-right: 1rem;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 .feed-right {
-    align-items: center;
     display: flex;
+    align-items: center;
     transition: margin 0.2s var(--animation-base);
 }
 
 .feed-visibility {
-    color: var(--orange-color);
-    height: 16px;
     margin-right: 1rem;
     width: 16px;
+    height: 16px;
+    color: var(--orange-color);
 }
 
 .feed-visibility-public {
@@ -77,11 +77,11 @@
 }
 
 .feed-icon {
-    color: var(--secondary-text-color);
-    height: 16px;
     position: absolute;
     right: 0;
-    transform: translateX(2rem);
-    transition: transform 0.2s var(--animation-base);
     width: 16px;
+    height: 16px;
+    color: var(--secondary-text-color);
+    transition: transform 0.2s var(--animation-base);
+    transform: translateX(2rem);
 }

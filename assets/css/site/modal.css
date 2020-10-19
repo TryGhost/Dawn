@@ -1,25 +1,25 @@
 .modal-overlay {
-    backdrop-filter: blur(8px);
-    background-color: rgba(0, 0, 0, 0.7);
-    bottom: 0;
-    display: none;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
     position: fixed;
-    right: 0;
     top: 0;
-    transition: opacity 0.2s var(--animation-base);
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 90;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.2s var(--animation-base);
+    pointer-events: none;
+    backdrop-filter: blur(8px);
 }
 
 .modal {
+    overflow: hidden;
+    margin: 9rem auto 0;
     background-color: var(--white-color);
     border-radius: 5px;
-    margin: 9rem auto 0;
-    overflow: hidden;
-    transform: translateY(-10px);
     transition: transform 0.2s var(--animation-base);
+    transform: translateY(-10px);
 }
 
 .modal-search {
@@ -31,10 +31,10 @@
 }
 
 .modal-close {
-    color: var(--white-color);
     position: absolute;
-    right: 15px;
     top: 15px;
+    right: 15px;
+    color: var(--white-color);
 }
 
 .modal-opened .modal-overlay {
@@ -48,7 +48,7 @@
 
 @media (max-width: 500px) {
     .modal-search {
-        border-radius: 0;
         width: 100%;
+        border-radius: 0;
     }
 }
