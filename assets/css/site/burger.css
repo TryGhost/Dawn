@@ -1,29 +1,29 @@
 .burger {
-    cursor: pointer;
-    height: 30px;
-    margin-left: 5px;
-    margin-right: -7px;
     position: relative;
+    margin-right: -7px;
+    margin-left: 5px;
     width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
 
 .burger-bar {
-    height: 100%;
-    left: 0;
     position: absolute;
     top: 0;
-    transition: transform 0.1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    left: 0;
     width: 100%;
+    height: 100%;
+    transition: transform 0.1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
 }
 
 .burger-bar::before {
-    background-color: var(--darker-gray-color);
     content: "";
-    height: 2px;
-    left: 7px;
     position: absolute;
-    transition: transform 0.1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) 0.1008s;
+    left: 7px;
     width: 16px;
+    height: 2px;
+    background-color: var(--darker-gray-color);
+    transition: transform 0.1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) 0.1008s;
 }
 
 .burger-bar:first-child::before {
@@ -49,6 +49,6 @@
 }
 
 .menu-opened .burger .burger-bar::before {
-    transform: none;
     transition: transform 0.1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    transform: none;
 }

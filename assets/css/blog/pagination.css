@@ -5,12 +5,12 @@ body:not(.paged-next) .infinite-scroll-button {
 }
 
 .infinite-scroll-request {
-    animation: scaleOut 1s infinite ease-in-out;
-    background-color: var(--darker-gray-color);
-    border-radius: 50%;
-    height: 40px;
     margin: 3rem auto 0;
     width: 40px;
+    height: 40px;
+    background-color: var(--darker-gray-color);
+    border-radius: 50%;
+    animation: scaleOut 1s infinite ease-in-out;
 }
 
 .infinite-scroll-action {

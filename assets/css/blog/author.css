@@ -1,29 +1,29 @@
 .author {
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-bottom: 4.5rem;
     text-align: center;
 }
 
 .author-image-placeholder {
-    border-radius: 50%;
     flex-shrink: 0;
-    margin-bottom: 2rem;
     overflow: hidden;
+    margin-bottom: 2rem;
     width: 70px;
+    border-radius: 50%;
 }
 
 .author-name {
-    font-size: 2.4rem;
     margin-bottom: 0;
+    font-size: 2.4rem;
 }
 
 .author-meta {
+    margin-top: 0.5rem;
     color: var(--secondary-text-color);
     font-size: 1.2rem;
     font-weight: 800;
-    margin-top: 0.5rem;
     text-transform: uppercase;
 }
 
@@ -41,9 +41,9 @@
 }
 
 .author-list .author-image-placeholder {
-    border: 2px solid var(--white-color);
     margin: 0 -4px;
     width: 54px;
+    border: 2px solid var(--white-color);
 }
 
 .author-list .author-image-placeholder:first-child {

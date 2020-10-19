@@ -1,6 +1,6 @@
 .search-input {
-    border: 0;
     height: 50px;
+    border: 0;
 }
 
 .search-button .icon-close {
@@ -16,9 +16,9 @@
 }
 
 .search-result {
+    overflow-y: scroll;
     max-height: 50vh;
     -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
 }
 
 .search-result-row + .search-result-row {
@@ -27,9 +27,9 @@
 
 .search-result-row-link {
     display: block;
+    padding: 1.3rem 1.5rem 1.2rem;
     font-size: 1.5rem;
     line-height: 1.4;
-    padding: 1.3rem 1.5rem 1.2rem;
 }
 
 .search-result-row-link:hover {

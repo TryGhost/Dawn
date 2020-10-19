@@ -1,7 +1,7 @@
 .site-footer {
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 3rem 0 4.5rem;
 }
 
@@ -11,14 +11,14 @@
 }
 
 .social-item {
+    margin: 0 4px;
     color: var(--secondary-text-color);
     line-height: 0;
-    margin: 0 4px;
 }
 
 .social-item .icon {
-    height: 24px;
     width: 24px;
+    height: 24px;
 }
 
 .copyright {
@@ -32,32 +32,32 @@
 }
 
 .copyright a:hover {
-    opacity: 1;
     text-decoration: underline;
+    opacity: 1;
 }
 
 .footer-nav {
-    align-items: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     margin-top: 0.5rem;
 }
 
 .footer-nav .menu-item {
-    align-items: center;
-    color: var(--secondary-text-color);
     display: flex;
+    align-items: center;
+    margin: 0;
+    color: var(--secondary-text-color);
     font-size: 1.2rem;
     font-weight: 400;
-    margin: 0;
 }
 
 .footer-nav .menu-item + .menu-item::before {
     content: "\02022";
+    padding: 0 0.7rem;
     font-family: serif;
     line-height: 1;
-    padding: 0 0.7rem;
 }
 
 .footer-nav .menu-item:hover {
@@ -65,8 +65,8 @@
 }
 
 .theme-icon {
-    height: 1.1rem;
     width: 1.1rem;
+    height: 1.1rem;
 }
 
 .theme-text {

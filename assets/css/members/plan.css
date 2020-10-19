@@ -4,39 +4,39 @@
 }
 
 .plan {
-    border: 1px solid var(--light-gray-color);
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
     margin: 0 1rem;
-    max-width: 35rem;
     padding: 3rem;
+    max-width: 35rem;
+    border: 1px solid var(--light-gray-color);
+    border-radius: 5px;
 }
 
 .plan-title {
+    margin-bottom: 0.3rem;
     color: var(--brand-color);
     font-size: 2rem;
-    margin-bottom: 0.3rem;
 }
 
 .plan-price {
+    display: flex;
     align-items: baseline;
     color: var(--secondary-text-color);
-    display: flex;
 }
 
 .plan-amount {
+    margin-right: 0.5rem;
     color: var(--darker-gray-color);
     font-size: 2.4rem;
     font-weight: 700;
-    margin-right: 0.5rem;
 }
 
 .plan-feature-list {
     flex-grow: 1;
-    list-style-type: none;
     margin: 2rem 0 3rem;
     padding: 0;
+    list-style-type: none;
 }
 
 .plan-feature {
@@ -54,19 +54,19 @@
 }
 
 .plan-selector-button:first-child {
-    border-bottom-right-radius: 0;
     border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .plan-selector-button + .plan-selector-button {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
     margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .plan-selector-button + .plan-selector-button:not(:last-child) {
-    border-bottom-right-radius: 0;
     border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .plan-selector-button:hover {

@@ -4,9 +4,9 @@
 }
 
 .tag-name {
+    margin-bottom: 0;
     color: var(--brand-color);
     font-size: 2.4rem;
-    margin-bottom: 0;
 }
 
 .tag-name::before {
@@ -19,13 +19,13 @@
 }
 
 .tag-list {
-    font-weight: 700;
     margin-top: 2rem;
+    font-weight: 700;
 }
 
 .tag-list-label {
-    color: var(--secondary-text-color);
     margin-right: 0.5rem;
+    color: var(--secondary-text-color);
 }
 
 .tag-list-item::before {

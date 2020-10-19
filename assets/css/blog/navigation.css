@@ -11,8 +11,8 @@
 }
 
 .navigation-link {
-    align-items: center;
     display: flex;
-    height: 30px;
+    align-items: center;
     width: 30px;
+    height: 30px;
 }

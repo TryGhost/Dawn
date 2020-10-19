@@ -3,9 +3,9 @@
 }
 
 .popular-title {
+    margin-bottom: 1rem;
     color: var(--secondary-text-color);
     font-size: 1.2rem;
-    margin-bottom: 1rem;
     text-transform: uppercase;
 }
 
@@ -15,9 +15,9 @@
 }
 
 .popular {
-    font-weight: 700;
-    margin-bottom: 0.4rem;
     margin-right: 0.8rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
 }
 
 .popular::before {
