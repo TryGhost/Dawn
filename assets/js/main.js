@@ -324,12 +324,14 @@ function search() {
     var searchButton = $('.search-button');
     var searchResult = $('.search-result');
     var popular = $('.popular-wrapper');
+    var includeContent = typeof gh_search_content == 'undefined' || gh_search_content == true ? true : false;
 
     var url =
         siteUrl +
         '/ghost/api/v3/content/posts/?key=' +
         gh_search_key +
-        '&limit=all&fields=id,title,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
+        '&limit=all&fields=id,title,url,updated_at,visibility&order=updated_at%20desc';
+    url += includeContent ? '&formats=plaintext' : '';
     var indexDump = JSON.parse(localStorage.getItem('dawn_search_index'));
     var index;
 
@@ -343,8 +345,12 @@ function search() {
             index.addDoc(post);
         });
 
-        localStorage.setItem('dawn_search_index', JSON.stringify(index));
-        localStorage.setItem('dawn_search_last', data.posts[0].updated_at);
+        try {
+            localStorage.setItem('dawn_search_index', JSON.stringify(index));
+            localStorage.setItem('dawn_search_last', data.posts[0].updated_at);
+        } catch (e) {
+            console.error('Your browser local storage is full. Update your search settings following the instruction at https://github.com/TryGhost/Dawn#disable-content-search');
+        }
     }
 
     if (
@@ -355,7 +361,9 @@ function search() {
             if (data.posts.length > 0) {
                 index = elasticlunr(function () {
                     this.addField('title');
-                    this.addField('plaintext');
+                    if (includeContent) {
+                        this.addField('plaintext');
+                    }
                     this.setRef('id');
                 });
 
