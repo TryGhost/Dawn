@@ -27,6 +27,18 @@ The theme generates an index of posts for highly performant search. The index is
 
 To force update the index, increment the search index migration version like `'v2'`.
 
+## Disable Content Search
+
+When your site has lots of posts, including the post content in the index cache ends up with exceeding the browser local storage quota. In that case, disabling content search is recommended. Also make sure increase the migration version to force update the old index.
+
+```html
+<script>
+    var gh_search_key = 'API_KEY';
+    var gh_search_migration = 'v2'; // Increased from v1
+    var gh_search_content = false; // Disables content search
+</script>
+```
+
 # White Logo
 
 If your logo image isn't recognizable in dark mode, you can set a white version of the logo in `Code injection > Site Header` field.
