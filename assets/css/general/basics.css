@@ -179,6 +179,13 @@ table:not(.highlight) {
     word-break: normal;
 }
 
+table:not(.highlight):not(.table) {
+    display: inline-block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
 table:not(.highlight) thead {
     border-bottom: 1px solid var(--light-gray-color);
     background-color: var(--lighter-gray-color);
