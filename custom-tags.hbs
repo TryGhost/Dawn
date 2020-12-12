@@ -1,0 +1,13 @@
+{{!< default}}
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+    {{#foreach tags}}
+        <a href='{{ url }}'>
+        <h2 class="tag-name-count">{{ name }} <small>({{ count.posts }})</small></h2>
+        </a>
+    {{/foreach}}
+    {{/get}}
+  </div>
+</main>
