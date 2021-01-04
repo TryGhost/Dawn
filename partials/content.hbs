@@ -59,14 +59,26 @@
                     as well as all the other posts in the archive! Subscribing will give you immediate access.
                 </p>
                 <section class="single-cta">
-                    {{#has visibility="paid"}}
-                        <h2 class="single-cta-title">This post is for paying subscribers only</h2>
-                    {{else}}
-                        <h2 class="single-cta-title">This post is for subscribers only</h2>
-                    {{/has}}
-                    <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
-                    <br>
-                    <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
+                    {{#if @labs.members}}
+                        {{#unless @member}}
+                            {{#has visibility="paid"}}
+                                <h2 class="single-cta-title">This post is for paying subscribers only</h2>
+                                <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
+                                <br>
+                                <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
+                            {{else}}
+                                <h2 class="single-cta-title">This post is for subscribers only</h2>
+                                <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
+                                <br>
+                                <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
+                            {{/has}}
+                        {{else}}
+                            {{#has visibility="paid"}}
+                                <h2 class="single-cta-title">This post is for paying subscribers only</h2>
+                                <button class="button single-cta-button" data-portal="account/plans">Upgrade</button>
+                            {{/has}}
+                        {{/unless}}
+                    {{/if}}
                 </section>
             {{/if}}
         {{else}}
