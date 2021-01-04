@@ -16,7 +16,8 @@
     --twitter-color: #1da1f2;
     --rss-color: #f26522;
     --animation-base: ease-in-out;
-    --font-base: muli, -apple-system, blinkmacsystemfont, segoe ui, helvetica, arial, sans-serif;
+    --font-base: "Muli", system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-code: "JetBrains Mono", "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --navbar-height: 80px;
 }
 
@@ -132,15 +133,38 @@ figcaption a {
     font-weight: 400 !important;
 }
 
-pre {
-    overflow-x: scroll;
-    padding: 1.6rem 2.2rem;
-    color: var(--white-color);
-    font-size: 1.6rem !important;
+code, kbd, samp, pre {
+    font-family: var(--font-code);
+}
+
+pre, code {
+    color: var(--primary-text-color);
+    font-size: 1.5rem;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
     line-height: 1.5;
-    background-color: var(--darker-gray-color);
-    border-radius: 5px !important;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
     -webkit-overflow-scrolling: touch;
+}
+
+pre {
+    overflow-x: auto;
+    padding: 1.6rem 2.2rem;
+    background-color: var(--lighter-gray-color);
+    border-radius: 5px;
+    border: 1px solid var(--light-gray-color);
+}
+
+:not(pre) > code {
+    padding: 0.3rem 0.6rem;
+    background-color: var(--lighter-gray-color);
+    border-radius: 5px;
+    border: 1px solid var(--light-gray-color);
 }
 
 hr {
