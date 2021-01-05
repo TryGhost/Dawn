@@ -13,8 +13,9 @@ A highly functional theme that adapts to the reader's preferences. Let them read
 
 # Search
 
-1. Generate a content API key in `Integrations` section which will be used to fetch posts from your site.
-2. Insert the generated key in `Code injection > Site Header` field.
+1. Navigate to the `Integrations` and click on `Add custom integration`. 
+2. Copy the content API key; this will be used to fetch posts from your site.
+3. Insert the generated key in `Code injection > Site Header` field.
 
 ```html
 <script>
