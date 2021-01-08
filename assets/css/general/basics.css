@@ -16,7 +16,7 @@
     --twitter-color: #1da1f2;
     --rss-color: #f26522;
     --animation-base: ease-in-out;
-    --font-base: muli, -apple-system, blinkmacsystemfont, segoe ui, helvetica, arial, sans-serif;
+    --font-base: Mulish, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
     --navbar-height: 80px;
 }
 
