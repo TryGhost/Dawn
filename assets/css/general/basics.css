@@ -17,6 +17,7 @@
     --rss-color: #f26522;
     --animation-base: ease-in-out;
     --font-base: Mulish, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+    --font-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; /* stylelint-disable-line value-keyword-case */
     --navbar-height: 80px;
 }
 
@@ -135,12 +136,23 @@ figcaption a {
 pre {
     overflow-x: scroll;
     padding: 1.6rem 2.2rem;
-    color: var(--white-color);
-    font-size: 1.6rem !important;
     line-height: 1.5;
-    background-color: var(--darker-gray-color);
-    border-radius: 5px !important;
+    white-space: pre;
+    hyphens: none;
+    background-color: var(--lighter-gray-color);
+    border-radius: 5px;
     -webkit-overflow-scrolling: touch;
+}
+
+code {
+    font-family: var(--font-mono);
+    font-size: 14px;
+}
+
+:not(pre) > code {
+    padding: 0.3rem 0.4rem;
+    background-color: var(--lighter-gray-color);
+    border-radius: 3px;
 }
 
 hr {
