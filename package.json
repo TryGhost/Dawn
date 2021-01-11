@@ -43,6 +43,7 @@
     "scripts": {
         "dev": "gulp",
         "test": "gscan .",
+        "test:ci": "gscan --fatal --verbose .",
         "lint": "gulp lint",
         "zip": "gulp zip"
     },
@@ -50,6 +51,7 @@
         "autoprefixer": "9.8.6",
         "beeper": "2.0.0",
         "cssnano": "4.1.10",
+        "gscan": "3.6.1",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
