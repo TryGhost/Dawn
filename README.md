@@ -50,6 +50,16 @@ If your logo image isn't recognizable in dark mode, you can set a white version 
 </script>
 ```
 
+# Dropdown Menu
+
+The theme looks for a menu item with three dots (`...`) in its URL, and uses that as a dropdown menu toggle. All menu items after the toggle will be added to the dropdown list automatically.
+
+| Label      | URL                       |
+|------------|---------------------------|
+| More links | https://example.com/...   |
+| Sub-1      | https://example.com/sub-1 |
+| Sub-2      | https://example.com/sub-2 |
+
 # Development
 
 Styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
