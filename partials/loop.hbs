@@ -9,11 +9,9 @@
     </div>
     <h2 class="feed-title">{{title}}</h2>
     <div class="feed-right">
-        {{#if @labs.members}}
-            <svg class="icon feed-visibility feed-visibility-{{visibility}}">
-                <use xlink:href="#star"></use>
-            </svg>
-        {{/if}}
+        <svg class="icon feed-visibility feed-visibility-{{visibility}}">
+            <use xlink:href="#star"></use>
+        </svg>
         <div class="feed-length">
             {{reading_time}}
         </div>
