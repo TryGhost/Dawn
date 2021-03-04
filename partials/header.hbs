@@ -11,13 +11,11 @@
     {{#if @site.navigation}}
         <nav class="main-nav hidden-xs hidden-sm hidden-md">
             {{navigation}}
-            {{#if @labs.members}}
-                <button class="button-icon menu-item-button js-modal" data-modal="search" aria-label="Search">
-                    <svg class="icon">
-                        <use xlink:href="#magnify"></use>
-                    </svg>
-                </button>
-            {{/if}}
+            <button class="button-icon menu-item-button js-modal" data-modal="search" aria-label="Search">
+                <svg class="icon">
+                    <use xlink:href="#magnify"></use>
+                </svg>
+            </button>
         </nav>
 
         <button class="button-icon hidden-lg hidden-xl js-modal" data-modal="search" aria-label="Search">
@@ -34,38 +32,28 @@
             <div class="container">
                 <nav class="mobile-nav">
                     {{navigation}}
-                    {{#if @labs.members}}
-                        {{#if @member}}
-                            <button class="button-text menu-item members-account" data-portal="account">Account</button>
-                            {{#unless @member.paid}}
-                                <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
-                            {{/unless}}
-                        {{else}}
-                            <button class="button-text menu-item members-login" data-portal="signin">Login</button>
-                            <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
-                        {{/if}}
+                    {{#if @member}}
+                        <button class="button-text menu-item members-account" data-portal="account">Account</button>
+                        {{#unless @member.paid}}
+                            <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
+                        {{/unless}}
+                    {{else}}
+                        <button class="button-text menu-item members-login" data-portal="signin">Login</button>
+                        <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
                     {{/if}}
                 </nav>
             </div>
         </div>
     {{/if}}
     <div class="header-right hidden-xs hidden-sm hidden-md">
-        {{#if @labs.members}}
-            {{#if @member}}
-                <button class="button-text menu-item members-account" data-portal="account">Account</button>
-                {{#unless @member.paid}}
-                    <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
-                {{/unless}}
-            {{else}}
-                <button class="button-text menu-item members-login" data-portal="signin">Login</button>
-                <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
-            {{/if}}
+        {{#if @member}}
+            <button class="button-text menu-item members-account" data-portal="account">Account</button>
+            {{#unless @member.paid}}
+                <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
+            {{/unless}}
         {{else}}
-            <button class="button-icon js-modal" data-modal="search" aria-label="Search">
-                <svg class="icon">
-                    <use xlink:href="#magnify"></use>
-                </svg>
-            </button>
+            <button class="button-text menu-item members-login" data-portal="signin">Login</button>
+            <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
         {{/if}}
     </div>
 </header>
