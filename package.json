@@ -58,7 +58,7 @@
         "gulp-postcss": "9.0.0",
         "gulp-stylelint": "13.0.0",
         "gulp-uglify": "3.0.2",
-        "gulp-zip": "5.0.2",
+        "gulp-zip": "5.1.0",
         "postcss": "8.2.8",
         "postcss-easy-import": "3.0.0",
         "pump": "3.0.0",
