@@ -28,7 +28,7 @@
 }
 
 .logo-text {
-    color: var(--secondary-text-color);
+    color: var(--brand-color);
     font-size: 1.8rem;
     font-weight: 800;
 }
