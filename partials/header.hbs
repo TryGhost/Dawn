@@ -3,6 +3,13 @@
         <a class="logo" href="{{@site.url}}">
             {{#if @site.logo}}
                 <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
+            {{else if @site.icon}}
+                <table>
+                  <tr>
+                    <td><img class="logo-image" src="{{@site.icon}}"></td>
+                    <td><span class="logo-text">{{@site.title}}</span></td>
+                  </tr>
+                </table>
             {{else}}
                 <span class="logo-text">{{@site.title}}</span>
             {{/if}}

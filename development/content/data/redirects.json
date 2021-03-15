@@ -1,0 +1,83 @@
+[
+  {
+    "from": "/welcome/",
+    "to":  "/",
+    "permanent": true
+  },
+  {
+    "from": "/subscribe/",
+    "to":  "/#/portal/",
+    "permanent": true
+  },
+  {
+    "from": "/podcast/",
+    "to":  "/",
+    "permanent": true
+  },
+  {
+    "from": "/p/introducing-surveillance-today",
+    "to":  "/introducing-surveillance-today/",
+    "permanent": true
+  },
+  {
+    "from": "/p/surveil-links-january-26-2021",
+    "to":  "/surveil-links-january-26-2021/",
+    "permanent": true
+  },
+  {
+    "from": "/p/surveil-links-february-2-2021",
+    "to":  "/surveil-links-february-2/",
+    "permanent": true
+  },
+  {
+    "from": "/p/surveil-links-february-8-2021-the",
+    "to":  "/surveil-links-february-8-2021-the-times-tracks-insurrectionists-to-their-homes-amazon-to-constantly-surveil-drivers-and-more/",
+    "permanent": true
+  },
+  {
+    "from": "/p/surveillance-in-black-history-martin",
+    "to":  "/surveillance-in-black-history-martin-luther-king/",
+    "permanent": true
+  },
+  {
+    "from": "/p/surveil-links-february-16-2021-apparently",
+    "to":  "/surveil-links-february-16-2021-apparently-warrantless-searches-of-devices-at-border-are-constitutional-another-location-data-broker-banned-and-more/",
+    "permanent": true
+  },
+  {
+    "from": "/p/surveil-links-feb-23-2021-oracle",
+    "to":  "/surveil-links-february-23-2021-oracle-is-advertising-surveillance-tech-to-china-london-using-chinese-surveillance-tech-and-more/",
+    "permanent": true
+  },
+  {
+    "from": "/p/surveil-links-march-2-2021-india",
+    "to":  "/surveil-links-march-2-2021-india-surveils-climate-activists-amazon-and-mcdonalds-spying-on-labor-organizers-and-more/",
+    "permanent": true
+  },
+  {
+    "from": "/p/surveil-links-march-9-2021-china",
+    "to":  "/surveil-links-march-9-2021-china-brings-surveillance-to-the-living-room-tech-company-is-providing-nation-wide-license-plate-readers-and-more/",
+    "permanent": true
+  },
+  {
+    "from": "/p/surveil-link-105-is-your-hospital",
+    "to":  "/surveil-link-105-is-your-hospital-employer-or-even-your-favorite-bar-using-facial-recognition/",
+    "permanent": true
+  },
+  {
+    "from": "/p/surveil-link-106-clubhouse-users",
+    "to":  "/clubhouse-users-in-saudi-arabia-are-being-surveilled/",
+    "permanent": true
+  },
+  {
+    "from": "/p/surveil-link-107-facial-recognition",
+    "to":  "/facial-recognition-ban-proposed-in-nebraska-the-police-are-opposed/",
+    "permanent": true
+  },
+  {
+    "from": "/p/the-crypto-wars-are-ramping-up-again",
+    "to":  "/the-crypto-wars-are-ramping-up-again/",
+    "permanent": true
+  }
+]
+

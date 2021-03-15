@@ -43,10 +43,10 @@
                 {{#is "post"}}
                     {{#unless @member}}
                         <section class="single-cta">
-                            <h2 class="single-cta-title">Enjoying these posts? Subscribe for more</h2>
+                            <h2 class="single-cta-title">Enjoying Surveillance Today? Subscribe and get every post directly to your inbox.</h2>
                             <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
                             <br>
-                            <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
+                            <button class="button-text single-cta-footer" data-portal="signin">Already a subscriber? Sign in.</button>
                         </section>
                     {{/unless}}
                 {{/is}}
@@ -58,9 +58,9 @@
                 </p>
                 <section class="single-cta">
                     {{#has visibility="paid"}}
-                        <h2 class="single-cta-title">This post is for paying subscribers only</h2>
+                        <h2 class="single-cta-title">This post is for paying subscribers only.</h2>
                     {{else}}
-                        <h2 class="single-cta-title">This post is for subscribers only</h2>
+                        <h2 class="single-cta-title">This post is for subscribers only.</h2>
                     {{/has}}
 
                     {{#if @member}}
@@ -70,7 +70,7 @@
                     {{else}}
                         <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
                         <br>
-                        <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
+                        <button class="button-text single-cta-footer" data-portal="signin">Already a subscriber? Sign in.</button>
                     {{/if}}
                 </section>
             {{/if}}

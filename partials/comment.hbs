@@ -1,5 +1,39 @@
-{{!-- {{#if post.access}}
 <div class="comment container small">
-    If you want to embed comments, this is a good place to do it!
+{{#if @labs.members}}
+  <h2><span id="cove-count"></span> Comments</h2>
+
+  {{^if @member}}
+    <p>Sign in or subscribe to join the conversation.<br>
+    Just enter your email below to get a link to log in.</p>
+    <div class="form-wrapper">
+    <form data-members-form="signin" id="cove-login">
+      <input class="modal-input search-input" data-members-email type="email" required="true" placeholder="your@email.com" />
+      <button type="submit" class="button form-button">
+        <svg class="icon">
+          <use xlink:href="#arrow-right"></use>
+        </svg>
+      </button>
+      <span class="signin-success" style="display:none">Great! Please check your inbox (or spam folder) for the link.</span>
+      <span class="signin-error" style="display:none">Something didn't work. Please try again.</span>
+    </form>
+    </div>
+  {{/if}}
+
+  <div id="cove"></div>
+
+  {{#if @member}}
+    <p>Signed in as {{@member.email}} · <a href="javascript:" data-members-signout>Sign out</a></p>
+    <p>Wondering how to set a profile picture? Make a <a href="https://gravatar.com" target="_blank">Gravatar</a> with the same email associated with your subscription.</p>
+  {{/if}}
+
+  <script src="https://cdn.cove.chat/comments.js" async></script>
+  <script>
+  const Cove = {
+    publication: "0089fa36de8e007babd00b3926a39967",
+    contentId: "{{post.id}}",
+    memberId: "{{@member.uuid}}",
+    memberEmail: "{{@member.email}}"
+  }
+  </script>
+{{/if}}
 </div>
-{{/if}} --}}

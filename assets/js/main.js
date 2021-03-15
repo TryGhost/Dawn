@@ -578,3 +578,16 @@ function pswp(container, element, trigger, caption, isGallery) {
         onThumbnailsClick(e);
     });
 }
+
+
+
+if (window.innerWidth >=1024) {
+  document.addEventListener('mouseout',() => {
+    if (event.toElement === null && e.relatedTarget === null) {
+       alert("Hello! I am an alert box!!");
+    }
+  });
+} else {
+  setTimeout(() => {
+  }, 120000);
+}
