@@ -80,7 +80,7 @@ function subMenu() {
     if (separator.length) {
         separator.nextAll('.menu-item').wrapAll('<div class="sub-menu" />');
         separator.replaceWith(
-            '<button class="button-icon menu-item-button menu-item-more" aria-label="More"><svg class="icon"><use xlink:href="#dots-horizontal"></use></svg></button>'
+            '<i class="fas fa-ellipsis-h" aria-hidden="true"></i>'
         );
 
         var toggle = mainNav.find('.menu-item-more');
@@ -131,8 +131,8 @@ function featured() {
         margin: 30,
         nav: true,
         navText: [
-            '<svg class="icon"><use xlink:href="#chevron-left"></use></svg>',
-            '<svg class="icon"><use xlink:href="#chevron-right"></use></svg>',
+            '<i class="fas fa-chevron-left icon"></i>',
+            '<i class="fas fa-chevron-right icon"></i>'
         ],
         responsive: {
             0: {

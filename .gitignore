@@ -28,3 +28,4 @@ changelog.md
 changelog.md.bk
 
 ghost.db
+development/content/data/*.json

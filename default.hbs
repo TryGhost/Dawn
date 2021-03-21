@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap" crossorigin="anonymous">
     {{#is "post"}}
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css" crossorigin="anonymous" />
     {{/is}}
 
     <script>
@@ -30,11 +30,17 @@
         }
     </script>
 
+    <script>
+        var gh_search_key = 'e8fa58d2e0d08fede449884721';
+        var gh_search_migration = 'v1';
+    </script>
+
+    <script src="https://kit.fontawesome.com/03dd9ff7ea.js" crossorigin="anonymous"></script>
+
     {{ghost_head}}
 </head>
 
 <body class="{{body_class}}{{{block "body_class"}}}">
-    {{> icons}}
 
     <div class="site">
         {{> header}}

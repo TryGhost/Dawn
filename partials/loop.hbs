@@ -9,17 +9,15 @@
     </div>
     <h2 class="feed-title">{{title}}</h2>
     <div class="feed-right">
-        {{#if @labs.members}}
-            <svg class="icon feed-visibility feed-visibility-{{visibility}}">
-                <use xlink:href="#star"></use>
-            </svg>
-        {{/if}}
+        {{#has visibility="paid"}}
+            <i class="far fa-star icon feed-visibility feed-visibility-{{visibility}}">
+            </i>
+        {{/has}}
         <div class="feed-length">
             {{reading_time}}
         </div>
     </div>
-    <svg class="icon feed-icon">
-        <use xlink:href="#chevron-right"></use>
-    </svg>
+    &nbsp;<i class="fas fa-chevron-right icon feed-icon">
+    </i>
     <a class="u-permalink" href="{{url}}" aria-label="{{title}}"></a>
 </article>

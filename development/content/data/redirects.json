@@ -78,6 +78,11 @@
     "from": "/p/the-crypto-wars-are-ramping-up-again",
     "to":  "/the-crypto-wars-are-ramping-up-again/",
     "permanent": true
+  },
+  {
+    "from": "/exactly-what-countries-are-surveiling-their-journalists-and-with-what-tools-cpj-documents-the-answers",
+    "to":  "/what-countries-are-surveiling-their-journalists-and-with-what-tools/",
+    "permanent": true
   }
 ]
 

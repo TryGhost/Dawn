@@ -1,5 +1,5 @@
-# Surveillance Today Ghost Theme
-This is the theme I use for my newsletter and podcast [Surveillance Today](https://www.surveillance.today). It's a fork of [Dawn](https://github.com/TryGhost/Dawn) with some minor tweaks.
+# Alba 
+This is the theme I use for my newsletter and podcast [Surveillance Today](https://www.surveillance.today). It's a fork of [Dawn](https://github.com/TryGhost/Dawn) with some minor tweaks. "Alba" is dawn in Spanish. **It will not work for your Ghost site without some tweaks.**
 
 # Dawn
 

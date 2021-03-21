@@ -1,49 +1,45 @@
 <footer class="site-footer container">
     <div class="social">
-        {{#if @site.facebook}}
-            <a class="social-item social-item-facebook"
-                href="{{facebook_url @site.facebook}}" target="_blank"
-                rel="noopener noreferrer" aria-label="Facebook">
-                <svg class="icon">
-                    <use xlink:href="#facebook-box"></use>
-                </svg>
-            </a>
-        {{/if}}
-        {{#if @site.twitter}}
             <a class="social-item social-item-twitter"
-                href="{{twitter_url @site.twitter}}" target="_blank"
+                href="https://www.twitter.com/egd_io" target="_blank"
                 rel="noopener noreferrer" aria-label="Twitter">
-                <svg class="icon">
-                    <use xlink:href="#twitter-box"></use>
-                </svg>
+                <i class="fab fa-twitter"></i>
             </a>
-        {{/if}}
+            <a class="social-item social-item-facebook"
+                href="https://www.facebook.com/egd.io" target="_blank"
+                rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="social-item social-item-instagram"
+                href="https://www.instagram.com/egd.io" target="_blank"
+                rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        <a class="social-item social-item-podcast"
+            href="https://anchor.fm/s/518efbec/podcast/rss"
+            target="_blank" rel="noopener noreferrer" aria-label="Podcast">
+            <i class="fas fa-podcast"></i>
+        </a>
         <a class="social-item social-item-rss"
-            href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/"
+            href="{{@site.url}}/rss/"
             target="_blank" rel="noopener noreferrer" aria-label="RSS">
-            <svg class="icon">
-                <use xlink:href="#rss-box"></use>
-            </svg>
+            <i class="fas fa-rss"></i>
         </a>
     </div>
 
     <div class="copyright">
+    &copy; 2020 - {{date format="YYYY"}} <a href="https://www.egd.io" target="_blank">Ethan Gregory Dodge</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a> &bull;
         Powered by <a href="https://ghost.org/" target="_blank"
             rel="noopener noreferrer">Ghost</a>
     </div>
 
-    <nav class="footer-nav">
+<nav class="footer-nav">
         {{navigation type="secondary"}}
         <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
-            <svg class="icon theme-icon theme-icon-system">
-                <use xlink:href="#circle-half-full"></use>
-            </svg>
-            <svg class="icon theme-icon theme-icon-dark">
-                <use xlink:href="#brightness-2"></use>
-            </svg>
-            <svg class="icon theme-icon theme-icon-light">
-                <use xlink:href="#white-balance-sunny"></use>
-            </svg>
+            <i class="far fa-moon icon theme-icon theme-icon-dark">
+            </i>
+            <i class="far fa-sun icon theme-icon theme-icon-light">
+            </i>
             <span class="theme-text">System theme</span>
         </a>
     </nav>

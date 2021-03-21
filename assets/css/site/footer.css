@@ -8,6 +8,7 @@
 .social {
     display: flex;
     margin-bottom: 2rem;
+    font-size: 2rem;
 }
 
 .social-item {
