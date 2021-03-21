@@ -47,6 +47,7 @@
 }
 
 .kg-bookmark-content {
+    flex-grow: 1;
     overflow: hidden;
     padding: 25px;
 }
