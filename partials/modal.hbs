@@ -14,7 +14,7 @@
         {{#get "tags" limit="5" include="count.posts" order="count.posts desc"}}
             {{#if tags}}
                 <div class="popular-wrapper">
-                    <h4 class="popular-title">Popular tags</h4>
+                    <h4 class="popular-title">{{t "Popular tags"}}</h4>
                     <div class="popular-feed">
                         {{#foreach tags}}
                             <a class="popular" href="{{url}}">{{name}}</a>

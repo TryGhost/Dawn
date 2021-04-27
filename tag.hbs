@@ -12,7 +12,7 @@
                     {{#get "tags" limit="all" filter="id:-{{id}}+visibility:public" as |tags|}}
                         {{#if tags}}
                             <div class="tag-list">
-                                <span class="tag-list-label">More:</span>
+                                <span class="tag-list-label">{{t "More:"}}</span>
                                 {{#foreach tags}}
                                     <a class="tag-list-item" href="{{url}}">{{name}}</a>
                                 {{/foreach}}
