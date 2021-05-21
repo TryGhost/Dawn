@@ -1,4 +1,16 @@
-{{#foreach navigation}}
-    <a class="menu-item menu-item-{{slug}}{{#if current}} menu-item-current{{/if}}"
-        href="{{url absolute="true"}}">{{label}}</a>
-{{/foreach}}
+{{#if isSecondary}}
+    <!-- secondary navigation -->
+    {{#foreach navigation}}
+        <a class="social-item social-item-{{slug}}" href="{{url}}" target="_blank"
+            rel="noopener noreferrer" aria-label="{{slug}}">
+            <svg class="icon">
+                <use xlink:href="#{{slug}}"></use>
+            </svg>
+        </a>
+    {{/foreach}}
+{{else}}
+    {{#foreach navigation}}
+        <a class="menu-item menu-item-{{slug}}{{#if current}} menu-item-current{{/if}}"
+            href="{{url absolute="true"}}">{{label}}</a>
+    {{/foreach}}
+{{/if}}
