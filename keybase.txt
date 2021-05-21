@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/iamninad
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://iamninad.com
+  * I am iamninad (https://keybase.io/iamninad) on keybase.
+  * I have a public key ASDz4dNJl0UuIkl94HRvJ337JPVgIR1QYsJm98GNnxMuBwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d0fe5287bf86992301ea883e705893821d5e1eba168fa0919d60f6b7027abf870a",
+      "host": "keybase.io",
+      "kid": "0120f3e1d34997452e22497de0746f277dfb24f560211d5062c266f7c18d9f132e070a",
+      "uid": "11cb1981cf489d3a024d972e9c296f19",
+      "username": "iamninad"
+    },
+    "merkle_root": {
+      "ctime": 1621069366,
+      "hash": "59709f8d99175d7353fbbe0e1b07836691f3aa9423971a72a34ca841490dd630b8ebf5497655f6b02db8e76cfa34bf297db0e1108d0e64d008c5b0550a342c33",
+      "hash_meta": "449edb598fb99eaf15e4c25635e54039e4efedc6158e45b51f3614b6b8f68634",
+      "seqno": 19948936
+    },
+    "service": {
+      "entropy": "nsMgXqekRb3Qiv0zthFg5Nyb",
+      "hostname": "iamninad.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.6.2"
+  },
+  "ctime": 1621069424,
+  "expire_in": 504576000,
+  "prev": "6ed547c9fa59a6da3bd6442077bf2da0b6c5bc140b340071fb8980fd360c737e",
+  "seqno": 13,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg8+HTSZdFLiJJfeB0byd9+yT1YCEdUGLCZvfBjZ8TLgcKp3BheWxvYWTESpcCDcQgbtVHyfpZpto71kQgd78toLbFvBQLNABx+4mA/TYMc37EIMuadVvLoXZ7XDlR9bF9bI0BMuoLgHBhN6xE9gOKdgubAgHCo3NpZ8RA1cP2oQl1kzD9KCNpUbd7j58Bi+qbLpkcyZnOUTykZJfI3sM8bvp2peCZd3jP/kVavJXRlA4KWaxng0Y9mxpQCqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIGcZvTp9wzUFur0yDDJFG1YY90kSEqF8qrgtph4svBkIo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/iamninad
+
+==================================================================
