@@ -29,7 +29,7 @@
             {{#unless no_image}}
                 <div class="single-media kg-width-{{width}} u-placeholder horizontal">
                     <img class="lazyload u-object-fit" data-srcset="{{> srcset}}"
-                        data-sizes="auto" src="{{img_url feature_image size="l"}}"
+                        data-sizes="auto" src="//images.weserv.nl/?url={{img_url feature_image size="l"}}"
                         srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                         alt="{{title}}">
                 </div>
@@ -63,7 +63,7 @@
                                 <a href="{{url}}" title="{{name}}">
                                     <img class="author-image lazyload u-object-fit"
                                         data-srcset="{{img_url profile_image size="xs"}}"
-                                        src="{{img_url profile_image size="xs"}}"
+                                        src="//images.weserv.nl/?url={{img_url profile_image size="xs"}}"
                                         srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                         alt="{{name}}">
                                 </a>
