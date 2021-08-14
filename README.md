@@ -8,7 +8,7 @@ A highly functional theme that adapts to the reader's preferences. Let them read
 
 # Instructions
 
-1. [Download this theme](https://github.com/TryGhost/Dawn/archive/master.zip)
+1. [Download this theme](https://github.com/TryGhost/Dawn/archive/main.zip)
 2. Log into Ghost, and go to the `Design` settings area to upload the zip file
 
 # Search
