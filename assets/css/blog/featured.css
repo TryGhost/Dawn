@@ -12,6 +12,10 @@
     font-weight: 700;
 }
 
+.has-serif-title .featured-wrapper .post-title {
+    font-family: var(--font-serif);
+}
+
 .featured-title {
     margin-bottom: 4.5rem;
     padding-bottom: 1rem;
