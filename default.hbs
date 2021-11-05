@@ -12,6 +12,9 @@
 
     <script>
         var siteUrl = '{{@site.url}}';
+        {{#if @custom.content_api_key_for_search}}
+            var gh_search_key = '{{@custom.content_api_key_for_search}}';
+        {{/if}}
     </script>
 
     <script>
