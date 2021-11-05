@@ -28,10 +28,17 @@
     letter-spacing: -0.1rem;
 }
 
+.has-serif-title .single-title {
+    font-family: var(--font-serif);
+}
+
 .single-excerpt {
     margin-top: 2rem;
     font-size: 1.8rem;
-    font-style: italic;
+}
+
+.has-serif-body .single-excerpt {
+    font-family: var(--font-serif);
 }
 
 .single-media {

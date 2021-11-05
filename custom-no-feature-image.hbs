@@ -6,7 +6,9 @@
             {{> content no_image=true}}
         {{/post}}
         {{#is "post"}}
-            {{> related}}
+            {{#if @custom.show_related_posts}}
+                {{> related}}
+            {{/if}}
             {{> comment}}
         {{/is}}
     </main>

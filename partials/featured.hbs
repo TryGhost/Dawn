@@ -1,7 +1,9 @@
 {{#get "posts" filter="featured:true" limit="all" as |featured|}}
     {{#if featured}}
         <section class="featured-wrapper container">
-            <h2 class="featured-title">Featured articles</h2>
+            {{#if @custom.featured_title}}
+                <h2 class="featured-title">{{@custom.featured_title}}</h2>
+            {{/if}}
             <div class="featured-feed owl">
                 {{#foreach featured}}
                     <article class="{{post_class}}">
@@ -15,8 +17,7 @@
                             </div>
                         {{/if}}
                         <h3 class="post-title">{{title}}</h3>
-                        <a class="u-permalink" href={{url}}
-                            aria-label="{{title}}"></a>
+                        <a class="u-permalink" href={{url}} aria-label="{{title}}"></a>
                     </article>
                 {{/foreach}}
             </div>
