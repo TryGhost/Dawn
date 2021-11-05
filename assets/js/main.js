@@ -315,8 +315,7 @@ function search() {
     'use strict';
     if (
         typeof gh_search_key == 'undefined' ||
-        gh_search_key == '' ||
-        typeof gh_search_migration == 'undefined'
+        gh_search_key == ''
     )
         return;
 
@@ -354,8 +353,7 @@ function search() {
     }
 
     if (
-        !indexDump ||
-        gh_search_migration != localStorage.getItem('dawn_search_migration')
+        !indexDump
     ) {
         $.get(url, function (data) {
             if (data.posts.length > 0) {
@@ -368,11 +366,6 @@ function search() {
                 });
 
                 update(data);
-
-                localStorage.setItem(
-                    'dawn_search_migration',
-                    gh_search_migration
-                );
             }
         });
     } else {

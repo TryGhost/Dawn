@@ -50,6 +50,9 @@
                 "options": ["Modern sans-serif", "Elegant serif"],
                 "default": "Modern sans-serif"
             },
+            "content_api_key_for_search": {
+                "type": "text"
+            },
             "show_featured_posts": {
                 "type": "boolean",
                 "default": true,
