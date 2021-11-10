@@ -1,32 +1,20 @@
 {{{html}}}
 
-{{#if access}}
-    {{#is "post"}}
-        {{#unless @member}}
-            <section class="single-cta">
-                <h2 class="single-cta-title">Enjoying these posts? Subscribe for more</h2>
-                <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
-                <br>
-                <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
-            </section>
-        {{/unless}}
-    {{/is}}
-{{else}}
-    <section class="single-cta">
-        {{#has visibility="paid"}}
-            <h2 class="single-cta-title">This post is for paying subscribers only</h2>
-        {{else}}
-            <h2 class="single-cta-title">This post is for subscribers only</h2>
-        {{/has}}
-
-        {{#if @member}}
-            {{#unless @member.paid}}
-                <button class="button single-cta-button" data-portal="account/plans">Upgrade now</button>
-            {{/unless}}
-        {{else}}
-            <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
-            <br>
-            <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
-        {{/if}}
-    </section>
-{{/if}}
+<section class="single-cta">
+    {{#has visibility="paid"}}
+        <h2 class="single-cta-title">This post is for paying subscribers only</h2>
+    {{/has}}
+    {{#has visibility="members"}}
+        <h2 class="single-cta-title">This post is for subscribers only</h2>
+    {{/has}}
+    {{#has visibility="filter"}}
+        <h2 class="single-cta-title">This post is for subscribers on the {{products}} only</h2>
+    {{/has}}
+    {{#if @member}}
+        <button class="button single-cta-button" data-portal="account/plans">Upgrade now</button>
+    {{else}}
+        <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
+        <br>
+        <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
+    {{/if}}
+</section>
