@@ -20,7 +20,7 @@
 }
 
 .theme-dark .sticky {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgb(0 0 0 / 60%);
 }
 
 .theme-dark .form-button,
@@ -63,7 +63,7 @@
     }
 
     html:not(.theme-light) .sticky {
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgb(0 0 0 / 60%);
     }
 
     html:not(.theme-light) .form-button,

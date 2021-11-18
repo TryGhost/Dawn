@@ -6,7 +6,7 @@
     left: 0;
     z-index: 90;
     display: none;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgb(0 0 0 / 70%);
     opacity: 0;
     transition: opacity 0.2s var(--animation-base);
     pointer-events: none;

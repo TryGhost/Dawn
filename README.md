@@ -13,14 +13,14 @@ A highly functional theme that adapts to the reader's preferences. Let them read
 
 # Search
 
-1. Navigate to the `Integrations` and click on `Add custom integration`. 
+1. Navigate to the `Integrations` and click on `Add custom integration`.
 2. Copy the content API key; this will be used to fetch posts from your site.
 3. Insert the generated key in `Code injection > Site Header` field.
 
 ```html
 <script>
-    var gh_search_key = 'API_KEY';
-    var gh_search_migration = 'v1';
+    var gh_search_key = "API_KEY";
+    var gh_search_migration = "v1";
 </script>
 ```
 
@@ -34,8 +34,8 @@ When your site has lots of posts, including the post content in the index cache 
 
 ```html
 <script>
-    var gh_search_key = 'API_KEY';
-    var gh_search_migration = 'v2'; // Increased from v1
+    var gh_search_key = "API_KEY";
+    var gh_search_migration = "v2"; // Increased from v1
     var gh_search_content = false; // Disables content search
 </script>
 ```
@@ -46,7 +46,7 @@ If your logo image isn't recognizable in dark mode, you can set a white version 
 
 ```html
 <script>
-    var gh_white_logo = 'https://example.com/content/images/white-logo.png';
+    var gh_white_logo = "https://example.com/content/images/white-logo.png";
 </script>
 ```
 
@@ -55,7 +55,7 @@ If your logo image isn't recognizable in dark mode, you can set a white version 
 The theme looks for a menu item with three dots (`...`) in its URL, and uses that as a dropdown menu toggle. All menu items after the toggle will be added to the dropdown list automatically.
 
 | Label      | URL                       |
-|------------|---------------------------|
+| ---------- | ------------------------- |
 | More links | https://example.com/...   |
 | Sub-1      | https://example.com/sub-1 |
 | Sub-2      | https://example.com/sub-2 |
@@ -82,7 +82,7 @@ yarn zip
 
 # PostCSS Features Used
 
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
+-   Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
 
 # Copyright & License
 

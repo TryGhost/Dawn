@@ -165,14 +165,12 @@ function pagination() {
         });
     }
 
-    wrapper.on('append.infiniteScroll', function (
-        event,
-        response,
-        path,
-        items
-    ) {
-        $(items[0]).addClass('feed-paged');
-    });
+    wrapper.on(
+        'append.infiniteScroll',
+        function (event, response, path, items) {
+            $(items[0]).addClass('feed-paged');
+        }
+    );
 }
 
 function video() {
@@ -265,7 +263,8 @@ function toc() {
 
             $('html, body').animate(
                 {
-                    scrollTop: $('[id="' + link.substring(1) + '"]').offset().top - 82,
+                    scrollTop:
+                        $('[id="' + link.substring(1) + '"]').offset().top - 82,
                 },
                 500
             );
@@ -313,17 +312,16 @@ function modal() {
 
 function search() {
     'use strict';
-    if (
-        typeof gh_search_key == 'undefined' ||
-        gh_search_key == ''
-    )
-        return;
+    if (typeof gh_search_key == 'undefined' || gh_search_key == '') return;
 
     var searchInput = $('.search-input');
     var searchButton = $('.search-button');
     var searchResult = $('.search-result');
     var popular = $('.popular-wrapper');
-    var includeContent = typeof gh_search_content == 'undefined' || gh_search_content == true ? true : false;
+    var includeContent =
+        typeof gh_search_content == 'undefined' || gh_search_content == true
+            ? true
+            : false;
 
     var url =
         siteUrl +
@@ -348,13 +346,13 @@ function search() {
             localStorage.setItem('dawn_search_index', JSON.stringify(index));
             localStorage.setItem('dawn_search_last', data.posts[0].updated_at);
         } catch (e) {
-            console.error('Your browser local storage is full. Update your search settings following the instruction at https://github.com/TryGhost/Dawn#disable-content-search');
+            console.error(
+                'Your browser local storage is full. Update your search settings following the instruction at https://github.com/TryGhost/Dawn#disable-content-search'
+            );
         }
     }
 
-    if (
-        !indexDump
-    ) {
+    if (!indexDump) {
         $.get(url, function (data) {
             if (data.posts.length > 0) {
                 index = elasticlunr(function () {

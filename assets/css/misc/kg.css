@@ -19,7 +19,7 @@
 }
 
 .kg-gallery-row:not(:first-of-type) {
-    margin: 10px 0 0 0;
+    margin: 10px 0 0;
 }
 
 .kg-gallery-image:not(:first-of-type) {
