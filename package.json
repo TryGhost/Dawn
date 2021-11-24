@@ -99,7 +99,7 @@
         "gulp-stylelint": "13.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "5.1.0",
-        "postcss": "8.3.11",
+        "postcss": "8.4.0",
         "postcss-easy-import": "3.0.0",
         "pump": "3.0.0",
         "stylelint": "14.1.0",
