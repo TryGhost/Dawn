@@ -11,6 +11,10 @@
     margin: 2.4rem 0 0;
 }
 
+.kg-gallery-image {
+    cursor: pointer;
+}
+
 .kg-image {
     margin-right: auto;
     margin-left: auto;
