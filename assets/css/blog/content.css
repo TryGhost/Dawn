@@ -63,7 +63,7 @@ is the very first element in the post content */
     font-weight: 600;
 }
 
-.gh-content a:not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container) {
+.gh-content a:not(.gh-post-upgrade-cta a):not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container) {
     color: var(--ghost-accent-color);
     text-decoration: underline;
     word-break: break-word;
@@ -73,7 +73,10 @@ is the very first element in the post content */
 .gh-content > ul,
 .gh-content > dl,
 .gh-content > p,
-.kg-callout-text {
+.kg-callout-text,
+.kg-toggle-content > ol,
+.kg-toggle-content > ul,
+.kg-toggle-content > p {
     font-size: 1.7rem;
 }
 
@@ -82,7 +85,10 @@ is the very first element in the post content */
 .has-serif-body .gh-content > ul,
 .has-serif-body .gh-content > dl,
 .has-serif-body .gh-content > p,
-.has-serif-body .kg-callout-text {
+.has-serif-body .kg-callout-text,
+.has-serif-body .kg-toggle-content > ol,
+.has-serif-body .kg-toggle-content > ul,
+.has-serif-body .kg-toggle-content > p {
     font-family: var(--font-serif);
 }
 
