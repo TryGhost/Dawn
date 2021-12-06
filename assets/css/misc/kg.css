@@ -1,4 +1,4 @@
-.kg-toggle-heading-text {
+.kg-toggle-card .kg-toggle-heading-text {
     font-size: 1.8rem;
     font-weight: 700;
 }
@@ -9,6 +9,10 @@
 
 .kg-toggle-content > * + * {
     margin: 2.4rem 0 0;
+}
+
+.kg-callout-card-accent a {
+    text-decoration: underline;
 }
 
 .kg-gallery-image {
