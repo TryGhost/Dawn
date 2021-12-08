@@ -15,6 +15,13 @@
     text-decoration: underline;
 }
 
+blockquote.kg-blockquote-alt {
+    padding: 0 1.5em;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--secondary-text-color);
+}
+
 .kg-gallery-image {
     cursor: pointer;
 }
