@@ -40,6 +40,10 @@
     color: var(--twitter-color);
 }
 
+.theme-dark .kg-audio-card button {
+    color: var(--darker-gray-color);
+}
+
 @media (prefers-color-scheme: dark) {
     html:not(.theme-light):root {
         --primary-text-color: #e2e2e2;
@@ -81,5 +85,9 @@
 
     html:not(.theme-light) .share-link-twitter {
         color: var(--twitter-color);
+    }
+
+    html:not(.theme-light) .kg-audio-card button {
+        color: var(--darker-gray-color);
     }
 }
