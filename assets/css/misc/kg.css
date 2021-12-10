@@ -8,7 +8,7 @@
 }
 
 .kg-toggle-content > * + * {
-    margin: 2.4rem 0 0;
+    margin: 2rem 0 0;
 }
 
 .kg-callout-card-accent a {
@@ -19,6 +19,7 @@ blockquote.kg-blockquote-alt {
     padding: 0 1.5em;
     font-style: normal;
     font-weight: 700;
+    line-height: 1.5;
     color: var(--secondary-text-color);
 }
 
