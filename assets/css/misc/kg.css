@@ -22,6 +22,10 @@ blockquote.kg-blockquote-alt {
     color: var(--secondary-text-color);
 }
 
+.kg-button-card .kg-btn {
+    font-size: 1.05em;
+}
+
 .kg-gallery-image {
     cursor: pointer;
 }
