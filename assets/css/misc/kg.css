@@ -31,6 +31,13 @@ blockquote.kg-blockquote-alt {
     margin-left: auto;
 }
 
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .kg-canvas {
     display: grid;
     grid-template-columns:
