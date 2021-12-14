@@ -57,7 +57,7 @@ a {
     transition: color 0.1s var(--animation-base);
 }
 
-a:hover {
+a:not(.kg-btn):not(.kg-product-card-button):hover {
     opacity: 0.8;
 }
 
