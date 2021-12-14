@@ -63,7 +63,7 @@ is the very first element in the post content */
     font-weight: 600;
 }
 
-.gh-content a:not(.gh-post-upgrade-cta a):not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container):not(.kg-callout-card-accent a) {
+.gh-content a:not(.gh-post-upgrade-cta a):not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container):not(.kg-callout-card-accent a):not(.kg-product-card-button) {
     color: var(--ghost-accent-color);
     text-decoration: underline;
     word-break: break-word;
