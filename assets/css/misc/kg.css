@@ -1,14 +1,14 @@
-.kg-toggle-card .kg-toggle-heading-text {
+.kg-card.kg-toggle-card .kg-toggle-heading-text {
     font-size: 1.8rem;
     font-weight: 700;
 }
 
-.has-serif-title .kg-toggle-heading-text {
+.has-serif-title .kg-toggle-card .kg-toggle-heading-text {
     font-family: var(--font-serif);
 }
 
-.kg-toggle-content > * + * {
-    margin: 2rem 0 0;
+.kg-card.kg-callout-card {
+    align-items: baseline;
 }
 
 .kg-callout-card-accent a {
@@ -23,7 +23,7 @@ blockquote.kg-blockquote-alt {
     color: var(--secondary-text-color);
 }
 
-.kg-button-card .kg-btn {
+.kg-card.kg-button-card .kg-btn {
     font-size: 1.05em;
 }
 

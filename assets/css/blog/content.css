@@ -63,7 +63,7 @@ is the very first element in the post content */
     font-weight: 600;
 }
 
-.gh-content a:not(.gh-post-upgrade-cta a):not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container):not(.kg-callout-card-accent a):not(.kg-product-card-button) {
+.gh-content a {
     color: var(--ghost-accent-color);
     text-decoration: underline;
     word-break: break-word;
@@ -76,10 +76,10 @@ is the very first element in the post content */
     font-size: 1.7rem;
 }
 
-.gh-content .kg-callout-text,
-.gh-content .kg-toggle-content > ol,
-.gh-content .kg-toggle-content > ul,
-.gh-content .kg-toggle-content > p {
+.gh-content .kg-callout-card .kg-callout-text,
+.gh-content .kg-toggle-card .kg-toggle-content > ol,
+.gh-content .kg-toggle-card .kg-toggle-content > ul,
+.gh-content .kg-toggle-card .kg-toggle-content > p {
     font-size: 1.6rem;
 }
 
