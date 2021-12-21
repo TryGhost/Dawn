@@ -103,7 +103,7 @@
         "postcss": "8.4.5",
         "postcss-easy-import": "3.0.0",
         "pump": "3.0.0",
-        "stylelint": "14.1.0",
+        "stylelint": "14.2.0",
         "stylelint-config-standard": "24.0.0",
         "stylelint-order": "5.0.0"
     },
