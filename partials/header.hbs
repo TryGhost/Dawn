@@ -2,6 +2,9 @@
     <div class="header-left">
         <a class="logo" href="{{@site.url}}">
             {{#if @site.logo}}
+                {{#if @custom.white_logo_for_dark_mode}}
+                    <img class="logo-image white" src="{{img_url @custom.white_logo_for_dark_mode}}" alt="{{@site.title}}">
+                {{/if}}
                 <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
             {{else}}
                 <span class="logo-text">{{@site.title}}</span>
