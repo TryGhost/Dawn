@@ -51,6 +51,9 @@
                 "options": ["Modern sans-serif", "Elegant serif"],
                 "default": "Modern sans-serif"
             },
+            "white_logo_for_dark_mode": {
+                "type": "image"
+            },
             "content_api_key_for_search": {
                 "type": "text"
             },
