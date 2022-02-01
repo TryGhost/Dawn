@@ -71,33 +71,52 @@ function sticky() {
 
 function subMenu() {
     'use strict';
-    var mainNav = $('.main-nav');
-    var separator = mainNav.find('.menu-item[href*="..."]');
+    var nav = document.querySelector('.main-nav');
+    var items = nav.querySelectorAll('.menu-item');
 
-    if (separator.length) {
-        separator.nextAll('.menu-item').wrapAll('<div class="sub-menu" />');
-        separator.replaceWith(
-            '<button class="button-icon menu-item-button menu-item-more" aria-label="More"><svg class="icon"><use xlink:href="#dots-horizontal"></use></svg></button>'
-        );
+    function getSiblings(el, filter) {
+        var siblings = [];
+        while (el= el.nextSibling) { if (!filter || filter(el)) siblings.push(el); }
+        return siblings;
+    }
 
-        var toggle = mainNav.find('.menu-item-more');
-        var subMenu = $('.sub-menu');
-        toggle.append(subMenu);
+    function exampleFilter(el) {
+        return el.nodeName.toLowerCase() == 'a';
+    }
 
-        toggle.on('click', function () {
-            if (!subMenu.is(':visible')) {
-                subMenu.show().addClass('animate__animated animate__bounceIn');
+    if (items.length > 5) {
+        var separator = items[4];
+
+        var toggle = document.createElement('button');
+        toggle.setAttribute('class', 'button-icon menu-item-button menu-item-more');
+        toggle.setAttribute('aria-label', 'More');
+        toggle.innerHTML = '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M21.333 16c0-1.473 1.194-2.667 2.667-2.667v0c1.473 0 2.667 1.194 2.667 2.667v0c0 1.473-1.194 2.667-2.667 2.667v0c-1.473 0-2.667-1.194-2.667-2.667v0zM13.333 16c0-1.473 1.194-2.667 2.667-2.667v0c1.473 0 2.667 1.194 2.667 2.667v0c0 1.473-1.194 2.667-2.667 2.667v0c-1.473 0-2.667-1.194-2.667-2.667v0zM5.333 16c0-1.473 1.194-2.667 2.667-2.667v0c1.473 0 2.667 1.194 2.667 2.667v0c0 1.473-1.194 2.667-2.667 2.667v0c-1.473 0-2.667-1.194-2.667-2.667v0z"></path></svg>';
+
+        var wrapper = document.createElement('div');
+        wrapper.setAttribute('class', 'sub-menu');
+
+        var children = getSiblings(separator, exampleFilter);
+
+        children.forEach(function (child) {
+            wrapper.appendChild(child);
+        });
+
+        toggle.appendChild(wrapper);
+        separator.parentNode.appendChild(toggle);
+
+        toggle.addEventListener('click', function () {
+            if (window.getComputedStyle(wrapper).display == 'none') {
+                wrapper.style.display = 'block';
+                wrapper.classList.add('animate__animated', 'animate__bounceIn');
             } else {
-                subMenu.addClass('animate__animated animate__zoomOut');
+                wrapper.classList.add('animate__animated', 'animate__zoomOut');
             }
         });
 
-        subMenu.on('animationend', function (e) {
-            subMenu.removeClass(
-                'animate__animated animate__bounceIn animate__zoomOut'
-            );
-            if (e.originalEvent.animationName == 'zoomOut') {
-                subMenu.hide();
+        wrapper.addEventListener('animationend', function (e) {
+            wrapper.classList.remove('animate__animated', 'animate__bounceIn', 'animate__zoomOut');
+            if (e.animationName == 'zoomOut') {
+                wrapper.style.display = 'none';
             }
         });
     }
