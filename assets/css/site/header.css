@@ -54,8 +54,7 @@
     font-weight: 700;
 }
 
-.menu-item[href*="..."],
-.menu-item[href*="..."] ~ .menu-item {
+.site-header .menu-item:nth-child(n+6) {
     display: none;
 }
 
@@ -130,10 +129,6 @@
 
 .mobile-menu .menu-item + .menu-item {
     margin-top: 1.5rem;
-}
-
-.mobile-menu .menu-item[href*="..."] ~ .menu-item {
-    display: inline;
 }
 
 .mobile-nav {
