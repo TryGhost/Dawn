@@ -101,7 +101,6 @@
         "dev": "gulp",
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
-        "lint": "gulp lint",
         "zip": "gulp zip"
     },
     "devDependencies": {
@@ -113,15 +112,11 @@
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "9.0.1",
-        "gulp-stylelint": "13.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "5.1.0",
         "postcss": "8.4.6",
         "postcss-easy-import": "3.0.0",
-        "pump": "3.0.0",
-        "stylelint": "14.4.0",
-        "stylelint-config-standard": "25.0.0",
-        "stylelint-order": "5.0.0"
+        "pump": "3.0.0"
     },
     "browserslist": [
         "defaults"
