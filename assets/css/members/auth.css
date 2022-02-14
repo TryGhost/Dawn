@@ -69,33 +69,6 @@
     width: 100%;
 }
 
-.loading .auth-button,
-.success .auth-button {
-    pointer-events: none;
-}
-
-.auth-button .loader,
-.auth-button .success {
-    display: none;
-    line-height: 0;
-}
-
-.loading .default,
-.success .default,
-.success .loader {
-    display: none;
-}
-
-.loading .loader,
-.success .success {
-    display: block;
-}
-
-.auth-button .success svg {
-    width: 20px;
-    height: 20px;
-}
-
 .auth-notification {
     display: none;
     padding: 2.4rem;

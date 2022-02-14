@@ -64,11 +64,17 @@
                             {{/unless}}
 
                             {{#if monthly_price}}
-                                <button class="button button-accent" data-portal="signup/{{id}}/monthly" data-monthly>Choose {{name}}</button>
+                                <button class="button button-accent" data-members-plan="{{monthly_price.id}}" data-monthly>
+                                    <span class="default">Choose {{name}}</span>
+                                    <span class="loader">{{> "icons/loader"}}</span>
+                                </button>
                             {{/if}}
 
                             {{#if yearly_price}}
-                                <button class="button button-accent" data-portal="signup/{{id}}/yearly" data-yearly>Choose {{name}}</button>
+                                <button class="button button-accent" data-members-plan="{{yearly_price.id}}" data-yearly>
+                                    <span class="default">Choose {{name}}</span>
+                                    <span class="loader">{{> "icons/loader"}}</span>
+                                </button>
                             {{/if}}
                         </section>
                     {{/foreach}}

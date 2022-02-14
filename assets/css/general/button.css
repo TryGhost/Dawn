@@ -21,18 +21,6 @@
     opacity: 1;
 }
 
-.button .icon-loading {
-    display: none;
-}
-
-.button.loading {
-    text-indent: -9999px;
-}
-
-.button.loading .icon-loading {
-    display: block;
-}
-
 .button-secondary {
     color: var(--darker-gray-color);
 }
@@ -73,4 +61,32 @@
 
 .button-accent:hover {
     border-color: var(--ghost-accent-color);
+}
+
+.loading .button,
+.loading.button,
+.success .button {
+    pointer-events: none;
+}
+
+.button .loader,
+.button .success {
+    display: none;
+    line-height: 0;
+}
+
+.loading .default,
+.success .default,
+.success .loader {
+    display: none;
+}
+
+.loading .loader,
+.success .success {
+    display: block;
+}
+
+.button .success svg {
+    width: 20px;
+    height: 20px;
 }
