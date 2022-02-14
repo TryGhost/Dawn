@@ -54,8 +54,10 @@
     font-weight: 700;
 }
 
-.site-header .menu-item:nth-child(n+6) {
-    display: none;
+@media (min-width: 992px) {
+    .site-header .menu-item:nth-child(n+6) {
+        display: none;
+    }
 }
 
 .menu-item-button {

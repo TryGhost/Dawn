@@ -111,3 +111,8 @@
     background-color: var(--white-color);
     box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
 }
+
+body:not(.portal-enabled) .gh-portal-triggerbtn-iframe {
+    opacity: 0;
+    pointer-events: none;
+}

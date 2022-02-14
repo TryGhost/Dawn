@@ -12,8 +12,13 @@
 
         {{#unless @member}}
             <div class="cover-cta">
-                <button class="button members-subscribe" data-portal="signup">Subscribe now</button>
-                <button class="button button-secondary members-login" data-portal="signin">Login</button>
+                {{#if @custom.enable_custom_membership}}
+                    <a class="button members-subscribe" href="/signup">Subscribe now</a>
+                    <a class="button button-secondary members-login" href="/signin">Login</a>
+                {{else}}
+                    <button class="button members-subscribe" data-portal="signup">Subscribe now</button>
+                    <button class="button button-secondary members-login" data-portal="signin">Login</button>
+                {{/if}}
             </div>
         {{/unless}}
     </div>

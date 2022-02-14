@@ -11,6 +11,7 @@
             {{/if}}
         </a>
     </div>
+
     {{#if @site.navigation}}
         <nav class="main-nav hidden-xs hidden-sm hidden-md">
             {{navigation}}
@@ -43,13 +44,19 @@
                             <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
                         {{/unless}}
                     {{else}}
-                        <button class="button-text menu-item members-login" data-portal="signin">Login</button>
-                        <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
+                        {{#if @custom.enable_custom_membership}}
+                            <a class="button-text menu-item members-login" href="/signin">Login</a>
+                            <a class="button-text menu-item menu-item-cta members-subscribe" href="/signup">Subscribe</a>
+                        {{else}}
+                            <button class="button-text menu-item members-login" data-portal="signin">Login</button>
+                            <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
+                        {{/if}}
                     {{/if}}
                 </nav>
             </div>
         </div>
     {{/if}}
+
     <div class="header-right hidden-xs hidden-sm hidden-md">
         {{#if @member}}
             <button class="button-text menu-item members-account" data-portal="account">Account</button>
@@ -57,8 +64,13 @@
                 <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
             {{/unless}}
         {{else}}
-            <button class="button-text menu-item members-login" data-portal="signin">Login</button>
-            <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
+            {{#if @custom.enable_custom_membership}}
+                <a class="button-text menu-item members-login" href="/signin">Login</a>
+                <a class="button-text menu-item menu-item-cta members-subscribe" href="/signup">Subscribe</a>
+            {{else}}
+                <button class="button-text menu-item members-login" data-portal="signin">Login</button>
+                <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
+            {{/if}}
         {{/if}}
     </div>
 </header>
