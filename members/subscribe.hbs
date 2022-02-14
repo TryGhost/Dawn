@@ -1,0 +1,113 @@
+{{!< ../default}}
+
+{{#page}}
+
+<div class="content-area">
+    <main class="site-main">
+        <header class="single-header kg-canvas">
+            <h1 class="single-title">{{title}}</h1>
+            {{#if custom_excerpt}}
+                <div class="single-excerpt">
+                    {{custom_excerpt}}
+                </div>
+            {{/if}}
+        </header>
+
+        <div class="container">
+            <div class="subscribe">
+                <div class="price-list">
+                    <button class="button button-secondary price-button active" data-price="monthly">Monthly</button>
+                    <button class="button button-secondary price-button" data-price="yearly">Yearly</button>
+                </div>
+
+                <div class="tier-list">
+                    {{#foreach @products}}
+                        <section class="tier">
+                            <header class="tier-header">
+                                <h2 class="tier-name">{{name}}</h2>
+                                {{#unless monthly_price}}
+                                    {{#unless yearly_price}}
+                                        <div class="tier-price">
+                                            <span class="tier-amount">$0</span>
+                                        </div>
+                                    {{/unless}}
+                                {{/unless}}
+
+                                {{#if monthly_price}}
+                                    <div class="tier-price" data-amount="{{monthly_price.amount}}" data-monthly>
+                                        <span class="tier-amount">{{price monthly_price}}</span> / month
+                                    </div>
+                                {{/if}}
+
+                                {{#if yearly_price}}
+                                    <div class="tier-price" data-amount="{{yearly_price.amount}}" data-yearly>
+                                        <span class="tier-amount">{{price yearly_price}}</span> / year
+                                    </div>
+                                {{/if}}
+
+                                {{#if description}}
+                                    <div class="tier-description">{{description}}</div>
+                                {{/if}}
+                            </header>
+                            {{#if benefits}}
+                                <ul class="tier-benefit-list">
+                                    {{#foreach benefits}}
+                                        <li class="tier-benefit">{{> "icons/check"}} {{name}}</li>
+                                    {{/foreach}}
+                                </ul>
+                            {{/if}}
+
+                            {{#unless monthly_price}}
+                                {{#unless yearly_price}}
+                                    <a class="button" href="/signup">Sign up</a>
+                                {{/unless}}
+                            {{/unless}}
+
+                            {{#if monthly_price}}
+                                <button class="button button-accent" data-portal="signup/{{id}}/monthly" data-monthly>Choose {{name}}</button>
+                            {{/if}}
+
+                            {{#if yearly_price}}
+                                <button class="button button-accent" data-portal="signup/{{id}}/yearly" data-yearly>Choose {{name}}</button>
+                            {{/if}}
+                        </section>
+                    {{/foreach}}
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+    if (document.querySelectorAll('.tier-list [data-monthly]').length > 0 && document.querySelectorAll('.tier-list [data-yearly]').length > 0) {
+        document.querySelector('.price-list').style.display = 'flex'
+
+        document.querySelectorAll('.price-button').forEach(button => {
+            button.addEventListener('click', e => {
+                document.querySelector('.tier-list').setAttribute('data-price', button.getAttribute('data-price'))
+
+                document.querySelectorAll('.price-button').forEach(button => {
+                    button.classList.remove('active')
+                })
+
+                button.classList.add('active')
+            })
+        })
+
+        document.querySelectorAll('.tier').forEach(tier => {
+            const prices = []
+
+            tier.querySelectorAll('.tier-price').forEach(price => {
+                if (price.getAttribute('data-amount')) {
+                    prices.push(parseInt(price.getAttribute('data-amount')))
+                }
+            })
+
+            if (prices.length) {
+                tier.setAttribute('data-save', 100 - Math.round(prices[1] / prices[0] / 12 * 100))
+            }
+        })
+    }
+</script>
+
+{{/page}}

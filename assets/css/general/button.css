@@ -12,7 +12,7 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     background-color: var(--white-color);
-    border-radius: 3px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -63,4 +63,14 @@
     line-height: inherit;
     background-color: transparent;
     cursor: pointer;
+}
+
+.button-accent {
+    background-color: var(--ghost-accent-color);
+    border-color: var(--ghost-accent-color);
+    color: #fff;
+}
+
+.button-accent:hover {
+    border-color: var(--ghost-accent-color);
 }

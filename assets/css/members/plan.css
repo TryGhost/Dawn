@@ -1,92 +1,113 @@
-.plan-list {
-    display: flex;
-    justify-content: center;
+[data-yearly] {
+    display: none !important;
 }
 
-.plan {
+[data-price="yearly"] .tier-price[data-yearly] {
+    display: flex !important;
+}
+
+[data-price="yearly"] .button[data-yearly] {
+    display: inline-flex !important;
+}
+
+[data-price="yearly"] [data-monthly] {
+    display: none !important;
+}
+
+.subscribe {
     display: flex;
     flex-direction: column;
-    margin: 0 1rem;
+    align-items: center;
+}
+
+.tier-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3.2rem;
+    width: 100%;
+}
+
+.tier {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     padding: 3rem;
-    max-width: 35rem;
     border: 1px solid var(--light-gray-color);
     border-radius: 5px;
 }
 
-.plan-title {
+.tier-list[data-price="yearly"] .tier[data-save]::after {
+    content: "Save " attr(data-save) "%";
+    position: absolute;
+    top: 34px;
+    right: 30px;
+    padding: 0.4rem 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1;
+    background-color: var(--light-gray-color);
+    border-radius: 20px;
+}
+
+.tier-name {
     margin-bottom: 0.3rem;
     color: var(--brand-color);
     font-size: 2rem;
 }
 
-.plan-price {
+.tier-price {
     display: flex;
     align-items: baseline;
     color: var(--secondary-text-color);
 }
 
-.plan-amount {
+.tier-amount {
     margin-right: 0.5rem;
     color: var(--darker-gray-color);
     font-size: 2.4rem;
     font-weight: 700;
 }
 
-.plan-feature-list {
+.tier-description {
+    margin-top: 1.2rem;
+    font-weight: 700;
+}
+
+.tier-benefit-list {
     flex-grow: 1;
     margin: 2rem 0 3rem;
     padding: 0;
     list-style-type: none;
 }
 
-.plan-feature {
-    margin: 0.6rem 0;
-}
-
-.plan-selector {
+.tier-benefit {
     display: flex;
+    margin: 1.2rem 0;
+}
+
+.tier-benefit svg {
+    flex-shrink: 0;
+    margin-right: 0.8rem;
+    width: 20px;
+}
+
+.price-list {
+    display: none;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
+    padding: 2px;
+    border-radius: 5px;
+    background-color: var(--lighter-gray-color);
 }
 
-.plan-selector-button {
+.price-button {
     position: relative;
+    border: 0;
+    background-color: transparent;
 }
 
-.plan-selector-button:first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.plan-selector-button + .plan-selector-button {
-    margin-left: -1px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.plan-selector-button + .plan-selector-button:not(:last-child) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.plan-selector-button:hover {
-    z-index: 10;
-}
-
-@media (max-width: 991px) {
-    .plan {
-        display: none;
-    }
-
-    .plan-selector-free + .plan-list .plan-free {
-        display: flex;
-    }
-
-    .plan-selector-monthly + .plan-list .plan-monthly {
-        display: flex;
-    }
-
-    .plan-selector-yearly + .plan-list .plan-yearly {
-        display: flex;
-    }
+.price-button.active {
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
 }
