@@ -9,6 +9,7 @@ var progress = $('.sticky-progress');
 
 $(function () {
     'use strict';
+    cover();
     subMenu();
     featured();
     pagination();
@@ -67,6 +68,16 @@ function sticky() {
     );
 
     lastSt = st;
+}
+
+function cover() {
+    'use strict';
+    var cover = document.querySelector('.auth-cover');
+    if (!cover) return;
+
+    imagesLoaded(cover, function () {
+        cover.classList.remove('loading');
+    });
 }
 
 function subMenu() {
