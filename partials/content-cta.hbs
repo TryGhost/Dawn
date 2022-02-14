@@ -7,14 +7,20 @@
     {{#has visibility="members"}}
         <h2 class="single-cta-title">This post is for subscribers only</h2>
     {{/has}}
-    {{#has visibility="filter"}}
+    {{#has visibility="tiers"}}
         <h2 class="single-cta-title">This post is for subscribers on the {{products}} only</h2>
     {{/has}}
     {{#if @member}}
         <button class="button single-cta-button" data-portal="account/plans">Upgrade now</button>
     {{else}}
-        <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
-        <br>
-        <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
+        {{#if @custom.enable_custom_membership}}
+            <a class="button single-cta-button" href="/subscribe">Subscribe now</a>
+            <br>
+            <a class="button-text single-cta-footer" href="/signin">Already have an account? Sign in</a>
+        {{else}}
+            <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
+            <br>
+            <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
+        {{/if}}
     {{/if}}
 </section>
