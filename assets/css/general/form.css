@@ -24,7 +24,7 @@ textarea {
     color: var(--darker-gray-color);
     font-size: 1.4rem;
     background-color: var(--white-color);
-    border-radius: 4px;
+    border-radius: 3px;
     appearance: none;
 }
 
