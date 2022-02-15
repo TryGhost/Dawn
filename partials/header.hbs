@@ -23,11 +23,13 @@
             {{/if}}
         </nav>
 
-        <button class="button-icon hidden-lg hidden-xl js-modal" data-modal="search" aria-label="Search">
-            <svg class="icon">
-                <use xlink:href="#magnify"></use>
-            </svg>
-        </button>
+        {{#if @custom.content_api_key_for_search}}
+            <button class="button-icon hidden-lg hidden-xl js-modal" data-modal="search" aria-label="Search">
+                <svg class="icon">
+                    <use xlink:href="#magnify"></use>
+                </svg>
+            </button>
+        {{/if}}
         <div class="burger hidden-lg hidden-xl">
             <div class="burger-bar"></div>
             <div class="burger-bar"></div>
