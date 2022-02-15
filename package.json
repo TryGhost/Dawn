@@ -68,7 +68,7 @@
             },
             "enable_custom_membership": {
                 "type": "boolean",
-                "default": true
+                "default": false
             },
             "show_featured_posts": {
                 "type": "boolean",
