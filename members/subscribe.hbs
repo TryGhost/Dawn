@@ -21,63 +21,65 @@
                 </div>
 
                 <div class="tier-list">
-                    {{#foreach @products}}
-                        <section class="tier">
-                            <header class="tier-header">
-                                <h2 class="tier-name">{{name}}</h2>
+                    {{#get "tiers" include="monthly_price,yearly_price,benefits" filter="active:true" limit="all"}}
+                        {{#foreach tiers}}
+                            <section class="tier">
+                                <header class="tier-header">
+                                    <h2 class="tier-name">{{name}}</h2>
+                                    {{#unless monthly_price}}
+                                        {{#unless yearly_price}}
+                                            <div class="tier-price">
+                                                <span class="tier-amount">$0</span>
+                                            </div>
+                                        {{/unless}}
+                                    {{/unless}}
+
+                                    {{#if monthly_price}}
+                                        <div class="tier-price" data-amount="{{monthly_price.amount}}" data-monthly>
+                                            <span class="tier-amount">{{price monthly_price}}</span> / month
+                                        </div>
+                                    {{/if}}
+
+                                    {{#if yearly_price}}
+                                        <div class="tier-price" data-amount="{{yearly_price.amount}}" data-yearly>
+                                            <span class="tier-amount">{{price yearly_price}}</span> / year
+                                        </div>
+                                    {{/if}}
+
+                                    {{#if description}}
+                                        <div class="tier-description">{{description}}</div>
+                                    {{/if}}
+                                </header>
+                                {{#if benefits}}
+                                    <ul class="tier-benefit-list">
+                                        {{#foreach benefits}}
+                                            <li class="tier-benefit">{{> "icons/check"}} {{name}}</li>
+                                        {{/foreach}}
+                                    </ul>
+                                {{/if}}
+
                                 {{#unless monthly_price}}
                                     {{#unless yearly_price}}
-                                        <div class="tier-price">
-                                            <span class="tier-amount">$0</span>
-                                        </div>
+                                        <a class="tier-button button" href="/signup">Sign up</a>
                                     {{/unless}}
                                 {{/unless}}
 
                                 {{#if monthly_price}}
-                                    <div class="tier-price" data-amount="{{monthly_price.amount}}" data-monthly>
-                                        <span class="tier-amount">{{price monthly_price}}</span> / month
-                                    </div>
+                                    <button class="tier-button button button-accent" data-members-plan="{{monthly_price.id}}" data-monthly>
+                                        <span class="default">Choose {{name}}</span>
+                                        <span class="loader">{{> "icons/loader"}}</span>
+                                    </button>
                                 {{/if}}
 
                                 {{#if yearly_price}}
-                                    <div class="tier-price" data-amount="{{yearly_price.amount}}" data-yearly>
-                                        <span class="tier-amount">{{price yearly_price}}</span> / year
-                                    </div>
+                                    <button class="tier-button button button-accent" data-members-plan="{{yearly_price.id}}" data-yearly>
+                                        <span class="default">Choose {{name}}</span>
+                                        <span class="loader">{{> "icons/loader"}}</span>
+                                    </button>
                                 {{/if}}
-
-                                {{#if description}}
-                                    <div class="tier-description">{{description}}</div>
-                                {{/if}}
-                            </header>
-                            {{#if benefits}}
-                                <ul class="tier-benefit-list">
-                                    {{#foreach benefits}}
-                                        <li class="tier-benefit">{{> "icons/check"}} {{name}}</li>
-                                    {{/foreach}}
-                                </ul>
-                            {{/if}}
-
-                            {{#unless monthly_price}}
-                                {{#unless yearly_price}}
-                                    <a class="tier-button button" href="/signup">Sign up</a>
-                                {{/unless}}
-                            {{/unless}}
-
-                            {{#if monthly_price}}
-                                <button class="tier-button button button-accent" data-members-plan="{{monthly_price.id}}" data-monthly>
-                                    <span class="default">Choose {{name}}</span>
-                                    <span class="loader">{{> "icons/loader"}}</span>
-                                </button>
-                            {{/if}}
-
-                            {{#if yearly_price}}
-                                <button class="tier-button button button-accent" data-members-plan="{{yearly_price.id}}" data-yearly>
-                                    <span class="default">Choose {{name}}</span>
-                                    <span class="loader">{{> "icons/loader"}}</span>
-                                </button>
-                            {{/if}}
-                        </section>
-                    {{/foreach}}
+                            </section>
+                        {{/foreach}}
+                    {{/get}}
                 </div>
             </div>
         </div>
