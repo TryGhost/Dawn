@@ -67,6 +67,9 @@
 .auth-button {
     margin-top: 2.4rem;
     width: 100%;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 6px;
 }
 
 .auth-notification {
@@ -85,7 +88,7 @@
 }
 
 .auth-notification-title {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     font-size: 1.7rem;
     font-weight: 700;
 }

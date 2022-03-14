@@ -44,7 +44,7 @@
     width: 100%;
     padding: 3rem;
     border: 1px solid var(--light-gray-color);
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 @media (max-width: 400px) {
@@ -107,6 +107,10 @@
     flex-shrink: 0;
     margin-right: 0.8rem;
     width: 20px;
+}
+
+.tier-button {
+    border-radius: 6px;
 }
 
 .price-list {

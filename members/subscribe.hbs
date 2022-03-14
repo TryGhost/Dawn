@@ -59,19 +59,19 @@
 
                             {{#unless monthly_price}}
                                 {{#unless yearly_price}}
-                                    <a class="button" href="/signup">Sign up</a>
+                                    <a class="tier-button button" href="/signup">Sign up</a>
                                 {{/unless}}
                             {{/unless}}
 
                             {{#if monthly_price}}
-                                <button class="button button-accent" data-members-plan="{{monthly_price.id}}" data-monthly>
+                                <button class="tier-button button button-accent" data-members-plan="{{monthly_price.id}}" data-monthly>
                                     <span class="default">Choose {{name}}</span>
                                     <span class="loader">{{> "icons/loader"}}</span>
                                 </button>
                             {{/if}}
 
                             {{#if yearly_price}}
-                                <button class="button button-accent" data-members-plan="{{yearly_price.id}}" data-yearly>
+                                <button class="tier-button button button-accent" data-members-plan="{{yearly_price.id}}" data-yearly>
                                     <span class="default">Choose {{name}}</span>
                                     <span class="loader">{{> "icons/loader"}}</span>
                                 </button>

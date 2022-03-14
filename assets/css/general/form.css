@@ -6,7 +6,7 @@ label {
 }
 
 label + label {
-    margin-top: 2rem;
+    margin-top: 1.6rem;
 }
 
 label input,
@@ -24,7 +24,7 @@ textarea {
     color: var(--darker-gray-color);
     font-size: 1.4rem;
     background-color: var(--white-color);
-    border-radius: 3px;
+    border-radius: 6px;
     appearance: none;
 }
 
