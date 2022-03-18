@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="tier-list">
-                    {{#get "tiers" include="monthly_price,yearly_price,benefits" filter="active:true" limit="all"}}
+                    {{#get "tiers" include="monthly_price,yearly_price,benefits" filter="visibility:public" limit="all"}}
                         {{#foreach tiers}}
                             <section class="tier">
                                 <header class="tier-header">
