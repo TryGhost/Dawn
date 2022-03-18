@@ -24,11 +24,11 @@
         <div class="subscribe-container container" data-count="{{@products.length}}">
             <div class="subscribe">
                 <div class="price-list">
-                    <button class="button button-secondary price-button active" data-price="monthly">Monthly</button>
-                    <button class="button button-secondary price-button" data-price="yearly">Yearly</button>
+                    <button class="button button-secondary price-button" data-price="monthly">Monthly</button>
+                    <button class="button button-secondary price-button active" data-price="yearly">Yearly</button>
                 </div>
 
-                <div class="tier-list">
+                <div class="tier-list" data-price="yearly">
                     {{#get "tiers" include="monthly_price,yearly_price,benefits" filter="visibility:public" limit="all"}}
                         {{#foreach tiers}}
                             <section class="tier">
