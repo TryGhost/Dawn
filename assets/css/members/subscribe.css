@@ -69,6 +69,7 @@
 
 .tier-name {
     margin-bottom: 0.3rem;
+    padding-right: 9.6rem;
     color: var(--brand-color);
     font-size: 2rem;
 }
@@ -91,16 +92,24 @@
     font-weight: 700;
 }
 
-.tier-benefit-list {
+.tier-content {
     flex-grow: 1;
-    margin: 2rem 0 3rem;
+    margin-bottom: 4rem;
+}
+
+.tier-benefit-list {
+    margin: 2rem 0 0 0;
     padding: 0;
     list-style-type: none;
 }
 
 .tier-benefit {
     display: flex;
-    margin: 1.2rem 0;
+    line-height: 1.55;
+}
+
+.tier-benefit + .tier-benefit {
+    margin-top: 1rem;
 }
 
 .tier-benefit svg {
