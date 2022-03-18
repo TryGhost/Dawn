@@ -14,9 +14,9 @@
         <button class="button single-cta-button" data-portal="account/plans">Upgrade now</button>
     {{else}}
         {{#if @custom.enable_custom_membership}}
-            <a class="button single-cta-button" href="/subscribe">Subscribe now</a>
+            <a class="button single-cta-button" href="{{@site.url}}/subscribe">Subscribe now</a>
             <br>
-            <a class="button-text single-cta-footer" href="/signin">Already have an account? Sign in</a>
+            <a class="button-text single-cta-footer" href="{{@site.url}}/signin">Already have an account? Sign in</a>
         {{else}}
             <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
             <br>

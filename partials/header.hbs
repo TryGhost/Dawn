@@ -45,8 +45,8 @@
                         {{/unless}}
                     {{else}}
                         {{#if @custom.enable_custom_membership}}
-                            <a class="button-text menu-item members-login" href="/signin">Login</a>
-                            <a class="button-text menu-item menu-item-cta members-subscribe" href="/subscribe">Subscribe</a>
+                            <a class="button-text menu-item members-login" href="{{@site.url}}/signin">Login</a>
+                            <a class="button-text menu-item menu-item-cta members-subscribe" href="{{@site.url}}/subscribe">Subscribe</a>
                         {{else}}
                             <button class="button-text menu-item members-login" data-portal="signin">Login</button>
                             <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
@@ -65,8 +65,8 @@
             {{/unless}}
         {{else}}
             {{#if @custom.enable_custom_membership}}
-                <a class="button-text menu-item members-login" href="/signin">Login</a>
-                <a class="button-text menu-item menu-item-cta members-subscribe" href="/subscribe">Subscribe</a>
+                <a class="button-text menu-item members-login" href="{{@site.url}}/signin">Login</a>
+                <a class="button-text menu-item menu-item-cta members-subscribe" href="{{@site.url}}/subscribe">Subscribe</a>
             {{else}}
                 <button class="button-text menu-item members-login" data-portal="signin">Login</button>
                 <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
