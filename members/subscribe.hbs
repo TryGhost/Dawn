@@ -2,14 +2,6 @@
 
 {{#page}}
 
-{{#get "tiers" include="monthly_price,yearly_price,benefits" filter="visibility:public" limit="all"}}
-    {{#match tiers.length "=" 1}}
-        {{#match tiers.[0].type "=" "free"}}
-            <script>window.location = '{{@site.url}}/signup';</script>
-        {{/match}}
-    {{/match}}
-{{/get}}
-
 <div class="content-area">
     <main class="site-main">
         <header class="single-header kg-canvas">
