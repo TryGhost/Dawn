@@ -104,9 +104,9 @@
         "zip": "gulp zip"
     },
     "devDependencies": {
-        "autoprefixer": "10.4.2",
+        "autoprefixer": "10.4.4",
         "beeper": "2.1.0",
-        "cssnano": "5.0.17",
+        "cssnano": "5.1.4",
         "gscan": "4.22.0",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
