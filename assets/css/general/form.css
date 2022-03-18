@@ -22,7 +22,7 @@ textarea {
     outline: none;
     border: 1px solid var(--light-gray-color);
     color: var(--darker-gray-color);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     background-color: var(--white-color);
     border-radius: 6px;
     appearance: none;

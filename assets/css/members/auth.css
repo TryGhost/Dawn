@@ -52,12 +52,12 @@
 
 .auth-title {
     margin-bottom: 0;
-    font-size: 2.4rem;
+    font-size: 2.6rem;
 }
 
 .auth-excerpt {
     margin-top: 1.2rem;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
 }
 
 .auth-form {
@@ -91,6 +91,19 @@
     margin-bottom: 0.8rem;
     font-size: 1.7rem;
     font-weight: 700;
+}
+
+.auth-notification-link {
+    display: flex;
+    align-items: center;
+    margin-top: 1.6rem;
+    font-weight: 700;
+}
+
+.auth-notification-link svg {
+    width: 16px;
+    height: 16px;
+    margin: 0 3px 0 -1px;
 }
 
 .auth .site-footer {
