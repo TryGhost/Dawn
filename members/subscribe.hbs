@@ -13,15 +13,15 @@
             {{/if}}
         </header>
 
-        <div class="subscribe-container container" data-count="{{@products.length}}">
-            <div class="subscribe">
-                <div class="price-list">
-                    <button class="button button-secondary price-button" data-price="monthly">Monthly</button>
-                    <button class="button button-secondary price-button active" data-price="yearly">Yearly</button>
-                </div>
+        {{#get "tiers" include="monthly_price,yearly_price,benefits" filter="visibility:public" limit="all"}}
+            <div class="subscribe-container container" data-count="{{tiers.length}}">
+                <div class="subscribe">
+                    <div class="price-list">
+                        <button class="button button-secondary price-button" data-price="monthly">Monthly</button>
+                        <button class="button button-secondary price-button active" data-price="yearly">Yearly</button>
+                    </div>
 
-                <div class="tier-list" data-price="yearly">
-                    {{#get "tiers" include="monthly_price,yearly_price,benefits" filter="visibility:public" limit="all"}}
+                    <div class="tier-list" data-price="yearly">
                         {{#foreach tiers}}
                             <section class="tier">
                                 <header class="tier-header">
@@ -79,10 +79,10 @@
                                 {{/if}}
                             </section>
                         {{/foreach}}
-                    {{/get}}
+                    </div>
                 </div>
             </div>
-        </div>
+        {{/get}}
     </main>
 </div>
 
