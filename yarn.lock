@@ -161,7 +161,7 @@
     "@elastic/elasticsearch" "7.17.0"
     "@tryghost/debug" "^0.1.14"
 
-"@tryghost/errors@^1.2.6":
+"@tryghost/errors@1.2.6", "@tryghost/errors@^1.2.6":
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/@tryghost/errors/-/errors-1.2.6.tgz#4cb15ec63de4e0fe632ce6fa84191e42c708371c"
   integrity sha512-9kNE9z9CIKjXKNWS03/pH8w9y1bTaLDTt1gIUQmBNlyS3zP56F1uJkz88Y5ySdp1Rbuee1UG+Kc8/L2NJQxsBg==
@@ -177,14 +177,6 @@
   dependencies:
     "@tryghost/errors" "^1.2.6"
     "@tryghost/request" "^0.1.19"
-
-"@tryghost/ignition-errors@0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@tryghost/ignition-errors/-/ignition-errors-0.1.8.tgz#6d4c4d4e02d32403ca1e574eaa91b3c0d138d6f6"
-  integrity sha512-4KYU+kDXZyP7tmzyHiUkfDy9RWxKAtA/6xTGdxYHurE5ZlT++cDDfdUtF0v3308GGUzKlBzRc3jmLjDYpngcBQ==
-  dependencies:
-    lodash "^4.17.21"
-    uuid "^8.3.2"
 
 "@tryghost/logging@2.1.0", "@tryghost/logging@^2.0.1":
   version "2.1.0"
@@ -2327,15 +2319,15 @@ graceful-fs@^4.0.0, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6,
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.9.tgz#041b05df45755e587a24942279b9d113146e1c96"
   integrity sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==
 
-gscan@4.25.1:
-  version "4.25.1"
-  resolved "https://registry.yarnpkg.com/gscan/-/gscan-4.25.1.tgz#ce2032137f1e9ef3e38eaa29ce0b80f1dfa13925"
-  integrity sha512-rPZ3ACDLpCmzUz1odkeQQxmcwfGqStpTctb7VZJ90GqKcEKox2wXCUZC2XF1Qad4tyl0jgzcl5EhQF36ijMKZg==
+gscan@4.25.2:
+  version "4.25.2"
+  resolved "https://registry.yarnpkg.com/gscan/-/gscan-4.25.2.tgz#c593183a075a09fbd426ac7b66023816c969e20f"
+  integrity sha512-wTwl5JD6RJa/F5CikVUARs5xtWITeE5YHDXug7d+9oQY5f7VFm3j+IGxjGmvoTVKDToHa0caTrJFqaKGC8e1GA==
   dependencies:
     "@sentry/node" "6.19.2"
     "@tryghost/config" "0.2.2"
     "@tryghost/debug" "0.1.11"
-    "@tryghost/ignition-errors" "0.1.8"
+    "@tryghost/errors" "1.2.6"
     "@tryghost/logging" "2.1.0"
     "@tryghost/pretty-cli" "1.2.24"
     "@tryghost/server" "0.1.4"
