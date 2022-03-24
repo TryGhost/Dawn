@@ -1,0 +1,74 @@
+{{!< ../default}}
+
+<div class="content-area">
+    <main class="site-main">
+        <div class="auth{{#unless @site.cover_image}} no-cover{{/unless}}">
+            <div class="auth-content">
+                <header class="site-header">
+                    <a class="logo" href="{{@site.url}}/subscribe">
+                        {{#if @site.logo}}
+                            {{#if @custom.white_logo_for_dark_mode}}
+                                <img class="logo-image white" src="{{img_url @custom.white_logo_for_dark_mode}}" alt="{{@site.title}}">
+                            {{/if}}
+                            <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
+                        {{else}}
+                            <span class="logo-text">{{@site.title}}</span>
+                        {{/if}}
+                    </a>
+
+                    <a class="auth-link" href="{{@site.url}}/subscribe">Don't have an account? <span>Sign up</span></a>
+                </header>
+
+                <div class="auth-wrapper">
+                    <header class="auth-header">
+                        {{#if @site.icon}}
+                            <img class="auth-icon" src="{{@site.icon}}" alt="{{@site.title}}">
+                        {{/if}}
+
+                        <h1 class="auth-title">Welcome Back</h1>
+
+                        <div class="auth-excerpt">
+                            Instant access to all members-only posts
+                        </div>
+                    </header>
+
+                    <form class="auth-form" data-members-form="signin">
+                        <label>
+                            <span>Email</span>
+                            <input type="email" placeholder="jamie@example.com" data-members-email required>
+                        </label>
+
+                        <button class="auth-button button button-accent" type="submit">
+                            <span class="default">Continue</span>
+                            <span class="loader">{{> "icons/loader"}}</span>
+                            <span class="success">{{> "icons/check"}}</span>
+                        </button>
+
+                        <section class="auth-notification">
+                            <h2 class="auth-notification-title">Now check your email!</h2>
+                            <p class="auth-notification-message">If the email doesn't arrive in 3 minutes, be sure to check your spam folder!</p>
+                            <a class="auth-notification-link" href="{{@site.url}}">
+                                <svg class="icon navigation-icon">
+                                    <use xlink:href="#arrow-left"></use>
+                                </svg>
+                                Back to home
+                            </a>
+                        </section>
+                    </form>
+                </div>
+
+                <footer class="site-footer">
+                    {{> "copyright"}}
+                </footer>
+            </div>
+
+            {{#if @site.cover_image}}
+                <div class="auth-cover loading">
+                    <img src="{{@site.cover_image}}" alt="{{@site.title}}">
+                </div>
+            {{/if}}
+        </div>
+    </main>
+</div>
+
+{{#contentFor "body_class"}} page-signin{{/contentFor}}

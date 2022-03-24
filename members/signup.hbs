@@ -1,7 +1,5 @@
 {{!< ../default}}
 
-{{#page}}
-
 <div class="content-area">
     <main class="site-main">
         <div class="auth{{#unless @site.cover_image}} no-cover{{/unless}}">
@@ -18,11 +16,7 @@
                         {{/if}}
                     </a>
 
-                    {{#has slug="signup"}}
-                        <a class="auth-link" href="{{@site.url}}/signin">Already a member? <span>Sign in</span></a>
-                    {{else}}
-                        <a class="auth-link" href="{{@site.url}}/subscribe">Don't have an account? <span>Sign up</span></a>
-                    {{/has}}
+                    <a class="auth-link" href="{{@site.url}}/signin">Already a member? <span>Sign in</span></a>
                 </header>
 
                 <div class="auth-wrapper">
@@ -31,22 +25,18 @@
                             <img class="auth-icon" src="{{@site.icon}}" alt="{{@site.title}}">
                         {{/if}}
 
-                        <h1 class="auth-title">{{title}}</h1>
+                        <h1 class="auth-title">Create an Account</h1>
 
-                        {{#if custom_excerpt}}
-                            <div class="auth-excerpt">
-                                {{custom_excerpt}}
-                            </div>
-                        {{/if}}
+                        <div class="auth-excerpt">
+                            Instant access to all members-only posts
+                        </div>
                     </header>
 
-                    <form class="auth-form" data-members-form="{{#has slug="signup"}}signup{{else}}signin{{/has}}">
-                        {{#has slug="signup"}}
-                            <label>
-                                <span>Name</span>
-                                <input type="text" placeholder="Jamie Larson" data-members-name>
-                            </label>
-                        {{/has}}
+                    <form class="auth-form" data-members-form="signup">
+                        <label>
+                            <span>Name</span>
+                            <input type="text" placeholder="Jamie Larson" data-members-name>
+                        </label>
 
                         <label>
                             <span>Email</span>
@@ -86,4 +76,4 @@
     </main>
 </div>
 
-{{/page}}
+{{#contentFor "body_class"}} page-signup{{/contentFor}}
