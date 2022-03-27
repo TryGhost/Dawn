@@ -86,3 +86,44 @@
     transition: transform 0.2s var(--animation-base);
     transform: translateX(2rem);
 }
+
+.feed-wrapper-homepage {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.feed-wrapper-homepage .feed-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: normal;
+}
+
+.feed-wrapper-homepage .feed-excerpt {
+    margin-top: 0.4rem;
+    line-height: 1.2;
+}
+
+.feed:hover .feed-excerpt {
+    opacity: 0.8;
+}
+
+.feed-wrapper-homepage .feed-right {
+    color: var(--secondary-text-color);
+    font-size: 1.4rem;
+    margin-top: 1.2rem;
+}
+
+.feed-wrapper-homepage .feed-length {
+    display: flex;
+    align-items: center;
+}
+
+.feed-wrapper-homepage .feed-length::before {
+    content: "\02022";
+    padding: 0 0.7rem;
+    font-size: 1rem;
+    line-height: 1;
+}

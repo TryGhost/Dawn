@@ -1,0 +1,17 @@
+<article class="feed {{post_class}}">
+	<div class="feed-wrapper-homepage">
+        <h2 class="feed-title">{{title}}</h2>
+        {{#if excerpt}}
+            <div class="feed-excerpt">{{excerpt words="100"}}</div>
+        {{/if}}
+        <div class="feed-right">
+            <time class="feed-date" datetime="{{date format="YYYY-MM-DD"}}">
+                {{date published_at}}
+            </time>
+			<div class="feed-length">
+				{{reading_time}}
+			</div>
+        </div>
+    </div>
+    <a class="u-permalink" href="{{url}}" aria-label="{{title}}"></a>
+</article>
