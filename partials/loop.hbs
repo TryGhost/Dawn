@@ -1,4 +1,5 @@
 <article class="feed {{post_class}}">
+
     <div class="feed-calendar">
         <div class="feed-calendar-month">
             {{date published_at format="MMM"}}
@@ -7,7 +8,9 @@
             {{date published_at format="DD"}}
         </div>
     </div>
+
     <h2 class="feed-title">{{title}}</h2>
+
     <div class="feed-right">
         <svg class="icon feed-visibility feed-visibility-{{visibility}}">
             <use xlink:href="#star"></use>
@@ -16,8 +19,11 @@
             {{reading_time}}
         </div>
     </div>
+
     <svg class="icon feed-icon">
         <use xlink:href="#chevron-right"></use>
     </svg>
+
     <a class="u-permalink" href="{{url}}" aria-label="{{title}}"></a>
+
 </article>

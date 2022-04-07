@@ -1,4 +1,5 @@
 <header class="site-header container">
+
     <div class="header-left">
         <a class="logo" href="{{@site.url}}">
             {{#if @site.logo}}
@@ -11,6 +12,7 @@
             {{/if}}
         </a>
     </div>
+
     {{#if @site.navigation}}
         <nav class="main-nav hidden-xs hidden-sm hidden-md">
             {{navigation}}
@@ -30,6 +32,7 @@
                 </svg>
             </button>
         {{/if}}
+
         <div class="burger hidden-lg hidden-xl">
             <div class="burger-bar"></div>
             <div class="burger-bar"></div>
@@ -52,6 +55,7 @@
             </div>
         </div>
     {{/if}}
+
     <div class="header-right hidden-xs hidden-sm hidden-md">
         {{#if @member}}
             <button class="button-text menu-item members-account" data-portal="account">Account</button>
@@ -63,21 +67,22 @@
             <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
         {{/if}}
     </div>
+
 </header>
 
 {{#is "post"}}
-    {{#post}}
-        <header class="sticky">
-            <div class="sticky-title">{{title}}</div>
-            <button class="button-icon sticky-toc-button" aria-label="Table of Contents">
-                <svg class="icon">
-                    <use xlink:href="#table-of-contents"></use>
-                </svg>
-                <div class="sticky-toc"></div>
-            </button>
-            <div class="sticky-track">
-                <div class="sticky-progress"></div>
-            </div>
-        </header>
-    {{/post}}
+{{#post}}
+    <header class="sticky">
+        <div class="sticky-title">{{title}}</div>
+        <button class="button-icon sticky-toc-button" aria-label="Table of Contents">
+            <svg class="icon">
+                <use xlink:href="#table-of-contents"></use>
+            </svg>
+            <div class="sticky-toc"></div>
+        </button>
+        <div class="sticky-track">
+            <div class="sticky-progress"></div>
+        </div>
+    </header>
+{{/post}}
 {{/is}}
