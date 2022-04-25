@@ -71,6 +71,10 @@
     height: 24px;
 }
 
+.menu-item-more svg {
+    fill: currentColor;
+}
+
 .menu-item-cta {
     color: var(--brand-color);
 }
