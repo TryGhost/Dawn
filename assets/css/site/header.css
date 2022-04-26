@@ -69,9 +69,6 @@
 .menu-item-more .icon {
     width: 24px;
     height: 24px;
-}
-
-.menu-item-more svg {
     fill: currentColor;
 }
 
