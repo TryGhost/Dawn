@@ -71,8 +71,8 @@ function sticky() {
 
 function subMenu() {
     'use strict';
-    var nav = document.querySelector('.main-nav');
-    var items = nav.querySelectorAll('.menu-item');
+    var mainNav = $('.main-nav');
+    var items = mainNav.find('.menu-item');
 
     function getSiblings(el, filter) {
         var siblings = [];
