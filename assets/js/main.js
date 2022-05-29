@@ -72,6 +72,12 @@ function sticky() {
 function subMenu() {
     'use strict';
     var nav = document.querySelector('.main-nav');
+
+    // For sites that don't have a main navigation, there is nothing to do
+    if (!nav) {
+        return;
+    }
+
     var items = nav.querySelectorAll('.menu-item');
 
     function getSiblings(el, filter) {
