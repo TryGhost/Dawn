@@ -1,0 +1,20 @@
+<div class="cover gh-outer">
+    <div class="cover-content gh-inner">
+        {{#if @site.icon}}
+            <div class="cover-icon">
+                <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+            </div>
+        {{/if}}
+
+        {{#if @site.description}}
+            <div class="cover-description">{{@site.description}}</div>
+        {{/if}}
+
+        {{#unless @member}}
+            <div class="cover-cta">
+                <button class="button members-subscribe" data-portal="signup">Subscribe now</button>
+                <button class="button button-secondary members-login" data-portal="signin">Login</button>
+            </div>
+        {{/unless}}
+    </div>
+</div>

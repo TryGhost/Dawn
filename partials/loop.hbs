@@ -1,0 +1,25 @@
+<article class="feed {{visibility}} {{post_class}}">
+
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            {{date published_at format="MMM"}}
+        </div>
+        <div class="feed-calendar-day">
+            {{date published_at format="DD"}}
+        </div>
+    </div>
+
+    <h2 class="feed-title">{{title}}</h2>
+
+    <div class="feed-right">
+        {{> "icons/star"}}
+        <div class="feed-length">
+            {{reading_time}}
+        </div>
+    </div>
+
+    {{> "icons/chevron-right"}}
+
+    <a class="u-permalink" href="{{url}}" aria-label="{{title}}"></a>
+
+</article>

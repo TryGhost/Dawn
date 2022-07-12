@@ -1,0 +1,104 @@
+<article class="single {{post_class}}">
+
+    <header class="single-header gh-canvas">
+        {{#is "post"}}
+        <div class="single-meta">
+            <span class="single-meta-item single-meta-date">
+                <time datetime="{{date format="YYYY-MM-DD"}}">
+                    {{date published_at}}
+                </time>
+            </span>
+            {{#if reading_time}}
+                <span class="single-meta-item single-meta-length">
+                    {{reading_time}}
+                </span>
+            {{/if}}
+            {{#primary_tag}}
+                <span class="single-meta-item single-meta-tag">
+                    <a class="post-tag post-tag-{{slug}}" href="{{url}}">
+                        {{name}}
+                    </a>
+                </span>
+            {{/primary_tag}}
+        </div>
+        {{/is}}
+
+        <h1 class="single-title">{{title}}</h1>
+
+        {{#if custom_excerpt}}
+            <div class="single-excerpt">
+                {{custom_excerpt}}
+            </div>
+        {{/if}}
+
+        {{#if feature_image}}
+        {{#unless no_image}}
+            <figure class="single-media kg-width-{{width}}">
+                <div class="u-placeholder horizontal">
+                    <img
+                        class="u-object-fit"
+                        srcset="{{> srcset}}"
+                        sizes="(min-width: 1200px) 920px, 92vw"
+                        src="{{img_url feature_image size="l"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    >
+                </div>
+
+                {{#if feature_image_caption}}
+                    <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+            </figure>
+        {{/unless}}
+        {{/if}}
+    </header>
+
+    <div class="single-content gh-content gh-canvas">
+        {{content}}
+    </div>
+
+    {{#is "post"}}
+    <div class="gh-canvas">
+    <footer class="single-footer">
+
+        <div class="single-footer-left">
+        {{#prev_post}}
+            <div class="navigation navigation-previous">
+                <a class="navigation-link" href="{{url}}" aria-label="Previous post">
+                    {{> "icons/arrow-left"}}
+                </a>
+            </div>
+        {{/prev_post}}
+        </div>
+
+        <div class="single-footer-middle">
+        {{#if @custom.show_author}}
+            <div class="single-footer-top">
+                <h3 class="single-footer-title">Published by:</h3>
+                <div class="author-list">
+                    {{#foreach authors}}
+                    <div class="author-image-placeholder u-placeholder square">
+                        <a href="{{url}}" title="{{name}}">
+                            <img class="author-image u-object-fit" src="{{img_url profile_image size="xs"}}" alt="{{name}}" loading="lazy">
+                        </a>
+                    </div>
+                    {{/foreach}}
+                </div>
+            </div>
+        {{/if}}
+        </div>
+
+        <div class="single-footer-right">
+        {{#next_post}}
+            <div class="navigation navigation-next">
+                <a class="navigation-link" href="{{url}}" aria-label="Next post">
+                    {{> "icons/arrow-right"}}
+                </a>
+            </div>
+        {{/next_post}}
+        </div>
+
+    </footer>
+    </div>
+    {{/is}}
+
+</article>

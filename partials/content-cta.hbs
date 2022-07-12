@@ -1,0 +1,20 @@
+{{{html}}}
+
+<section class="single-cta">
+    {{#has visibility="paid"}}
+        <h2 class="single-cta-title">This post is for paying subscribers only</h2>
+    {{/has}}
+    {{#has visibility="members"}}
+        <h2 class="single-cta-title">This post is for subscribers only</h2>
+    {{/has}}
+    {{#has visibility="filter"}}
+        <h2 class="single-cta-title">This post is for subscribers on the {{tiers}} only</h2>
+    {{/has}}
+    {{#if @member}}
+        <button class="button single-cta-button" data-portal="account/plans">Upgrade now</button>
+    {{else}}
+        <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
+        <br>
+        <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
+    {{/if}}
+</section>

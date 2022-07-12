@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html{{#match @custom.color_scheme "Dark"}} class="theme-dark"{{/match}}{{#match @custom.color_scheme "Light"}} class="theme-light"{{/match}} lang="{{@site.locale}}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+
+    {{ghost_head}}
+</head>
+
+<body class='{{body_class}} is-head-b--n--a{{{block "body_class"}}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}'>
+<div class="site">
+
+    <header id="gh-head" class="gh-head gh-outer">
+    <div class="gh-head-inner gh-inner">
+
+        <div class="gh-head-brand">
+            <div class="gh-head-brand-wrapper">
+                <a class="gh-head-logo" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                        {{#if @custom.white_logo_for_dark_mode}}
+                            <img src="{{img_url @custom.white_logo_for_dark_mode}}" alt="{{@site.title}}">
+                        {{/if}}
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+            </div>
+            <button class="gh-burger"></button>
+        </div>
+
+        <nav class="gh-head-menu">
+            {{navigation}}
+        </nav>
+
+        <div class="gh-head-actions">
+            <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+            {{#if @member}}
+                <button class="button-text menu-item members-account" data-portal="account">Account</button>
+                {{#unless @member.paid}}
+                    <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
+                {{/unless}}
+            {{else}}
+                <button class="button-text menu-item members-login" data-portal="signin">Login</button>
+                <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
+            {{/if}}
+        </div>
+
+    </div>
+    </header>
+
+    {{#is "home"}}
+        {{> "cover"}}
+
+        {{#if @custom.show_featured_posts}}
+            {{> "featured-posts"}}
+        {{/if}}
+    {{/is}}
+
+    <div class="site-content">
+        {{{body}}}
+    </div>
+
+    <footer class="gh-foot gh-outer">
+        <div class="gh-foot-inner gh-inner">
+            <div class="gh-copyright">
+                {{@site.title}} © {{date format="YYYY"}}
+            </div>
+            <nav class="gh-foot-menu">
+                {{navigation type="secondary"}}
+            </nav>
+            <div class="gh-powered-by">
+                <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
+            </div>
+        </div>
+    </footer>
+
+    {{> "pswp"}}
+
+</div>
+
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src='{{asset "built/main.min.js"}}'></script>
+
+{{ghost_foot}}
+
+</body>
+</html>

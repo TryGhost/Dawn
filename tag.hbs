@@ -1,0 +1,35 @@
+{{!< default}}
+
+<main class="site-main">
+
+    {{#tag}}
+    <section class="tag">
+
+        <div class="gh-canvas">
+
+            <h1 class="tag-name">{{name}}</h1>
+
+            {{#if description}}
+                <div class="tag-description">{{description}}</div>
+            {{/if}}
+
+            {{#if feature_image}}
+                <div class="tag-media u-placeholder horizontal kg-width-wide">
+                    <img class="u-object-fit" srcset="{{> srcset}}" src="{{img_url feature_image size="l"}}" alt="{{name}}">
+                </div>
+            {{/if}}
+
+        </div>
+
+    </section>
+    {{/tag}}
+
+    <div class="post-feed gh-feed gh-canvas">
+        {{#foreach posts}}
+            {{> "loop"}}
+        {{/foreach}}
+    </div>
+
+    {{pagination}}
+
+</main>

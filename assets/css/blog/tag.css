@@ -1,0 +1,51 @@
+.tag {
+    margin-bottom: 4.5rem;
+    text-align: center;
+}
+
+.tag-name {
+    margin-bottom: 0;
+    font-size: 3rem;
+    color: var(--brand-color);
+}
+
+.tag-name::before {
+    content: "#";
+}
+
+.tag-description {
+    max-width: 520px;
+    margin: 16px auto 0;
+}
+
+.tag-list {
+    margin-top: 2rem;
+    font-weight: 700;
+}
+
+.tag-list-label {
+    margin-right: 0.5rem;
+    color: var(--secondary-text-color);
+}
+
+.tag-list-item::before {
+    content: "#";
+}
+
+.tag-list-item + .tag-list-item {
+    margin-left: 0.3rem;
+}
+
+.tag-media {
+    margin-top: 4.5rem;
+}
+
+@media (max-width: 767px) {
+    .tag {
+        margin-bottom: 2.5rem;
+    }
+
+    .tag-media {
+        margin-top: 3rem;
+    }
+}
