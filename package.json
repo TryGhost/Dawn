@@ -2,6 +2,7 @@
     "name": "dawn",
     "description": "A Ghost theme",
     "version": "1.0.0",
+    "private": true,
     "engines": {
         "ghost": ">=4.0.0"
     },
