@@ -97,6 +97,7 @@
         "zip": "gulp zip"
     },
     "devDependencies": {
+        "@tryghost/shared-theme-assets": "1.0.0",
         "autoprefixer": "10.4.7",
         "beeper": "2.1.0",
         "cssnano": "5.1.12",
@@ -109,7 +110,6 @@
         "gulp-zip": "5.1.0",
         "postcss": "8.4.14",
         "postcss-easy-import": "4.0.0",
-        "pump": "3.0.0",
-        "shared": "https://gitpkg.now.sh/TryGhost/Themes/packages/_shared?main"
+        "pump": "3.0.0"
     }
 }
