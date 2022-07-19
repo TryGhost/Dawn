@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "private": true,
     "engines": {
-        "ghost": ">=4.0.0"
+        "ghost": ">=5.0.0"
     },
     "license": "MIT",
     "author": {
