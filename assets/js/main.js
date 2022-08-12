@@ -7,7 +7,10 @@ $(function () {
 
 function subMenu() {
     'use strict';
+
     var nav = document.querySelector('.gh-head-menu .nav');
+    if (!nav) return;
+
     var items = nav.querySelectorAll('li');
 
     function getSiblings(el, filter) {
