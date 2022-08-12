@@ -4,11 +4,22 @@
 
     {{#post}}
         {{> "content" width="wide"}}
-        {{> "comment"}}
     {{/post}}
 
     {{#if @custom.show_related_posts}}
         {{> "related-posts"}}
     {{/if}}
+
+    {{#post}}
+        {{#if comments}}
+            <section class="gh-comments gh-canvas">
+                <header class="gh-comments-header">
+                    <h3 class="gh-comments-title related-title">Member discussion</h3>
+                    {{comment_count class="gh-comments-count"}}
+                </header>
+                {{comments title="" count=false}}
+            </section>
+        {{/if}}
+    {{/post}}
 
 </main>
