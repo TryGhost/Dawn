@@ -23,6 +23,21 @@
     --content-font-size: 1.7rem;
 }
 
-:where(h1, h2, h3, h4, h5, h6) {
+body {
+    color: var(--primary-text-color);
+    background-color: var(--white-color);
+}
+
+a {
+    color: var(--darker-gray-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 800;
+    color: var(--darker-gray-color);
 }
