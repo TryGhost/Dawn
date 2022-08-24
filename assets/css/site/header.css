@@ -36,6 +36,7 @@
 .menu-item-more .icon {
     width: 24px;
     height: 24px;
+    fill: var(--darker-gray-color);
 }
 
 .menu-item-cta {
