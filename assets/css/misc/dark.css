@@ -2,11 +2,13 @@
     --primary-text-color: #e2e2e2;
     --secondary-text-color: #868686;
     --white-color: #282c35;
+    --color-white: #282c35;
     --lighter-gray-color: #2f333c;
     --light-gray-color: #3b3e46;
     --mid-gray-color: #666;
     --dark-gray-color: #e6e6e6;
     --darker-gray-color: #fff;
+    --color-darker-gray: #fff;
 }
 
 .theme-dark .logo-image.white + .logo-image,
@@ -49,11 +51,13 @@
         --primary-text-color: #e2e2e2;
         --secondary-text-color: #868686;
         --white-color: #282c35;
+        --color-white: #282c35;
         --lighter-gray-color: #2f333c;
         --light-gray-color: #3b3e46;
         --mid-gray-color: #666;
         --dark-gray-color: #e6e6e6;
         --darker-gray-color: #fff;
+        --color-darker-gray: #fff;
     }
 
     html:not(.theme-light) .logo-image.white + .logo-image,
