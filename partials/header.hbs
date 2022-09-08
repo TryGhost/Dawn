@@ -1,0 +1,83 @@
+<header class="site-header container">
+    <div class="header-left">
+        <a class="logo" href="{{@site.url}}">
+            {{#if @site.logo}}
+                {{#if @custom.white_logo_for_dark_mode}}
+                    <img class="logo-image white" src="{{img_url @custom.white_logo_for_dark_mode}}" alt="{{@site.title}}">
+                {{/if}}
+                <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
+            {{else}}
+                <span class="logo-text">{{@site.title}}</span>
+            {{/if}}
+        </a>
+    </div>
+    {{#if @site.navigation}}
+        <nav class="main-nav hidden-xs hidden-sm hidden-md">
+            {{navigation}}
+            {{#if @custom.content_api_key_for_search}}
+                <button class="button-icon menu-item-button js-modal" data-modal="search" aria-label="Search">
+                    <svg class="icon">
+                        <use xlink:href="#magnify"></use>
+                    </svg>
+                </button>
+            {{/if}}
+        </nav>
+
+        {{#if @custom.content_api_key_for_search}}
+            <button class="button-icon hidden-lg hidden-xl js-modal" data-modal="search" aria-label="Search">
+                <svg class="icon">
+                    <use xlink:href="#magnify"></use>
+                </svg>
+            </button>
+        {{/if}}
+        <div class="burger hidden-lg hidden-xl">
+            <div class="burger-bar"></div>
+            <div class="burger-bar"></div>
+        </div>
+
+        <div class="mobile-menu hidden-lg hidden-xl">
+            <div class="container">
+                <nav class="mobile-nav">
+                    {{navigation}}
+                    {{#if @member}}
+                        <button class="button-text menu-item members-account" data-portal="account">Account</button>
+                        {{#unless @member.paid}}
+                            <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
+                        {{/unless}}
+                    {{else}}
+                        <button class="button-text menu-item members-login" data-portal="signin">Login</button>
+                        <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
+                    {{/if}}
+                </nav>
+            </div>
+        </div>
+    {{/if}}
+    <div class="header-right hidden-xs hidden-sm hidden-md">
+        {{#if @member}}
+            <button class="button-text menu-item members-account" data-portal="account">Account</button>
+            {{#unless @member.paid}}
+                <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
+            {{/unless}}
+        {{else}}
+            <button class="button-text menu-item members-login" data-portal="signin">Login</button>
+            <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
+        {{/if}}
+    </div>
+</header>
+
+{{#is "post"}}
+    {{#post}}
+        <header class="sticky">
+            <div class="sticky-title">{{title}}</div>
+            <button class="button-icon sticky-toc-button" aria-label="Table of Contents">
+                <svg class="icon">
+                    <use xlink:href="#table-of-contents"></use>
+                </svg>
+                <div class="sticky-toc"></div>
+            </button>
+            <div class="sticky-track">
+                <div class="sticky-progress"></div>
+            </div>
+        </header>
+    {{/post}}
+{{/is}}

@@ -1,0 +1,106 @@
+/* Content refers to styling all page and post content that is
+created within the Ghost editor. The main content handles
+headings, text, images and lists. We deal with cards lower down. */
+
+/* Default vertical spacing */
+.gh-content > * + * {
+    margin-top: 2.8rem;
+    margin-bottom: 0;
+}
+
+/* [id] represents all headings h1-h6, reset all margins */
+.gh-content > [id] {
+    margin: 0;
+}
+
+.has-serif-title .gh-content > [id] {
+    font-family: var(--font-serif);
+}
+
+/* Add back a top margin to all headings, unless a heading
+is the very first element in the post content */
+.gh-content > [id]:not(:first-child) {
+    margin-top: 4.8rem;
+}
+
+/* Add a small margin between a heading and anything after it */
+.gh-content > [id] + * {
+    margin-top: 1.6rem;
+}
+
+.gh-content > [id] + .kg-card {
+    margin-top: 2.8rem;
+}
+
+/* A larger margin before/after HRs and blockquotes */
+.gh-content > hr,
+.gh-content > blockquote {
+    position: relative;
+    margin-top: 4.8rem;
+}
+
+.gh-content > hr + *,
+.gh-content > blockquote + * {
+    margin-top: 4.8rem;
+}
+
+/* Cards */
+.gh-content :not(.kg-card):not([id]) + .kg-card {
+    margin-top: 4.8rem;
+}
+
+.gh-content .kg-card + :not(.kg-card) {
+    margin-top: 4.8rem;
+}
+
+/* Now the content typography styles */
+.gh-content > h2 {
+    font-size: 2.3rem;
+}
+
+.gh-content > h3 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.gh-content a {
+    color: var(--ghost-accent-color);
+    text-decoration: underline;
+    word-break: break-word;
+}
+
+.gh-content > ol,
+.gh-content > ul,
+.gh-content > dl,
+.gh-content > p {
+    font-size: 1.7rem;
+}
+
+.gh-content .kg-callout-card .kg-callout-text,
+.gh-content .kg-toggle-card .kg-toggle-content > ol,
+.gh-content .kg-toggle-card .kg-toggle-content > ul,
+.gh-content .kg-toggle-card .kg-toggle-content > p {
+    font-size: 1.6rem;
+}
+
+.has-serif-body .gh-content > blockquote,
+.has-serif-body .gh-content > ol,
+.has-serif-body .gh-content > ul,
+.has-serif-body .gh-content > dl,
+.has-serif-body .gh-content > p,
+.has-serif-body .gh-content .kg-callout-text,
+.has-serif-body .gh-content .kg-toggle-content > ol,
+.has-serif-body .gh-content .kg-toggle-content > ul,
+.has-serif-body .gh-content .kg-toggle-content > p {
+    font-family: var(--font-serif);
+}
+
+.gh-content > ul,
+.gh-content > ol,
+.gh-content > dl {
+    padding-left: 4rem;
+}
+
+.gh-content li + li {
+    margin-top: 0.8rem;
+}

@@ -1,0 +1,80 @@
+.kg-card.kg-toggle-card .kg-toggle-heading-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.has-serif-title .kg-toggle-card .kg-toggle-heading-text {
+    font-family: var(--font-serif);
+}
+
+.kg-card.kg-callout-card {
+    align-items: baseline;
+}
+
+.kg-callout-card-accent a {
+    text-decoration: underline;
+}
+
+blockquote.kg-blockquote-alt {
+    padding: 0 1.5em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--secondary-text-color);
+}
+
+.kg-card.kg-button-card .kg-btn {
+    font-size: 1.05em;
+}
+
+.has-serif-title .kg-card.kg-header-card h2.kg-header-card-header {
+    font-family: var(--font-serif);
+}
+
+.has-serif-body .kg-header-card h3.kg-header-card-subheader {
+    font-family: var(--font-serif);
+}
+
+.kg-gallery-image {
+    cursor: pointer;
+}
+
+.kg-image {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.kg-canvas {
+    display: grid;
+    grid-template-columns:
+        [full-start]
+        minmax(4vw, auto)
+        [wide-start]
+        minmax(auto, 140px)
+        [main-start]
+        min(640px, calc(100% - 8vw))
+        [main-end]
+        minmax(auto, 140px)
+        [wide-end]
+        minmax(4vw, auto)
+        [full-end];
+}
+
+.kg-canvas > * {
+    grid-column: main-start/main-end;
+}
+
+.kg-width-wide {
+    grid-column: wide-start/wide-end;
+}
+
+.kg-width-full {
+    grid-column: full-start/full-end;
+}

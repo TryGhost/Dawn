@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "@tryghost:theme"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["beeper"],
+      "allowedVersions": "<3.0.0"
+    }
+  ]
+}

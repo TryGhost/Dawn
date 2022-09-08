@@ -1,0 +1,26 @@
+{{#get "posts" filter="featured:true" limit="all" as |featured|}}
+    {{#if featured}}
+        <section class="featured-wrapper container">
+            {{#if @custom.featured_title}}
+                <h2 class="featured-title">{{@custom.featured_title}}</h2>
+            {{/if}}
+            <div class="featured-feed owl">
+                {{#foreach featured}}
+                    <article class="{{post_class}}">
+                        {{#if feature_image}}
+                            <div class="u-placeholder horizontal">
+                                <img class="lazyload u-object-fit"
+                                    data-srcset="{{> srcset}}" data-sizes="auto"
+                                    src="{{img_url feature_image size="m"}}"
+                                    srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                    alt="{{title}}">
+                            </div>
+                        {{/if}}
+                        <h3 class="post-title">{{title}}</h3>
+                        <a class="u-permalink" href={{url}} aria-label="{{title}}"></a>
+                    </article>
+                {{/foreach}}
+            </div>
+        </section>
+    {{/if}}
+{{/get}}
