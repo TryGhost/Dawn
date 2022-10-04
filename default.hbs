@@ -41,9 +41,11 @@
             <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
             {{#if @member}}
                 <button class="button-text menu-item members-account" data-portal="account">Account</button>
-                {{#unless @member.paid}}
-                    <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
-                {{/unless}}
+                {{#if @setting.paid_members_enabled}}
+                    {{#unless @member.paid}}
+                        <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
+                    {{/unless}}
+                {{/if}}
             {{else}}
                 <button class="button-text menu-item members-login" data-portal="signin">Login</button>
                 <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
