@@ -10,49 +10,56 @@
     {{ghost_head}}
 </head>
 
-<body class='{{body_class}} is-head-b--n--a{{{block "body_class"}}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}'>
+<body class='{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}'>
 <div class="site">
 
     <header id="gh-head" class="gh-head gh-outer">
-    <div class="gh-head-inner gh-inner">
-
-        <div class="gh-head-brand">
-            <div class="gh-head-brand-wrapper">
-                <a class="gh-head-logo" href="{{@site.url}}">
-                    {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}">
-                        {{#if @custom.white_logo_for_dark_mode}}
-                            <img src="{{img_url @custom.white_logo_for_dark_mode}}" alt="{{@site.title}}">
+        <div class="gh-head-inner gh-inner">
+            <div class="gh-head-brand">
+                <div class="gh-head-brand-wrapper">
+                    <a class="gh-head-logo" href="{{@site.url}}">
+                        {{#if @site.logo}}
+                            <img src="{{@site.logo}}" alt="{{@site.title}}">
+                            {{#if @custom.white_logo_for_dark_mode}}
+                                <img src="{{img_url @custom.white_logo_for_dark_mode}}" alt="{{@site.title}}">
+                            {{/if}}
+                        {{else}}
+                            {{@site.title}}
                         {{/if}}
-                    {{else}}
-                        {{@site.title}}
-                    {{/if}}
-                </a>
+                    </a>
+                </div>
+                <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                <button class="gh-burger"></button>
             </div>
-            <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-            <button class="gh-burger"></button>
-        </div>
 
-        <nav class="gh-head-menu">
-            {{navigation}}
-        </nav>
+            <nav class="gh-head-menu">
+                {{navigation}}
+                {{#unless @site.members_enabled}}
+                    {{#match @custom.navigation_layout "Stacked"}}
+                        <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                    {{/match}}
+                {{/unless}}
+            </nav>
 
-        <div class="gh-head-actions">
-            <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-            {{#if @member}}
-                <button class="button-text menu-item members-account" data-portal="account">Account</button>
-                {{#if @setting.paid_members_enabled}}
-                    {{#unless @member.paid}}
-                        <button class="button-text menu-item menu-item-cta members-upgrade" data-portal="account/plans">Upgrade</button>
+            <div class="gh-head-actions">
+                {{#unless @site.members_enabled}}
+                    {{^match @custom.navigation_layout "Stacked"}}
+                        <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                    {{/match}}
+                {{else}}
+                    <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                    {{#unless @member}}
+                        {{#unless @site.members_invite_only}}
+                            <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                        {{else}}
+                            <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signin" data-portal="signin">Login</a>
+                        {{/unless}}
+                    {{else}}
+                        <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/account" data-portal="account">Account</a>
                     {{/unless}}
-                {{/if}}
-            {{else}}
-                <button class="button-text menu-item members-login" data-portal="signin">Login</button>
-                <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
-            {{/if}}
+                {{/unless}}
+            </div>
         </div>
-
-    </div>
     </header>
 
     {{#is "home"}}
