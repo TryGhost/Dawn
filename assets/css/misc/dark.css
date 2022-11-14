@@ -11,13 +11,11 @@
     --color-darker-gray: #fff;
 }
 
-.theme-dark .logo-image.white + .logo-image,
-.theme-dark .cover-icon-image.white + .cover-icon-image {
+.theme-dark .gh-head-logo img:first-child:not(:only-child) {
     opacity: 0;
 }
 
-.theme-dark .logo-image.logo-image.white,
-.theme-dark .cover-icon-image.white {
+.theme-dark .gh-head-logo img + img {
     opacity: 1;
 }
 
@@ -60,13 +58,11 @@
         --color-darker-gray: #fff;
     }
 
-    html:not(.theme-light) .logo-image.white + .logo-image,
-    html:not(.theme-light) .cover-icon-image.white + .cover-icon-image {
+    html:not(.theme-light) .gh-head-logo img:first-child:not(:only-child) {
         opacity: 0;
     }
 
-    html:not(.theme-light) .logo-image.logo-image.white,
-    html:not(.theme-light) .cover-icon-image.white {
+    html:not(.theme-light) .gh-head-logo img + img {
         opacity: 1;
     }
 
