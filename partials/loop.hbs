@@ -1,13 +1,12 @@
 <article class="feed {{visibility}} {{post_class}}">
 
+{{#primary_tag}}
     <div class="feed-calendar">
-        <div class="feed-calendar-month">
-            {{date published_at format="MMM"}}
-        </div>
-        <div class="feed-calendar-day">
-            {{date published_at format="DD"}}
-        </div>
+        <a class="post-tag post-tag-{{slug}}" href="{{url}}">
+            {{name}}
+        </a>
     </div>
+{{/primary_tag}}                
 
     <h2 class="feed-title">{{title}}</h2>
 
