@@ -4,9 +4,14 @@
     --white-color: #282c35;
     --color-white: #282c35;
     --lighter-gray-color: #2f333c;
+    --color-lighter-gray: #2f333c;
     --light-gray-color: #3b3e46;
+    --color-light-gray: #3b3e46;
+    --color-light-color: #3b3e46;
     --mid-gray-color: #666;
+    --color-mid-gray: #666;
     --dark-gray-color: #e6e6e6;
+    --color-dark-gray: #e6e6e6;
     --darker-gray-color: #fff;
     --color-darker-gray: #fff;
 }
