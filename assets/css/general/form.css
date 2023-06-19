@@ -21,11 +21,11 @@ textarea {
     padding: 0 1.5rem;
     font-size: 1.6rem;
     color: var(--darker-gray-color);
+    appearance: none;
     background-color: var(--white-color);
     border: 1px solid var(--light-gray-color);
     border-radius: 5px;
     outline: none;
-    appearance: none;
 }
 
 input:focus,
