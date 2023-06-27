@@ -107,7 +107,7 @@
         "autoprefixer": "10.4.14",
         "beeper": "2.1.0",
         "cssnano": "6.0.1",
-        "gscan": "4.37.0",
+        "gscan": "4.37.1",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
