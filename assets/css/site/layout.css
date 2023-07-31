@@ -9,6 +9,10 @@
     padding: 6rem 0;
 }
 
+.page-template .site-content {
+    padding-block: 0;
+}
+
 @media (max-width: 767px) {
     .site-content {
         padding: 3rem 0;

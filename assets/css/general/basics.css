@@ -21,6 +21,13 @@
     --font-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
     --navbar-height: 80px;
     --content-font-size: 1.7rem;
+    --header-spacing: 60px;
+}
+
+@media (max-width: 767px) {
+    :root {
+        --header-spacing: 30px;
+    }
 }
 
 body {
