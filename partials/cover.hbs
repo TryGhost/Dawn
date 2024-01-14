@@ -10,11 +10,13 @@
             <div class="cover-description">{{@site.description}}</div>
         {{/if}}
 
-        {{#unless @member}}
+        {{#if @site.members_enabled}}
+            {{#unless @member}}
             <div class="cover-cta">
                 <button class="button members-subscribe" data-portal="signup">Subscribe now</button>
                 <button class="button button-secondary members-login" data-portal="signin">Login</button>
             </div>
-        {{/unless}}
+            {{/unless}}
+        {{/if}}
     </div>
 </div>
