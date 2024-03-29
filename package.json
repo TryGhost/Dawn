@@ -108,7 +108,7 @@
         "beeper": "2.1.0",
         "cssnano": "6.1.2",
         "gscan": "4.42.0",
-        "gulp": "4.0.2",
+        "gulp": "5.0.0",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "10.0.0",
