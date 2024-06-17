@@ -1,0 +1,73 @@
+.membership-plans {
+    display: flex;
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    flex: 1;
+    max-width: 420px;
+    min-width: 320px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--white);
+    padding: 32px;
+    border-radius: 7px;
+    border: 1px solid rgb(225, 225, 225);
+    min-height: 200px;
+    transition: border-color 0.25s ease-in-out;
+}
+
+.card:hover {
+    border-color: rgb(61,61,61)
+}
+
+.plan-name {
+    margin-bottom: 0.5rem;
+}
+
+.plan-amount {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.plan-description {
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.card-details {
+    margin-bottom: 8rem;
+}
+
+.plan-button {
+    justify-self: end;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1em;
+    letter-spacing: 0.2px;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    min-width: 80px;
+    margin-bottom: 1.5rem;
+    margin-top: auto;
+    height: 44px;
+    padding: 0 1.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .25s ease;
+    box-shadow: none;
+    user-select: none;
+    outline: none;
+    border: none;
+}

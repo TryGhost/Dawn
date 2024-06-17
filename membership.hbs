@@ -1,0 +1,35 @@
+{{!< ./default}} <main id="site-main" class="site-main site-signup outer">
+    <div class="inner">
+        <section class="membership-plans">
+            {{#get "tiers" include="name,description,monthly_price,benefits" limit="all" as |tiers|}}
+            {{#foreach tiers}}
+            <div class="card" data-test-tier="paid">
+                <div class="card-header">
+                    <h4 class="plan-name" style="color: {{@site.accent_color}}">{{name}}</h4>
+                    <div class=" gh-portal-product-price">
+                        {{#if monthly_price}}
+                        <span class="plan-amount" data-testid="product-amount">
+                            {{price monthly_price currency=currency}}
+                        </span>
+                        <span class="billing-period">per month</span>
+                        {{else}}
+                        <span class="plan-amount">Free</span>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="card-details">
+                    <div class="plan-description" data-testid="product-description">
+                        {{description}}</div>
+                    <div class="benefit-list">
+                        {{#foreach benefits as |benefit|}}
+                        <div class="benefit-title">✓ {{benefit}}</div>
+                        {{/foreach}}
+                    </div>
+                </div>
+                <button class="plan-button" style="background-color: {{@site.accent_color}}">Choose Plan</button>
+            </div>
+            {{/foreach}}
+            {{/get}}
+        </section>
+    </div>
+    </main>
