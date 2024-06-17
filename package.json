@@ -1,6 +1,6 @@
 {
-    "name": "dawn",
-    "description": "A Ghost theme",
+    "name": "dawn-omega",
+    "description": "An extension of the ",
     "version": "1.0.0",
     "private": true,
     "engines": {
@@ -8,9 +8,9 @@
     },
     "license": "MIT",
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Adin Vashi",
+        "email": "akvashi24@gmail.com",
+        "url": "akvashi.dev"
     },
     "keywords": [
         "ghost",
