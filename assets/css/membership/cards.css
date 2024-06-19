@@ -1,13 +1,36 @@
+.membership-container {
+    padding: 0px 2rem;
+}
+
 .membership-plans {
     display: flex;
+    flex-wrap: wrap;
     grid-gap: 20px;
     justify-content: center;
+}
+
+.number-input {
+    width: 150px;
+    background-color: var(--color-lighter-gray);
+    border: none;
+    font-weight: 800;
+    font-size: 3.5rem;
+    padding-left: 8px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.number-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 .card {
     flex: 1;
     max-width: 420px;
-    min-width: 320px;
+    min-width: 370px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -25,12 +48,29 @@
 }
 
 .plan-name {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.price-container {
+    display: flex;
+}
+
+.price-currency {
+    font-size: 2rem; 
+    font-weight: 700;
+    align-self: flex-start
 }
 
 .plan-amount {
-    font-weight: 700;
-    font-size: 3rem;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1em;
+    letter-spacing: -1.3px;
+}
+
+.billing-period {
+    align-self: flex-end;
+    margin-left: 5px;
 }
 
 .plan-description {
@@ -43,6 +83,10 @@
     margin-bottom: 8rem;
 }
 
+.benefit-title {
+    margin-bottom: 10px;
+}
+
 .plan-button {
     justify-self: end;
     margin-left: auto;
@@ -52,7 +96,7 @@
     color: white;
     justify-content: center;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1em;
     letter-spacing: 0.2px;
     text-align: center;
@@ -62,6 +106,7 @@
     margin-bottom: 1.5rem;
     margin-top: auto;
     height: 44px;
+    width: 100%;
     padding: 0 1.8rem;
     border-radius: 6px;
     cursor: pointer;
