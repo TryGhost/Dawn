@@ -1,56 +1,99 @@
 {{!< ./default}} <main id="site-main" class="site-main site-signup outer">
     <div class="membership-container">
-        <section class="membership-plans">
-            {{#get "tiers" include="name,description,monthly_price,benefits" limit="all" as |tiers|}}
-            {{#foreach tiers}}
-            <div class="card" data-test-tier="paid">
-                <div class="card-header">
-                    <h4 class="plan-name" style="color: {{@site.accent_color}}">{{name}}</h4>
-                    <div class="price-container">
-                        {{#if monthly_price}}
-                        <span class="price-currency">$</span>
-                        <span class="plan-amount title" data-testid="product-amount">{{price monthly_price}}</span>
-                        <span class="billing-period">/month</span>
-                        {{else}}
-                        <span class="plan-amount title">Free</span>
-                        {{/if}}
-                    </div>
-                </div>
-                <div class="card-details">
-                    <div class="plan-description" data-testid="product-description">
-                        {{description}}</div>
-                    <div class="benefit-list">
-                        {{#foreach benefits as |benefit|}}
-                        <div class="benefit-title">✓ {{benefit}}</div>
-                        {{/foreach}}
-                    </div>
-                </div>
-                <button class="plan-button" style="background-color: {{@site.accent_color}}">Choose</button>
+        {{!-- If member --}}
+        {{!-- Choose plan --}}
+        {{!-- Else --}}
+        {{!-- Inputs --}}
+        <form data-members-form>
+            <div class="signup-form">
+                <label>
+                    Name
+                    <input data-members-name placeholder="Craig Mod" />
+                </label>
+                <label>
+                    Email
+                    <input data-members-email type="email" required="true" placeholder="craigmod@theteastand.org" />
+                </label>
+                <p data-members-error></p>
             </div>
-            {{/foreach}}
-            {{/get}}
-            <div class="card" data-test-tier="paid">
-                <div class="card-header">
-                    <h4 class="plan-name" style="color: {{@site.accent_color}}">Pay what you want</h4>
-                    <div>
-                        <span class="price-currency">$</span>
-                        <input class="number-input title" type="number" placeholder="15" />
-                        <span class="billing-period">/month</span>
+            <section class="membership-plans">
+                {{#get "tiers" include="id,name,description,monthly_price,benefits" limit="all" as |tiers|}}
+                {{#foreach tiers as |tier|}}
+                {{#if monthly_price}}
+                {{!-- Paid tier --}}
+                <div class="card" data-test-tier="paid">
+                    <div class="card-header">
+                        <h4 class="plan-name" style="color: {{@site.accent_color}}">{{name}}</h4>
+                        <div class="price-container">
+                            <span class="price-currency">$</span>
+                            <span class="plan-amount title" data-testid="product-amount">{{price monthly_price}}</span>
+                            <span class="billing-period">/month</span>
+                        </div>
                     </div>
-                </div>
-                <div class="card-details">
-                    <div class="plan-description" data-testid="product-description">
-                        Choose your own monthly contribution and receive perks! </div>
-                    <div class="benefit-list">
-                        <div class="benefit-title">✓ Receive perks of closest tier </div>
-                        <div class="benefit-title">$4-8/month makes you a Sipper </div>
-                        <div class="benefit-title">$10+ makes you a Steeper! </div>
+                    <div class="card-details">
+                        <div class="plan-description" data-testid="product-description">
+                            {{description}}</div>
+                        <div class="benefit-list">
+                            {{#foreach benefits as |benefit|}}
+                            <div class="benefit-title">✓ {{benefit}}</div>
+                            {{/foreach}}
+                        </div>
                     </div>
+                    <button type="submit" data-portal="signup/{{id}}/monthly" class="plan-button"
+                        style="background-color: {{@site.accent_color}}">Choose</button>
                 </div>
-                <button class="plan-button" style="background-color: {{@site.accent_color}}">Choose</button>
-            </div>
-        </section>
+                {{else}}
+                {{#unless @member}}
+                {{!-- Free tier and not a member --}}
+                <div class="card" data-test-tier="free">
+                    <div class="card-header">
+                        <h4 class="plan-name" style="color: {{@site.accent_color}}">{{name}}</h4>
+                        <div class="price-container">
+                            <span class="plan-amount title">Free</span>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <div class="plan-description" data-testid="product-description">
+                            {{description}}</div>
+                        <div class="benefit-list">
+                            {{#foreach benefits as |benefit|}}
+                            <div class="benefit-title">✓ {{benefit}}</div>
+                            {{/foreach}}
+                        </div>
+                    </div>
+                    {{!-- This should just be a regular signup --}}
+                    <button type="submit" data-portal="signup/{{id}}/monthly" class="plan-button"
+                        style="background-color: {{@site.accent_color}}">Choose</button>
+                </div>
+                {{/unless}}
+                {{/if}}
+
+                {{/foreach}}
+                {{/get}}
+                <div class="card" data-test-tier="paid">
+                    <div class="card-header">
+                        <h4 class="plan-name" style="color: {{@site.accent_color}}">Pay what you want</h4>
+                        <div>
+                            <span class="price-currency">$</span>
+                            <input class="number-input title" type="number" placeholder="15" />
+                            <span class="billing-period">/month</span>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <div class="plan-description" data-testid="product-description">
+                            Choose your own monthly contribution and receive perks! </div>
+                        <div class="benefit-list">
+                            <div class="benefit-title">✓ Receive perks of closest tier </div>
+                            <div class="benefit-title">$4-8/month makes you a Sipper </div>
+                            <div class="benefit-title">$10+ makes you a Steeper! </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="plan-button"
+                        style="background-color: {{@site.accent_color}}">Choose</button>
+                </div>
+            </section>
     </div>
+    </form>
     </main>
 
     <script>

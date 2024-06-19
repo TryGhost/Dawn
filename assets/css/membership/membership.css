@@ -1,3 +1,16 @@
+.signup-form {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+    padding: 2rem 4rem;
+}
+::placeholder {
+     color: var(--color-mid-gray);
+     font-weight: 500;
+ }
+
+
 .membership-container {
     padding: 0px 2rem;
 }
@@ -5,8 +18,11 @@
 .membership-plans {
     display: flex;
     flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
     grid-gap: 20px;
     justify-content: center;
+    max-width: 800px;
 }
 
 .number-input {
