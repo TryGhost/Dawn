@@ -1,5 +1,5 @@
 .signup-form {
-    max-width: 400px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4rem;
@@ -9,6 +9,29 @@
      color: var(--color-mid-gray);
      font-weight: 500;
  }
+
+ .input-container {
+    max-width: 400px;
+    margin: 0 auto;
+ }
+
+
+ .email-input {
+    margin-bottom: 3rem;
+ }
+
+ .error-container {
+    padding: 1rem;
+    background-color: red;
+    color:white;
+    /* border: 1px solid red; */
+    border-radius: 4px;
+ }
+
+ .error-container:empty {
+    display: none;
+ }
+
 
 
 .membership-container {
