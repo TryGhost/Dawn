@@ -70,7 +70,11 @@
                         </div>
                     </div>
                     <button type="submit" class="plan-button"
-                        style="background-color: {{@site.accent_color}}">Choose</button>
+                        style="background-color: {{@site.accent_color}}">
+                    <a href="/signup-success">
+                        Choose
+                    </a>
+                        </button>
                 </div>
                 {{/unless}}
                 {{/if}}
@@ -102,6 +106,7 @@
         </section>
         </form>
         {{#if @member.paid}}
+        {{!-- {{#foreach @member.subscriptions}} {{cancel_link}} {{/foreach}} --}}
         <div class="cancel-subscription">
             <span>To cancel your subscription, see your <a href="#/portal/account"  style="color: {{@site.accent_color}}">account details</a></span>
         </div>
