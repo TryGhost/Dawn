@@ -1,5 +1,5 @@
 routes:
-  /membership/: membership
+  /subscriptions/: membership
 
 collections:
   /:
