@@ -4,7 +4,7 @@
         {{!-- Choose plan --}}
         {{!-- Else --}}
         {{!-- Inputs --}}
-        <form data-members-form>
+        <form data-members-form data-members-autoredirect="false">
             <div class="signup-form">
             {{#unless @member}}
                 <div class="input-container">
@@ -69,12 +69,12 @@
                             {{/foreach}}
                         </div>
                     </div>
+                    <a class="subscription-link" href="/signup-success">
                     <button type="submit" class="plan-button"
                         style="background-color: {{@site.accent_color}}">
-                    <a class="subscription-link" href="/signup-success">
                         Choose
-                    </a>
                         </button>
+                    </a>
                 </div>
                 {{/unless}}
                 {{/if}}
