@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+    <script src="https://kit.fontawesome.com/50077fbe28.js" crossorigin="anonymous"></script>
 
     {{ghost_head}}
 </head>
@@ -57,7 +58,10 @@
                                 <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signin" data-portal="signin">Sign in</a>
                             {{/unless}}
                         {{else}}
-                            <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/account" data-portal="account">Account</a>
+                            <a class="gh-head-link" href="#/portal/account" data-portal="account">
+                            <i class="fa-regular fa-user" data-portal="account"></i>
+                            </a>
+                            <a class="gh-head-btn gh-btn gh-primary-btn" href="/membership" data-portal="account">View Plans</a>
                         {{/unless}}
                     </div>
                 {{/unless}}
