@@ -5,6 +5,7 @@
         {{!-- Else --}}
         {{!-- Inputs --}}
         <form data-members-form="signup">
+            {{#unless @member}}
             <div class="signup-form">
                 <div class="input-container">
                     <label class="name-input">
@@ -19,6 +20,12 @@
                 </div>
                 <div id="error" class="error-container" data-members-error></div>
             </div>
+            {{else}}
+            <div class="signup-form">
+                <h1>Change plan</h1>
+            </div>
+            {{/unless}}
+
             <section class="membership-plans">
                 {{#get "tiers" include="id,name,description,monthly_price,benefits" limit="all" as |tiers|}}
                 {{#foreach tiers as |tier|}}

@@ -3,7 +3,8 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4rem;
-    padding: 2rem 4rem;
+    padding: 0rem 4rem 0.5rem 4rem;
+    text-align: center;
 }
 ::placeholder {
      color: var(--color-mid-gray);
