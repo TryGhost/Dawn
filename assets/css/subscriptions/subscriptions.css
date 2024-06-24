@@ -156,3 +156,8 @@
     outline: none;
     border: none;
 }
+
+.cancel-subscription {
+    margin: 4rem auto;
+    text-align: center;
+}

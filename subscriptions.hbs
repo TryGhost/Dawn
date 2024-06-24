@@ -5,8 +5,8 @@
         {{!-- Else --}}
         {{!-- Inputs --}}
         <form data-members-form="signup">
-            {{#unless @member}}
             <div class="signup-form">
+            {{#unless @member}}
                 <div class="input-container">
                     <label class="name-input">
                         Name
@@ -19,12 +19,10 @@
                     </label>
                 </div>
                 <div id="error" class="error-container" data-members-error></div>
-            </div>
-            {{else}}
-            <div class="signup-form">
-                <h1>Change plan</h1>
-            </div>
+            {{else }}
+                <h1>Choose a plan</h1>
             {{/unless}}
+            </div>
 
             <section class="membership-plans">
                 {{#get "tiers" include="id,name,description,monthly_price,benefits" limit="all" as |tiers|}}
@@ -80,8 +78,6 @@
                 {{/foreach}}
                 {{/get}}
                 {{!-- Pay what you wish --}}
-        </form>
-
         <div class="card" data-test-tier="paid">
             <div class="card-header">
                 <h4 class="plan-name" style="color: {{@site.accent_color}}">Pay what you wish</h4>
@@ -104,6 +100,12 @@
                 style="background-color: {{@site.accent_color}}">Choose</button>
         </div>
         </section>
+        </form>
+        {{#if @member.paid}}
+        <div class="cancel-subscription">
+            <span>To cancel your subscription, see your <a href="#/portal/account"  style="color: {{@site.accent_color}}">account details</a></span>
+        </div>
+        {{/if}}
     </div>
     </main>
 
