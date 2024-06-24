@@ -47,8 +47,8 @@
                             {{/foreach}}
                         </div>
                     </div>
-                    <button type="submit" data-portal="signup/{{id}}/monthly" class="plan-button"
-                        style="background-color: {{@site.accent_color}}">Choose</button>
+                    <a type="submit" href="javascript:" data-portal="signup/{{id}}/monthly" class="plan-button"
+                        style="background-color: {{@site.accent_color}}">Choose</a>
                 </div>
                 {{else}}
                 {{#unless @member}}
