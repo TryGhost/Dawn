@@ -163,15 +163,19 @@
     border: none;
 }
 
-.cancellation-container {
+.cancellation-layout {
     margin: 4rem auto;
-    text-align: center;
-    max-width: 200px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+
+.cancellation-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .cancel-link {
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     align-items: center;
     background-color: white;
@@ -188,7 +192,6 @@
     margin-top: auto;
     margin-bottom: 1.5rem;
     height: 44px;
-    width: 100%;
     padding: 0 1.8rem;
     border-radius: 6px;
     cursor: pointer;

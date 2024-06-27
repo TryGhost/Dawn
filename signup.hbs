@@ -106,9 +106,11 @@
         </section>
         </form>
         {{#if @member.paid}}
-        <div class="cancellation-container">
+        <div class="cancellation-layout">
         {{#foreach @member.subscriptions as |sub|}} 
-        {{cancel_link class="cancel-link" cancelLabel="Cancel Membership: {{sub.tier.name}}"}} 
+            <div class="cancellation-container">
+        {{cancel_link class="cancel-link" cancelLabel="Cancel Membership"}} 
+            </div>
         {{/foreach}}
         </div>
         {{/if}}
