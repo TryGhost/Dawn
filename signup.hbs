@@ -14,13 +14,15 @@
                     </label>
                     <label class="email-input">
                         Email
-                        <input id="email" data-members-email type="email" required="true"
+                        <input id="signup-email" data-members-email type="email" required="true"
                             placeholder="craigmod@theteastand.org" />
                     </label>
                 <div id="error" class="error-container" data-members-error></div>
                 </div>
             {{else }}
                 <h1>Choose a plan</h1>
+                <span id="signup-name" style="display: none;"></span>
+                <span id="signup-email" style="display: none;">{{@member.email}}</span>
             {{/unless}}
             </div>
 
@@ -104,10 +106,14 @@
         </section>
         </form>
         {{#if @member.paid}}
-        {{!-- {{#foreach @member.subscriptions}} {{cancel_link}} {{/foreach}} --}}
+        {{#foreach @member.subscriptions as |sub|}} 
+        {{cancel_link}} 
         <div class="cancel-subscription">
-            <span>To cancel your subscription, see your <a href="#/portal/account"  style="color: {{@site.accent_color}}">account details</a></span>
+            <button>Cancel Subscription: {{sub}}</button>
+            <span>name: {{sub.tier.name}}</span>
+            <span></span>
         </div>
+        {{/foreach}}
         {{/if}}
     </div>
     </main>
@@ -133,9 +139,8 @@
         }
 
         function getStripeLink(subscriptionAmount) {
-            console.log('Getting stripe link...')
             subscriptionAmount = subscriptionAmount || document.getElementById("subscriptionAmount").value;
-            var email = document.getElementById("email").value;
+            var email = document.getElementById("signup-email").value;
             // no email or no price : ask user to fill all
             if (!email || !subscriptionAmount) {
                 var form = document.getElementById('signup-form')
