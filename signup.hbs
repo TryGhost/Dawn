@@ -85,13 +85,16 @@
                 {{/foreach}}
                 {{/get}}
                 {{!-- Pay what you wish --}}
+        </form>
         <div class="card" data-test-tier="paid">
             <div class="card-header">
                 <h4 class="plan-name" style="color: {{@site.accent_color}}">Pay what you wish</h4>
                 <div>
+                    <form id="pwyw-form">
                     <span class="price-currency">$</span>
-                    <input id="subscriptionAmount" class="number-input title" type="number" placeholder="15"/>
+                    <input id="subscriptionAmount" class="number-input title" type="number" placeholder="15" required="true" min="1"/>
                     <span class="billing-period">/month</span>
+                    </form>
                 </div>
             </div>
             <div class="card-details">
@@ -107,7 +110,6 @@
                 style="background-color: {{@site.accent_color}}">Choose</div>
         </div>
         </section>
-        </form>
         {{!-- {{#if @member.paid}}
         <div class="cancellation-layout">
         {{#foreach @member.subscriptions as |sub|}} 
@@ -140,15 +142,22 @@
             observer.observe(targetNode, config);
         }
 
-        function getStripeLink(subscriptionAmount) {
+        function getStripeLink(subscriptionAmount, payWhatYouWish) {
             subscriptionAmount = subscriptionAmount || document.getElementById("subscriptionAmount").value;
             var emailNode = document.getElementById("signup-email");
             var email = emailNode.value || emailNode.innerHTML;
             // no email or no price : ask user to fill all
-            if (!email || !subscriptionAmount) {
                 var form = document.getElementById('signup-form')
-                form.reportValidity()
+            const formValid = form.reportValidity()
+            if (!email || !formValid) {
                 return;
+            }
+            if (payWhatYouWish) {
+                const pwywForm = document.getElementById('pwyw-form')
+                const pwywFormValid = pwywForm.reportValidity()
+                if (!pwywFormValid) {
+                    return
+                }
             }
             // call our custom backend
             fetch("https://teastand-backend.vercel.app/api/get-stripe-session", {
@@ -167,9 +176,9 @@
         }
 
         function addClickHandlers() {
-            document.getElementById("pwyw-payment-button").addEventListener("click", () => getStripeLink(null))
-            document.getElementById("Sipper-payment-button").addEventListener("click", () => getStripeLink(3))
-            document.getElementById("Steeper-payment-button").addEventListener("click", () => getStripeLink(9))
+            document.getElementById("pwyw-payment-button").addEventListener("click", () => getStripeLink(null, true))
+            document.getElementById("Sipper-payment-button").addEventListener("click", () => getStripeLink(3, false))
+            document.getElementById("Steeper-payment-button").addEventListener("click", () => getStripeLink(9, false))
         }
 
         document.addEventListener("DOMContentLoaded", function () {
