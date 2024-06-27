@@ -20,7 +20,7 @@
                 <div id="error" class="error-container" data-members-error></div>
                 </div>
             {{else }}
-                <h1>Add a subscription</h1>
+                <h1>Choose a plan</h1>
                 <span id="signup-name" style="display: none;"></span>
                 <span id="signup-email" style="display: none;">{{@member.email}}</span>
                 {{#foreach @member.subscriptions as |sub|}} 
@@ -110,7 +110,7 @@
                 style="background-color: {{@site.accent_color}}">Choose</div>
         </div>
         </section>
-        {{!-- {{#if @member.paid}}
+        {{#if @member.paid}}
         <div class="cancellation-layout">
         {{#foreach @member.subscriptions as |sub|}} 
             <div class="cancellation-container">
@@ -118,7 +118,7 @@
             </div>
         {{/foreach}}
         </div>
-        {{/if}} --}}
+        {{/if}}
     </div>
     </main>
 
