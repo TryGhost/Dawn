@@ -4,8 +4,8 @@
         {{!-- Choose plan --}}
         {{!-- Else --}}
         {{!-- Inputs --}}
-        <form data-members-form data-members-autoredirect="false">
-            <div class="signup-form">
+        <form data-members-form data-members-autoredirect="false" id="signup-form">
+            <div class="form-header">
             {{#unless @member}}
                 <div class="input-container">
                     <label class="name-input">
@@ -17,8 +17,8 @@
                         <input id="email" data-members-email type="email" required="true"
                             placeholder="craigmod@theteastand.org" />
                     </label>
-                </div>
                 <div id="error" class="error-container" data-members-error></div>
+                </div>
             {{else }}
                 <h1>Choose a plan</h1>
             {{/unless}}
@@ -100,7 +100,7 @@
                     <div class="benefit-title">$10+ makes you a Steeper! </div>
                 </div>
             </div>
-            <button id="pwyw-button" class="plan-button"
+            <button id="pwyw-button" class="plan-button" type=""
                 style="background-color: {{@site.accent_color}}">Choose</button>
         </div>
         </section>
@@ -115,38 +115,65 @@
     </main>
 
     <script type="text/javascript">
-        function addClickHandlers() {
-            document.getElementById("pwyw-button").addEventListener("click", function (ev) {
-                // remove error
-                document.getElementById("error").innerHTML = ""
-                var subscriptionAmount = document.getElementById("subscriptionAmount").value;
-                var email = document.getElementById("email").value;
-                // no email or no price : ask user to fill all
-                if (!email || !subscriptionAmount) {
-                    document.getElementById("error").innerHTML = "Please fill in all the fields";
-                    return;
+        function connectMutationObserver() {
+            // Select the node that will be observed for mutations
+            const targetNode = document.getElementById("signup-form");
+
+            // Options for the observer (which mutations to observe)
+            const config = { attributes: true, childList: false, subtree: false };
+
+            // Callback function to execute when mutations are observed
+            const callback = (mutationList, observer) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "attributes") {
+                    if (mutation.target.className === 'success') {
+                        document.location = '/signup-success'
+                    }
                 }
-                console.log('got here')
-                // call our custom backend
-                fetch("https://teastand-backend.vercel.app/api/get-stripe-session", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "*/*"
-                    },
-                    body: JSON.stringify({ email, amount: subscriptionAmount })
-                }).then(function (result) {
-                    return result.json()
-                }).then(function (json) {
-                    // post payment redirection 
-                    document.location = json.url
-                })
-                console.log('got to the end')
+            }
+            };
+
+            // Create an observer instance linked to the callback function
+            const observer = new MutationObserver(callback);
+
+            // Start observing the target node for configured mutations
+            observer.observe(targetNode, config);
+        }
+
+        function getStripeLink(ev) {
+            // remove error
+            document.getElementById("error").innerHTML = ""
+            var subscriptionAmount = document.getElementById("subscriptionAmount").value;
+            var email = document.getElementById("email").value;
+            // no email or no price : ask user to fill all
+            if (!email || !subscriptionAmount) {
+                document.getElementById("error").innerHTML = "Please fill in all the fields";
+                return;
+            }
+            // call our custom backend
+            fetch("https://teastand-backend.vercel.app/api/get-stripe-session", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "*/*"
+                },
+                body: JSON.stringify({ email, amount: subscriptionAmount })
+            }).then(function (result) {
+                return result.json()
+            }).then(function (json) {
+                // post payment redirection 
+                document.location = json.url
             })
+        }
+
+        function addClickHandlers() {
+            document.getElementById("pwyw-button").addEventListener("click", getStripeLink)
         }
 
         document.addEventListener("DOMContentLoaded", function () {
             addClickHandlers()
+            connectMutationObserver()
         });
+
 
     </script>

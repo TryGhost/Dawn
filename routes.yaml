@@ -1,5 +1,5 @@
 routes:
-  /subscriptions/: subscriptions
+  /signup/: signup
   /signup-success/: signup-success
 
 collections:
