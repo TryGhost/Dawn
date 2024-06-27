@@ -47,8 +47,8 @@
                             {{/foreach}}
                         </div>
                     </div>
-                    <a type="submit" href="javascript:" data-portal="signup/{{id}}/monthly" class="plan-button"
-                        style="background-color: {{@site.accent_color}}">Choose</a>
+                    <button class="plan-button stripe-checkout-link" id="{{name}}-payment-button"
+                        style="background-color: {{@site.accent_color}}">Choose</button>
                 </div>
                 {{else}}
                 {{#unless @member}}
@@ -69,12 +69,10 @@
                             {{/foreach}}
                         </div>
                     </div>
-                    <a class="subscription-link" href="/signup-success">
                     <button type="submit" class="plan-button"
                         style="background-color: {{@site.accent_color}}">
                         Choose
                         </button>
-                    </a>
                 </div>
                 {{/unless}}
                 {{/if}}
@@ -87,7 +85,7 @@
                 <h4 class="plan-name" style="color: {{@site.accent_color}}">Pay what you wish</h4>
                 <div>
                     <span class="price-currency">$</span>
-                    <input id="subscriptionAmount" class="number-input title" type="number" placeholder="15" />
+                    <input id="subscriptionAmount" class="number-input title" type="number" placeholder="15"/>
                     <span class="billing-period">/month</span>
                 </div>
             </div>
@@ -100,7 +98,7 @@
                     <div class="benefit-title">$10+ makes you a Steeper! </div>
                 </div>
             </div>
-            <button id="pwyw-button" class="plan-button" type=""
+            <button id="pwyw-payment-button" class="plan-button"
                 style="background-color: {{@site.accent_color}}">Choose</button>
         </div>
         </section>
@@ -116,13 +114,10 @@
 
     <script type="text/javascript">
         function connectMutationObserver() {
-            // Select the node that will be observed for mutations
             const targetNode = document.getElementById("signup-form");
-
-            // Options for the observer (which mutations to observe)
             const config = { attributes: true, childList: false, subtree: false };
 
-            // Callback function to execute when mutations are observed
+            // Only free tier can trigger this callback
             const callback = (mutationList, observer) => {
             for (const mutation of mutationList) {
                 if (mutation.type === "attributes") {
@@ -133,21 +128,17 @@
             }
             };
 
-            // Create an observer instance linked to the callback function
             const observer = new MutationObserver(callback);
-
-            // Start observing the target node for configured mutations
             observer.observe(targetNode, config);
         }
 
-        function getStripeLink(ev) {
-            // remove error
-            document.getElementById("error").innerHTML = ""
-            var subscriptionAmount = document.getElementById("subscriptionAmount").value;
+        function getStripeLink(subscriptionAmount) {
+            subscriptionAmount = subscriptionAmount || document.getElementById("subscriptionAmount").value;
             var email = document.getElementById("email").value;
             // no email or no price : ask user to fill all
             if (!email || !subscriptionAmount) {
-                document.getElementById("error").innerHTML = "Please fill in all the fields";
+                var form = document.getElementById('signup-form')
+                form.reportValidity()
                 return;
             }
             // call our custom backend
@@ -167,7 +158,9 @@
         }
 
         function addClickHandlers() {
-            document.getElementById("pwyw-button").addEventListener("click", getStripeLink)
+            document.querySelectorAll("pwyw-payment-button").addEventListener("click", () => getStripeLink(null))
+            document.querySelectorAll("Sipper-payment-button").addEventListener("click", () => getStripeLink(3))
+            document.querySelectorAll("Steeper-payment-button").addEventListener("click", () => getStripeLink(9))
         }
 
         document.addEventListener("DOMContentLoaded", function () {
