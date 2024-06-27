@@ -47,8 +47,8 @@
                             {{/foreach}}
                         </div>
                     </div>
-                    <button class="plan-button stripe-checkout-link" id="{{name}}-payment-button"
-                        style="background-color: {{@site.accent_color}}">Choose</button>
+                    <div class="plan-button stripe-checkout-link" id="{{name}}-payment-button"
+                        style="background-color: {{@site.accent_color}}">Choose</div>
                 </div>
                 {{else}}
                 {{#unless @member}}
@@ -133,6 +133,7 @@
         }
 
         function getStripeLink(subscriptionAmount) {
+            console.log('Getting stripe link...')
             subscriptionAmount = subscriptionAmount || document.getElementById("subscriptionAmount").value;
             var email = document.getElementById("email").value;
             // no email or no price : ask user to fill all
@@ -158,9 +159,9 @@
         }
 
         function addClickHandlers() {
-            document.querySelectorAll("pwyw-payment-button").addEventListener("click", () => getStripeLink(null))
-            document.querySelectorAll("Sipper-payment-button").addEventListener("click", () => getStripeLink(3))
-            document.querySelectorAll("Steeper-payment-button").addEventListener("click", () => getStripeLink(9))
+            document.getElementById("pwyw-payment-button").addEventListener("click", () => getStripeLink(null))
+            document.getElementById("Sipper-payment-button").addEventListener("click", () => getStripeLink(3))
+            document.getElementById("Steeper-payment-button").addEventListener("click", () => getStripeLink(9))
         }
 
         document.addEventListener("DOMContentLoaded", function () {
