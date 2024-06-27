@@ -106,14 +106,11 @@
         </section>
         </form>
         {{#if @member.paid}}
+        <div class="cancellation-container">
         {{#foreach @member.subscriptions as |sub|}} 
-        {{cancel_link}} 
-        <div class="cancel-subscription">
-            <button>Cancel Subscription: {{sub}}</button>
-            <span>name: {{sub.tier.name}}</span>
-            <span></span>
-        </div>
+        {{cancel_link class="cancel-link" cancelLabel="Cancel Membership: {{sub.tier.name}}"}} 
         {{/foreach}}
+        </div>
         {{/if}}
     </div>
     </main>
@@ -140,7 +137,8 @@
 
         function getStripeLink(subscriptionAmount) {
             subscriptionAmount = subscriptionAmount || document.getElementById("subscriptionAmount").value;
-            var email = document.getElementById("signup-email").value;
+            var emailNode = document.getElementById("signup-email");
+            var email = emailNode.value || emailNode.innerHTML;
             // no email or no price : ask user to fill all
             if (!email || !subscriptionAmount) {
                 var form = document.getElementById('signup-form')

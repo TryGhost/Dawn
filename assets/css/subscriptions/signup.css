@@ -163,7 +163,42 @@
     border: none;
 }
 
-.cancel-subscription {
+.cancellation-container {
     margin: 4rem auto;
     text-align: center;
+    max-width: 200px;
+}
+
+.cancel-link {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: var(--brand-color);
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1em;
+    letter-spacing: 0.2px;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    min-width: 80px;
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+    height: 44px;
+    width: 100%;
+    padding: 0 1.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .25s ease;
+    box-shadow: none;
+    user-select: none;
+    outline: none;
+    border: 1px solid rgb(225, 225, 225);
+}
+
+.cancel-link:hover {
+    border-color: rgb(61,61,61)
 }
