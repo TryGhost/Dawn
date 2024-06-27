@@ -20,9 +20,12 @@
                 <div id="error" class="error-container" data-members-error></div>
                 </div>
             {{else }}
-                <h1>Choose a plan</h1>
+                <h1>Change your plan</h1>
                 <span id="signup-name" style="display: none;"></span>
                 <span id="signup-email" style="display: none;">{{@member.email}}</span>
+                {{#foreach @member.subscriptions as |sub|}} 
+                <span id="member-subscription" style="display:none;">{{sub.tier.name}}</span>
+                {{/foreach}}
             {{/unless}}
             </div>
 
