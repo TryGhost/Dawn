@@ -58,10 +58,14 @@
                                 <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signin" data-portal="signin">Sign in</a>
                             {{/unless}}
                         {{else}}
+                            {{#if @member.paid}}
                             <a class="gh-head-link" href="#/portal/account" data-portal="account">
                             <i class="fa-regular fa-user" data-portal="account"></i>
                             </a>
                             <a class="gh-head-btn gh-btn gh-primary-btn" href="/signup">View Plans</a>
+                            {{else}}
+                            <button class="gh-head-btn gh-btn gh-primary-btn" href="membershp">View Perks</button>
+                            {{/if}}
                         {{/unless}}
                     </div>
                 {{/unless}}
