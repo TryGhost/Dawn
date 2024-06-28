@@ -23,7 +23,7 @@
                 <h1>Choose a plan</h1>
                 <span id="signup-name" style="display: none;"></span>
                 <span id="signup-email" style="display: none;">{{@member.email}}</span>
-                <span id="membership-paid">{{@member.paid}}</span>
+                <span id="membership-paid" style="display: none;">{{@member.paid}}</span>
                 {{#foreach @member.subscriptions as |sub|}} 
                 <span id="member-subscription" style="display:none;">{{sub.tier.name}}</span>
                 {{/foreach}}
@@ -183,8 +183,10 @@
 
         function redirectMembers() {
             const node = document.getElementById('membership-paid')
+            console.log(node)
             if (node.innerHTML === 'true') {
-                document.url = '/member-perks'
+                console.log('got here')
+                document.location = '/member-perks'
             }
         }
 
