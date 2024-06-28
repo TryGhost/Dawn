@@ -183,8 +183,7 @@
 
         function redirectMembers() {
             const node = document.getElementById('membership-paid')
-            console.log(node)
-            if (node.innerHTML === 'true') {
+            if (node && node.innerHTML === 'true') {
                 console.log('got here')
                 document.location = '/member-perks'
             }
