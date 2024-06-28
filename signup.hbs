@@ -23,6 +23,7 @@
                 <h1>Choose a plan</h1>
                 <span id="signup-name" style="display: none;"></span>
                 <span id="signup-email" style="display: none;">{{@member.email}}</span>
+                <span id="membership-paid">{{@member.paid}}</span>
                 {{#foreach @member.subscriptions as |sub|}} 
                 <span id="member-subscription" style="display:none;">{{sub.tier.name}}</span>
                 {{/foreach}}
@@ -88,7 +89,7 @@
         </form>
         <div class="card" data-test-tier="paid">
             <div class="card-header">
-                <h4 class="plan-name" style="color: {{@site.accent_color}}">Pay what you wish</h4>
+                <h4 class="plan-name" style="color: {{@site.accent_color}}">Pay What You Wish</h4>
                 <div>
                     <form id="pwyw-form">
                     <span class="price-currency">$</span>
@@ -101,8 +102,8 @@
                 <div class="plan-description" data-testid="product-description">
                     Choose your own monthly contribution and receive perks! </div>
                 <div class="benefit-list">
-                    <div class="benefit-title">✓ $1-8/month makes you a Sipper </div>
-                    <div class="benefit-title">✓ $10+ makes you a Steeper! </div>
+                    <div class="benefit-title">✓ $1-8/month makes you a Sipper!</div>
+                    <div class="benefit-title">✓ $10+/month makes you a Steeper! </div>
                 </div>
             </div>
             <div id="pwyw-payment-button" class="plan-button"
@@ -180,7 +181,15 @@
             document.getElementById("Steeper-payment-button").addEventListener("click", () => getStripeLink(9, false))
         }
 
+        function redirectMembers() {
+            const node = document.getElementById('membership-paid')
+            if (node.innerHTML === 'true') {
+                document.url = '/member-perks'
+            }
+        }
+
         document.addEventListener("DOMContentLoaded", function () {
+            redirectMembers()
             addClickHandlers()
             connectMutationObserver()
         });
