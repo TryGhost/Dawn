@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+    <script src="https://kit.fontawesome.com/50077fbe28.js" crossorigin="anonymous"></script>
 
     {{ghost_head}}
 </head>
@@ -52,12 +53,17 @@
                         {{#unless @member}}
                             {{#unless @site.members_invite_only}}
                                 <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
-                                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                                <a class="gh-head-btn gh-btn gh-primary-btn" href="/signup">Sign up</a>
                             {{else}}
                                 <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signin" data-portal="signin">Sign in</a>
                             {{/unless}}
                         {{else}}
-                            <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/account" data-portal="account">Account</a>
+                            <a class="gh-head-link" href="#/portal/account" data-portal="account">
+                            <i class="fa-regular fa-user" data-portal="account"></i>
+                            </a>
+                            {{#unless @member.paid}}
+                            <a class="gh-head-btn gh-btn gh-primary-btn" href="/signup">View Plans</a>
+                            {{/unless}}
                         {{/unless}}
                     </div>
                 {{/unless}}

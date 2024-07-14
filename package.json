@@ -1,122 +1,126 @@
 {
-    "name": "dawn",
-    "description": "A Ghost theme",
-    "version": "1.0.0",
-    "private": true,
-    "engines": {
-        "ghost": ">=5.0.0"
+  "name": "dawn-pay-what-you-want",
+  "description": "An extension of Ghost's Dawn theme",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Adin Vashi",
+    "email": "akvashi24@gmail.com",
+    "url": "https://akvashi.dev"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "docs": "https://dawn.ghost.io/about/",
+  "config": {
+    "posts_per_page": 5,
+    "image_sizes": {
+      "xs": {
+        "width": 150
+      },
+      "s": {
+        "width": 400
+      },
+      "m": {
+        "width": 750
+      },
+      "l": {
+        "width": 960
+      },
+      "xl": {
+        "width": 1140
+      },
+      "xxl": {
+        "width": 1920
+      }
     },
-    "license": "MIT",
-    "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
-    },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme"
-    ],
-    "docs": "https://dawn.ghost.io/about/",
-    "config": {
-        "posts_per_page": 5,
-        "image_sizes": {
-            "xs": {
-                "width": 150
-            },
-            "s": {
-                "width": 400
-            },
-            "m": {
-                "width": 750
-            },
-            "l": {
-                "width": 960
-            },
-            "xl": {
-                "width": 1140
-            },
-            "xxl": {
-                "width": 1920
-            }
-        },
-        "card_assets": true,
-        "custom": {
-            "navigation_layout": {
-                "type": "select",
-                "options": ["Logo on the left", "Logo in the middle", "Stacked"],
-                "default": "Logo on the left"
-            },
-            "title_font": {
-                "type": "select",
-                "options": [
-                    "Modern sans-serif",
-                    "Elegant serif"
-                ],
-                "default": "Modern sans-serif"
-            },
-            "body_font": {
-                "type": "select",
-                "options": [
-                    "Modern sans-serif",
-                    "Elegant serif"
-                ],
-                "default": "Modern sans-serif"
-            },
-            "color_scheme": {
-                "type": "select",
-                "options": [
-                    "Auto",
-                    "Light",
-                    "Dark"
-                ],
-                "default": "Auto"
-            },
-            "white_logo_for_dark_mode": {
-                "type": "image"
-            },
-            "show_featured_posts": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
-            "featured_title": {
-                "type": "text",
-                "default": "Featured articles",
-                "group": "homepage"
-            },
-            "show_author": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
-            },
-            "show_related_posts": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
-            }
-        }
-    },
-    "scripts": {
-        "dev": "gulp",
-        "test": "gscan .",
-        "zip": "gulp zip"
-    },
-    "devDependencies": {
-        "@tryghost/shared-theme-assets": "2.4.5",
-        "autoprefixer": "10.4.19",
-        "beeper": "2.1.0",
-        "cssnano": "7.0.4",
-        "gscan": "4.43.1",
-        "gulp": "5.0.0",
-        "gulp-concat": "2.6.1",
-        "gulp-livereload": "4.0.2",
-        "gulp-postcss": "10.0.0",
-        "gulp-uglify": "3.0.2",
-        "gulp-zip": "5.1.0",
-        "ordered-read-streams": "2.0.0",
-        "postcss": "8.4.39",
-        "postcss-easy-import": "4.0.0",
-        "pump": "3.0.0"
+    "card_assets": true,
+    "custom": {
+      "navigation_layout": {
+        "type": "select",
+        "options": [
+          "Logo on the left",
+          "Logo in the middle",
+          "Stacked"
+        ],
+        "default": "Logo on the left"
+      },
+      "title_font": {
+        "type": "select",
+        "options": [
+          "Modern sans-serif",
+          "Elegant serif"
+        ],
+        "default": "Modern sans-serif"
+      },
+      "body_font": {
+        "type": "select",
+        "options": [
+          "Modern sans-serif",
+          "Elegant serif"
+        ],
+        "default": "Modern sans-serif"
+      },
+      "color_scheme": {
+        "type": "select",
+        "options": [
+          "Auto",
+          "Light",
+          "Dark"
+        ],
+        "default": "Auto"
+      },
+      "white_logo_for_dark_mode": {
+        "type": "image"
+      },
+      "show_featured_posts": {
+        "type": "boolean",
+        "default": true,
+        "group": "homepage"
+      },
+      "featured_title": {
+        "type": "text",
+        "default": "Featured articles",
+        "group": "homepage"
+      },
+      "show_author": {
+        "type": "boolean",
+        "default": true,
+        "group": "post"
+      },
+      "show_related_posts": {
+        "type": "boolean",
+        "default": true,
+        "group": "post"
+      }
     }
+  },
+  "scripts": {
+    "dev": "gulp",
+    "test": "gscan .",
+    "zip": "gulp zip"
+  },
+  "devDependencies": {
+    "@tryghost/shared-theme-assets": "2.4.3",
+    "autoprefixer": "10.4.19",
+    "beeper": "2.1.0",
+    "cssnano": "7.0.2",
+    "gscan": "4.43.1",
+    "gulp": "5.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-livereload": "4.0.2",
+    "gulp-postcss": "10.0.0",
+    "gulp-uglify": "3.0.2",
+    "gulp-zip": "5.1.0",
+    "ordered-read-streams": "2.0.0",
+    "postcss": "8.4.38",
+    "postcss-easy-import": "4.0.0",
+    "pump": "3.0.0"
+  }
 }

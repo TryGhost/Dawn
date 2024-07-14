@@ -1,0 +1,197 @@
+{{!< ./default}} <main id="site-main" class="site-main site-signup outer">
+    <div class="membership-container">
+        <form data-members-form data-members-autoredirect="false" id="signup-form">
+            <div class="form-header">
+            {{#unless @member}}
+                <div class="input-container">
+                    <label class="name-input">
+                        Name
+                        <input id="name" data-members-name placeholder="Craig Mod" required="true" />
+                    </label>
+                    <label class="email-input">
+                        Email
+                        <input id="signup-email" data-members-email type="email" required="true"
+                            placeholder="craigmod@example.org" />
+                    </label>
+                <div id="error" class="error-container" data-members-error></div>
+                </div>
+            {{else }}
+                <h1>Choose a plan</h1>
+                <span id="signup-name" style="display: none;"></span>
+                <span id="signup-email" style="display: none;">{{@member.email}}</span>
+                <span id="membership-paid" style="display: none;">{{@member.paid}}</span>
+                {{#foreach @member.subscriptions as |sub|}} 
+                <span id="member-subscription" style="display:none;">{{sub.tier.name}}</span>
+                {{/foreach}}
+            {{/unless}}
+            </div>
+
+            <section class="membership-plans">
+                {{#get "tiers" include="id,name,description,monthly_price,benefits" limit="all" as |tiers|}}
+                {{#foreach tiers as |tier|}}
+                {{#if monthly_price}}
+                {{!-- Paid tier --}}
+                <div class="card" data-test-tier="paid">
+                    <div class="card-header">
+                        <h4 class="plan-name" style="color: {{@site.accent_color}}">{{name}}</h4>
+                        <div class="price-container">
+                            <span class="price-currency">$</span>
+                            <span class="plan-amount title" data-testid="product-amount">{{price monthly_price}}</span>
+                            <span class="billing-period">/month</span>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <div class="plan-description" data-testid="product-description">
+                            {{description}}</div>
+                        <div class="benefit-list">
+                            {{#foreach benefits as |benefit|}}
+                            <div class="benefit-title">✓ {{benefit}}</div>
+                            {{/foreach}}
+                        </div>
+                    </div>
+                    <div class="plan-button stripe-checkout-link" id="{{name}}-payment-button"
+                        style="background-color: {{@site.accent_color}}">Choose</div>
+                </div>
+                {{else}}
+                {{#unless @member}}
+                {{!-- Free tier and not a member --}}
+                <div class="card" data-test-tier="free">
+                    <div class="card-header">
+                        <h4 class="plan-name" style="color: {{@site.accent_color}}">{{name}}</h4>
+                        <div class="price-container">
+                            <span class="plan-amount title">Free</span>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <div class="plan-description" data-testid="product-description">
+                            {{description}}</div>
+                        <div class="benefit-list">
+                            {{#foreach benefits as |benefit|}}
+                            <div class="benefit-title">✓ {{benefit}}</div>
+                            {{/foreach}}
+                        </div>
+                    </div>
+                    <button type="submit" class="plan-button"
+                        style="background-color: {{@site.accent_color}}">
+                        Choose
+                        </button>
+                </div>
+                {{/unless}}
+                {{/if}}
+
+                {{/foreach}}
+                {{/get}}
+                {{!-- Pay what you wish --}}
+        </form>
+        <div class="card" data-test-tier="paid">
+            <div class="card-header">
+                <h4 class="plan-name" style="color: {{@site.accent_color}}">Pay What You Wish</h4>
+                <div>
+                    <form id="pwyw-form">
+                    <span class="price-currency">$</span>
+                    <input id="subscriptionAmount" class="number-input title" type="number" placeholder="15" required="true" min="1"/>
+                    <span class="billing-period">/month</span>
+                    </form>
+                </div>
+            </div>
+            <div class="card-details">
+                <div class="plan-description" data-testid="product-description">
+                    Choose your own monthly contribution and receive perks! </div>
+                <div class="benefit-list">
+                    <div class="benefit-title">✓ Explain custom tier benefits here</div>
+                </div>
+            </div>
+            <div id="pwyw-payment-button" class="plan-button"
+                style="background-color: {{@site.accent_color}}">Choose</div>
+        </div>
+        </section>
+        {{#if @member.paid}}
+        <div class="cancellation-layout">
+        {{#foreach @member.subscriptions as |sub|}} 
+            <div class="cancellation-container">
+        {{cancel_link class="cancel-link" cancelLabel="Cancel Membership"}} 
+            </div>
+        {{/foreach}}
+        </div>
+        {{/if}}
+    </div>
+    </main>
+
+    <script type="text/javascript">
+        function connectMutationObserver() {
+            const targetNode = document.getElementById("signup-form");
+            const config = { attributes: true, childList: false, subtree: false };
+
+            // Only free tier can trigger this callback
+            const callback = (mutationList, observer) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "attributes") {
+                    if (mutation.target.className === 'success') {
+                        document.location = '/signup-success'
+                    }
+                }
+            }
+            };
+
+            const observer = new MutationObserver(callback);
+            observer.observe(targetNode, config);
+        }
+
+        function getStripeLink(subscriptionAmount, payWhatYouWish) {
+            subscriptionAmount = subscriptionAmount || document.getElementById("subscriptionAmount").value;
+            var emailNode = document.getElementById("signup-email");
+            var email = emailNode.value || emailNode.innerHTML;
+            // no email or no price : ask user to fill all
+                var form = document.getElementById('signup-form')
+            const formValid = form.reportValidity()
+            if (!email || !formValid) {
+                return;
+            }
+            if (payWhatYouWish) {
+                const pwywForm = document.getElementById('pwyw-form')
+                const pwywFormValid = pwywForm.reportValidity()
+                if (!pwywFormValid) {
+                    return
+                }
+            }
+            // TODO: replace with your backend server URL
+            const customURL = null
+            if (!customURL) {
+                console.err("Set a custom backend to get Stripe link!")
+            }
+            fetch(customURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "*/*"
+                },
+                body: JSON.stringify({ email, amount: subscriptionAmount })
+            }).then(function (result) {
+                return result.json()
+            }).then(function (json) {
+                // post payment redirection 
+                document.location = json.url
+            })
+        }
+
+        function addClickHandlers() {
+            document.getElementById("pwyw-payment-button").addEventListener("click", () => getStripeLink(null, true))
+            document.getElementById("Sipper-payment-button").addEventListener("click", () => getStripeLink(3, false))
+            document.getElementById("Steeper-payment-button").addEventListener("click", () => getStripeLink(9, false))
+        }
+
+        function redirectMembers() {
+            const node = document.getElementById('membership-paid')
+            if (node && node.innerHTML === 'true') {
+                document.location = '/member-perks'
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            redirectMembers()
+            addClickHandlers()
+            connectMutationObserver()
+        });
+
+
+    </script>

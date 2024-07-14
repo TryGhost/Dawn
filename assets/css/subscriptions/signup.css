@@ -1,0 +1,206 @@
+.form-header {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+    padding: 0rem 4rem 0.5rem 4rem;
+    text-align: center;
+}
+::placeholder {
+     color: var(--color-mid-gray);
+     font-weight: 500;
+ }
+
+ .input-container {
+    max-width: 400px;
+    margin: 0 auto;
+ }
+
+
+ .email-input {
+    margin-bottom: 3rem;
+ }
+
+ .error-container {
+    padding: 1rem;
+    background-color: red;
+    color:white;
+    /* border: 1px solid red; */
+    border-radius: 4px;
+ }
+
+ .error-container:empty {
+    display: none;
+ }
+
+
+
+.membership-container {
+    padding: 0px 2rem;
+}
+
+.membership-plans {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    grid-gap: 20px;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.number-input {
+    width: 150px;
+    background-color: var(--color-lighter-gray);
+    border: none;
+    font-weight: 800;
+    font-size: 3.5rem;
+    padding-left: 8px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.number-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.card {
+    flex: 1;
+    max-width: 420px;
+    min-width: 370px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--white);
+    padding: 32px;
+    border-radius: 7px;
+    border: 1px solid rgb(225, 225, 225);
+    min-height: 200px;
+    transition: border-color 0.25s ease-in-out;
+}
+
+.card:hover {
+    border-color: rgb(61,61,61)
+}
+
+.plan-name {
+    margin-bottom: 1rem;
+}
+
+.price-container {
+    display: flex;
+}
+
+.price-currency {
+    font-size: 2rem; 
+    font-weight: 700;
+    align-self: flex-start
+}
+
+.plan-amount {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1em;
+    letter-spacing: -1.3px;
+}
+
+.billing-period {
+    align-self: flex-end;
+    margin-left: 5px;
+}
+
+.plan-description {
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.card-details {
+    margin-bottom: 8rem;
+}
+
+.benefit-title {
+    margin-bottom: 10px;
+}
+
+.subscription-link {
+    color: white;
+    justify-self: end;
+    width: 100%;
+    margin-top: auto;
+}
+
+.plan-button {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1em;
+    letter-spacing: 0.2px;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    min-width: 80px;
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+    height: 44px;
+    width: 100%;
+    padding: 0 1.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .25s ease;
+    box-shadow: none;
+    user-select: none;
+    outline: none;
+    border: none;
+}
+
+.cancellation-layout {
+    margin: 4rem auto;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+
+.cancellation-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.cancel-link {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1em;
+    letter-spacing: 0.2px;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    min-width: 80px;
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+    height: 44px;
+    padding: 0 1.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .25s ease;
+    box-shadow: none;
+    user-select: none;
+    outline: none;
+    border: 1px solid rgb(225, 225, 225);
+}
+
+.cancel-link:hover {
+    border-color: red
+}
