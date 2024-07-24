@@ -2,7 +2,7 @@
     <div class="membership-container">
         <form data-members-form data-members-autoredirect="false" id="signup-form">
             <div class="form-header">
-            {{#unless @member}}
+                {{#unless @member}}
                 <div class="input-container">
                     <label class="name-input">
                         Name
@@ -13,17 +13,17 @@
                         <input id="signup-email" data-members-email type="email" required="true"
                             placeholder="craigmod@example.org" />
                     </label>
-                <div id="error" class="error-container" data-members-error></div>
+                    <div id="error" class="error-container" data-members-error></div>
                 </div>
-            {{else }}
+                {{else }}
                 <h1>Choose a plan</h1>
                 <span id="signup-name" style="display: none;"></span>
                 <span id="signup-email" style="display: none;">{{@member.email}}</span>
                 <span id="membership-paid" style="display: none;">{{@member.paid}}</span>
-                {{#foreach @member.subscriptions as |sub|}} 
+                {{#foreach @member.subscriptions as |sub|}}
                 <span id="member-subscription" style="display:none;">{{sub.tier.name}}</span>
                 {{/foreach}}
-            {{/unless}}
+                {{/unless}}
             </div>
 
             <section class="membership-plans">
@@ -71,10 +71,9 @@
                             {{/foreach}}
                         </div>
                     </div>
-                    <button type="submit" class="plan-button"
-                        style="background-color: {{@site.accent_color}}">
+                    <button type="submit" class="plan-button" style="background-color: {{@site.accent_color}}">
                         Choose
-                        </button>
+                    </button>
                 </div>
                 {{/unless}}
                 {{/if}}
@@ -88,9 +87,10 @@
                 <h4 class="plan-name" style="color: {{@site.accent_color}}">Pay What You Wish</h4>
                 <div>
                     <form id="pwyw-form">
-                    <span class="price-currency">$</span>
-                    <input id="subscriptionAmount" class="number-input title" type="number" placeholder="15" required="true" min="1"/>
-                    <span class="billing-period">/month</span>
+                        <span class="price-currency">$</span>
+                        <input id="subscriptionAmount" class="number-input title" type="number" placeholder="15"
+                            required="true" min="1" />
+                        <span class="billing-period">/month</span>
                     </form>
                 </div>
             </div>
@@ -101,17 +101,17 @@
                     <div class="benefit-title">✓ Explain custom tier benefits here</div>
                 </div>
             </div>
-            <div id="pwyw-payment-button" class="plan-button"
-                style="background-color: {{@site.accent_color}}">Choose</div>
+            <div id="pwyw-payment-button" class="plan-button" style="background-color: {{@site.accent_color}}">Choose
+            </div>
         </div>
         </section>
         {{#if @member.paid}}
         <div class="cancellation-layout">
-        {{#foreach @member.subscriptions as |sub|}} 
+            {{#foreach @member.subscriptions as |sub|}}
             <div class="cancellation-container">
-        {{cancel_link class="cancel-link" cancelLabel="Cancel Membership"}} 
+                {{cancel_link class="cancel-link" cancelLabel="Cancel Membership"}}
             </div>
-        {{/foreach}}
+            {{/foreach}}
         </div>
         {{/if}}
     </div>
@@ -124,13 +124,13 @@
 
             // Only free tier can trigger this callback
             const callback = (mutationList, observer) => {
-            for (const mutation of mutationList) {
-                if (mutation.type === "attributes") {
-                    if (mutation.target.className === 'success') {
-                        document.location = '/signup-success'
+                for (const mutation of mutationList) {
+                    if (mutation.type === "attributes") {
+                        if (mutation.target.className === 'success') {
+                            document.location = '/signup-success'
+                        }
                     }
                 }
-            }
             };
 
             const observer = new MutationObserver(callback);
@@ -141,8 +141,7 @@
             subscriptionAmount = subscriptionAmount || document.getElementById("subscriptionAmount").value;
             var emailNode = document.getElementById("signup-email");
             var email = emailNode.value || emailNode.innerHTML;
-            // no email or no price : ask user to fill all
-                var form = document.getElementById('signup-form')
+            var form = document.getElementById('signup-form')
             const formValid = form.reportValidity()
             if (!email || !formValid) {
                 return;
