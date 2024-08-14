@@ -33,6 +33,13 @@
     margin: 0 0.5rem;
 }
 
+.card-section-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
 .card-container {
     margin-top: 2rem;
     display: grid;
