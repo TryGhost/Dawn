@@ -32,3 +32,59 @@
 .cover-cta .button {
     margin: 0 0.5rem;
 }
+
+.card-container {
+    margin-top: 2rem;
+    display: grid;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    grid-gap: 20px;
+    justify-content: space-around;
+    max-width: 1200px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cover-card {
+    flex: 1;
+    max-width: 420px;
+    min-width: 370px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    background: var(--white);
+    border-radius: 7px;
+    border: 1px solid rgb(225, 225, 225);
+    min-height: 200px;
+    transition: border-color 0.25s ease-in-out;
+    background-image: url('https://media.npr.org/assets/img/2019/09/23/esquire-npr-2015--2_custom-815bdae9165e9a24a51023a69d898a2f945568eb.jpg?s=1100&c=50&f=jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.gradient {
+    display: flex;
+    padding: 2rem 2rem 1.5rem 2rem;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(75,75,75,0.75));
+    justify-content: center;
+    border-radius: 7px;
+
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    background: none;
+}
+
+.margin-left {
+    margin-left: auto;
+}
+.margin-right {
+    margin-right: auto;
+}

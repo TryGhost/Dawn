@@ -1,22 +1,52 @@
 <div class="cover gh-outer">
     <div class="cover-content gh-inner">
         {{#if @site.icon}}
-            <div class="cover-icon">
-                <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
-            </div>
+        <div class="cover-icon">
+            <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+        </div>
         {{/if}}
 
         {{#if @site.description}}
-            <div class="cover-description">{{@site.description}}</div>
+        <div class="cover-description">{{@site.description}}</div>
         {{/if}}
 
         {{#if @site.members_enabled}}
-            {{#unless @member}}
-            <div class="cover-cta">
-                <a class="button members-subscribe" href="/signup">Sign up</a>
-                <button class="button button-secondary members-login" data-portal="signin">Login</button>
-            </div>
-            {{/unless}}
+        {{#unless @member}}
+        <div class="cover-cta">
+            <a class="button members-subscribe" href="/signup">Sign up</a>
+            <button class="button button-secondary members-login" data-portal="signin">Login</button>
+        </div>
+        {{/unless}}
         {{/if}}
     </div>
+    <section class="card-container">
+        <div class="cover-card margin-left">
+            <div class="gradient">
+            <span class="card-title">
+                Popups
+            </span>
+            </div>
+        </div>
+        <div class="cover-card margin-right">
+            <div class="gradient">
+            <span class="card-title">
+                Steeped in Sound
+            </span>
+            </div>
+        </div>
+        <div class="cover-card margin-left">
+            <div class="gradient">
+            <span class="card-title">
+                Distros
+            </span>
+            </div>
+        </div>
+        <div class="cover-card margin-right">
+            <div class="gradient">
+            <span class="card-title">
+                Tea Talks
+            </span>
+            </div>
+        </div>
+    </section>
 </div>
