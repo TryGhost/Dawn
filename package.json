@@ -1,7 +1,7 @@
 {
   "name": "dawn-omega",
   "description": "An extension of Ghost's Dawn theme",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "private": true,
   "engines": {
     "ghost": ">=5.0.0"
@@ -78,16 +78,6 @@
       },
       "white_logo_for_dark_mode": {
         "type": "image"
-      },
-      "show_featured_posts": {
-        "type": "boolean",
-        "default": true,
-        "group": "homepage"
-      },
-      "featured_title": {
-        "type": "text",
-        "default": "Featured articles",
-        "group": "homepage"
       },
       "show_author": {
         "type": "boolean",
