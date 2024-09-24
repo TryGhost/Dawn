@@ -92,19 +92,6 @@
       "card_section_title": {
         "type": "text",
         "group": "homepage"
-      },
-      "card_1_image": {
-        "type": "image",
-        "group": "homepage"
-      },
-      "card_1_title": {
-        "type": "text",
-        "group": "homepage"
-      },
-      "card_1_subtitle": {
-        "type": "text",
-        "default": "",
-        "group": "homepage"
       }
     }
   },
