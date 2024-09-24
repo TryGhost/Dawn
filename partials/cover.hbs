@@ -19,43 +19,11 @@
         {{/unless}}
         {{/if}}
     </div>
-    {{#if @custom.card_section_title}}
     <div class="card-section-title">
         <h3>{{@custom.card_section_title}}</h3>
     </div>
-    {{/if}}
-    <section class="card-container">
-        {{#if @custom.card_1_image}}
-        {{#if @custom.card_1_title }}
-        <div class="cover-card" style="background-image: url('{{@custom.card_1_image}}');">
-            <div class="gradient">
-                <span class="card-title">
-                    {{@custom.card_1_title}}
-                </span>
-            </div>
-        </div>
-        {{/if}}
-        {{/if}}
-        <div class="cover-card ">
-            <div class="gradient">
-                <span class="card-title">
-                    Steeped in Sound
-                </span>
-            </div>
-        </div>
-        <div class="cover-card">
-            <div class="gradient">
-                <span class="card-title">
-                    Distros
-                </span>
-            </div>
-        </div>
-        <div class="cover-card ">
-            <div class="gradient">
-                <span class="card-title">
-                    Tea Talks
-                </span>
-            </div>
-        </div>
+    <section id="card-container">
     </section>
+    <script src="../assets/js/settings.js"></script>
+    <script src="../assets/js/cards.js"></script>
 </div>
