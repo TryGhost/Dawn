@@ -24,7 +24,7 @@ const cards = [
 
     {
         title: 'Distros',
-        image: 'https://raw.githubusercontent.com/the-tea-stand/dawn-omega/refs/heads/main/assets/images/distro.jpeg',
+        image: 'https://raw.githubusercontent.com/the-tea-stand/dawn-omega/refs/heads/main/assets/images/distro-landscape.jpeg',
         url: 'https://theteastand.org/distros/' 
     },
     
