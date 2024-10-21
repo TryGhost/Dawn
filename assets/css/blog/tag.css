@@ -3,40 +3,40 @@
     text-align: center;
 }
 
-.tag-name {
+.tag .tag-name {
     margin-bottom: 0;
     font-size: 3rem;
     color: var(--brand-color);
 }
 
-.tag-name::before {
+.tag .tag-name::before {
     content: "#";
 }
 
-.tag-description {
+.tag .tag-description {
     max-width: 520px;
     margin: 16px auto 0;
 }
 
-.tag-list {
+.tag .tag-list {
     margin-top: 2rem;
     font-weight: 700;
 }
 
-.tag-list-label {
+.tag .tag-list-label {
     margin-right: 0.5rem;
     color: var(--secondary-text-color);
 }
 
-.tag-list-item::before {
+.tag .tag-list-item::before {
     content: "#";
 }
 
-.tag-list-item + .tag-list-item {
+.tag .tag-list-item + .tag-list-item {
     margin-left: 0.3rem;
 }
 
-.tag-media {
+.tag .tag-media {
     margin-top: 4.5rem;
 }
 
@@ -45,7 +45,7 @@
         margin-bottom: 2.5rem;
     }
 
-    .tag-media {
+    .tag .tag-media {
         margin-top: 3rem;
     }
 }
