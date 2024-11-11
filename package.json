@@ -115,7 +115,7 @@
         "gulp-uglify": "3.0.2",
         "gulp-zip": "5.1.0",
         "ordered-read-streams": "2.0.0",
-        "postcss": "8.4.48",
+        "postcss": "8.4.49",
         "postcss-easy-import": "4.0.0",
         "pump": "3.0.2"
     }
