@@ -49,6 +49,16 @@
     color: var(--darker-gray-color);
 }
 
+.theme-dark .kg-bookmark-card a.kg-bookmark-container,
+.theme-dark .kg-bookmark-card a.kg-bookmark-container:hover,
+.theme-dark .kg-file-card-container,
+.theme-dark .kg-file-card-container:hover,
+.theme-dark .kg-audio-card,
+.theme-dark .kg-product-card-container {
+    background-color: var(--lighter-gray-color) !important;
+    opacity: 1;
+}
+
 @media (prefers-color-scheme: dark) {
     html:not(.theme-light):root {
         --primary-text-color: #e2e2e2;
@@ -94,5 +104,15 @@
 
     html:not(.theme-light) .kg-audio-card button {
         color: var(--darker-gray-color);
+    }
+
+    html:not(.theme-light) .kg-bookmark-card a.kg-bookmark-container,
+    html:not(.theme-light) .kg-bookmark-card a.kg-bookmark-container:hover,
+    html:not(.theme-light) .kg-file-card-container,
+    html:not(.theme-light) .kg-file-card-container:hover,
+    html:not(.theme-light) .kg-audio-card,
+    html:not(.theme-light) .kg-product-card-container {
+        background-color: var(--lighter-gray-color) !important;
+        opacity: 1;
     }
 }
