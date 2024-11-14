@@ -15,8 +15,8 @@
     word-break: break-word;
 }
 
-.has-serif-title .featured-wrapper .post-title {
-    font-family: var(--font-serif);
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .featured-wrapper .post-title {
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 .featured-title {

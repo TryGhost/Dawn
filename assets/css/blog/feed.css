@@ -48,6 +48,7 @@
     padding-right: 1rem;
     margin-bottom: 0;
     overflow: hidden;
+    font-family: var(--gh-font-body, var(--font-sans));
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.3;
