@@ -23,7 +23,7 @@ const cards = [
     {
         title: "⛩️ Popups",
         url: "https://www.theteastand.org/popups/",
-        image: "https://i.imgur.com/cjggPYy.jpeg"
+        image: "https://github.com/the-tea-stand/dawn-omega/blob/main/assets/images/popup.JPG?raw=true"
     },
     {
         title: "🥬 Distros",
@@ -33,11 +33,11 @@ const cards = [
     {
         title: "🫖 Tea Talks",
         url: "https://www.theteastand.org/tea-talks/",
-        image: "https://i.imgur.com/oV1PqD6.jpeg"
+        image: "https://github.com/the-tea-stand/dawn-omega/blob/main/assets/images/tea-talk.JPG?raw=true"
     },
     {
         title: "📀 Steeped in Sound",
         url: "https://www.theteastand.org/steeped-in-sound/",
-        image: "https://i.imgur.com/CywIxsR.jpeg"
+        image: "https://github.com/the-tea-stand/dawn-omega/blob/main/assets/images/steeped.jpeg?raw=true"
     },
 ]
