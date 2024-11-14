@@ -28,7 +28,7 @@ const cards = [
     {
         title: "🥬 Distros",
         url: "https://www.theteastand.org/distros/",
-        image: "https://i.imgur.com/ozD6q0p.jpeg"
+        image: "https://github.com/the-tea-stand/dawn-omega/blob/main/assets/images/distro.jpg?raw=true"
     },
     {
         title: "🫖 Tea Talks",
