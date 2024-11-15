@@ -40,6 +40,12 @@
     margin-bottom: 3rem;
 }
 
+.articles-section-title-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
 .card-container {
     margin-top: 2rem;
     display: flex;
@@ -63,11 +69,11 @@
     justify-content: end;
     background: var(--white);
     border-radius: 7px;
-    border: 1px solid rgb(225, 225, 225);
     min-height: 200px;
     transition: border-color 0.25s ease-in-out;
     background-size: cover;
     background-repeat: no-repeat;
+    border: 3px solid var(--brand-color);
 }
 
 

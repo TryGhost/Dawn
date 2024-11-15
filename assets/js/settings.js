@@ -1,3 +1,14 @@
+// Homepage text
+// 
+// Notes:
+// Each of these variables should be a string.  It should be well-formed HTML.
+// This is a site to test your HTML: https://onecompiler.com/html/
+// It can also just be a regular string, e.g. "This is a string"
+
+
+const description = "The Tea Stand serves free tea to build community. We've served 4,003 free cups and counting!"
+const articlesTitle = "Recaps"
+
 // Modality cards on homepage
 //
 // Notes:

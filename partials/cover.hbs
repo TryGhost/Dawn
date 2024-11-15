@@ -7,7 +7,7 @@
         {{/if}}
 
         {{#if @site.description}}
-        <div class="cover-description">{{@site.description}}</div>
+        <div id="cover-description" class="cover-description"></div>
         {{/if}}
 
         {{#if @site.members_enabled}}
@@ -24,6 +24,9 @@
     </div>
     <section id="card-container">
     </section>
+    <div class="articles-section-title-container">
+        <h3 id="articles-section-title"></h3>
+    </div>
     <script src="{{asset 'js/settings.js'}}"></script>
-    <script src="{{asset 'js/cards.js'}}"></script>
+    <script src="{{asset 'js/homepage.js'}}"></script>
 </div>
