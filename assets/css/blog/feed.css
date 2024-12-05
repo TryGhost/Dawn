@@ -30,6 +30,7 @@
 
 .feed-calendar {
     display: flex;
+    gap: 0.4rem;
     min-width: 45px;
     margin-right: 1.5rem;
     font-size: 1.1rem;
@@ -39,7 +40,6 @@
 }
 
 .feed-calendar-month {
-    margin-right: 0.4rem;
     text-transform: uppercase;
 }
 
