@@ -113,7 +113,7 @@
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "10.0.0",
         "gulp-uglify": "3.0.2",
-        "gulp-zip": "5.1.0",
+        "gulp-zip": "6.1.0",
         "ordered-read-streams": "2.0.0",
         "postcss": "8.5.3",
         "postcss-easy-import": "4.0.0",
