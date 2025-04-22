@@ -45,6 +45,34 @@
     color: var(--twitter-color);
 }
 
+.theme-dark .share-link-linkedin {
+    color: var(--linkedin-color);
+}
+
+.theme-dark .share-link-bluesky {
+    color: var(--bluesky-color);
+}
+
+.theme-dark .share-link-threads {
+    color: var(--threads-color);
+}
+
+.theme-dark .share-link-mastodon {
+    color: var(--mastodon-color);
+}
+
+.theme-dark .share-link-tiktok {
+    color: var(--tiktok-color);
+}
+
+.theme-dark .share-link-youtube {
+    color: var(--youtube-color);
+}
+
+.theme-dark .share-link-instagram {
+    color: var(--instagram-color);
+}
+
 .theme-dark .kg-audio-card button {
     color: var(--darker-gray-color);
 }

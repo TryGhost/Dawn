@@ -1,5 +1,6 @@
 .share {
     display: flex;
+    gap: 0.4rem;
 }
 
 .share-link {
@@ -22,15 +23,6 @@
     height: 14px;
 }
 
-.share-link .icon-facebook {
-    margin-right: 0.2rem;
-    margin-left: -0.3rem;
-}
-
-.share-link .icon-twitter {
-    margin-right: 0.4rem;
-}
-
 .share-link-facebook {
     background-color: var(--facebook-color);
 }
@@ -38,3 +30,33 @@
 .share-link-twitter {
     background-color: var(--twitter-color);
 }
+
+.share-link-linkedin {
+    background-color: var(--linkedin-color);
+}
+
+.share-link-bluesky {
+    background-color: var(--bluesky-color);
+}
+
+.share-link-threads {
+    background-color: var(--threads-color);
+}
+
+.share-link-mastodon {
+    background-color: var(--mastodon-color);
+}
+
+.share-link-tiktok {
+    background-color: var(--tiktok-color);
+}
+
+.share-link-youtube {
+    background-color: var(--youtube-color);
+}
+
+.share-link-instagram {
+    background-color: var(--instagram-color);
+}
+
+

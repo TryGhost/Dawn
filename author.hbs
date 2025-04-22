@@ -25,15 +25,57 @@
 
         <div class="share author-social">
             {{#if facebook}}
-                <a class="share-link share-link-facebook author-social-item" href="https://www.facebook.com/{{facebook}}" target="_blank" rel="noopener noreferrer">
+                <a class="share-link share-link-facebook author-social-item" href="{{social_url type="facebook"}}" target="_blank" rel="noopener noreferrer">
                     {{> "icons/facebook"}}
                     Facebook
                 </a>
             {{/if}}
             {{#if twitter}}
-                <a class="share-link share-link-twitter author-social-item" href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener noreferrer">
+                <a class="share-link share-link-twitter author-social-item" href="{{social_url type="twitter"}}" target="_blank" rel="noopener noreferrer">
                     {{> "icons/twitter"}}
                     Twitter
+                </a>
+            {{/if}}
+            {{#if linkedin}}
+                <a class="share-link share-link-linkedin author-social-item" href="{{social_url type="linkedin"}}" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/linkedin"}}
+                    LinkedIn
+                </a>
+            {{/if}}
+            {{#if bluesky}}
+                <a class="share-link share-link-bluesky author-social-item" href="{{social_url type="bluesky"}}" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/bluesky"}}
+                    Bluesky
+                </a>
+            {{/if}}
+            {{#if threads}}
+                <a class="share-link share-link-threads author-social-item" href="{{social_url type="threads"}}" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/threads"}}
+                    Threads
+                </a>
+            {{/if}}
+            {{#if mastodon}}
+                <a class="share-link share-link-mastodon author-social-item" href="{{social_url type="mastodon"}}" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/mastodon"}}
+                    Mastodon
+                </a>
+            {{/if}}
+            {{#if tiktok}}
+                <a class="share-link share-link-tiktok author-social-item" href="{{social_url type="tiktok"}}" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/tiktok"}}
+                    TikTok
+                </a>
+            {{/if}}
+            {{#if youtube}}
+                <a class="share-link share-link-youtube author-social-item" href="{{social_url type="youtube"}}" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/youtube"}}
+                    YouTube
+                </a>
+            {{/if}}
+            {{#if instagram}}
+                <a class="share-link share-link-instagram author-social-item" href="{{social_url type="instagram"}}" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/instagram"}}
+                    Instagram
                 </a>
             {{/if}}
         </div>
