@@ -117,6 +117,6 @@
         "ordered-read-streams": "2.0.0",
         "postcss": "8.5.4",
         "postcss-easy-import": "4.0.0",
-        "pump": "3.0.2"
+        "pump": "3.0.3"
     }
 }
