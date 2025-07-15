@@ -106,7 +106,7 @@
         "@tryghost/shared-theme-assets": "2.5.0",
         "autoprefixer": "10.4.21",
         "beeper": "2.1.0",
-        "cssnano": "7.0.7",
+        "cssnano": "7.1.0",
         "gscan": "4.49.7",
         "gulp": "5.0.1",
         "gulp-concat": "2.6.1",
