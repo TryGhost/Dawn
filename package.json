@@ -1,6 +1,6 @@
 {
-    "name": "dawn",
-    "description": "A Ghost theme",
+    "name": "justin-pecott-net-dawn",
+    "description": "Customized Dawn theme for justin.pecott.net",
     "version": "1.0.0",
     "private": true,
     "engines": {
@@ -8,9 +8,9 @@
     },
     "license": "MIT",
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Justin Pecott",
+        "email": "justin@pecott.net",
+        "url": "https://justin.pecott.net"
     },
     "keywords": [
         "ghost",
@@ -44,7 +44,11 @@
         "custom": {
             "navigation_layout": {
                 "type": "select",
-                "options": ["Logo on the left", "Logo in the middle", "Stacked"],
+                "options": [
+                    "Logo on the left",
+                    "Logo in the middle",
+                    "Stacked"
+                ],
                 "default": "Logo on the left"
             },
             "title_font": {
@@ -103,7 +107,7 @@
         "zip": "gulp zip"
     },
     "devDependencies": {
-        "@tryghost/shared-theme-assets": "2.5.0",
+        "@tryghost/shared-theme-assets": "2.5.1",
         "autoprefixer": "10.4.21",
         "beeper": "2.1.0",
         "cssnano": "7.1.0",
