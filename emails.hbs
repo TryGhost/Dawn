@@ -1,0 +1,25 @@
+{{!< default}}
+
+<main class="site-main">
+    <section class="tag">
+
+        <div class="gh-canvas">
+
+            <h1 class="tag-name">emails</h1>
+
+            <div class="tag-description">Past emails</div>
+
+        </div>
+
+    </section>
+    <div class="post-feed gh-feed gh-canvas">
+        {{#get "posts" filter="tag:['emails']" as |posts|}}
+            {{#foreach posts}}
+                {{> "loop"}}
+            {{/foreach}}
+        {{/get}}
+    </div>
+
+    {{pagination}}
+
+</main>

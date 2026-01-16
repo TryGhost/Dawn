@@ -1,7 +1,7 @@
 {
-    "name": "cd-video",
+    "name": "canin-dawn",
     "description": "A DreamFreely'd Ghost theme",
-    "version": "1.0.9",
+    "version": "1.0.3",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -75,6 +75,16 @@
             "white_logo_for_dark_mode": {
                 "type": "image"
             },
+            // "show_featured_posts": {
+            //     "type": "boolean",
+            //     "default": true,
+            //     "group": "homepage"
+            // },
+            // "featured_title": {
+            //     "type": "text",
+            //     "default": "Featured articles",
+            //     "group": "homepage"
+            // },
             "show_author": {
                 "type": "boolean",
                 "default": true,
@@ -93,20 +103,20 @@
         "zip": "gulp zip"
     },
     "devDependencies": {
-        "@tryghost/shared-theme-assets": "2.5.2",
-        "autoprefixer": "10.4.23",
+        "@tryghost/shared-theme-assets": "2.5.0",
+        "autoprefixer": "10.4.21",
         "beeper": "2.1.0",
-        "cssnano": "7.1.2",
-        "gscan": "5.2.2",
-        "gulp": "5.0.1",
+        "cssnano": "7.0.6",
+        "gscan": "4.47.0",
+        "gulp": "5.0.0",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "10.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "5.1.0",
         "ordered-read-streams": "2.0.0",
-        "postcss": "8.5.6",
+        "postcss": "8.5.3",
         "postcss-easy-import": "4.0.0",
-        "pump": "3.0.3"
+        "pump": "3.0.2"
     }
 }
