@@ -1,3 +1,0 @@
-<h4>Terms of Service</h4>
-
-<div>Async result!</div>
