@@ -1,0 +1,65 @@
+{
+  "name": "mingo",
+  "version": "2.5.3",
+  "description": "JavaScript implementation of MongoDB query language",
+  "main": "./dist/mingo.js",
+  "module": "./lib/index.js",
+  "scripts": {
+    "clean": "rm -fr dist/*",
+    "build.umd": "rollup -c config/rollup.umd.js",
+    "build.es": "rollup -c config/rollup.es.js",
+    "build": "npm run build.umd && npm run build.es",
+    "release": "npm run clean && npm run build && npm test",
+    "postrelease": "uglifyjs dist/mingo.js --comments '/^!/' --compress --mangle --sourcemap dist/mingo.min.map --output dist/mingo.min.js",
+    "test": "NODE_ENV=test nyc --reporter=lcov --reporter=text tape test/*.js test/**/*.js",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kofrasa/mingo.git"
+  },
+  "files": [
+    "dist",
+    "index.d.ts",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "devDependencies": {
+    "@babel/preset-env": "7.9.0",
+    "@babel/plugin-external-helpers": "7.8.3",
+    "babel-plugin-istanbul": "6.0.0",
+    "backbone": "1.4.0",
+    "benchmark": "2.1.4",
+    "bson": "4.0.4",
+    "codecov": "3.6.5",
+    "istanbul": "0.4.5",
+    "lodash": "4.17.15",
+    "nyc": "15.0.0",
+    "perf_hooks": "0.0.1",
+    "rollup": "2.3.2",
+    "rollup-plugin-babel": "4.4.0",
+    "@rollup/plugin-commonjs": "11.0.2",
+    "@rollup/plugin-node-resolve": "7.1.1",
+    "tape": "4.13.2",
+    "uglify-js": "3.8.1"
+  },
+  "keywords": [
+    "util",
+    "mongo",
+    "nosql",
+    "query",
+    "aggregate",
+    "filter",
+    "group",
+    "project",
+    "search",
+    "transform"
+  ],
+  "author": "Francis Asante <kofrasa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kofrasa/mingo/issues"
+  },
+  "dependencies": {}
+}

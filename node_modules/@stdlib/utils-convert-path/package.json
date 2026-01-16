@@ -1,0 +1,79 @@
+{
+  "name": "@stdlib/utils-convert-path",
+  "version": "0.2.2",
+  "description": "Convert between POSIX and Windows paths.",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "The Stdlib Authors",
+    "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+  },
+  "contributors": [
+    {
+      "name": "The Stdlib Authors",
+      "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+    }
+  ],
+  "main": "./lib",
+  "directories": {
+    "doc": "./docs",
+    "lib": "./lib",
+    "dist": "./dist"
+  },
+  "types": "./docs/types",
+  "scripts": {},
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/utils-convert-path.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "dependencies": {
+    "@stdlib/assert-is-string": "^0.2.2",
+    "@stdlib/regexp-extended-length-path": "^0.2.2",
+    "@stdlib/string-base-lowercase": "^0.4.0",
+    "@stdlib/string-format": "^0.2.2",
+    "@stdlib/string-replace": "^0.2.1",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.2"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">2.7.0"
+  },
+  "os": [
+    "aix",
+    "darwin",
+    "freebsd",
+    "linux",
+    "macos",
+    "openbsd",
+    "sunos",
+    "win32",
+    "windows"
+  ],
+  "keywords": [
+    "stdlib",
+    "stdutils",
+    "stdutil",
+    "utilities",
+    "utility",
+    "utils",
+    "util",
+    "convert",
+    "posix",
+    "windows",
+    "win",
+    "linux",
+    "unix",
+    "win32",
+    "path",
+    "string",
+    "str"
+  ],
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/stdlib"
+  }
+}

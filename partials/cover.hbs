@@ -7,16 +7,22 @@
         {{/if}}
 
         {{#if @site.description}}
-            <div class="cover-description">{{@site.description}}</div>
+            <div class="cover-description"><b>{{@site.description}}</b></div>
         {{/if}}
 
-        {{#if @site.members_enabled}}
+        {{!-- <div class="cover-cta">
+            <a href="https://payhip.com/b/1nE5I" target="_blank">
+                <b><u>ME Course starts Sept 15th, 2025</u></b>
+            </a>
+        </div> --}}
+
+        {{!-- {{#if @site.members_enabled}}
             {{#unless @member}}
             <div class="cover-cta">
                 <button class="button members-subscribe" data-portal="signup">Subscribe now</button>
                 <button class="button button-secondary members-login" data-portal="signin">Login</button>
             </div>
             {{/unless}}
-        {{/if}}
+        {{/if}} --}}
     </div>
 </div>

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../lib/index.js"],
+  "sourcesContent": ["/**\n* @license Apache-2.0\n*\n* Copyright (c) 2018 The Stdlib Authors.\n*\n* Licensed under the Apache License, Version 2.0 (the \"License\");\n* you may not use this file except in compliance with the License.\n* You may obtain a copy of the License at\n*\n*    http://www.apache.org/licenses/LICENSE-2.0\n*\n* Unless required by applicable law or agreed to in writing, software\n* distributed under the License is distributed on an \"AS IS\" BASIS,\n* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n* See the License for the specific language governing permissions and\n* limitations under the License.\n*/\n\n'use strict';\n\n/**\n* Minimum signed 16-bit integer.\n*\n* @module @stdlib/constants-int16-min\n* @type {integer32}\n*\n* @example\n* var INT16_MIN = require( '@stdlib/constants-int16-min' );\n* // returns -32768\n*/\n\n\n// MAIN //\n\n/**\n* Minimum signed 16-bit integer.\n*\n* ## Notes\n*\n* The number has the value\n*\n* ```tex\n* -(2^{15})\n* ```\n*\n* which corresponds to the two's complement bit sequence\n*\n* ```binarystring\n* 1000000000000000\n* ```\n*\n* @constant\n* @type {integer32}\n* @default -32768\n*/\nvar INT16_MIN = -32768|0; // asm type annotation\n\n\n// EXPORTS //\n\nmodule.exports = INT16_MIN;\n"],
+  "mappings": "aAuDA,IAAIA,EAAY,OAKhB,OAAO,QAAUA",
+  "names": ["INT16_MIN"]
+}

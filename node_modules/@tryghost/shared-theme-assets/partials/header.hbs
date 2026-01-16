@@ -1,0 +1,18 @@
+{{!--
+    Parameters:
+    * layout (wide, side)
+    * background (color, image)
+    * action (button, email, search)
+--}}
+
+{{#if @site.description}}
+    {{> components/header-content}}
+{{else}}
+    {{#if @site.cover_image}}
+        {{> components/header-content}}
+    {{else}}    
+        {{#if action}}
+            {{> components/header-content}}
+        {{/if}}
+    {{/if}}
+{{/if}}

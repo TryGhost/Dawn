@@ -1,0 +1,23 @@
+.gh-comments {
+    margin-top: 64px;
+    margin-bottom: -24px;
+}
+
+.gh-comments-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.gh-comments .gh-comments-title {
+    margin-bottom: 28px;
+}
+
+.gh-comments-header .gh-comments-title {
+    margin-bottom: 0;
+}
+
+.gh-comments-count {
+    color: var(--color-secondary-text);
+}

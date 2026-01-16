@@ -1,0 +1,73 @@
+{
+  "name": "@stdlib/utils-regexp-from-string",
+  "version": "0.2.2",
+  "description": "Create a regular expression from a regular expression string.",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "The Stdlib Authors",
+    "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+  },
+  "contributors": [
+    {
+      "name": "The Stdlib Authors",
+      "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+    }
+  ],
+  "main": "./lib",
+  "directories": {
+    "doc": "./docs",
+    "lib": "./lib",
+    "dist": "./dist"
+  },
+  "types": "./docs/types",
+  "scripts": {},
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/utils-regexp-from-string.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "dependencies": {
+    "@stdlib/assert-is-string": "^0.2.1",
+    "@stdlib/regexp-regexp": "^0.2.2",
+    "@stdlib/string-format": "^0.2.2",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.2"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">2.7.0"
+  },
+  "os": [
+    "aix",
+    "darwin",
+    "freebsd",
+    "linux",
+    "macos",
+    "openbsd",
+    "sunos",
+    "win32",
+    "windows"
+  ],
+  "keywords": [
+    "stdlib",
+    "stdutils",
+    "stdutil",
+    "util",
+    "utils",
+    "utility",
+    "utilities",
+    "regular",
+    "expression",
+    "regex",
+    "regexp",
+    "string",
+    "parse"
+  ],
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/stdlib"
+  }
+}

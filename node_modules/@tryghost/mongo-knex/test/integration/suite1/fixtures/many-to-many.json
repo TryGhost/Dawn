@@ -1,0 +1,31 @@
+{
+    "posts_tags": [
+        {"post_id": 1, "tag_id": 1, "sort_order": 0},
+        {"post_id": 2, "tag_id": 2, "sort_order": 0},
+        {"post_id": 3, "tag_id": 3, "sort_order": 0},
+        {"post_id": 4, "tag_id": 1, "sort_order": 0},
+        {"post_id": 4, "tag_id": 2, "sort_order": 1},
+        {"post_id": 5, "tag_id": 1, "sort_order": 0},
+        {"post_id": 6, "tag_id": 1, "sort_order": 0},
+        {"post_id": 6, "tag_id": 2, "sort_order": 1},
+        {"post_id": 8, "tag_id": 4, "sort_order": 1}
+    ],
+
+    "posts_authors": [
+        {"post_id": 1, "author_id": 1, "sort_order": 0},
+        {"post_id": 2, "author_id": 2, "sort_order": 0},
+        {"post_id": 3, "author_id": 1, "sort_order": 0},
+        {"post_id": 4, "author_id": 2, "sort_order": 0},
+        {"post_id": 4, "author_id": 1, "sort_order": 1},
+        {"post_id": 5, "author_id": 1, "sort_order": 0},
+        {"post_id": 6, "author_id": 1, "sort_order": 0},
+        {"post_id": 7, "author_id": 1, "sort_order": 0},
+        {"post_id": 8, "author_id": 2, "sort_order": 0},
+        {"post_id": 8, "author_id": 3, "sort_order": 1}
+    ],
+
+    "posts_comments": [
+        {"post_id": 1, "comment_id": "external_1"},
+        {"post_id": 2, "comment_id": "external_2"}
+    ]
+}

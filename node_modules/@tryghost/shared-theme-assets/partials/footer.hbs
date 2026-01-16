@@ -1,0 +1,20 @@
+{{!--
+    Parameters:
+    * footerText (text)
+--}}
+
+<footer class="gh-foot gh-outer">
+    <div class="gh-foot-inner gh-inner">
+        <nav class="gh-foot-menu">
+            {{navigation type="secondary"}}
+        </nav>
+
+        <div class="gh-copyright">
+            {{#unless footerText}}
+                {{@site.title}} &copy; {{date format="YYYY"}}. Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a>
+            {{else}}
+                {{footerText}}
+            {{/unless}}
+        </div>
+    </div>
+</footer>

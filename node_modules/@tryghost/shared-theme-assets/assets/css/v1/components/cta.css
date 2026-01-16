@@ -1,0 +1,50 @@
+.gh-cta-gradient {
+    position: relative;
+    grid-column: full-start / full-end;
+    height: 160px;
+    margin-top: -16rem;
+    margin-bottom: 4rem;
+    content: "";
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--color-white));
+}
+
+.gh-cta-gradient:first-child {
+    display: none;
+}
+
+.gh-cta {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.gh-cta-title {
+    margin-bottom: 3.2rem;
+    font-size: 2.2rem;
+    letter-spacing: -0.02em;
+}
+
+.gh-cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gh-cta-link {
+    margin-top: 0.8rem;
+    font-size: 1.4rem;
+    color: var(--color-secondary-text);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.gh-cta-link:hover {
+    color: var(--color-darker-gray);
+}
+
+@media (max-width: 767px) {
+    .gh-cta-actions {
+        column-gap: 0.8rem;
+    }
+}

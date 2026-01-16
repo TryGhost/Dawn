@@ -1,0 +1,61 @@
+<section class="gh-archive gh-outer">
+    <div class="gh-archive-inner gh-inner">
+        <header class="gh-archive-header">
+            {{#if profile_image}}
+                <figure class="gh-archive-image">
+                    <img
+                        srcset="{{img_url profile_image size="s"}} 300w,
+                                {{img_url profile_image size="m"}} 720w,
+                                {{img_url profile_image size="l"}} 960w,
+                                {{img_url profile_image size="xl"}} 1200w,
+                                {{img_url profile_image size="xxl"}} 2000w"
+                        sizes="(max-width: 1200px) 100vw, 1200px"
+                        src="{{img_url profile_image size="xl"}}"
+                        alt="{{name}}"
+                    >
+                </figure>
+            {{/if}}
+            <h1 class="gh-archive-title">{{name}}</h1>
+            {{#if bio}}
+                <p class="gh-archive-description">{{bio}}</p>
+            {{/if}}
+            <div class="gh-archive-meta">
+                {{#if location}}
+                    <div class="gh-archive-location">{{location}}</div>
+                {{/if}}
+                <div class="gh-archive-social">
+                    {{#if website}}
+                        <a href="{{website}}" target="_blank" rel="noopener">{{website}}</a>
+                    {{/if}}
+                    {{#if twitter}}
+                        <a href="{{social_url type="twitter"}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                    {{/if}}
+                    {{#if facebook}}
+                        <a href="{{social_url type="facebook"}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                    {{/if}}
+                    {{#if linkedin}}
+                        <a href="{{social_url type="linkedin"}}" target="_blank" rel="noopener">{{> "icons/linkedin"}}</a>
+                    {{/if}}
+                    {{#if bluesky}}
+                        <a href="{{social_url type="bluesky"}}" target="_blank" rel="noopener">{{> "icons/bluesky"}}</a>
+                    {{/if}}
+                    {{#if threads}}
+                        <a href="{{social_url type="threads"}}" target="_blank" rel="noopener">{{> "icons/threads"}}</a>
+                    {{/if}}
+                    {{#if mastodon}}
+                        <a href="{{social_url type="mastodon"}}" target="_blank" rel="noopener">{{> "icons/mastodon"}}</a>
+                    {{/if}}
+                    {{#if tiktok}}
+                        <a href="{{social_url type="tiktok"}}" target="_blank" rel="noopener">{{> "icons/tiktok"}}</a>
+                    {{/if}}
+                    {{#if youtube}}
+                        <a href="{{social_url type="youtube"}}" target="_blank" rel="noopener">{{> "icons/youtube"}}</a>
+                    {{/if}}
+                    {{#if instagram}}
+                        <a href="{{social_url type="instagram"}}" target="_blank" rel="noopener">{{> "icons/instagram"}}</a>
+                    {{/if}}
+                </div>
+            </div>
+        </header>
+    </div>
+</section>

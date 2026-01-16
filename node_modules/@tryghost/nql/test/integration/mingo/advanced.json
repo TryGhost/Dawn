@@ -1,0 +1,149 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "My first post",
+            "html": "<p>Loads of text here...</p>",
+            "authors": [
+                {
+                    "id": 1,
+                    "name": "Joe",
+                    "slug": "joe"
+                }
+            ],
+            "page": false,
+            "featured": false,
+            "image": null,
+            "status": "published",
+            "tags": [
+                {
+                    "id": 1,
+                    "name": "Photo",
+                    "slug": "photo",
+                    "visibility": "public"
+                },
+                {
+                    "id": 4,
+                    "name": "#internal",
+                    "slug": "hash-internal",
+                    "visibility": "internal"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Second post",
+            "html": "<p>And some more text...</p>",
+            "authors": [
+                {
+                    "id": 1,
+                    "name": "Joe",
+                    "slug": "joe"
+                }
+            ],
+            "page": false,
+            "featured": false,
+            "image": "myimage.jpg",
+            "status": "draft",
+            "tags": [{
+                "id": 2,
+                "name": "Video",
+                "slug": "video",
+                "visibility": "public"
+            }]
+        },
+        {
+            "id": 3,
+            "title": "3rd post",
+            "html": "<p>Something else...</p>",
+            "authors": [
+                {
+                    "id": 2,
+                    "name": "Joanne",
+                    "slug": "joanne"
+                }
+            ],
+            "page": false,
+            "featured": true,
+            "image": null,
+            "status": "published",
+            "tags": [{
+                "id": 1,
+                "name": "Photo",
+                "slug": "photo",
+                "visibility": "public"
+            }, {
+                "id": 2,
+                "name": "Video",
+                "slug": "video",
+                "visibility": "public"
+            }]
+        },
+        {
+            "id": 4,
+            "title": "The one that was number 4",
+            "html": "<p>It's always sunny.</p>",
+            "authors": [
+                {
+                    "id": 2,
+                    "name": "Joanne",
+                    "slug": "joanne"
+                }
+            ],
+            "page": false,
+            "featured": false,
+            "image": "myimage.jpg",
+            "status": "published",
+            "tags": [{
+                "id": 3,
+                "name": "Audio",
+                "slug": "audio",
+                "visibility": "public"
+            }]
+        },
+        {
+            "id": 5,
+            "title": "5 is not ready yet",
+            "html": "<p></p>",
+            "authors": [
+                {
+                    "id": 1,
+                    "name": "Joe",
+                    "slug": "joe"
+                },
+                {
+                    "id": 2,
+                    "name": "Joanne",
+                    "slug": "joanne"
+                }
+            ],
+            "page": false,
+            "featured": false,
+            "image": null,
+            "status": "draft",
+            "tags": []
+        },
+        {
+            "id": 6,
+            "title": "About",
+            "html": "<p>All about this site</p>",
+            "authors": [
+                {
+                    "id": 1,
+                    "name": "Joe",
+                    "slug": "joe"
+                },
+                {
+                    "id": 2,
+                    "name": "Joanne",
+                    "slug": "joanne"
+                }
+            ],
+            "page": true,
+            "featured": false,
+            "image": null,
+            "status": "published",
+            "tags": []
+        }
+    ]
+}

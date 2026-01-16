@@ -1,0 +1,75 @@
+{
+  "name": "@stdlib/utils-get-prototype-of",
+  "version": "0.2.2",
+  "description": "Return the prototype of a provided object.",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "The Stdlib Authors",
+    "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+  },
+  "contributors": [
+    {
+      "name": "The Stdlib Authors",
+      "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+    }
+  ],
+  "main": "./lib",
+  "directories": {
+    "doc": "./docs",
+    "lib": "./lib",
+    "dist": "./dist"
+  },
+  "types": "./docs/types",
+  "scripts": {},
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/utils-get-prototype-of.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "dependencies": {
+    "@stdlib/assert-is-function": "^0.2.1",
+    "@stdlib/object-ctor": "^0.2.1",
+    "@stdlib/utils-native-class": "^0.2.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">2.7.0"
+  },
+  "os": [
+    "aix",
+    "darwin",
+    "freebsd",
+    "linux",
+    "macos",
+    "openbsd",
+    "sunos",
+    "win32",
+    "windows"
+  ],
+  "keywords": [
+    "stdlib",
+    "stdutils",
+    "stdutil",
+    "utilities",
+    "utility",
+    "utils",
+    "util",
+    "object",
+    "obj",
+    "prototype",
+    "prototypeof",
+    "proto",
+    "polyfill",
+    "inheritance",
+    "inherit",
+    "getprototypeof"
+  ],
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/stdlib"
+  }
+}

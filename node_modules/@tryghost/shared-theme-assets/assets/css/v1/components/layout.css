@@ -1,0 +1,68 @@
+.gh-site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.gh-main {
+    flex-grow: 1;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.page-template .gh-main {
+    padding-block: 0;
+}
+
+.gh-outer {
+    padding-right: var(--gap);
+    padding-left: var(--gap);
+}
+
+.gh-inner {
+    max-width: var(--container-width, 1200px);
+    margin: 0 auto;
+}
+
+/* Canvas creates a multi-column, centered grid which the post
+is laid out on top of. Canvas just defines the grid, we don't
+use it for applying any other styles. */
+
+.gh-canvas,
+.kg-width-full.kg-content-wide {
+    --main: min(var(--content-width, 720px), 100% - var(--gap) * 2);
+    --wide: minmax(0, calc((var(--container-width, 1200px) - var(--content-width, 720px)) / 2));
+    --full: minmax(var(--gap), 1fr);
+
+    display: grid;
+    grid-template-columns:
+        [full-start] var(--full)
+        [wide-start] var(--wide)
+        [main-start] var(--main) [main-end]
+        var(--wide) [wide-end]
+        var(--full) [full-end];
+}
+
+.gh-canvas > * {
+    grid-column: main;
+}
+
+.kg-width-wide,
+.kg-content-wide > div {
+    grid-column: wide;
+}
+
+.kg-width-full {
+    grid-column: full;
+}
+
+.kg-width-full img {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    #gh-main {
+        padding-top: 4.8rem;
+        padding-bottom: 4.8rem;
+    }
+}

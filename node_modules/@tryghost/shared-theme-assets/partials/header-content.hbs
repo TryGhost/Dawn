@@ -1,0 +1,33 @@
+<section class="gh-header gh-outer{{#match layout "side"}}{{#match background "image"}} is-side{{/match}}{{/match}}{{#match layout "!=" "side"}}{{#match background "image"}}{{#if @site.cover_image}} has-background-image{{/if}}{{else match background "color"}} has-background-color{{/match}}{{/match}}">
+    <div class="gh-header-inner gh-inner">
+
+        {{#match background "image"}}
+            {{#if @site.cover_image}}
+                <img class="gh-header-image" src="{{img_url @site.cover_image}}" alt="{{@site.title}}">
+            {{/if}}
+        {{/match}}
+
+        <div class="gh-header-content">
+            {{#if primary}}
+                <h1 class="gh-header-primary">{{primary}}</h1>
+            {{/if}}
+            {{#if secondary}}
+                <p class="gh-header-secondary">{{secondary}}</p>
+            {{/if}}
+            {{#match action "button"}}
+                <a class="gh-header-action gh-header-button gh-btn" href="#">Learn more</a>
+            {{else match action "email"}}
+                {{#if @site.members_enabled}}
+                    {{#unless @member}}
+                        {{#unless @site.members_invite_only}}
+                            <button class="gh-header-action gh-header-input" data-portal>jamie@example.com <span>Subscribe</span></button>
+                        {{/unless}}
+                    {{/unless}}
+                {{/if}}
+            {{else match action "search"}}
+                <button class="gh-header-action gh-header-input" data-ghost-search>Search posts, tags and authors <span>{{> "icons/search"}}</span></button>
+            {{/match}}
+        </div>
+
+    </div>
+</section>

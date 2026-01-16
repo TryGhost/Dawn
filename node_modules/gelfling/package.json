@@ -1,0 +1,17 @@
+{
+  "name": "gelfling",
+  "version": "0.3.1",
+  "description": "Create and send GELF (Graylog2) messages, including chunking",
+  "author": "Michael Hart <michael.hart.au@gmail.com> (http://github.com/mhart)",
+  "main": "gelfling.js",
+  "keywords": [
+    "gelf",
+    "graylog",
+    "graylog2"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mhart/gelfling.git"
+  },
+  "license": "MIT"
+}

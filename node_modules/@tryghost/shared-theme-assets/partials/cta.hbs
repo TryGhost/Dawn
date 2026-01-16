@@ -1,0 +1,12 @@
+{{#if @site.members_enabled}}
+    {{#unless @member}}
+        <section class="gh-cta gh-outer">
+            <div class="gh-cta-inner gh-inner">
+                {{#if title}}
+                    <h2 class="gh-cta-title">{{title}}</h2>
+                {{/if}}
+                <button class="gh-cta-input" data-portal>jamie@example.com <span>Subscribe</span></button>
+            </div>
+        </section>
+    {{/unless}}
+{{/if}}

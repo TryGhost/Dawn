@@ -1,0 +1,39 @@
+.gh-navigation {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    column-gap: 2.4rem;
+    align-items: center;
+}
+
+.gh-navigation > div {
+    display: flex;
+    align-items: center;
+}
+
+.gh-navigation-next {
+    justify-content: flex-end;
+}
+
+.gh-navigation-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.gh-navigation-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+.gh-navigation-previous svg {
+    margin-right: 0.4rem;
+}
+
+.gh-navigation-next svg {
+    margin-left: 0.4rem;
+}
+
+@media (max-width: 767px) {
+    .gh-navigation-hide {
+        display: none;
+    }
+}

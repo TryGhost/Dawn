@@ -1,0 +1,172 @@
+/* Content refers to styling all page and post content that is
+created within the Ghost editor. The main content handles
+headings, text, images and lists. We deal with cards lower down. */
+
+.gh-content {
+    margin-top: 4rem;
+    font-size: var(--content-font-size, 1.8rem);
+    letter-spacing: var(--content-letter-spacing, 0);
+    word-break: break-word;
+}
+
+/* Default vertical spacing */
+.gh-content > * + * {
+    margin-top: calc(1.6em * var(--content-spacing-multiplier, 1));
+    margin-bottom: 0;
+}
+
+/* [id] represents all headings h1-h6, reset all margins */
+.gh-content > [id] {
+    margin: 0;
+}
+
+.gh-content > .kg-card + [id] {
+    margin-top: calc(2em * var(--content-spacing-multiplier, 1)) !important;
+}
+
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .gh-content > [id] {
+    font-family: var(--gh-font-heading, var(--font-serif));
+    letter-spacing: -0.01em;
+}
+
+/* Add back a top margin to all headings, unless a heading
+is the very first element in the post content */
+.gh-content > [id]:not(:first-child) {
+    margin-top: calc(1.6em * var(--content-spacing-multiplier, 1));
+}
+
+/* Add a small margin between a heading and anything after it */
+.gh-content > [id] + * {
+    margin-top: calc(0.8em * var(--content-spacing-multiplier, 1));
+}
+
+/* A larger margin before/after HRs and blockquotes */
+.gh-content > hr,
+.gh-content > blockquote {
+    position: relative;
+    margin-top: calc(2.4em * var(--content-spacing-multiplier, 1));
+}
+
+.gh-content > hr + *,
+.gh-content > blockquote + * {
+    margin-top: calc(2.4em * var(--content-spacing-multiplier, 1));
+}
+
+/* Now the content typography styles */
+.gh-content h2 {
+    font-size: 1.6em;
+}
+
+.gh-content h3 {
+    font-size: 1.4em;
+}
+
+.gh-content a {
+    color: var(--ghost-accent-color);
+    text-decoration: underline;
+    word-break: break-word;
+}
+
+.gh-content .kg-callout-card .kg-callout-text,
+.gh-content .kg-toggle-card .kg-toggle-content > ol,
+.gh-content .kg-toggle-card .kg-toggle-content > ul,
+.gh-content .kg-toggle-card .kg-toggle-content > p {
+    font-size: 0.95em;
+}
+
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content > blockquote,
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content > ol,
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content > ul,
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content > dl,
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content > p,
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content .kg-callout-text,
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content .kg-toggle-content > ol,
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content .kg-toggle-content > ul,
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content .kg-toggle-content > p {
+    font-family: var(--gh-font-body, var(--font-serif));
+}
+
+.gh-content ul,
+.gh-content ol,
+.gh-content dl {
+    padding-left: 2.8rem;
+}
+
+.gh-content :is(li + li, li :is(ul, ol)) {
+    margin-top: 0.8rem;
+}
+
+.gh-content ol ol li {
+    list-style-type: lower-alpha;
+}
+
+.gh-content ol ol ol li {
+    list-style-type: lower-roman;
+}
+
+.gh-content table:not(.gist table) {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    overflow-x: auto;
+    font-family: var(--font-sans);
+    font-size: 1.6rem;
+    white-space: nowrap;
+    vertical-align: top;
+    border-spacing: 0;
+    border-collapse: collapse;
+    -webkit-overflow-scrolling: touch;
+    background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+    background-repeat: no-repeat;
+    background-attachment: scroll, scroll;
+    background-size: 10px 100%, 10px 100%;
+}
+
+.gh-content table:not(.gist table) td:first-child {
+    background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-repeat: no-repeat;
+    background-size: 20px 100%;
+}
+
+.gh-content table:not(.gist table) td:last-child {
+    background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: 20px 100%;
+}
+
+.gh-content table:not(.gist table) th {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-darkgrey);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    background-color: var(--color-white);
+}
+
+.gh-content table:not(.gist table) th,
+.gh-content table:not(.gist table) td {
+    padding: 6px 12px;
+    border: 1px solid var(--color-light-gray);
+}
+
+/* Page without header */
+.page-template .gh-content:only-child {
+    margin-top: 0 !important;
+}
+
+.page-template .gh-content:only-child > *:first-child:not(.kg-width-full) {
+    margin-top: var(--header-spacing, 80px);
+}
+
+.page-template .gh-content > *:last-child:not(.kg-width-full) {
+    margin-bottom: var(--footer-spacing, 0);
+}
+
+@media (max-width: 767px) {
+    .gh-content {
+        margin-top: 3.2rem;
+        font-size: 1.7rem;
+    }
+}

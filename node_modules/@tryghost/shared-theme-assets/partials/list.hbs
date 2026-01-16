@@ -1,0 +1,75 @@
+{{!--
+    Parameters:
+    * layout (grid, magazine)
+    * count (number)
+    * columns (number)
+    * slug (tag)
+    * showHeader (true, false)
+    * showPrimaryTag (true, false)
+    * showPrimaryAuthor (true, false)
+    * showExcerpt (true, false)
+    * showPublishedAt (true, false)
+    * showReadingTime (true, false)
+    * hasPagination (true, false)
+--}}
+
+<div class="gh-list{{#match layout "magazine"}} grid magazine{{else match layout "grid"}} grid{{else match layout "simple"}} simple{{/match}} gh-outer" data-column="{{column}}">
+    <div class="gh-list-inner gh-inner">
+
+        {{#if showHeader}}
+            {{#if slug}}
+                {{#get "tags" filter="slug:{{slug}}"}}
+                    {{#foreach tags}}
+                        <header class="gh-list-header">
+                            <a href="{{url}}"><h2 class="gh-list-title">{{name}}</h2></a>
+                            <a class="gh-list-action" href="{{url}}">View all &rarr;</a>
+                        </header>
+                    {{/foreach}}
+                {{/get}}
+            {{else}}
+                <header class="gh-list-header">
+                    <a href="{{url}}"><h2 class="gh-list-title">Latest</h2></a>
+                    <a class="gh-list-action" href="{{url}}">View all &rarr;</a>
+                </header>
+            {{/if}}
+        {{/if}}
+
+
+        {{#if hasPagination}}
+            <div class="gh-list-feed gh-feed">
+                {{#foreach posts}}
+                    {{> components/list-item
+                        showPrimaryTag=../showPrimaryTag
+                        showExcerpt=../showExcerpt
+                        showPrimaryAuthor=../showPrimaryAuthor
+                        showPublishedAt=../showPublishedAt}}
+                {{/foreach}}
+            </div>
+        {{else}}
+            <div class="gh-list-feed">
+                {{#if slug}}
+                    {{#get "posts" include="tags,authors" filter="tag:{{slug}}" limit=count}}
+                        {{#foreach posts}}
+                            {{> components/list-item
+                                showPrimaryTag=../../showPrimaryTag
+                                showExcerpt=../../showExcerpt
+                                showPrimaryAuthor=../../showPrimaryAuthor
+                                showPublishedAt=../../showPublishedAt}}
+                        {{/foreach}}
+                    {{/get}}
+                {{else}}
+                    {{#get "posts" include="tags,authors" limit=count}}
+                        {{#foreach posts}}
+                            {{> components/list-item
+                                showPrimaryTag=../../showPrimaryTag
+                                showExcerpt=../../showExcerpt
+                                showPrimaryAuthor=../../showPrimaryAuthor
+                                showPublishedAt=../../showPublishedAt}}
+                        {{/foreach}}
+                    {{/get}}
+                {{/if}}
+            </div>
+        {{/if}}
+
+    </div>
+</div>

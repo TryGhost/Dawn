@@ -1,0 +1,13 @@
+.pagination {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    margin-top: 6.4rem;
+}
+
+.page-number {
+    grid-column-start: 2;
+}
+
+.older-posts {
+    text-align: right;
+}

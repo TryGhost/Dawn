@@ -1,0 +1,147 @@
+/* Add extra margin before/after any cards,
+except for when immediately preceeded by a heading */
+
+.gh-content :not(.kg-card):not(table):not([id]) + :is(.kg-card, table) {
+    margin-top: calc(2em * var(--content-spacing-multiplier, 1));
+}
+
+.gh-content :is(.kg-card, table) + :not(.kg-card):not(table):not([id]) {
+    margin-top: calc(2em * var(--content-spacing-multiplier, 1));
+}
+
+/* Remove space between full-width cards */
+.gh-content > .kg-width-full + .kg-width-full:not(.kg-width-full.kg-card-hascaption + .kg-width-full) {
+    margin-top: 0;
+}
+
+/* Image
+/* ---------------------------------------------------------- */
+
+.kg-image {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Embed
+/* ---------------------------------------------------------- */
+
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Gallery
+/* ---------------------------------------------------------- */
+
+.kg-image[width][height],
+.kg-gallery-image {
+    cursor: pointer;
+}
+
+.kg-image-card a:hover,
+.kg-gallery-image a:hover {
+    opacity: 1 !important;
+}
+
+/* Toggle
+/* ---------------------------------------------------------- */
+
+.kg-card.kg-toggle-card .kg-toggle-heading-text {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .kg-toggle-card .kg-toggle-heading-text {
+    font-family: var(--gh-font-heading, var(--font-serif));
+}
+
+/* Callout
+/* ---------------------------------------------------------- */
+
+.kg-callout-card.kg-card {
+    border-radius: 0.25em;
+}
+
+.kg-callout-card-accent a {
+    text-decoration: underline;
+}
+
+/* Blockquote
+/* ---------------------------------------------------------- */
+
+blockquote.kg-blockquote-alt {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--color-secondary-text);
+}
+
+/* Button
+/* ---------------------------------------------------------- */
+
+.kg-card.kg-button-card .kg-btn {
+    font-size: 1em;
+}
+
+/* Header
+/* ---------------------------------------------------------- */
+
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .kg-card.kg-header-card h2.kg-header-card-header {
+    font-family: var(--gh-font-heading, var(--font-serif));
+}
+
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .kg-header-card h3.kg-header-card-subheader {
+    font-family: var(--gh-font-body, var(--font-serif));
+}
+
+/* Bookmark
+/* ---------------------------------------------------------- */
+
+.kg-bookmark-card a.kg-bookmark-container,
+.kg-bookmark-card a.kg-bookmark-container:hover,
+.kg-file-card-container,
+.kg-file-card-container:hover,
+.kg-audio-card,
+.kg-product-card-container {
+    background: var(--background-color, #fff) !important;
+    color: var(--color-darker-gray, #222) !important;
+    opacity: 1;
+}
+
+.kg-bookmark-card .kg-bookmark-container {
+    border-radius: 0.25em !important;
+}
+
+.kg-bookmark-card .kg-bookmark-content {
+    padding: 1.15em;
+}
+
+.kg-bookmark-card .kg-bookmark-title {
+    font-size: 0.9em;
+}
+
+.kg-bookmark-card .kg-bookmark-description {
+    max-height: none;
+    margin-top: 0.3em;
+    font-size: 0.8em;
+}
+
+.kg-bookmark-card .kg-bookmark-metadata {
+    font-size: 0.8em;
+}
+
+.kg-bookmark-card .kg-bookmark-thumbnail img {
+    border-radius: 0 0.2em 0.2em 0;
+}
+
+/* Audio
+/* ---------------------------------------------------------- */
+
+.has-light-text .kg-audio-card button {
+    color: #fff;
+}
+
+.has-light-text .kg-audio-card .kg-audio-volume-slider {
+    color: rgb(255 255 255 / 0.3)
+}

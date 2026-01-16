@@ -1,0 +1,46 @@
+.page-template .gh-article-header {
+    margin-top: var(--header-spacing, 80px);
+}
+
+.gh-article-tag {
+    color: var(--ghost-accent-color);
+}
+
+.gh-article-title {
+    word-break: break-word;
+}
+
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .gh-article-title {
+    font-family: var(--gh-font-heading, var(--font-serif));
+    letter-spacing: -0.01em;
+}
+
+.gh-article-excerpt {
+    margin-top: 2rem;
+    font-size: 2.1rem;
+    line-height: 1.5;
+    color: var(--color-secondary-text);
+}
+
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-article-excerpt {
+    font-family: var(--gh-font-body, var(--font-serif));
+}
+
+.gh-article-image {
+    grid-column: wide-start/wide-end;
+    margin-top: 4rem;
+}
+
+.gh-article-image img {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .gh-article-excerpt {
+        font-size: 1.9rem;
+    }
+
+    .gh-article-image {
+        margin-top: 2.4rem;
+    }
+}

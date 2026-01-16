@@ -1,7 +1,7 @@
 {
-    "name": "dawn",
-    "description": "A Ghost theme",
-    "version": "1.0.0",
+    "name": "cd-video",
+    "description": "A DreamFreely'd Ghost theme",
+    "version": "1.0.9",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -74,16 +74,6 @@
             },
             "white_logo_for_dark_mode": {
                 "type": "image"
-            },
-            "show_featured_posts": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
-            "featured_title": {
-                "type": "text",
-                "default": "Featured articles",
-                "group": "homepage"
             },
             "show_author": {
                 "type": "boolean",

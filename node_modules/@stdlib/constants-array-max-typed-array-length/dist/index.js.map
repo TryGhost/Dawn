@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../lib/index.js"],
+  "sourcesContent": ["/**\n* @license Apache-2.0\n*\n* Copyright (c) 2018 The Stdlib Authors.\n*\n* Licensed under the Apache License, Version 2.0 (the \"License\");\n* you may not use this file except in compliance with the License.\n* You may obtain a copy of the License at\n*\n*    http://www.apache.org/licenses/LICENSE-2.0\n*\n* Unless required by applicable law or agreed to in writing, software\n* distributed under the License is distributed on an \"AS IS\" BASIS,\n* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n* See the License for the specific language governing permissions and\n* limitations under the License.\n*/\n\n'use strict';\n\n/**\n* Maximum length of a typed array.\n*\n* @module @stdlib/constants-array-max-typed-array-length\n*\n* @example\n* var MAX_TYPED_ARRAY_LENGTH = require( '@stdlib/constants-array-max-typed-array-length' );\n* // returns 9007199254740991\n*/\n\n// MAIN //\n\n/**\n* Maximum length of a typed array.\n*\n* ```tex\n* 2^{53} - 1\n* ```\n*\n* @constant\n* @type {number}\n* @default 9007199254740991\n*/\nvar MAX_TYPED_ARRAY_LENGTH = 9007199254740991;\n\n\n// EXPORTS //\n\nmodule.exports = MAX_TYPED_ARRAY_LENGTH;\n"],
+  "mappings": "aA2CA,IAAIA,EAAyB,iBAK7B,OAAO,QAAUA",
+  "names": ["MAX_TYPED_ARRAY_LENGTH"]
+}

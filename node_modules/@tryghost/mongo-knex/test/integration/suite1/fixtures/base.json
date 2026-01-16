@@ -1,0 +1,158 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Pat Taylor",
+            "slug": "pat"
+        },
+        {
+            "id": 2,
+            "name": "Sam Smith",
+            "slug": "sam"
+        },
+        {
+            "id": 3,
+            "name": "Leslie Jones",
+            "slug": "leslie"
+        }
+    ],
+    "posts": [
+        {
+            "id": 1,
+            "title": "A Whole New World",
+            "featured": false,
+            "image": null,
+            "status": "published",
+            "published_at": "2015-01-01",
+            "author_id": 1
+        },
+        {
+            "id": 2,
+            "title": "The Bare Necessities",
+            "featured": false,
+            "image": "myimage.jpg",
+            "status": "draft",
+            "published_at": null,
+            "author_id": 2
+        },
+        {
+            "id": 3,
+            "title": "When She Loved Me",
+            "featured": true,
+            "image": null,
+            "status": "published",
+            "published_at": "2015-01-03",
+            "author_id": 1
+        },
+        {
+            "id": 4,
+            "title": "Circle of Life",
+            "featured": true,
+            "image": null,
+            "status": "published",
+            "published_at": "2015-06-01",
+            "author_id": 2
+        },
+        {
+            "id": 5,
+            "title": "Be Our Guest",
+            "featured": true,
+            "image": null,
+            "status": "published",
+            "published_at": "2015-06-02",
+            "author_id": 1
+        },
+        {
+            "id": 6,
+            "title": "He's a Tramp",
+            "featured": true,
+            "image": null,
+            "status": "published",
+            "published_at": "2015-06-03",
+            "author_id": 1
+        },
+        {
+            "id": 7,
+            "title": "no tags, yeah",
+            "featured": true,
+            "image": null,
+            "status": "published",
+            "published_at": "2015-06-04",
+            "author_id": 1
+        },
+        {
+            "id": 8,
+            "title": "has internal tag",
+            "featured": true,
+            "image": null,
+            "status": "published",
+            "published_at": "2015-06-05",
+            "author_id": 2
+        }
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "Classic",
+            "slug": "classic",
+            "visibility": "public",
+            "created_at": "2015-01-01"
+        },
+        {
+            "id": 2,
+            "name": "Animal",
+            "slug": "animal",
+            "visibility": "public",
+            "created_at": "2015-01-02"
+        },
+        {
+            "id": 3,
+            "name": "CGI",
+            "slug": "cgi",
+            "visibility": "public",
+            "created_at": "2015-06-21"
+        },
+        {
+            "id": 4,
+            "name": "#internal",
+            "slug": "hash-internal",
+            "visibility": "internal",
+            "created_at": "2015-06-22"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "comment_provider_id": "external_1",
+            "content": "Hello, world"
+        },
+        {
+            "id": 2,
+            "comment_provider_id": "external_2",
+            "content": "Learn forex trading today and make millions, only a 1000 USD up front payment! bit.ly/scam"
+        }
+    ],
+    "posts_meta": [
+        {
+            "id": 1,
+            "post_id": 1,
+            "meta_title": "Meta of A Whole New World",
+            "meta_description": "A whole new world with new horizons to pursue I'll chase them anywhere",
+            "like_count": 10
+        },
+        {
+            "id": 2,
+            "post_id": 4,
+            "meta_title": "Meta of Circle of Life",
+            "meta_description": "Till we find our place nn the path unwinding in the circle the circle of life.",
+            "like_count": 42
+        },
+        {
+            "id": 3,
+            "post_id": 5,
+            "meta_title": "Meta of Be Our Guest",
+            "meta_description": null,
+            "like_count": 42
+        }
+    ]
+}

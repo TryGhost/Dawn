@@ -1,0 +1,25 @@
+{{!< default}}
+
+<main class="site-main">
+    <section class="tag">
+
+        <div class="gh-canvas">
+
+            <h1 class="tag-name">projects</h1>
+
+            <div class="tag-description">Active DreamFreely projects</div>
+
+        </div>
+
+    </section>
+    <div class="post-feed gh-feed gh-canvas">
+        {{#get "posts" filter="tag:['projects']" as |posts|}}
+            {{#foreach posts}}
+                {{> "loop-two"}}
+            {{/foreach}}
+        {{/get}}
+    </div>
+
+    {{pagination}}
+
+</main>

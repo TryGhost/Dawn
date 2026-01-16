@@ -1,0 +1,10 @@
+{
+    "database": {
+        "client": "mysql",
+        "connection": {
+            "user": "root",
+            "password": "",
+            "database": "nql_testing"
+        }
+    }
+}

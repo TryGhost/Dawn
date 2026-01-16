@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../lib/index.js"],
+  "sourcesContent": ["/**\n* @license Apache-2.0\n*\n* Copyright (c) 2018 The Stdlib Authors.\n*\n* Licensed under the Apache License, Version 2.0 (the \"License\");\n* you may not use this file except in compliance with the License.\n* You may obtain a copy of the License at\n*\n*    http://www.apache.org/licenses/LICENSE-2.0\n*\n* Unless required by applicable law or agreed to in writing, software\n* distributed under the License is distributed on an \"AS IS\" BASIS,\n* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n* See the License for the specific language governing permissions and\n* limitations under the License.\n*/\n\n'use strict';\n\n/**\n* Minimum signed 8-bit integer.\n*\n* @module @stdlib/constants-int8-min\n* @type {integer32}\n*\n* @example\n* var INT8_MIN = require( '@stdlib/constants-int8-min' );\n* // returns -128\n*/\n\n\n// MAIN //\n\n/**\n* Minimum signed 8-bit integer.\n*\n* ## Notes\n*\n* The number is given by\n*\n* ```tex\n* -(2^{7})\n* ```\n*\n* which corresponds to the two's complement bit sequence\n*\n* ```binarystring\n* 10000000\n* ```\n*\n* @constant\n* @type {integer32}\n* @default -128\n*/\nvar INT8_MIN = -128|0; // asm type annotation\n\n\n// EXPORTS //\n\nmodule.exports = INT8_MIN;\n"],
+  "mappings": "aAuDA,IAAIA,EAAW,KAKf,OAAO,QAAUA",
+  "names": ["INT8_MIN"]
+}

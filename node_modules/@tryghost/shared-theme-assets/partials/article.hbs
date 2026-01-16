@@ -1,0 +1,65 @@
+<article class="gh-article {{post_class}}">
+
+    {{#match @page.show_title_and_feature_image}}
+        <header class="gh-article-header gh-canvas">
+            {{!--
+                HTML comments used in this block are intentional.
+                They're used for eliminating empty spaces between tags which makes :empty selector possible.
+                Can be removed when :has selector is widely supported.
+            --}}
+            <span class="gh-article-meta"><!--
+            -->{{#if showPrimaryTag}}
+                    {{#if primary_tag}}
+                        <a class="gh-article-meta-tag" href="{{primary_tag.url}}"{{#if primary_tag.accent_color}} style="color: {{primary_tag.accent_color}};"{{/if}}>{{primary_tag.name}}</a>
+                    {{/if}}
+                {{/if}}
+                {{#if showPublishedAt}}
+                    <time class="gh-article-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+                {{/if}}
+                {{#if showReadingTime}}
+                    <span class="gh-article-meta-length">{{reading_time}}</span>
+                {{/if}}<!--
+            --></span>
+
+            <h1 class="gh-article-title">{{title}}</h1>
+
+            {{#if custom_excerpt}}
+                <p class="gh-article-excerpt">{{custom_excerpt}}</p>
+            {{/if}}
+
+            {{#unless hideFeatureImage}}
+                {{#if feature_image}}
+                    <figure class="gh-article-image kg-width-wide">
+                        <img
+                            srcset="{{img_url feature_image size="s"}} 300w,
+                                    {{img_url feature_image size="m"}} 720w,
+                                    {{img_url feature_image size="l"}} 960w,
+                                    {{img_url feature_image size="xl"}} 1200w,
+                                    {{img_url feature_image size="xxl"}} 2000w"
+                            sizes="(max-width: 1200px) 100vw, 1200px"
+                            src="{{img_url feature_image size="xl"}}"
+                            alt="{{title}}"
+                        >
+                        {{#if feature_image_caption}}
+                            <figcaption>{{feature_image_caption}}</figcaption>
+                        {{/if}}
+                    </figure>
+                {{/if}}
+            {{/unless}}
+        </header>
+    {{/match}}
+
+    <section class="gh-content gh-canvas">
+        {{content}}
+    </section>
+
+    {{#if showComments}}
+        {{#if comments}}
+            <div class="gh-article-comments gh-canvas">
+                <h2 class="gh-article-comments-title">{{comment_count empty="" single="comment" plural="comments"}}</h2>
+                {{comments title="" count=false}}
+            </div>
+        {{/if}}
+    {{/if}}
+
+</article>

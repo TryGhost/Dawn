@@ -1,0 +1,17 @@
+{{#contentFor 'pageStyles'}}
+<style>
+  li a {
+    color: #800;
+  }
+</style>
+{{/contentFor}}
+
+{{> sub/comment}}
+<h1>{{title}}</h1>
+<ul>
+    {{#each veggies}}
+      <li>
+        <a href="/veggies/{{this.name}}">{{this.name}}</a>
+      </li>
+    {{/each}}
+</ul>

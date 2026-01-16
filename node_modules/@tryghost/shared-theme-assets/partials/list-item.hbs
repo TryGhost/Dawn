@@ -1,0 +1,39 @@
+<article class="gh-list-item {{post_class}}">
+    <a class="gh-list-item-inner" href="{{url}}">
+        {{#if feature_image}}
+            <figure class="gh-list-item-image">
+                <img
+                    srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 720w,
+                            {{img_url feature_image size="l"}} 960w,
+                            {{img_url feature_image size="xl"}} 1200w,
+                            {{img_url feature_image size="xxl"}} 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                >
+            </figure>
+        {{/if}}
+        <div class="gh-list-item-content">
+            {{#if showPrimaryTag}}
+                {{#if primary_tag.name}}
+                    <span class="gh-list-item-primary-tag" {{#if primary_tag.accent_color}}style="color: {{primary_tag.accent_color}};"{{/if}}>{{primary_tag.name}}</span>
+                {{/if}}
+            {{/if}}
+
+            <h3 class="gh-list-item-title">{{title}}</h3>
+
+            {{#if showExcerpt}}
+                <p class="gh-list-item-excerpt">{{excerpt}}</p>
+            {{/if}}
+
+            {{#if showPrimaryAuthor}}
+                <span class="gh-list-item-primary-author">{{primary_author.name}}</span>
+            {{/if}}
+
+            {{#if showPublishedAt}}
+                <span class="gh-list-item-published-at">{{date published_at format="DD MMM YYYY"}}</span>
+            {{/if}}
+        </div>
+    </a>
+</article>

@@ -2,13 +2,15 @@
 
     {{#match @page.show_title_and_feature_image}}
         <header class="single-header gh-canvas">
+            <h1 class="single-title">{{title}}</h1>
+
             {{#is "post"}}
             <div class="single-meta">
-                <span class="single-meta-item single-meta-date">
+                {{!-- <span class="single-meta-item single-meta-date">
                     <time datetime="{{date format="YYYY-MM-DD"}}">
-                        {{date published_at format="DD MMM YYYY"}}
+                        {{date published_at}}
                     </time>
-                </span>
+                </span> --}}
                 {{#if reading_time}}
                     <span class="single-meta-item single-meta-length">
                         {{reading_time}}
@@ -23,8 +25,6 @@
                 {{/primary_tag}}
             </div>
             {{/is}}
-
-            <h1 class="single-title">{{title}}</h1>
 
             {{#if custom_excerpt}}
                 <div class="single-excerpt">

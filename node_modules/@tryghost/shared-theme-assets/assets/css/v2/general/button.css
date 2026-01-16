@@ -1,0 +1,78 @@
+.gh-btn {
+    display: inline-flex;
+    gap: 0.4em;
+    align-items: center;
+    justify-content: center;
+    padding: calc(0.75em * var(--multiplier, 1)) calc(1.15em * var(--multiplier, 1));
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-white);
+    letter-spacing: inherit;
+    cursor: pointer;
+    background-color: var(--color-darker-gray);
+    border: 0;
+    border-radius: 100px;
+}
+
+.gh-btn:hover {
+    opacity: 0.95;
+}
+
+.gh-post-upgrade-cta .gh-btn {
+    line-height: inherit;
+}
+
+.gh-primary-btn {
+    background-color: var(--ghost-accent-color);
+}
+
+.gh-outline-btn {
+    color: var(--color-darker-gray);
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid var(--color-light-gray);
+}
+
+.gh-outline-btn:hover {
+    border-color: var(--color-mid-gray);
+    opacity: 1;
+}
+
+.gh-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    color: var(--color-darker-gray);
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.gh-icon-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.gh-text-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    color: var(--color-darker-gray);
+    letter-spacing: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    will-change: opacity;
+}
+
+.gh-text-btn:hover {
+    opacity: 0.8;
+}

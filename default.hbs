@@ -6,9 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
-
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="06317a76-1bad-44da-b5d9-3224c3e712a7"></script>
     {{ghost_head}}
 </head>
+
+<style>
+    .join-hover-button {
+        position: fixed;
+        bottom: min(32px, 5vw);
+        right: min(32px, 5vw);
+        z-index: 1000;
+        border-radius: 32px;
+        background-color: var(--ghost-accent-color);
+        padding: 16px 24px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    }
+    .join-hover-button:hover {
+        background-color: hsl(from var(--ghost-accent-color) h calc(s - 20) calc(l + 10));
+        opacity: 1;
+    }
+    .hover-button-inner {
+        color: #fff;  
+        display: flex;
+        flex-direction: row;   
+    }
+    .join-hover-button a svg {margin-right: 4px;}
+    @media (max-width: 600px) {
+        .join-hover-button span {
+            display: none; 
+        }
+        .join-hover-button {
+            padding: 16px;
+        }
+        
+    }
+    @media (min-width: 600px) {
+        .join-hover-button {
+            display: none; 
+        }        
+    }
+</style>
 
 <body class='{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}'>
 <div class="site">
@@ -29,7 +66,7 @@
                     </a>
                 </div>
                 <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
-                <button class="gh-burger" aria-label="Toggle menu"></button>
+                <button class="gh-burger"></button>
             </div>
 
             <nav class="gh-head-menu">
@@ -68,9 +105,9 @@
     {{#is "home"}}
         {{> "cover"}}
 
-        {{#if @custom.show_featured_posts}}
+        {{!-- {{#if @custom.show_featured_posts}}
             {{> "featured-posts"}}
-        {{/if}}
+        {{/if}} --}}
     {{/is}}
 
     <div class="site-content">
@@ -87,17 +124,17 @@
                     {{navigation type="secondary"}}
                 </nav>
             {{/if}}
-            <div class="gh-powered-by">
+            {{!-- <div class="gh-powered-by">
                 <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
-            </div>
+            </div> --}}
         </div>
     </footer>
 
 </div>
 
-{{#is "post, page"}}
+{{!-- {{#is "post, page"}}
     {{> "pswp"}}
-{{/is}}
+{{/is}} --}}
 
 <script
     src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -107,6 +144,15 @@
 <script src='{{asset "built/main.min.js"}}'></script>
 
 {{ghost_foot}}
+
+{{#unless @member}}
+    <a href="#/portal/" class="join-hover-button">
+       <div class="hover-button-inner ">
+          {{!-- {{>"icons/star"}} --}}
+          <img src="https://canin.dreamfreely.org/content/images/2025/10/DFDollarSign.Transparent-real.png" alt="" style="width: 26px; height: 26px;">
+          <span>&nbsp;{{@site.portal_button_signup_text}}</span>
+        </div></a>
+{{/unless}}  
 
 </body>
 </html>

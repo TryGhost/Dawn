@@ -1,0 +1,64 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "My first post",
+            "html": "<p>Loads of text here...</p>",
+            "author": "joe",
+            "featured": false,
+            "image": null,
+            "status": "published",
+            "tags": ["photo"]
+        },
+        {
+            "id": 2,
+            "title": "Second post",
+            "html": "<p>And some more text...</p>",
+            "author": "joe",
+            "featured": false,
+            "image": "myimage.jpg",
+            "status": "draft",
+            "tags": ["video"]
+        },
+        {
+            "id": 3,
+            "title": "3rd post",
+            "html": "<p>Something else...</p>",
+            "author": "joanne",
+            "featured": true,
+            "image": null,
+            "status": "published",
+            "tags": ["photo", "video"]
+        },
+        {
+            "id": 4,
+            "title": "The post that was number 4",
+            "html": "<p>It's always sunny.</p>",
+            "author": "joanne",
+            "featured": false,
+            "image": "myimage.jpg",
+            "status": "published",
+            "tags": ["audio"]
+        },
+        {
+            "id": 5,
+            "title": "5 is not ready yet",
+            "html": "<p></p>",
+            "author": "joe",
+            "featured": false,
+            "image": null,
+            "status": "draft",
+            "tags": []
+        },
+        {
+            "id": 6,
+            "title": "6th thing",
+            "html": "<p>More test...</p>",
+            "author": "joanne",
+            "featured": true,
+            "image": "somethinghere.jpg",
+            "status": "draft",
+            "tags": ["photo", "video"]
+        }
+    ]
+}

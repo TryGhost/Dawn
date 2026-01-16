@@ -1,13 +1,23 @@
 {{!< default}}
 
 <main class="site-main">
-
     <div class="post-feed gh-feed gh-canvas">
-        {{#foreach posts}}
-            {{> "loop"}}
-        {{/foreach}}
+        {{#get "posts" filter="featured: true" as |posts|}}
+            {{#foreach posts}}
+                {{> "loop-two"}}
+            {{/foreach}}
+        {{/get}}
     </div>
 
-    {{pagination}}
+    <div class="cover-cta" style="display:block;">
+        <center>
+            <a href="https://calendly.com/dreamfreely/meet-n-speak" target="_blank">
+                <b><u>Book a Meet 'n' Speak</u></b>
+            </a>
+        </center>
+    </div>
+
+    {{!-- <div class="post-feed gh-feed gh-canvas soundcloud">
+    </div> --}}
 
 </main>
