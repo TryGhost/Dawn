@@ -11,7 +11,7 @@
                 </span>
                 {{#if reading_time}}
                     <span class="single-meta-item single-meta-length">
-                        {{reading_time}}
+                        {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
                     </span>
                 {{/if}}
                 {{#primary_tag}}
@@ -65,7 +65,7 @@
         <div class="single-footer-left">
         {{#prev_post}}
             <div class="navigation navigation-previous">
-                <a class="navigation-link" href="{{url}}" aria-label="Previous post">
+                <a class="navigation-link" href="{{url}}" aria-label="{{t "Previous post"}}">
                     {{> "icons/arrow-left"}}
                 </a>
             </div>
@@ -75,7 +75,7 @@
         <div class="single-footer-middle">
         {{#if @custom.show_author}}
             <div class="single-footer-top">
-                <h3 class="single-footer-title">Published by:</h3>
+                <h3 class="single-footer-title">{{t "Published by:"}}</h3>
                 <div class="author-list">
                     {{#foreach authors}}
                     <div class="author-image-placeholder u-placeholder square">
@@ -92,7 +92,7 @@
         <div class="single-footer-right">
         {{#next_post}}
             <div class="navigation navigation-next">
-                <a class="navigation-link" href="{{url}}" aria-label="Next post">
+                <a class="navigation-link" href="{{url}}" aria-label="{{t "Next post"}}">
                     {{> "icons/arrow-right"}}
                 </a>
             </div>
