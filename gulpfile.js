@@ -16,6 +16,9 @@ const easyimport = require('postcss-easy-import');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
+// translations support
+const { mergeLocales } = require('@tryghost/theme-translations/build');
+
 function serve(done) {
     livereload.listen();
     done();
@@ -90,11 +93,19 @@ function zipper(done) {
     ], handleError(done));
 }
 
+function locales(done) {
+    mergeLocales({
+        local: './locales-local',
+        output: './locales'
+    })(done);
+}
+
+const localesWatcher = () => watch('./locales-local/**/*.json', locales);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const cssWatcher = () => watch('assets/css/**/*.css', css);
 const jsWatcher = () => watch('assets/js/**/*.js', js);
-const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
-const build = series(css, js);
+const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher, localesWatcher);
+const build = series(css, js, locales);
 
 exports.build = build;
 exports.zip = series(build, zipper);
