@@ -103,7 +103,7 @@
         "zip": "gulp zip"
     },
     "devDependencies": {
-        "@tryghost/shared-theme-assets": "2.5.2",
+        "@tryghost/shared-theme-assets": "2.6.1",
         "@tryghost/theme-translations": "^0.0.9",
         "autoprefixer": "10.4.27",
         "beeper": "2.1.0",
