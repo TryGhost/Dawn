@@ -105,9 +105,9 @@
     "devDependencies": {
         "@tryghost/shared-theme-assets": "2.6.1",
         "@tryghost/theme-translations": "^0.0.9",
-        "autoprefixer": "10.4.27",
+        "autoprefixer": "10.5.0",
         "beeper": "2.1.0",
-        "cssnano": "7.1.4",
+        "cssnano": "7.1.5",
         "gscan": "5.4.3",
         "gulp": "5.0.1",
         "gulp-concat": "2.6.1",
