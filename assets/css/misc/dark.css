@@ -147,4 +147,13 @@
         background-color: var(--lighter-gray-color) !important;
         opacity: 1;
     }
+
+    html:not(.theme-light) .gh-button-share {
+        color: rgba(255, 255, 255, 0.85);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    html:not(.theme-light) .gh-button-share:hover {
+        border-color: rgba(255, 255, 255, 0.5);
+    }
 }
