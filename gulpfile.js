@@ -93,7 +93,7 @@ function zipper(done) {
             '!pnpm-workspace.yaml',
             '!AGENTS.md',
             '!CLAUDE.md',
-        ]),
+        ], {encoding: false}),
         zip(filename),
         dest('dist/')
     ], handleError(done));
