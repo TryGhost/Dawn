@@ -41,7 +41,7 @@
     color: var(--facebook-color);
 }
 
-.theme-dark .share-link-twitter {
+.theme-dark .share-link-x {
     color: var(--twitter-color);
 }
 
@@ -130,7 +130,7 @@
         color: var(--facebook-color);
     }
 
-    html:not(.theme-light) .share-link-twitter {
+    html:not(.theme-light) .share-link-x {
         color: var(--twitter-color);
     }
 
