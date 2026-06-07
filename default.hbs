@@ -82,11 +82,23 @@
             <div class="gh-copyright">
                 {{@site.title}} © {{date format="YYYY"}}
             </div>
-            {{#if @site.secondary_navigation}}
-                <nav class="gh-foot-menu">
-                    {{navigation type="secondary"}}
-                </nav>
-            {{/if}}
+            <div class="gh-foot-center">
+                <div class="gh-social-links">
+                    {{#social_accounts @site}}
+                        <a href="{{href}}" target="_blank" rel="noopener" aria-label="{{name}}">
+                            {{#> (concat "icons/" type)}}
+                                {{!-- Fallback when no per-platform icon partial exists --}}
+                                <span>{{name}}</span>
+                            {{/undefined}}
+                        </a>
+                    {{/social_accounts}}
+                </div>
+                {{#if @site.secondary_navigation}}
+                    <nav class="gh-foot-menu">
+                        {{navigation type="secondary"}}
+                    </nav>
+                {{/if}}
+            </div>
             <div class="gh-powered-by">
                 {{{t "Powered by {ghostlink}" ghostlink="<a href=\"https://ghost.org/\" target=\"_blank\" rel=\"noopener\">Ghost</a>"}}}
             </div>
