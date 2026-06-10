@@ -1,0 +1,9 @@
+# This file exists for the standalone repo this theme is subtree-pushed to:
+# without it, pnpm 11 fails `pnpm install` on the un-triaged dtrace-provider
+# build script. When installing from the monorepo root, pnpm uses the root
+# pnpm-workspace.yaml instead (including its linkWorkspacePackages setting)
+# and ignores this file.
+allowBuilds:
+  # Optional dtrace bindings for bunyan (a gscan dependency); not needed to
+  # build, test, or zip the theme.
+  dtrace-provider: false

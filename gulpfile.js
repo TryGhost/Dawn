@@ -89,7 +89,8 @@ function zipper(done) {
             '!node_modules', '!node_modules/**',
             '!dist', '!dist/**',
             '!pnpm-debug.log',
-            '!pnpm-lock.yaml'
+            '!pnpm-lock.yaml',
+            '!pnpm-workspace.yaml'
         ]),
         zip(filename),
         dest('dist/')
