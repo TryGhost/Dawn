@@ -88,7 +88,8 @@ function zipper(done) {
             '**',
             '!node_modules', '!node_modules/**',
             '!dist', '!dist/**',
-            '!yarn-error.log'
+            '!pnpm-debug.log',
+            '!pnpm-lock.yaml'
         ]),
         zip(filename),
         dest('dist/')
