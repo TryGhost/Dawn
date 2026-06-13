@@ -1,0 +1,34 @@
+.cover {
+    margin-top: 48px;
+}
+
+.cover-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cover-icon {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.cover-icon-image {
+    width: 120px;
+}
+
+.cover-description {
+    font-size: 1.7rem;
+}
+
+.cover-cta {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.cover-cta .button {
+    margin: 0 0.5rem;
+}

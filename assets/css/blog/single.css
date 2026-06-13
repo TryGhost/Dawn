@@ -1,0 +1,129 @@
+.single-header {
+    margin-bottom: 4.5rem;
+    text-align: center;
+}
+
+.page-template .single-header {
+    margin-top: var(--header-spacing);
+}
+
+.single-meta {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--secondary-text-color);
+    text-transform: uppercase;
+}
+
+.single-meta-item + .single-meta-item::before {
+    padding: 0 0.3rem;
+    font-family: serif;
+    content: "\02022";
+}
+
+.single-meta-tag .post-tag {
+    color: var(--brand-color);
+}
+
+.single-title {
+    margin-bottom: 0;
+    font-size: 4rem;
+    line-height: 1.2;
+    letter-spacing: -0.1rem;
+    word-break: break-word;
+}
+
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .single-title {
+    font-family: var(--gh-font-heading, var(--font-serif));
+}
+
+.single-excerpt {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    word-break: break-word;
+}
+
+.has-serif-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .single-excerpt {
+    font-family: var(--gh-font-body, var(--font-serif));
+}
+
+.single-media {
+    margin-top: 4.5rem;
+}
+
+.single-cta {
+    padding: 3rem;
+    margin-top: 4rem !important;
+    text-align: center;
+    border-top: 5px solid var(--brand-color);
+    border-bottom: 1px solid var(--light-gray-color);
+}
+
+.single-cta-title {
+    margin: 0 0 3rem !important;
+}
+
+.single-cta-button {
+    margin-bottom: 1rem;
+    font-weight: 800 !important;
+}
+
+.single-cta-footer {
+    font-size: 1.4rem;
+    font-weight: 400 !important;
+    letter-spacing: -0.02rem;
+}
+
+.single-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 4.5rem;
+}
+
+.single-footer-left,
+.single-footer-right {
+    display: flex;
+    flex: 2;
+}
+
+.single-footer-right {
+    justify-content: flex-end;
+}
+
+.single-footer-middle {
+    display: flex;
+    flex-direction: column;
+}
+
+.single-footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single-footer-title {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.single-footer-bottom {
+    margin-top: 2rem;
+}
+
+@media (max-width: 767px) {
+    .single-header {
+        margin-bottom: 3rem;
+    }
+
+    .single-title {
+        font-size: 2.6rem;
+    }
+
+    .single-excerpt {
+        font-size: 1.7rem;
+    }
+
+    .single-media {
+        margin-top: 3rem;
+    }
+}
