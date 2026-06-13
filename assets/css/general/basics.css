@@ -1,0 +1,57 @@
+:root {
+    --brand-color: var(--ghost-accent-color, #ff572f);
+    --primary-text-color: #333;
+    --secondary-text-color: #999;
+    --white-color: #fff;
+    --lighter-gray-color: #f6f6f6;
+    --light-gray-color: #e6e6e6;
+    --mid-gray-color: #ccc;
+    --dark-gray-color: #444;
+    --darker-gray-color: #1a1a1a;
+    --black-color: #000;
+    --green-color: #28a745;
+    --orange-color: #ffc107;
+    --red-color: #dc3545;
+    --facebook-color: #3b5998;
+    --twitter-color: #1da1f2;
+    --linkedin-color: #0B66C3;
+    --bluesky-color: #1185FE;
+    --threads-color: #000000;
+    --mastodon-color: #6364FF;
+    --tiktok-color: #000000;
+    --youtube-color: #ff0000;
+    --instagram-color: #000000;
+    --rss-color: #f26522;
+    --animation-base: ease-in-out;
+    --font-sans: Mulish, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    --font-serif: Lora, Times, serif;
+    --font-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    --navbar-height: 80px;
+    --content-font-size: 1.7rem;
+    --header-spacing: 60px;
+}
+
+@media (max-width: 767px) {
+    :root {
+        --header-spacing: 30px;
+    }
+}
+
+body {
+    color: var(--primary-text-color);
+    background-color: var(--white-color);
+}
+
+a {
+    color: var(--darker-gray-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800;
+    color: var(--darker-gray-color);
+}

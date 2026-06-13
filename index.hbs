@@ -9,15 +9,18 @@
         {{/get}}
     </div>
 
-    <div class="cover-cta" style="display:block;">
-        <center>
-            <a href="https://calendly.com/dreamfreely/meet-n-speak" target="_blank">
-                <b><u>Book a Meet 'n' Speak</u></b>
-            </a>
-        </center>
-    </div>
-
-    {{!-- <div class="post-feed gh-feed gh-canvas soundcloud">
-    </div> --}}
+    <center class="cover-content gh-inner">
+        <b><a href="https://calendly.com/dreamfreely/curiosity-call" target="_blank">Book a Curiosity Call</a></b>
+    
+    
+        {{#if @site.members_enabled}}
+            {{#unless @member}}
+            <div class="cover-cta">
+                <button class="button members-subscribe" data-portal="signup">{{t "Subscribe now"}}</button>
+                <button class="button button-secondary members-login" data-portal="signin">{{t "Login"}}</button>
+            </div>
+            {{/unless}}
+        {{/if}}
+    </center>
 
 </main>

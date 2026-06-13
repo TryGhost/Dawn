@@ -2,18 +2,16 @@
 
     {{#match @page.show_title_and_feature_image}}
         <header class="single-header gh-canvas">
-            <h1 class="single-title">{{title}}</h1>
-
             {{#is "post"}}
             <div class="single-meta">
-                {{!-- <span class="single-meta-item single-meta-date">
+                <span class="single-meta-item single-meta-date">
                     <time datetime="{{date format="YYYY-MM-DD"}}">
-                        {{date published_at}}
+                        {{date published_at format="DD MMM YYYY"}}
                     </time>
-                </span> --}}
+                </span>
                 {{#if reading_time}}
                     <span class="single-meta-item single-meta-length">
-                        {{reading_time}}
+                        {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
                     </span>
                 {{/if}}
                 {{#primary_tag}}
@@ -26,11 +24,17 @@
             </div>
             {{/is}}
 
+            <h1 class="single-title">{{title}}</h1>
+
             {{#if custom_excerpt}}
                 <div class="single-excerpt">
                     {{custom_excerpt}}
                 </div>
             {{/if}}
+
+            <div class="gh-meta-share">
+                <a href="#/share" class="gh-button-share">{{t "Share"}} {{> "icons/share"}}</a>
+            </div>
 
             {{#if feature_image}}
             {{#unless no_image}}
@@ -65,7 +69,7 @@
         <div class="single-footer-left">
         {{#prev_post}}
             <div class="navigation navigation-previous">
-                <a class="navigation-link" href="{{url}}" aria-label="Previous post">
+                <a class="navigation-link" href="{{url}}" aria-label="{{t "Previous post"}}">
                     {{> "icons/arrow-left"}}
                 </a>
             </div>
@@ -75,7 +79,7 @@
         <div class="single-footer-middle">
         {{#if @custom.show_author}}
             <div class="single-footer-top">
-                <h3 class="single-footer-title">Published by:</h3>
+                <h3 class="single-footer-title">{{t "Published by:"}}</h3>
                 <div class="author-list">
                     {{#foreach authors}}
                     <div class="author-image-placeholder u-placeholder square">
@@ -92,7 +96,7 @@
         <div class="single-footer-right">
         {{#next_post}}
             <div class="navigation navigation-next">
-                <a class="navigation-link" href="{{url}}" aria-label="Next post">
+                <a class="navigation-link" href="{{url}}" aria-label="{{t "Next post"}}">
                     {{> "icons/arrow-right"}}
                 </a>
             </div>

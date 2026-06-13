@@ -1,6 +1,7 @@
 const {series, parallel, watch, src, dest} = require('gulp');
 const pump = require('pump');
 const fs = require('fs');
+const path = require('path');
 const order = require('ordered-read-streams');
 
 // gulp plugins and utils
@@ -15,6 +16,10 @@ const zip = require('gulp-zip');
 const easyimport = require('postcss-easy-import');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+
+// translations support
+const { mergeLocales } = require('@tryghost/theme-translations/build');
+const sharedThemeAssetsPath = path.dirname(require.resolve('@tryghost/shared-theme-assets/package.json'));
 
 function serve(done) {
     livereload.listen();
@@ -52,8 +57,8 @@ function css(done) {
 
 function getJsFiles(version) {
     const jsFiles = [
-        src(`node_modules/@tryghost/shared-theme-assets/assets/js/${version}/lib/**/*.js`),
-        src(`node_modules/@tryghost/shared-theme-assets/assets/js/${version}/main.js`),
+        src(`${sharedThemeAssetsPath}/assets/js/${version}/lib/**/*.js`),
+        src(`${sharedThemeAssetsPath}/assets/js/${version}/main.js`),
     ];
 
     if (fs.existsSync(`assets/js/lib`)) {
@@ -90,11 +95,19 @@ function zipper(done) {
     ], handleError(done));
 }
 
+function locales(done) {
+    mergeLocales({
+        local: './locales-local',
+        output: './locales'
+    })(done);
+}
+
+const localesWatcher = () => watch('./locales-local/**/*.json', locales);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const cssWatcher = () => watch('assets/css/**/*.css', css);
 const jsWatcher = () => watch('assets/js/**/*.js', js);
-const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
-const build = series(css, js);
+const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher, localesWatcher);
+const build = series(css, js, locales);
 
 exports.build = build;
 exports.zip = series(build, zipper);
