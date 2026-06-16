@@ -90,7 +90,9 @@ function zipper(done) {
             '!dist', '!dist/**',
             '!pnpm-debug.log',
             '!pnpm-lock.yaml',
-            '!pnpm-workspace.yaml'
+            '!pnpm-workspace.yaml',
+            '!AGENTS.md',
+            '!CLAUDE.md',
         ]),
         zip(filename),
         dest('dist/')
