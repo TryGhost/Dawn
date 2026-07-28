@@ -8,7 +8,7 @@
         <h2 class="single-cta-title">{{t "This post is for subscribers only"}}</h2>
     {{/has}}
     {{#has visibility="filter"}}
-        <h2 class="single-cta-title">{{t "This post is for subscribers on the {tiers} only" tiers=tiers}}</h2>
+        <h2 class="single-cta-title">{{{t "This post is for subscribers on the {tiers} only" tiers=(tiers separator=", " lastSeparator=(t " and "))}}}</h2>
     {{/has}}
     {{#if @member}}
         <button class="button single-cta-button" data-portal="account/plans">{{t "Upgrade now"}}</button>
