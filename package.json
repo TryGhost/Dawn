@@ -102,7 +102,7 @@
         "test": "gscan .",
         "zip": "gulp zip"
     },
-    "packageManager": "pnpm@12.3.0",
+    "packageManager": "pnpm@12.3.1",
     "devDependencies": {
         "@tryghost/shared-theme-assets": "2.7.3",
         "@tryghost/theme-translations": "^0.0.9",
