@@ -104,7 +104,7 @@
     },
     "packageManager": "pnpm@12.4.2",
     "devDependencies": {
-        "@tryghost/shared-theme-assets": "2.7.4",
+        "@tryghost/shared-theme-assets": "2.7.5",
         "@tryghost/theme-translations": "^0.0.9",
         "autoprefixer": "10.6.1",
         "beeper": "2.1.0",
