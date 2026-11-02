@@ -3,6 +3,10 @@
 # build script. When installing from the monorepo root, pnpm uses the root
 # pnpm-workspace.yaml instead (including its linkWorkspacePackages setting)
 # and ignores this file.
+minimumReleaseAge: 4320
+strictDepBuilds: true
+blockExoticSubdeps: true
+
 allowBuilds:
   # Optional dtrace bindings for bunyan (a gscan dependency); not needed to
   # build, test, or zip the theme.
